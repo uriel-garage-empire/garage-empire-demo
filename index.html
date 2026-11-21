@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GARAGE EMPIRE Free Browser Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Russo+One&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e9e6df;--panel:#f6f4ef;--ink:#1b1d20;--mut:#6b6f76;--line:#cfcbc0;--acc:#d9a400;--accink:#1b1d20;--good:#1f8f4e;--bad:#c23a2e;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181b;--panel:#1e2226;--ink:#ecebe6;--mut:#9aa0a8;--line:#333a40;--acc:#f2c230;--good:#4cc77d;--bad:#ff6b5c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181b;--panel:#1e2226;--ink:#ecebe6;--mut:#9aa0a8;--line:#333a40;--acc:#f2c230;--good:#4cc77d;--bad:#ff6b5c;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,system-ui,sans-serif;line-height:1.5}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:2px solid var(--acc)}
+h1{margin:0;font-size:22px;font-weight:900;letter-spacing:.04em}
+h1 small{display:block;font-size:11px;font-weight:400;color:var(--mut);letter-spacing:.02em}
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:6px 12px;border-radius:6px}
+button:hover{border-color:var(--acc)}button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+button.pri{background:var(--acc);color:var(--accink);border-color:var(--acc);font-weight:700}
+button:disabled{opacity:.45;cursor:not-allowed}
+.money{font-weight:900;font-size:18px;color:var(--acc);min-width:110px;text-align:center}
+main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;padding:16px;max-width:1200px;margin:auto}
+@media(max-width:820px){main{grid-template-columns:1fr}}
+#stage{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;height:340px;overflow:hidden;position:sticky;top:8px}
+@media(max-width:820px){#stage{position:relative;height:260px}}
+#stage canvas{display:block;width:100%;height:100%;touch-action:pan-y}
+#cap{position:absolute;inset-inline:12px;bottom:8px;font-size:13px;color:var(--mut);pointer-events:none}
+nav{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+nav button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:10px}
+.card.sel{border-color:var(--acc);box-shadow:inset 3px 0 0 var(--acc)}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:700;padding:1px 8px;border-radius:99px;color:#fff}
+.mut{color:var(--mut);font-size:13px}
+.sw{width:22px;height:22px;border-radius:50%;padding:0;border:2px solid var(--line)}
+.meter{height:8px;background:var(--line);border-radius:4px;overflow:hidden;flex:1;min-width:80px}
+.meter i{display:block;height:100%}
+.lane{height:26px;background:var(--line);border-radius:4px;margin:6px 0;overflow:hidden}
+.lane i{display:block;height:100%;width:0;background:var(--acc)}
+.lane.o i{background:var(--mut)}
+.res{font-weight:900;font-size:18px;margin-top:8px}
+h2{font-size:16px;margin:0 0 10px}
+:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#090b12;--panel:#121626;--ink:#eef2ff;--mut:#8e97b3;--line:#262c47;--acc:#ff5a1f;--accink:#0a0c14;--neo:#19e3ff;--good:#3be08a;--bad:#ff5d6c;color-scheme:dark}
+:root[data-theme="light"]{--bg:#dfe3ee;--panel:#f4f6fb;--ink:#10131f;--mut:#5b6275;--line:#c3c9db;--acc:#d63f06;--accink:#fff;--neo:#0a7fa0;--good:#16793f;--bad:#b3261e;color-scheme:light}
+h1,.money,.big,.stats b,.tile b{font-family:"Russo One",Cairo,sans-serif;font-weight:400}
+h1{font-style:italic;transform:skew(-8deg);text-shadow:0 0 14px var(--acc)}
+header{border-image:linear-gradient(90deg,var(--acc),var(--neo)) 1;background:var(--panel)}
+button{border-radius:0;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%);padding:6px 16px;border-color:transparent;background:var(--line)}
+button.pri{background:var(--acc)}nav button.on{background:var(--neo);color:#04121a}
+button:focus-visible{outline:none;filter:drop-shadow(0 0 5px var(--neo))}
+.sw,.tile{clip-path:none}.sw{border-radius:50%}
+.card{border-left:3px solid var(--line);background:linear-gradient(120deg,var(--panel),transparent 140%)}
+.card.sel{border-left-color:var(--acc);box-shadow:0 0 20px -8px var(--acc)}
+#stage{background:radial-gradient(ellipse at 50% 85%,#2a1240,#090b12 70%);border-color:var(--neo);box-shadow:0 0 22px -10px var(--neo)}
+.lane i{background:var(--neo)}
+#home[hidden],main[hidden]{display:none}
+#home{position:relative;min-height:calc(100vh - 70px);overflow:hidden;background:linear-gradient(#04050b,#160a2c 40%,#5a1d3a 58%,#0a0c14 58%)}
+.sky{position:absolute;left:0;top:0;width:100%;height:58%;fill:#080a14}
+.road{position:absolute;left:-30%;right:-30%;bottom:-8%;height:52%;background:#0b0d16;transform:perspective(300px) rotateX(58deg);transform-origin:50% 100%;border-inline:5px solid var(--neo)}
+.road::before{content:"";position:absolute;left:50%;width:12px;margin-left:-6px;top:0;bottom:0;background:repeating-linear-gradient(0deg,#ffd23f 0 60px,transparent 60px 120px);animation:rd .8s linear infinite}
+@keyframes rd{to{background-position:0 120px}}
+@media(prefers-reduced-motion:reduce){.road::before{animation:none}}
+.hc{position:relative;z-index:2;padding:34px 18px 28px;max-width:1000px;margin:auto;color:#eef2ff}
+.tg{color:var(--neo);margin:0 0 6px}
+.big{font-size:clamp(44px,12vw,108px);line-height:1;font-style:italic;margin:0;color:#fff;text-shadow:0 0 12px #ff5a1f,0 0 42px #ff2d95;transform:skew(-8deg);transform-origin:left}
+.stats{display:flex;gap:24px;flex-wrap:wrap;margin:18px 0}
+.stats b{display:block;font-size:22px;color:#fff}.stats span{color:#aab2d0;font-size:13px}
+.cta{font-size:18px;padding:10px 38px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:26px}
+.tile{text-align:start;padding:14px;background:rgba(10,12,22,.85);color:#eef2ff;border:1px solid #262c47;border-top:3px solid var(--acc)}
+.tile b{display:block;font-size:17px}.tile span{font-size:13px;color:#aab2d0}
+dialog{background:var(--panel);color:var(--ink);border:1px solid var(--neo);padding:18px}dialog input{display:block;width:100%;margin:8px 0;padding:8px;background:var(--bg);color:var(--ink);border:1px solid var(--line);font:inherit}dialog::backdrop{background:rgba(0,0,0,.6)}
+</style>
+</head>
+<body>
+<header>
+ <h1 onclick="go('home')" style="cursor:pointer">GARAGE EMPIRE<small>BUILD. MODIFY. TRADE. DOMINATE.</small></h1>
+ <div class="bar"><button onclick="go('home')" aria-label="Home">⌂</button><span class="money" id="money"></span>
+ <button id="bCur"></button><button id="bLang"></button><button id="bTh"></button><button id="bReset"></button></div>
+</header>
+<div id="home"></div>
+<div style="max-width:1200px;margin:auto;padding:6px 16px;font-size:12px"><button id="saveState" style="font-size:12px;padding:3px 8px"></button></div>
+<main>
+ <div id="stage"><div id="cap"></div></div>
+ <section><nav id="nav"></nav><div id="view"></div></section>
+</main>
+<script src="./save-schema.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const RATE=50, KEY='garage-empire-v06';
+const RAR=[['Common','شائع','#7b818a'],['Uncommon','غير شائع','#3f9b66'],['Rare','نادر','#3677c2'],['Epic','ملحمي','#8a50c4'],['Legendary','أسطوري','#d18a1c'],['Unique','فريد','#c93d34']];
+const CARS=[
+['Hyundai Excel',1997,0,90,950,2500],['Nissan Sunny B14',1996,0,110,1000,3500],['Honda Civic EK',1999,0,125,1050,4500],
+['Mazda MX-5 NA',1992,1,115,960,9000],['Subaru Impreza WRX',2002,1,227,1250,14000],['BMW M3 E46',2003,2,333,1570,32000],
+['Nissan Skyline R34 GT-R',1999,2,276,1560,55000],['Toyota Supra A80',1998,3,320,1510,78000],['Honda NSX',1997,3,290,1380,85000],
+['Porsche 911 GT3',2018,4,500,1430,190000],['Lamborghini Aventador',2017,4,740,1575,330000],['Bugatti Chiron',2019,5,1500,1995,2900000]];
+CARS.push(['Chevrolet Lanos',2000,0,85,1000,2200],['Kia Cerato',2012,0,156,1250,6500],['Toyota MR2 SW20',1993,1,245,1260,18000],['Nissan Silvia S15',2000,1,247,1250,21000],['Honda S2000',2000,1,240,1250,24000],['Toyota GR Yaris',2021,1,261,1280,32000],['Ford Mustang GT',2005,2,300,1580,27000],['Mitsubishi 3000GT VR-4',1994,2,320,1700,29000],['Toyota Chaser JZX100',1998,2,276,1500,30000],['Nissan 350Z',2003,2,287,1450,28000],['Mitsubishi Lancer Evo IX',2006,2,286,1400,36000],['Mazda RX-7 FD Veilside',1999,2,350,1280,48000],['Chevrolet Camaro ZL1',2018,3,650,1760,72000],['Dodge Viper GTS',1999,3,450,1500,95000],['Tesla Model S Plaid',2022,3,1020,2162,108000],['Nissan GT-R R35',2017,3,565,1740,115000],['Ferrari 458 Italia',2010,4,562,1485,230000],['McLaren 720S',2017,4,710,1419,310000],['Pagani Huayra',2013,5,730,1350,2600000],['Koenigsegg Jesko',2022,5,1600,1420,3200000]);
+CARS.sort((a,b)=>a[2]-b[2]||a[5]-b[5]);
+const COLS=['#c93d34','#e8e8e8','#1c1c1e','#2f6fd0','#f2c230','#2f9e60','#e5692c'];
+const L={
+en:{garage:'Garage',market:'Market',work:'Workshop',race:'Race',own:'You own no cars. Buy one in the Market.',buy:'Buy',sell:'Sell',refresh:'Refresh market',spoiler:'Spoiler',tune:'ECU tune',stage:'Stage',cond:'Condition',hp:'Power',kg:'kg',eng:'Engine',tir:'Tires',brk:'Brakes',rep:'Repair',repall:'Repair all',ok:'Good',pick:'Select a car in the Garage first.',go:'Start drag race (400 m)',you:'You',opp:'Rival',win:'You won',lose:'You lost',et:'ET',prize:'Prize',poor:'Not enough money',full:'Garage full (max 8)',reset:'Reset',rst:'Reset all progress?',note:'Demo: fixed rate 1 USD = 50 EGP. Progress saves in this browser.',drag:'Drag to rotate',wins:'Wins',ecu:'ECU stage',max:'Max',sold:'Sold',bought:'Bought',free:'Free'},
+ar:{garage:'الجراج',market:'السوق',work:'الورشة',race:'السباق',own:'مفيش عندك عربيات. اشتري واحدة من السوق.',buy:'اشتري',sell:'بيع',refresh:'حدّث السوق',spoiler:'سبويلر',tune:'تعديل ECU',stage:'المرحلة',cond:'الحالة',hp:'القوة',kg:'كجم',eng:'المحرك',tir:'الكاوتش',brk:'الفرامل',rep:'صلّح',repall:'صلّح الكل',ok:'سليمة',pick:'اختار عربية من الجراج الأول.',go:'ابدأ سباق تسارع (400 م)',you:'أنت',opp:'المنافس',win:'كسبت',lose:'خسرت',et:'الزمن',prize:'الجايزة',poor:'الرصيد مش كفاية',full:'الجراج مليان (الحد 8)',reset:'إعادة ضبط',rst:'مسح كل التقدم؟',note:'نسخة تجريبية: سعر الصرف ثابت 1 دولار = 50 جنيه. التقدم بيتحفظ في المتصفح.',drag:'اسحب للتدوير',wins:'الانتصارات',ecu:'مرحلة ECU',max:'الحد الأقصى',sold:'تم البيع',bought:'تم الشراء',free:'مجاني'}};
+let S, uid=1, car3d;
+const rnd=(a,b)=>a+Math.random()*(b-a);
+function stock(){return Array.from({length:6},()=>{const c=Math.min(CARS.length-1,Math.floor(Math.pow(Math.random(),1.7)*CARS.length)),cond=Math.round(rnd(35,100));return{cid:c,cond,price:Math.round(CARS[c][5]*(.5+.5*cond/100)*rnd(.95,1.2))}})}
+function fresh(){uid=1;return{usd:8000,own:[{id:uid++,cid:CARS.findIndex(c=>c[0]==='Hyundai Excel'),w:[70,60,75],col:COLS[1],sp:0,st:0}],sel:1,stock:stock(),tab:'garage',lang:'ar',cur:'USD',wins:0,theme:''}}
+const t=k=>L[S.lang][k];
+const fmt=u=>S.cur==='USD'?'$'+Math.round(u).toLocaleString('en-US'):Math.round(u*RATE).toLocaleString('en-US')+(S.lang==='ar'?' ج.م':' EGP');
+const cond=o=>Math.round((o.w[0]+o.w[1]+o.w[2])/3);
+const hpOf=o=>Math.round(CARS[o.cid][3]*(1+.08*o.st)*(.6+.4*cond(o)/100));
+const val=o=>CARS[o.cid][5]*(.45+.45*cond(o)/100)*(1+.08*o.st)+(o.sp?200:0);
+const cur=()=>S.own.find(o=>o.id===S.sel);
+const tag=r=>`<span class="tag" style="background:${RAR[r][2]}">${S.lang==='ar'?RAR[r][1]:RAR[r][0]}</span>`;
+const bar=v=>`<div class="meter"><i style="width:${v}%;background:${v>60?'var(--good)':v>30?'var(--acc)':'var(--bad)'}"></i></div>`;
+function et(o){const c=CARS[o.cid];return 5.825*Math.pow(c[4]*2.2046/hpOf(o),1/3)*(1+(100-o.w[1])/500)*(o.sp?.99:1)}
+function toast(m){document.getElementById('cap').textContent=m;setTimeout(()=>{document.getElementById('cap').textContent=t('drag')},2200)}
+
+function render(){
+ document.documentElement.lang=S.lang;document.documentElement.dir=S.lang==='ar'?'rtl':'ltr';
+ if(S.theme)document.documentElement.dataset.theme=S.theme;else delete document.documentElement.dataset.theme;
+ money.textContent=fmt(S.usd);bCur.textContent=S.cur;bLang.textContent=S.lang==='ar'?'EN':'عربي';bTh.textContent='◐';bReset.textContent=t('reset');
+ nav.innerHTML=['garage','market','work','race'].map(k=>`<button class="${S.tab===k?'on':''}" onclick="S.tab='${k}';render()">${t(k)}</button>`).join('');
+ view.innerHTML=({garage:vGarage,market:vMarket,work:vWork,race:vRace})[S.tab]()+`<p class="mut">${t('note')}</p>`;
+ setAcc();renderHome();updateCar();save();
+}
+function vGarage(){
+ if(!S.own.length)return`<div class="card">${t('own')}</div>`;
+ return S.own.map(o=>{const c=CARS[o.cid];return`<div class="card ${o.id===S.sel?'sel':''}" onclick="S.sel=${o.id};render()">
+ <div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>
+ <div class="mut">${t('hp')} ${hpOf(o)} · ${c[4]} ${t('kg')} · ${t('cond')} ${cond(o)}% · ${t('ecu')} ${o.st}</div>
+ <div class="row" style="margin-top:6px" onclick="event.stopPropagation()"><span class="row" style="gap:5px">${COLS.map(k=>`<button class="sw" aria-label="color" style="background:${k}" onclick="paint(${o.id},'${k}')"></button>`).join('')}</span>
+ <span class="row" style="gap:6px"><button onclick="spoil(${o.id})">${t('spoiler')} ${o.sp?'✓':fmt(500)}</button>
+ <button onclick="tune(${o.id})" ${o.st>=3?'disabled':''}>${o.st>=3?t('max'):t('tune')+' '+fmt(800*(o.st+1))}</button>
+ <button onclick="sell(${o.id})">${t('sell')} ${fmt(val(o))}</button></span></div></div>`}).join('')}
+function vMarket(){return`<button onclick="S.stock=stock();render()" style="margin-bottom:10px">${t('refresh')}</button>`+S.stock.map((s,i)=>{const c=CARS[s.cid];return`<div class="card"><div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>
+ <div class="row"><span class="mut">${t('hp')} ${c[3]} · ${c[4]} ${t('kg')} · ${t('cond')} ${s.cond}%</span><button class="pri" onclick="buy(${i})">${t('buy')} ${fmt(s.price)}</button></div></div>`}).join('')}
+function rcost(o,i){return Math.ceil((100-o.w[i])*(8+CARS[o.cid][5]/4000))}
+function vWork(){const o=cur();if(!o)return`<div class="card">${t('pick')}</div>`;
+ const n=[t('eng'),t('tir'),t('brk')],tot=[0,1,2].reduce((a,i)=>a+rcost(o,i),0);
+ return`<div class="card"><h2>${CARS[o.cid][0]}</h2>`+n.map((x,i)=>`<div class="row" style="margin:8px 0"><span style="width:70px">${x}</span>${bar(o.w[i])}<span class="mut" style="width:40px">${o.w[i]}%</span>
+ <button onclick="repair(${o.id},${i})" ${o.w[i]>=100?'disabled':''}>${o.w[i]>=100?t('ok'):t('rep')+' '+fmt(rcost(o,i))}</button></div>`).join('')+
+ `<button class="pri" onclick="repairAll()" ${tot?'':'disabled'}>${t('repall')} ${fmt(tot)}</button></div>`}
+function vRace(){const o=cur();if(!o)return`<div class="card">${t('pick')}</div>`;
+ return`<div class="card"><h2>${CARS[o.cid][0]} · ${t('wins')} ${S.wins}</h2><div class="mut">${t('et')} ≈ ${et(o).toFixed(2)}s</div>
+ <div class="lane"><i id="l1"></i></div><div class="lane o"><i id="l2"></i></div>
+ <button class="pri" id="go" ${racing?'disabled':''} onclick="race()">${t('go')}</button><div class="res" id="res"></div></div>`}
+
+function paint(id,k){const o=S.own.find(x=>x.id===id);o.col=k;S.sel=id;render()}
+function spoil(id){const o=S.own.find(x=>x.id===id);S.sel=id;if(o.sp){o.sp=0}else{if(S.usd<500)return toast(t('poor'));S.usd-=500;o.sp=1}render()}
+function tune(id){const o=S.own.find(x=>x.id===id),p=800*(o.st+1);if(S.usd<p)return toast(t('poor'));S.usd-=p;o.st++;S.sel=id;render()}
+function sell(id){const o=S.own.find(x=>x.id===id);S.usd+=Math.round(val(o));S.own=S.own.filter(x=>x.id!==id);if(S.sel===id)S.sel=S.own[0]?S.own[0].id:0;toast(t('sold'));render()}
+function buy(i){const s=S.stock[i];if(S.own.length>=8)return toast(t('full'));if(S.usd<s.price)return toast(t('poor'));
+ S.usd-=s.price;const w=()=>Math.max(10,Math.min(100,s.cond+Math.round(rnd(-12,12))));
+ const o={id:uid++,cid:s.cid,w:[w(),w(),w()],col:COLS[Math.floor(rnd(0,COLS.length))],sp:0,st:0};S.own.push(o);S.sel=o.id;S.stock.splice(i,1);toast(t('bought'));render()}
+function repair(id,i){const o=S.own.find(x=>x.id===id),c=rcost(o,i);if(S.usd<c)return toast(t('poor'));S.usd-=c;o.w[i]=100;render()}
+function repairAll(){const o=cur(),c=[0,1,2].reduce((a,i)=>a+rcost(o,i),0);if(S.usd<c)return toast(t('poor'));S.usd-=c;o.w=[100,100,100];render()}
+let racing=false;
+function race(){
+ if(racing)return;
+ const o=cur();if(!o)return toast(t('pick'));
+ const mine=et(o)*rnd(.98,1.03),opp=mine*rnd(.9,1.12),k=.3;
+ const button=document.getElementById('go'),lanePlayer=document.getElementById('l1'),laneRival=document.getElementById('l2'),result=document.getElementById('res');
+ if(!button||!lanePlayer||!laneRival||!result)return;
+ racing=true;const token=raceToken;button.disabled=true;result.textContent='';
+ [[lanePlayer,mine],[laneRival,opp]].forEach(([el,time])=>{el.style.transition='none';el.style.width='0';void el.offsetWidth;el.style.transition=`width ${time*k}s linear`;el.style.width='100%'});
+ const language=S.lang;
+ setTimeout(()=>{if(token!==raceToken)return;racing=false;const won=mine<opp,prize=Math.round(250+CARS[o.cid][3]*1.5);
+  if(won){S.usd+=prize;S.wins++}o.w=o.w.map((v,i)=>Math.max(5,v-Math.round(rnd(3,i===1?14:9))));render();
+  const output=document.getElementById('res');if(output){output.style.color=won?'var(--good)':'var(--bad)';const words=L[language];
+   output.textContent=`${won?words.win:words.lose} · ${words.you} ${mine.toFixed(2)}s / ${words.opp} ${opp.toFixed(2)}s`+(won?` · ${words.prize} ${fmt(prize)}`:'');}
+ },Math.max(mine,opp)*k*1000+200);
+}
+
+/* 3D */
+function init3d(){
+ const el=document.getElementById('stage'),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(40,1,.1,100);
+ const rd=new THREE.WebGLRenderer({antialias:true,alpha:true});rd.setPixelRatio(Math.min(devicePixelRatio,2));el.prepend(rd.domElement);
+ sc.add(new THREE.HemisphereLight(0xffffff,0x555566,.9));const d=new THREE.DirectionalLight(0xffffff,.9);d.position.set(4,6,5);sc.add(d);
+ const g=new THREE.Group();sc.add(g);
+ const floor=new THREE.Mesh(new THREE.CircleGeometry(4,48),new THREE.MeshStandardMaterial({color:0x444a50}));floor.rotation.x=-Math.PI/2;sc.add(floor);const ring=new THREE.Mesh(new THREE.RingGeometry(3.6,3.72,64),new THREE.MeshBasicMaterial({color:0x19e3ff,side:2}));ring.rotation.x=-Math.PI/2;ring.position.y=.01;sc.add(ring);const ug=new THREE.PointLight(0xff2d95,1.4,8);ug.position.set(0,.2,0);sc.add(ug);
+ const body=new THREE.MeshStandardMaterial({color:0xffffff,metalness:.5,roughness:.35}),dark=new THREE.MeshStandardMaterial({color:0x15181b,roughness:.6});
+ const add=(geo,m,x,y,z)=>{const e=new THREE.Mesh(geo,m);e.position.set(x,y,z);g.add(e);return e};
+ add(new THREE.BoxGeometry(4.2,.6,1.8),body,0,.6,0);add(new THREE.BoxGeometry(2.1,.55,1.6),body,-.2,1.15,0);
+ add(new THREE.BoxGeometry(1.9,.4,1.62),dark,-.2,1.17,0).scale.set(1,.9,1);
+ [[1.3,.9],[-1.3,.9],[1.3,-.9],[-1.3,-.9]].forEach(([x,z])=>{const w=add(new THREE.CylinderGeometry(.4,.4,.3,20),dark,x,.4,z);w.rotation.x=Math.PI/2});
+ const sp=new THREE.Group();[[-.7],[.7]].forEach(([z])=>{const s=new THREE.Mesh(new THREE.BoxGeometry(.1,.4,.1),dark);s.position.set(-1.9,1.1,z);sp.add(s)});
+ const wing=new THREE.Mesh(new THREE.BoxGeometry(.5,.07,1.9),body);wing.position.set(-1.9,1.35,0);sp.add(wing);g.add(sp);
+ car3d={g,body,sp};cam.position.set(6,3,6);cam.lookAt(0,.8,0);
+ let drag=false,px=0;el.addEventListener('pointerdown',e=>{drag=true;px=e.clientX});addEventListener('pointerup',()=>drag=false);
+ el.addEventListener('pointermove',e=>{if(drag){g.rotation.y+=(e.clientX-px)*.01;px=e.clientX}});
+ const rs=()=>{const w=el.clientWidth,h=el.clientHeight;rd.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix()};addEventListener('resize',rs);rs();
+ (function loop(){if(!drag&&!matchMedia('(prefers-reduced-motion:reduce)').matches)g.rotation.y+=.005;rd.render(sc,cam);requestAnimationFrame(loop)})()}
+function updateCar(){if(!car3d){document.getElementById('cap').textContent=S.lang==='ar'?'معاينة 3D مش متاحة. باقي اللعبة شغال.':'3D preview unavailable. You can still play.';return;}const o=cur();car3d.g.visible=!!o;if(!o)return;car3d.body.color.set(o.col);car3d.sp.visible=!!o.sp;
+ const r=CARS[o.cid][2];car3d.g.scale.set(1+r*.025,1-r*.035,1+r*.02);if(!document.getElementById('cap').dataset.t)document.getElementById('cap').textContent=t('drag')}
+
+bCur.onclick=()=>{S.cur=S.cur==='USD'?'EGP':'USD';render()};
+bLang.onclick=()=>{S.lang=S.lang==='ar'?'en':'ar';render()};
+bTh.onclick=()=>{const d=document.documentElement.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');S.theme=d==='dark'?'light':'dark';render()};
+bReset.onclick=()=>{if(confirm(t('rst'))){const l=S.lang,th=S.theme;applyState(fresh());S.lang=l;S.theme=th;render()}};
+const H={en:{tag:'Night runs. Real cars. One empire.',go:'Continue',cash:'Cash',own:'Your cars',db:'Cars in the game',w:'Race wins',t:{garage:['Garage','Paint, tune and show off your build'],market:['Market','Hunt the best deal on the street'],work:['Workshop','Repair wear before it costs you a race'],race:['Street race','Beat the rival over 400 m']}},ar:{tag:'سباقات الليل. عربيات حقيقية. إمبراطورية واحدة.',go:'كمّل اللعب',cash:'الرصيد',own:'عربياتك',db:'عربيات في اللعبة',w:'انتصارات',t:{garage:['الجراج','لوّن وعدّل واستعرض عربيتك'],market:['السوق','دوّر على أحسن صفقة'],work:['الورشة','صلّح التآكل قبل ما يكلفك السباق'],race:['سباق الشارع','اكسب المنافس في 400 متر']}}};
+function go(k){if(k==='home')S.scr='home';else{S.scr='game';if(k!=='game')S.tab=k}render()}
+function renderHome(){const h=S.scr!=='game',d=H[S.lang];home.hidden=!h;document.querySelector('main').hidden=h;if(!h)return;
+ const sky=Array.from({length:17},(_,i)=>{const e=70+((i*53)%130);return`<rect x="${i*48}" y="${300-e}" width="40" height="${e}"/>`}).join('');
+ home.innerHTML=`<svg class="sky" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">${sky}<rect x="290" y="150" width="40" height="5" fill="#ff2d95"/><rect x="580" y="110" width="40" height="5" fill="#19e3ff"/></svg><div class="road"></div>
+ <div class="hc"><p class="tg">${d.tag}</p><h2 class="big">GARAGE<br>EMPIRE</h2>
+ <div class="stats"><div><b>${fmt(S.usd)}</b><span>${d.cash}</span></div><div><b>${S.own.length}</b><span>${d.own}</span></div><div><b>${S.wins}</b><span>${d.w}</span></div><div><b>${CARS.length}</b><span>${d.db}</span></div></div>
+ <button class="pri cta" onclick="go('game')">${d.go}</button>
+ <div class="tiles">${['garage','market','work','race'].map(k=>`<button class="tile" onclick="go('${k}')"><b>${d.t[k][0]}</b><span>${d.t[k][1]}</span></button>`).join('')}</div></div>`}
+let raceToken=0,localFailed=false;
+const DEMO_KEY='garage-empire-pages-demo-v1';
+function applyState(data){racing=false;S=data;uid=Math.max(0,...S.own.map(o=>o.id))+1;raceToken++}
+function load(){try{const raw=localStorage.getItem(DEMO_KEY);const d=raw&&GarageSave.normalize(JSON.parse(raw));applyState(d||fresh())}catch{applyState(fresh());localFailed=true}}
+function save(){try{localStorage.setItem(DEMO_KEY,JSON.stringify(GarageSave.normalize(S)));localFailed=false}catch{localFailed=true}setAcc()}
+function setAcc(){const el=document.getElementById('saveState');el.style.color=localFailed?'var(--bad)':'var(--mut)';el.textContent=S.lang==='ar'?(localFailed?'تعذر الحفظ على الجهاز':'نسخة تجربة: الحفظ في المتصفح فقط، من غير حسابات'):(localFailed?'Device save failed':'Demo: browser-only save, no accounts');el.style.cursor='default'}
+load();
+try{init3d()}catch(e){console.warn('3D preview unavailable',e);document.getElementById('stage').dataset.unavailable='1'}
+render();
+</script>
+</body>
+</html>
