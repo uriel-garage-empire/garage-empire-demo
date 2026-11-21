@@ -89,6 +89,9 @@ a.sourceLink{color:var(--neo);font-size:12px;text-decoration:none;overflow-wrap:
 .infoBtn{font-size:11px;padding:4px 9px;margin-top:6px;color:var(--neo)}.saveTools{max-width:1380px;margin:0 auto;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap}.saveTools button,.restore{font-size:11px;padding:3px 10px;color:var(--mut)}.restore{cursor:pointer}.restore input{display:none}.catalogCta{display:block;margin-top:12px;color:var(--neo);background:#0b1524b0;padding:9px 24px}.card .row{min-width:0}.card b{overflow-wrap:anywhere}.mut{overflow-wrap:anywhere}nav button{font-size:13px;padding:8px 13px}
 @media(max-width:820px){main{grid-template-columns:1fr;padding:12px;gap:18px}#stage{height:330px;position:relative;top:0}.stageTop{top:16px;inset-inline:17px}.stageTop b{font-size:16px}.cameraControls{bottom:48px}#cap{font-size:10px;bottom:10px}.specCard h2{font-size:18px}.specGrid{gap:14px 12px}.specGrid b{font-size:12px}.saveTools{padding:0 12px}nav{gap:4px}nav button{font-size:12px;padding:8px 10px}.catalogTile{padding:12px}.catalogTile b{font-size:12px}.catalogTile .mut{font-size:10px}.specCard .row button{width:100%}}
 @media(max-width:360px){.catalogList{grid-template-columns:1fr}#stage{height:310px}.stageTop b{font-size:14px}.specGrid{grid-template-columns:1fr}}
+.rpmWrap{margin:10px 0 6px}.rpmTop{display:flex;justify-content:space-between;font-size:12px;color:var(--mut);margin-bottom:4px}.rpm{position:relative;height:18px;background:var(--line);border-radius:4px;overflow:hidden;direction:ltr}.rpm i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--neo);transition:none}.rpm .zone{position:absolute;top:0;bottom:0;background:#3be08a55;border-inline:2px solid var(--good)}.rpm .red{position:absolute;right:0;top:0;bottom:0;width:8%;background:#ff5d6c44;border-inline-start:2px solid var(--bad)}
+.shiftLog{font-size:12px;display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.shiftLog span{padding:1px 8px;border-radius:99px;background:var(--line)}.shiftLog span.perfect{background:var(--good);color:#04121a}.shiftLog span.lateS,.shiftLog span.earlyS{background:var(--bad);color:#fff}
+.teamGrid{display:grid;gap:10px}.teamCard .row{align-items:flex-start}.repBox{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px;font-size:13px}.repBox li{margin:4px 0}.repBox .tip{color:var(--acc);font-weight:700}
 
 </style>
 </head>
@@ -105,9 +108,9 @@ a.sourceLink{color:var(--neo);font-size:12px;text-decoration:none;overflow-wrap:
  <div id="stage" tabindex="0" aria-label="3D car preview, drag or use arrow keys"><div class="stageTop"><span class="eyebrow">GARAGE / 3D STUDIO</span><b id="previewName" dir="ltr"></b></div><div class="cameraControls"><button onclick="car3d?.zoom(-.6)" aria-label="Zoom in">+</button><button onclick="car3d?.zoom(.6)" aria-label="Zoom out">−</button><button onclick="car3d?.reset()" aria-label="Reset camera">↺</button><button id="spinButton" onclick="if(car3d)this.setAttribute('aria-pressed',car3d.toggle())" aria-label="Toggle automatic rotation" aria-pressed="true">⏯</button></div><div id="cap"></div></div>
  <section><nav id="nav"></nav><div id="view"></div></section>
 </main>
-<script src="./catalog-data.js?v=20261121-race-3"></script>
-<script src="./preview.js?v=20261121-race-3"></script>
-<script src="./save-schema.js?v=20261121-race-3"></script>
+<script src="./catalog-data.js?v=20261121-crew-4"></script>
+<script src="./preview.js?v=20261121-crew-4"></script>
+<script src="./save-schema.js?v=20261121-crew-4"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const RATE=50, KEY='garage-empire-v06';
@@ -142,29 +145,29 @@ function importSave(input){const file=input.files[0];if(!file)return;if(file.siz
 
 const COLS=['#c93d34','#e8e8e8','#1c1c1e','#2f6fd0','#f2c230','#2f9e60','#e5692c'];
 const L={
-en:{garage:'Garage',market:'Market',work:'Workshop',race:'Race',own:'You own no cars. Buy one in the Market.',buy:'Buy',sell:'Sell',refresh:'Refresh market',spoiler:'Spoiler',tune:'ECU tune',stage:'Stage',cond:'Condition',hp:'Game power',kg:'game kg',eng:'Engine',tir:'Tires',brk:'Brakes',rep:'Repair',repall:'Repair all',ok:'Good',pick:'Select a car in the Garage first.',go:'Start drag race (400 m)',you:'You',opp:'Rival',win:'You won',lose:'You lost',tier:'Tier',scout:'Find a rival',wait:'Wait for green...',tapGo:'TAP NOW!',fs:'False start! You launched before green.',react:'Reaction',tierUp:'Tier up! Tougher rivals ahead.',dnf:'You never launched.',et:'ET',prize:'Prize',poor:'Not enough money',full:'Garage full (max 8)',reset:'Reset',rst:'Reset all progress?',note:'Demo: fixed rate 1 USD = 50 EGP. Progress saves in this browser.',drag:'Drag to rotate',wins:'Wins',ecu:'ECU stage',max:'Max',sold:'Sold',bought:'Bought',free:'Free'},
-ar:{garage:'الجراج',market:'السوق',work:'الورشة',race:'السباق',own:'مفيش عندك عربيات. اشتري واحدة من السوق.',buy:'اشتري',sell:'بيع',refresh:'حدّث السوق',spoiler:'سبويلر',tune:'تعديل ECU',stage:'المرحلة',cond:'الحالة',hp:'قوة اللعبة',kg:'كجم (اللعبة)',eng:'المحرك',tir:'الكاوتش',brk:'الفرامل',rep:'صلّح',repall:'صلّح الكل',ok:'سليمة',pick:'اختار عربية من الجراج الأول.',go:'ابدأ سباق تسارع (400 م)',you:'أنت',opp:'المنافس',win:'كسبت',lose:'خسرت',tier:'الدرجة',scout:'دوّر على منافس',wait:'استنى الأخضر...',tapGo:'دوس دلوقتي!',fs:'انطلاقة مبكرة! دوست قبل الأخضر.',react:'رد الفعل',tierUp:'درجة أعلى! المنافسين الجايين أصعب.',dnf:'ما انطلقتش خالص.',et:'الزمن',prize:'الجايزة',poor:'الرصيد مش كفاية',full:'الجراج مليان (الحد 8)',reset:'إعادة ضبط',rst:'مسح كل التقدم؟',note:'نسخة تجريبية: سعر الصرف ثابت 1 دولار = 50 جنيه. التقدم بيتحفظ في المتصفح.',drag:'اسحب للتدوير',wins:'الانتصارات',ecu:'مرحلة ECU',max:'الحد الأقصى',sold:'تم البيع',bought:'تم الشراء',free:'مجاني'}};
+en:{garage:'Garage',market:'Market',work:'Workshop',race:'Race',own:'You own no cars. Buy one in the Market.',buy:'Buy',sell:'Sell',refresh:'Refresh market',spoiler:'Spoiler',tune:'ECU tune',stage:'Stage',cond:'Condition',hp:'Game power',kg:'game kg',eng:'Engine',tir:'Tires',brk:'Brakes',rep:'Repair',repall:'Repair all',ok:'Good',pick:'Select a car in the Garage first.',go:'Start drag race (400 m)',you:'You',opp:'Rival',win:'You won',lose:'You lost',tier:'Tier',scout:'Find a rival',wait:'Wait for green...',tapGo:'TAP NOW!',fs:'False start! You launched before green.',react:'Reaction',tierUp:'Tier up! Tougher rivals ahead.',dnf:'You never launched.',et:'ET',prize:'Prize',poor:'Not enough money',full:'Garage full (max 8)',reset:'Reset',rst:'Reset all progress?',note:'Demo: fixed rate 1 USD = 50 EGP. Progress saves in this browser.',drag:'Drag to rotate',wins:'Wins',ecu:'ECU stage',max:'Max',sold:'Sold',bought:'Bought',free:'Free',parts:'Parts',team:'Team',rpm:'RPM',gear:'Gear',shift:'SHIFT',perfect:'Perfect shift',goodS:'Good shift',earlyS:'Early shift',lateS:'Late (rev limiter)',auto:'Automatic, no shifts',hired:'Hired',hire:'Hire',install:'Install',installed:'Installed',oem:'Factory (OEM) parts',after:'Aftermarket tuning parts',estNote:'Prices are in-game estimates inspired by real market prices, not actual quotes.',kitEng:'Factory engine service kit',kitTir:'Factory tire set',kitBrk:'Factory brake kit',turbo:'Turbo kit',tiresUp:'Sport / slick tires',weightUp:'Weight reduction',analystN:'Analyst',analystD:'Breaks down every race: why you won or lost and what to improve next.',mechanicN:'Mechanic',mechanicD:'25% off repairs and factory parts, 20% less wear per race.',agentN:'Agent',agentD:'+15% on every race prize.',coachN:'Coach',coachD:'Wider perfect-shift zone and sharper launch feedback.',report:'Analyst report',tipReaction:'Your reaction was slower than the rival. Launch closer to green.',tipBuild:'The rival out-powered you. Tune the engine (ECU/turbo), fix condition, or race a stronger car.',tipCond:'Your car condition is costing you time. Repair wear in the Workshop or with factory parts.',tipShifts:'Slow shifts cost you time. Hit the green zone.',tipGood:'Clean race. You beat the rival on the factors that mattered.',vsReact:'Reaction',vsEt:'Car pace',vsShift:'Shift time lost'},
+ar:{garage:'الجراج',market:'السوق',work:'الورشة',race:'السباق',own:'مفيش عندك عربيات. اشتري واحدة من السوق.',buy:'اشتري',sell:'بيع',refresh:'حدّث السوق',spoiler:'سبويلر',tune:'تعديل ECU',stage:'المرحلة',cond:'الحالة',hp:'قوة اللعبة',kg:'كجم (اللعبة)',eng:'المحرك',tir:'الكاوتش',brk:'الفرامل',rep:'صلّح',repall:'صلّح الكل',ok:'سليمة',pick:'اختار عربية من الجراج الأول.',go:'ابدأ سباق تسارع (400 م)',you:'أنت',opp:'المنافس',win:'كسبت',lose:'خسرت',tier:'الدرجة',scout:'دوّر على منافس',wait:'استنى الأخضر...',tapGo:'دوس دلوقتي!',fs:'انطلاقة مبكرة! دوست قبل الأخضر.',react:'رد الفعل',tierUp:'درجة أعلى! المنافسين الجايين أصعب.',dnf:'ما انطلقتش خالص.',et:'الزمن',prize:'الجايزة',poor:'الرصيد مش كفاية',full:'الجراج مليان (الحد 8)',reset:'إعادة ضبط',rst:'مسح كل التقدم؟',note:'نسخة تجريبية: سعر الصرف ثابت 1 دولار = 50 جنيه. التقدم بيتحفظ في المتصفح.',drag:'اسحب للتدوير',wins:'الانتصارات',ecu:'مرحلة ECU',max:'الحد الأقصى',sold:'تم البيع',bought:'تم الشراء',free:'مجاني',parts:'القطع',team:'التيم',rpm:'RPM',gear:'الغيار',shift:'غيّر',perfect:'غيار ممتاز',goodS:'غيار كويس',earlyS:'غيار بدري',lateS:'متأخر (حد الموتور)',auto:'أوتوماتيك، مفيش غيارات',hired:'متعاقد',hire:'عيّن',install:'ركّب',installed:'مركّب',oem:'قطع مصنع أصلية',after:'قطع تعديل (أفترماركت)',estNote:'الأسعار تقديرية مستوحاة من السوق الحقيقي، مش عروض أسعار فعلية.',kitEng:'طقم صيانة موتور أصلي',kitTir:'طقم كاوتش أصلي',kitBrk:'طقم فرامل أصلي',turbo:'طقم تيربو',tiresUp:'كاوتش سبورت / سليك',weightUp:'تخفيف وزن',analystN:'محلل',analystD:'بيحلّل كل سباق: كسبت أو خسرت ليه، وتحسّن إيه اللي جاي.',mechanicN:'ميكانيكي',mechanicD:'خصم 25% على التصليح وقطع المصنع، وتآكل أقل 20% في كل سباق.',agentN:'وكيل',agentD:'زيادة 15% على جايزة كل سباق.',coachN:'مدرب',coachD:'منطقة الغيار الممتاز أوسع وتقييم أدق لانطلاقتك.',report:'تقرير المحلل',tipReaction:'رد فعلك كان أبطأ من المنافس. انطلق أقرب للأخضر.',tipBuild:'المنافس عدّاك بالقوة. طوّر الموتور (ECU/تيربو) أو ظبط الحالة، أو سابق بعربية أقوى.',tipCond:'حالة عربيتك بتضيّع عليك وقت. صلّح التآكل من الورشة أو بقطع المصنع.',tipShifts:'الغيارات ضيّعت عليك وقت. دوس في المنطقة الخضرا.',tipGood:'سباق نضيف. كسبت في العوامل المهمة.',vsReact:'رد الفعل',vsEt:'سرعة العربية',vsShift:'وقت ضايع في الغيارات'}};
 let S, uid=1, car3d;
 const rnd=(a,b)=>a+Math.random()*(b-a);
 function stock(){return Array.from({length:6},()=>{const c=Math.min(CARS.length-1,Math.floor(Math.pow(Math.random(),1.7)*CARS.length)),cond=Math.round(rnd(35,100));return{cid:c,cond,price:Math.round(CARS[c][5]*(.5+.5*cond/100)*rnd(.95,1.2))}})}
-function fresh(){uid=1;return{usd:8000,own:[{id:uid++,cid:CARS.findIndex(c=>c[0]==='Hyundai Excel'),w:[70,60,75],col:COLS[1],sp:0,st:0}],sel:1,stock:stock(),tab:'garage',lang:'ar',cur:'USD',wins:0,theme:''}}
+function fresh(){uid=1;return{usd:8000,own:[{id:uid++,cid:CARS.findIndex(c=>c[0]==='Hyundai Excel'),w:[70,60,75],col:COLS[1],sp:0,st:0,up:{tu:0,ti:0,wt:0}}],sel:1,stock:stock(),tab:'garage',lang:'ar',cur:'USD',wins:0,theme:'',team:[]}}
 const t=k=>L[S.lang][k];
 const fmt=u=>S.cur==='USD'?'$'+Math.round(u).toLocaleString('en-US'):Math.round(u*RATE).toLocaleString('en-US')+(S.lang==='ar'?' ج.م':' EGP');
 const cond=o=>Math.round((o.w[0]+o.w[1]+o.w[2])/3);
-const hpOf=o=>Math.round(CARS[o.cid][3]*(1+.08*o.st)*(.6+.4*cond(o)/100));
-const val=o=>CARS[o.cid][5]*(.45+.45*cond(o)/100)*(1+.08*o.st)+(o.sp?200:0);
+const hpOf=o=>Math.round(CARS[o.cid][3]*(1+.08*o.st)*(1+.12*o.up.tu)*(.6+.4*cond(o)/100));
+const val=o=>Math.round(CARS[o.cid][5]*(.45+.45*cond(o)/100)*(1+.08*o.st+.1*o.up.tu+.02*o.up.ti+.03*o.up.wt))+(o.sp?200:0);
 const cur=()=>S.own.find(o=>o.id===S.sel);
 const tag=r=>`<span class="tag" style="background:${RAR[r][2]}">${S.lang==='ar'?RAR[r][1]:RAR[r][0]}</span>`;
 const bar=v=>`<div class="meter"><i style="width:${v}%;background:${v>60?'var(--good)':v>30?'var(--acc)':'var(--bad)'}"></i></div>`;
-function et(o){const c=CARS[o.cid];return 5.825*Math.pow(c[4]*2.2046/hpOf(o),1/3)*(1+(100-o.w[1])/500)*(o.sp?.99:1)}
+function et(o){const c=CARS[o.cid];return 5.825*Math.pow(c[4]*2.2046*(1-.04*o.up.wt)/hpOf(o),1/3)*(1+(100-o.w[1])/500*(1-.25*o.up.ti))*(1-.015*o.up.ti)*(o.sp?.99:1)}
 function toast(m){document.getElementById('cap').textContent=m;setTimeout(()=>{document.getElementById('cap').textContent=t('drag')},2200)}
 
 function render(){
  document.documentElement.lang=S.lang;document.documentElement.dir=S.lang==='ar'?'rtl':'ltr';
  if(S.theme)document.documentElement.dataset.theme=S.theme;else delete document.documentElement.dataset.theme;
  money.textContent=fmt(S.usd);bCur.textContent=S.cur;bLang.textContent=S.lang==='ar'?'EN':'عربي';bTh.textContent='◐';bReset.textContent=t('reset');
- nav.innerHTML=['garage','market','catalog','work','race'].map(k=>`<button class="${S.tab===k?'on':''}" onclick="S.tab='${k}';render()">${k==='catalog'?word('Catalog','الكتالوج'):t(k)}</button>`).join('');
- view.innerHTML=({garage:vGarage,market:vMarket,work:vWork,race:vRace,catalog:vCatalog})[S.tab]()+`<p class="mut">${t('note')}</p>`;
+ nav.innerHTML=['garage','market','catalog','work','parts','team','race'].map(k=>`<button class="${S.tab===k?'on':''}" onclick="S.tab='${k}';render()">${k==='catalog'?word('Catalog','الكتالوج'):t(k)}</button>`).join('');
+ view.innerHTML=({garage:vGarage,market:vMarket,work:vWork,race:vRace,catalog:vCatalog,parts:vParts,team:vTeam})[S.tab]()+`<p class="mut">${t('note')}</p>`;
  setAcc();renderHome();updateCar();save();
  if(car3d)spinButton.setAttribute('aria-pressed',car3d.isAuto());
  if(S.tab==='catalog'){catalogSearch.value=catalogQuery;brandFilter.value=catalogBrand;shapeFilter.value=catalogShape;renderCatalogList()}
@@ -174,14 +177,14 @@ function vGarage(){
  if(!S.own.length)return`<div class="card">${t('own')}</div>`;
  return S.own.map(o=>{const c=CARS[o.cid];return`<div class="card ${o.id===S.sel?'sel':''}" onclick="S.sel=${o.id};render()">
  <div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>${infoButton(o.cid)}
- <div class="mut">${t('hp')} ${hpOf(o)} · ${c[4]} ${t('kg')} · ${t('cond')} ${cond(o)}% · ${t('ecu')} ${o.st}</div>
+ <div class="mut">${t('hp')} ${hpOf(o)} · ${c[4]} ${t('kg')} · ${t('cond')} ${cond(o)}% · ${t('ecu')} ${o.st} · ${t('turbo')} ${o.up.tu} · ${t('tiresUp')} ${o.up.ti} · ${t('weightUp')} ${o.up.wt}</div>
  <div class="row" style="margin-top:6px" onclick="event.stopPropagation()"><span class="row" style="gap:5px">${COLS.map(k=>`<button class="sw" aria-label="color" style="background:${k}" onclick="paint(${o.id},'${k}')"></button>`).join('')}</span>
  <span class="row" style="gap:6px"><button onclick="spoil(${o.id})">${t('spoiler')} ${o.sp?'✓':fmt(500)}</button>
  <button onclick="tune(${o.id})" ${o.st>=3?'disabled':''}>${o.st>=3?t('max'):t('tune')+' '+fmt(800*(o.st+1))}</button>
  <button onclick="sell(${o.id})">${t('sell')} ${fmt(val(o))}</button></span></div></div>`}).join('')}
 function vMarket(){return`<button onclick="S.stock=stock();render()" style="margin-bottom:10px">${t('refresh')}</button>`+S.stock.map((s,i)=>{const c=CARS[s.cid];return`<div class="card"><div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>${infoButton(s.cid)}
  <div class="row"><span class="mut">${t('hp')} ${c[3]} · ${c[4]} ${t('kg')} · ${t('cond')} ${s.cond}%</span><button class="pri" onclick="buy(${i})">${t('buy')} ${fmt(s.price)}</button></div></div>`}).join('')}
-function rcost(o,i){return Math.ceil((100-o.w[i])*(8+CARS[o.cid][5]/4000))}
+function rcost(o,i){return Math.ceil((100-o.w[i])*(8+CARS[o.cid][5]/4000)*(has('mechanic')?.75:1))}
 function vWork(){const o=cur();if(!o)return`<div class="card">${t('pick')}</div>`;
  const n=[t('eng'),t('tir'),t('brk')],tot=[0,1,2].reduce((a,i)=>a+rcost(o,i),0);
  return`<div class="card"><h2>${CARS[o.cid][0]}</h2>`+n.map((x,i)=>`<div class="row" style="margin:8px 0"><span style="width:70px">${x}</span>${bar(o.w[i])}<span class="mut" style="width:40px">${o.w[i]}%</span>
@@ -189,18 +192,36 @@ function vWork(){const o=cur();if(!o)return`<div class="card">${t('pick')}</div>
  `<button class="pri" onclick="repairAll()" ${tot?'':'disabled'}>${t('repall')} ${fmt(tot)}</button></div>`}
 const TIERNAMES=[['Street','الشارع'],['City','المدينة'],['Pro','المحترفين'],['Elite','النخبة'],['Legend','الأساطير'],['Empire','الإمبراطورية']];
 const tier=()=>Math.min(5,Math.floor(S.wins/3));
-const prizeOf=()=>R?Math.round((250+CARS[R.cid][3]*1.2)*(1+.25*tier())):0;
+const prizeOf=()=>R?Math.round((250+CARS[R.cid][3]*1.2)*(1+.25*tier())*(has('agent')?1.15:1)):0;
 function vRace(){const o=cur();if(!o)return`<div class="card">${t('pick')}</div>`;
- const tr=tier(),tn=TIERNAMES[tr][S.lang==='ar'?1:0],rc=R?CARS[R.cid]:null;
+ const tr=tier(),tn=TIERNAMES[tr][S.lang==='ar'?1:0],rc=R?CARS[R.cid]:null,z=zone();
  return`<div class="card"><div class="row"><h2>${t('tier')} ${tr+1} · ${tn}</h2><span class="mut">${t('wins')} ${S.wins}</span></div>
  ${rc?`<div class="row" style="margin-top:6px"><b>${word('Rival','المنافس')}: ${rc[0]} <span class="mut">${rc[1]}</span></b>${tag(rc[2])}</div>
  <div class="mut">${hpOf(R)} ${t('hp')} · ${t('et')} ≈ ${rEt().toFixed(2)}s · ${t('prize')} ${fmt(prizeOf())}</div>
- <div class="mut">${word('Your build','عربيتك')}: ${CARS[o.cid][0]} · ${hpOf(o)} ${t('hp')} · ${t('et')} ≈ ${et(o).toFixed(2)}s</div>`
+ <div class="mut">${word('Your build','عربيتك')}: ${CARS[o.cid][0]} · ${hpOf(o)} ${t('hp')} · ${t('et')} ≈ ${et(o).toFixed(2)}s${isEV(o)?' · '+t('auto'):''}</div>`
  :`<div class="mut" style="margin:6px 0">${word('No rival yet. Scout your tier to line up the next race.','لسه مفيش منافس. دوّر في درجتك عشان تلاقي السباق الجاي.')}</div>`}
  <div class="tree" id="tree"><i></i><i></i><i></i></div>
  <div class="lane"><i id="l1"></i></div><div class="lane o"><i id="l2"></i></div>
- ${rc?`<button class="pri" id="go" onclick="racing?launch():race()">${racing?(greenAt?t('tapGo'):t('wait')):t('go')}</button>`:`<button class="pri" onclick="scout()">${t('scout')}</button>`}
+ <div class="rpmWrap" id="rpmWrap" hidden><div class="rpmTop"><span>${t('rpm')}</span><span id="gearNum" dir="ltr"></span></div><div class="rpm"><span class="zone" style="left:${z[0]}%;width:${z[1]-z[0]}%"></span><span class="red"></span><i id="rpmFill"></i></div><div class="shiftLog" id="shiftLog"></div></div>
+ ${rc?`<button class="pri" id="go" onclick="racing?(launched?shift():launch()):race()">${racing?(launched?t('shift'):(greenAt?t('tapGo'):t('wait'))):t('go')}</button>`:`<button class="pri" onclick="scout()">${t('scout')}</button>`}
  <div class="res" id="res"></div></div>`}
+const TU_COST=[3500,6000,9500],TI_COST=[800,1500],WT_COST=[1800,3000];
+function kitCost(o,i){const c=CARS[o.cid];return Math.round([150+c[5]*.012,120+c[5]*.004,100+c[5]*.003][i]*(has('mechanic')?.75:1))}
+function buyKit(i){const o=cur();if(!o||o.w[i]>=100)return;const c=kitCost(o,i);if(S.usd<c)return toast(t('poor'));S.usd-=c;o.w[i]=100;render()}
+function buyUp(k){const o=cur();if(!o)return;const costs={tu:TU_COST,ti:TI_COST,wt:WT_COST}[k],cst=costs[o.up[k]];if(cst===undefined)return;if(S.usd<cst)return toast(t('poor'));S.usd-=cst;o.up[k]++;S.sel=o.id;render()}
+function vParts(){const o=cur();if(!o)return`<div class="card">${t('pick')}</div>`;const c=CARS[o.cid];
+ const kits=[t('kitEng'),t('kitTir'),t('kitBrk')];
+ const ups=[['tu',t('turbo'),TU_COST,3],['ti',t('tiresUp'),TI_COST,2],['wt',t('weightUp'),WT_COST,2]];
+ return`<div class="card"><h2>${c[0]} <span class="mut">${c[1]}</span></h2><p class="mut">${t('estNote')}</p>
+ <div class="eyebrow" style="margin:8px 0">${t('oem')}</div>`+
+ kits.map((n,i)=>`<div class="row" style="margin:6px 0"><span>${n} <span class="mut">(${o.w[i]}%)</span></span><button onclick="buyKit(${i})" ${o.w[i]>=100?'disabled':''}>${o.w[i]>=100?t('ok'):t('install')+' '+fmt(kitCost(o,i))}</button></div>`).join('')+
+ `<div class="eyebrow" style="margin:10px 0">${t('after')}</div>`+
+ ups.map(([k,n,costs,mx])=>`<div class="row" style="margin:6px 0"><span>${n} <span class="mut">${t('stage')} ${o.up[k]}/${mx}</span></span><button onclick="buyUp('${k}')" ${o.up[k]>=mx?'disabled':''}>${o.up[k]>=mx?t('maxed'):t('install')+' '+fmt(costs[o.up[k]])}</button></div>`).join('')+
+ `<div class="row" style="margin:6px 0"><span>${t('tune')} <span class="mut">${t('stage')} ${o.st}/3</span></span><button onclick="tune(${o.id})" ${o.st>=3?'disabled':''}>${o.st>=3?t('maxed'):t('install')+' '+fmt(800*(o.st+1))}</button></div>
+ <div class="row" style="margin:6px 0"><span>${t('spoiler')}</span><button onclick="spoil(${o.id})">${o.sp?t('installed'):t('install')+' '+fmt(500)}</button></div></div>`}
+const TEAMDEF=[['analyst',1500,'analystN','analystD'],['mechanic',2500,'mechanicN','mechanicD'],['agent',2000,'agentN','agentD'],['coach',2000,'coachN','coachD']];
+function hire(m){const d=TEAMDEF.find(x=>x[0]===m);if(!d||has(m))return;if(S.usd<d[1])return toast(t('poor'));S.usd-=d[1];S.team.push(m);render()}
+function vTeam(){return`<div class="teamGrid">`+TEAMDEF.map(([id,cost,nk,dk])=>`<div class="card teamCard"><div class="row"><b>${t(nk)}</b>${has(id)?`<span class="tag" style="background:var(--good)">${t('hired')}</span>`:`<button class="pri" onclick="hire('${id}')">${t('hire')} ${fmt(cost)}</button>`}</div><div class="mut" style="margin-top:4px">${t(dk)}</div></div>`).join('')+`</div>`}
 
 function paint(id,k){const o=S.own.find(x=>x.id===id);o.col=k;S.sel=id;render()}
 function spoil(id){const o=S.own.find(x=>x.id===id);S.sel=id;if(o.sp){o.sp=0}else{if(S.usd<500)return toast(t('poor'));S.usd-=500;o.sp=1}render()}
@@ -208,26 +229,36 @@ function tune(id){const o=S.own.find(x=>x.id===id),p=800*(o.st+1);if(S.usd<p)ret
 function sell(id){const o=S.own.find(x=>x.id===id);S.usd+=Math.round(val(o));S.own=S.own.filter(x=>x.id!==id);if(S.sel===id)S.sel=S.own[0]?S.own[0].id:0;toast(t('sold'));render()}
 function buy(i){const s=S.stock[i];if(S.own.length>=8)return toast(t('full'));if(S.usd<s.price)return toast(t('poor'));
  S.usd-=s.price;const w=()=>Math.max(10,Math.min(100,s.cond+Math.round(rnd(-12,12))));
- const o={id:uid++,cid:s.cid,w:[w(),w(),w()],col:COLS[Math.floor(rnd(0,COLS.length))],sp:0,st:0};S.own.push(o);S.sel=o.id;S.stock.splice(i,1);toast(t('bought'));render()}
+ const o={id:uid++,cid:s.cid,w:[w(),w(),w()],col:COLS[Math.floor(rnd(0,COLS.length))],sp:0,st:0,up:{tu:0,ti:0,wt:0}};S.own.push(o);S.sel=o.id;S.stock.splice(i,1);toast(t('bought'));render()}
 function repair(id,i){const o=S.own.find(x=>x.id===id),c=rcost(o,i);if(S.usd<c)return toast(t('poor'));S.usd-=c;o.w[i]=100;render()}
 function repairAll(){const o=cur(),c=[0,1,2].reduce((a,i)=>a+rcost(o,i),0);if(S.usd<c)return toast(t('poor'));S.usd-=c;o.w=[100,100,100];render()}
-let racing=false,R=null,greenAt=0,launched=false,timers=[],resolved=true,rTotal=0,pTotal=null,lastReact=0;
+let racing=false,R=null,greenAt=0,launched=false,timers=[],resolved=true,rTotal=0,pTotal=null,lastReact=0,rReactMs=0,pRun=0,rEt0=0,gear=0,gearStart=0,limiterAt=0,shifts=[],rpmId=0;
+const GEARS=4;
+const has=m=>S.team&&S.team.includes(m);
+const isEV=o=>shapeOf(o.cid)==='ev';
+const zone=()=>has('coach')?[72,93]:[76,90];
+function shiftKind(p){const[a,b]=zone();if(p>=a&&p<=b)return'perfect';if(p>=55&&p<=97)return'goodS';return p<55?'earlyS':'lateS'}
+function shiftDelta(p){const[a,b]=zone();if(p>=a&&p<=b)return-.15;if(p>=55&&p<=97)return 0;if(p<55)return .18;return .25}
 function scout(){if(racing)return;const o=cur();if(!o)return toast(t('pick'));
  const tr=tier(),pool=CARS.map((c,i)=>({c,i})).filter(x=>x.c[2]===tr);
  const sel=pool.length?pool[Math.floor(Math.random()*pool.length)]:{c:CARS[0],i:0};
  const wv=()=>Math.round(rnd(50,100));
- R={id:0,cid:sel.i,w:[wv(),wv(),wv()],col:'#1c1c1e',sp:tr>=3?1:0,st:Math.min(3,Math.floor(tr/2))};render()}
+ R={id:0,cid:sel.i,w:[wv(),wv(),wv()],col:'#1c1c1e',sp:tr>=3?1:0,st:Math.min(3,Math.floor(tr/2)),up:{tu:tr>=4?1:0,ti:0,wt:0}};render()}
 const rEt=()=>et(R);
 function animate(el,secs){if(!el)return;el.style.transition='none';el.style.width='0';void el.offsetWidth;el.style.transition=`width ${secs}s linear`;el.style.width='100%'}
+function animateSeg(el,secs,toPct){if(!el)return;el.style.transition=`width ${secs}s linear`;el.style.width=toPct+'%'}
 function race(){
  if(racing)return;const o=cur();if(!o)return toast(t('pick'));if(!R)return scout();
- racing=true;launched=false;resolved=false;pTotal=null;render();
+ racing=true;launched=false;resolved=false;pTotal=null;shifts=[];gear=0;limiterAt=0;greenAt=0;render();
  const token=raceToken,k=.3,lights=[...document.querySelectorAll('#tree i')];
  timers.forEach(clearTimeout);timers=[];
  lights.forEach((el,i)=>timers.push(setTimeout(()=>{if(token===raceToken)el.classList.add('on')},500*(i+1))));
  const waitMs=500*lights.length+rnd(500,1400);
+ pRun=et(o)*rnd(.98,1.03);
+ rEt0=rEt();
  const rReact=rnd(Math.max(120,330-30*tier()),Math.max(190,430-35*tier()));
- rTotal=rReact/1000+rEt()*rnd(.97,1.05);
+ rReactMs=Math.round(rReact);
+ rTotal=rReact/1000+rEt0*rnd(.97,1.05);
  timers.push(setTimeout(()=>{if(token!==raceToken)return;greenAt=performance.now();
   lights.forEach(el=>el.className='');lights[lights.length-1].className='go';
   const b=document.getElementById('go');if(b)b.textContent=t('tapGo');
@@ -240,21 +271,92 @@ function launch(){
  if(!greenAt){timers.forEach(clearTimeout);timers=[];pTotal=-1;return resolve(token,o)}
  if(launched)return;launched=true;
  const react=performance.now()-greenAt;lastReact=Math.round(react);
- pTotal=react/1000+et(o)*rnd(.98,1.03);
- animate(document.getElementById('l1'),(pTotal-react/1000)*k);
- timers.push(setTimeout(()=>resolve(token,o),Math.max(pTotal,rTotal)*k*1000+300));
+ const b=document.getElementById('go'),wrap=document.getElementById('rpmWrap'),gn=document.getElementById('gearNum');
+ if(wrap)wrap.hidden=false;
+ if(isEV(o)){
+  pTotal=react/1000+pRun;
+  if(b)b.textContent=t('auto');
+  if(gn)gn.textContent=t('auto');
+  animate(document.getElementById('l1'),pRun*k);
+  timers.push(setTimeout(()=>resolve(token,o),Math.max(pTotal,rTotal)*k*1000+300));
+  return;
+ }
+ gear=1;gearStart=performance.now();
+ if(b)b.textContent=t('shift');
+ if(gn)gn.textContent=gear+' / '+GEARS;
+ const gearDurMs=k*pRun/GEARS*1000;
+ animateSeg(document.getElementById('l1'),gearDurMs/1000,gear/GEARS*100);
+ rpmId=requestAnimationFrame(()=>rpmTick(token,o,gearDurMs));
+}
+function rpmTick(token,o,gearDurMs){
+ if(token!==raceToken||resolved)return;
+ const el=document.getElementById('rpmFill');
+ const pct=(performance.now()-gearStart)/gearDurMs*100;
+ if(el)el.style.width=Math.min(100,pct)+'%';
+ if(pct>=100){
+  if(gear<GEARS){
+   if(!limiterAt)limiterAt=performance.now();
+   if(performance.now()-limiterAt>300){doShift(100,token,o,gearDurMs);return}
+  }else{finishRun(token,o);return}
+ }
+ rpmId=requestAnimationFrame(()=>rpmTick(token,o,gearDurMs));
+}
+function shift(){
+ if(!racing||resolved||!launched||gear<1||gear>=GEARS)return;
+ const o=cur(),token=raceToken,k=.3,gearDurMs=k*pRun/GEARS*1000;
+ const pct=Math.min(100,(performance.now()-gearStart)/gearDurMs*100);
+ doShift(pct,token,o,gearDurMs);
+}
+function doShift(pct,token,o,gearDurMs){
+ if(resolved||gear<1||gear>=GEARS)return;
+ const kind=shiftKind(pct);
+ shifts.push({kind,delta:shiftDelta(pct)});
+ const log=document.getElementById('shiftLog');
+ if(log){const s=document.createElement('span');s.className=kind;s.textContent=t(kind);log.appendChild(s)}
+ gear++;gearStart=performance.now();limiterAt=0;
+ const gn=document.getElementById('gearNum');if(gn)gn.textContent=gear+' / '+GEARS;
+ const el=document.getElementById('rpmFill');if(el)el.style.width='0';
+ animateSeg(document.getElementById('l1'),gearDurMs/1000,gear/GEARS*100);
+ cancelAnimationFrame(rpmId);
+ rpmId=requestAnimationFrame(()=>rpmTick(token,o,gearDurMs));
+}
+function finishRun(token,o){
+ if(resolved||token!==raceToken)return;
+ cancelAnimationFrame(rpmId);
+ const k=.3,delta=shifts.reduce((a,s)=>a+s.delta,0);
+ pTotal=lastReact/1000+pRun+delta;
+ animateSeg(document.getElementById('l1'),.15,100);
+ timers.push(setTimeout(()=>resolve(token,o),Math.max(300,(rTotal-pTotal)*k*1000+300)));
+}
+function report(o,won){
+ const pET=et(o),rE=rEt0;
+ const loss=shifts.filter(s=>s.delta>0).reduce((a,s)=>a+s.delta,0);
+ const gain=-shifts.filter(s=>s.delta<0).reduce((a,s)=>a+s.delta,0);
+ const rows=[`${t('vsReact')}: ${word('you','انت')} ${lastReact}ms / ${word('the rival','المنافس')} ${rReactMs}ms`,
+  `${t('vsEt')}: ${word('you','انت')} ${pET.toFixed(2)}s / ${word('the rival','المنافس')} ${rE.toFixed(2)}s`,
+  `${t('vsShift')}: ${shifts.length?(loss?loss.toFixed(2)+'s':(gain?'+ '+gain.toFixed(2)+'s':'0')):t('auto')}`];
+ const tips=[];
+ if(lastReact-rReactMs>80)tips.push(t('tipReaction'));
+ if(pET-rE>0.15)tips.push(t('tipBuild'));
+ if(cond(o)<75)tips.push(t('tipCond'));
+ if(loss>0.2)tips.push(t('tipShifts'));
+ if(!tips.length)tips.push(t('tipGood'));
+ return`<div class="repBox"><b>📋 ${t('report')}</b><ul>${rows.map(r=>`<li>${r}</li>`).join('')}${tips.map(x=>`<li class="tip">${x}</li>`).join('')}</ul></div>`;
 }
 function resolve(token,o){
  if(resolved||token!==raceToken)return;resolved=true;racing=false;
+ cancelAnimationFrame(rpmId);
  const words=L[S.lang],rc=CARS[R.cid],fs=pTotal===-1,tb=tier(),prize=prizeOf();
  const won=!fs&&pTotal!==null&&pTotal<rTotal;
+ const rep=fs||pTotal===null||!has('analyst')?'':report(o,won);
  if(won){S.usd+=prize;S.wins++;if(tier()>tb){R=null;toast(t('tierUp'))}}
- if(!fs)o.w=o.w.map((v,i)=>Math.max(5,v-Math.round(rnd(3,i===1?14:9))));
+ if(!fs){const wf=has('mechanic')?.8:1;o.w=o.w.map((v,i)=>Math.max(5,v-Math.round(rnd(3,i===1?14:9)*wf)))}
  render();
  const output=document.getElementById('res');
  if(output){output.style.color=won?'var(--good)':'var(--bad)';
-  output.textContent=fs?words.fs:`${won?words.win:words.lose}${pTotal===null?' · '+words.dnf:''} · ${words.you} ${pTotal===null?'--':pTotal.toFixed(2)+'s'} / ${words.opp} ${rTotal.toFixed(2)}s (${rc[0]})`+(launched?` · ${words.react} ${lastReact}ms`:'')+(won?` · ${words.prize} ${fmt(prize)}`:'')}
+  output.innerHTML=(fs?words.fs:`${won?words.win:words.lose}${!launched?' · '+words.dnf:''} · ${words.you} ${pTotal===null?'--':pTotal.toFixed(2)+'s'} / ${words.opp} ${rTotal.toFixed(2)}s (${rc[0]})`+(launched?` · ${words.react} ${lastReact}ms`:'')+(won?` · ${words.prize} ${fmt(prize)}`:''))+(rep||'')}
 }
+addEventListener('keydown',e=>{if(e.code==='Space'&&racing&&S.tab==='race'){e.preventDefault();launched?shift():launch()}});
 
 bCur.onclick=()=>{S.cur=S.cur==='USD'?'EGP':'USD';render()};
 bLang.onclick=()=>{S.lang=S.lang==='ar'?'en':'ar';render()};
@@ -270,9 +372,9 @@ function renderHome(){const h=S.scr!=='game',d=H[S.lang];home.hidden=!h;document
  <button class="pri cta" onclick="go('game')">${d.go}</button>
  <button class="catalogCta" onclick="showCatalog(32)">${word('Explore the new showroom ↗','اكتشف كتالوج العربيات الجديد ↗')}</button><div class="tiles">${['garage','market','work','race'].map(k=>`<button class="tile" onclick="go('${k}')"><b>${d.t[k][0]}</b><span>${d.t[k][1]}</span></button>`).join('')}</div></div>`}
 let raceToken=0,localFailed=false;
-for(const fn of ['paint','spoil','tune','sell','buy','repair','repairAll']){const original=window[fn];window[fn]=function(...args){if(racing)return toast(word('Finish the race first','استنى السباق يخلص'));return original(...args)}}
+for(const fn of ['paint','spoil','tune','sell','buy','repair','repairAll','buyKit','buyUp','hire']){const original=window[fn];window[fn]=function(...args){if(racing)return toast(word('Finish the race first','استنى السباق يخلص'));return original(...args)}}
 const DEMO_KEY='garage-empire-pages-demo-v1';
-function applyState(data){racing=false;resolved=true;R=null;greenAt=0;launched=false;pTotal=null;timers.forEach(clearTimeout);timers=[];S=data;uid=Math.max(0,...S.own.map(o=>o.id))+1;raceToken++}
+function applyState(data){racing=false;resolved=true;R=null;greenAt=0;launched=false;pTotal=null;gear=0;shifts=[];limiterAt=0;cancelAnimationFrame(rpmId);timers.forEach(clearTimeout);timers=[];S=data;uid=Math.max(0,...S.own.map(o=>o.id))+1;raceToken++}
 function load(){try{const raw=localStorage.getItem(DEMO_KEY);const d=raw&&GarageSave.normalize(JSON.parse(raw));applyState(d||fresh())}catch{applyState(fresh());localFailed=true}}
 function save(){try{localStorage.setItem(DEMO_KEY,JSON.stringify(GarageSave.normalize(S)));localFailed=false}catch{localFailed=true}setAcc()}
 function setAcc(){const el=document.getElementById('saveState');el.style.color=localFailed?'var(--bad)':'var(--mut)';el.textContent=S.lang==='ar'?(localFailed?'تعذر الحفظ على الجهاز':'نسخة تجربة: الحفظ في المتصفح فقط، من غير حسابات'):(localFailed?'Device save failed':'Demo: browser-only save, no accounts');el.style.cursor='default'}
