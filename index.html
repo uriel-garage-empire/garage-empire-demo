@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>GARAGE EMPIRE Free Browser Demo</title>
+<title>GARAGE EMPIRE | Showroom Update</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Russo+One&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#e9e6df;--panel:#f6f4ef;--ink:#1b1d20;--mut:#6b6f76;--line:#cfcbc0;--acc:#d9a400;--accink:#1b1d20;--good:#1f8f4e;--bad:#c23a2e;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -71,6 +71,21 @@ button:focus-visible{outline:none;filter:drop-shadow(0 0 5px var(--neo))}
 .tile{text-align:start;padding:14px;background:rgba(10,12,22,.85);color:#eef2ff;border:1px solid #262c47;border-top:3px solid var(--acc)}
 .tile b{display:block;font-size:17px}.tile span{font-size:13px;color:#aab2d0}
 dialog{background:var(--panel);color:var(--ink);border:1px solid var(--neo);padding:18px}dialog input{display:block;width:100%;margin:8px 0;padding:8px;background:var(--bg);color:var(--ink);border:1px solid var(--line);font:inherit}dialog::backdrop{background:rgba(0,0,0,.6)}
+
+main{max-width:1380px;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start;gap:24px;padding:20px}
+#stage{height:490px;border:1px solid #33475e;border-radius:18px;background:radial-gradient(ellipse at 55% 70%,#283652 0,#111b30 45%,#080e1a 85%);box-shadow:0 20px 70px #0005;top:16px}
+#stage canvas{touch-action:pan-y}#cap{font-size:11px;inset-inline:18px;bottom:14px;color:#d7e4f3;background:#08101dd9;border-radius:5px;padding:4px 8px;max-width:calc(100% - 36px)}
+.stageTop{position:absolute;top:22px;inset-inline:23px;pointer-events:none;display:grid;gap:9px}.stageTop b{font-size:19px;color:#fff;text-align:start;line-height:1.4}.eyebrow{font:10px 'Russo One',sans-serif;letter-spacing:.17em;color:var(--neo)}
+.cameraControls{position:absolute;bottom:55px;inset-inline-end:15px;display:flex;gap:5px}.cameraControls button{clip-path:none;border:1px solid #394b63;border-radius:8px;background:#142035db;color:white;width:37px;padding:4px;font-size:18px;min-height:36px}
+.specCard{padding:18px;border-radius:12px;border-left:3px solid var(--neo)}.specCard h2{font-size:21px;margin-top:9px;line-height:1.4;text-align:start}.bodyTag{font-size:11px;border:1px solid var(--line);padding:3px 8px;border-radius:99px;color:var(--mut)}
+.specGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}.specGrid small{display:block;color:var(--mut);font-size:11px;margin-bottom:4px}.specGrid b{display:block;text-align:start;font-size:13px;font-weight:700;line-height:1.6;overflow-wrap:anywhere}
+a.sourceLink{color:var(--neo);font-size:12px;text-decoration:none;overflow-wrap:anywhere}.specCard details{margin:16px 0;padding:12px 0;border-block:1px solid var(--line);font-size:12px;color:var(--mut)}summary{cursor:pointer}.specCard .row{gap:8px}.specCard button{font-size:12px;padding:9px 12px}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}.filters input,.filters select{min-width:0;font:inherit;font-size:13px;background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:10px;border-radius:7px}.filters input{width:100%}.filters select{flex:1}
+.catalogList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.catalogTile{clip-path:none;border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:14px;text-align:start;display:grid;gap:8px;min-width:0}.catalogTile.active{border-color:var(--neo);background:linear-gradient(145deg,#15404c40,var(--panel))}.catalogTile b{font-size:14px;line-height:1.4;text-align:start;overflow-wrap:anywhere}.tileNumber{font-size:10px;letter-spacing:.04em;color:var(--neo)}.catalogTile .mut{font-size:10px}.tilePrice{font-size:15px;font-family:'Russo One',sans-serif}.tilePrice small{font:10px Cairo,sans-serif;color:var(--mut)}.count{font:16px 'Russo One',sans-serif;color:var(--neo)}.catalogIntro{margin:6px 0 18px}.catalogIntro h2{font-size:23px;margin:9px 0}
+.infoBtn{font-size:11px;padding:4px 9px;margin-top:6px;color:var(--neo)}.saveTools{max-width:1380px;margin:0 auto;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap}.saveTools button,.restore{font-size:11px;padding:3px 10px;color:var(--mut)}.restore{cursor:pointer}.restore input{display:none}.catalogCta{display:block;margin-top:12px;color:var(--neo);background:#0b1524b0;padding:9px 24px}.card .row{min-width:0}.card b{overflow-wrap:anywhere}.mut{overflow-wrap:anywhere}nav button{font-size:13px;padding:8px 13px}
+@media(max-width:820px){main{grid-template-columns:1fr;padding:12px;gap:18px}#stage{height:330px;position:relative;top:0}.stageTop{top:16px;inset-inline:17px}.stageTop b{font-size:16px}.cameraControls{bottom:48px}#cap{font-size:10px;bottom:10px}.specCard h2{font-size:18px}.specGrid{gap:14px 12px}.specGrid b{font-size:12px}.saveTools{padding:0 12px}nav{gap:4px}nav button{font-size:12px;padding:8px 10px}.catalogTile{padding:12px}.catalogTile b{font-size:12px}.catalogTile .mut{font-size:10px}.specCard .row button{width:100%}}
+@media(max-width:360px){.catalogList{grid-template-columns:1fr}#stage{height:310px}.stageTop b{font-size:14px}.specGrid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -81,10 +96,13 @@ dialog{background:var(--panel);color:var(--ink);border:1px solid var(--neo);padd
 </header>
 <div id="home"></div>
 <div style="max-width:1200px;margin:auto;padding:6px 16px;font-size:12px"><button id="saveState" style="font-size:12px;padding:3px 8px"></button></div>
+<div class="saveTools"><button id="backup" onclick="exportSave()"></button><label class="restore" id="restoreLabel">Restore save<input type="file" accept="application/json,.json" onchange="importSave(this)"></label></div>
 <main>
- <div id="stage"><div id="cap"></div></div>
+ <div id="stage" tabindex="0" aria-label="3D car preview, drag or use arrow keys"><div class="stageTop"><span class="eyebrow">GARAGE / 3D STUDIO</span><b id="previewName" dir="ltr"></b></div><div class="cameraControls"><button onclick="car3d?.zoom(-.6)" aria-label="Zoom in">+</button><button onclick="car3d?.zoom(.6)" aria-label="Zoom out">−</button><button onclick="car3d?.reset()" aria-label="Reset camera">↺</button><button id="spinButton" onclick="if(car3d)this.setAttribute('aria-pressed',car3d.toggle())" aria-label="Toggle automatic rotation" aria-pressed="true">⏯</button></div><div id="cap"></div></div>
  <section><nav id="nav"></nav><div id="view"></div></section>
 </main>
+<script src="./catalog-data.js"></script>
+<script src="./preview.js"></script>
 <script src="./save-schema.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
@@ -97,10 +115,31 @@ const CARS=[
 ['Porsche 911 GT3',2018,4,500,1430,190000],['Lamborghini Aventador',2017,4,740,1575,330000],['Bugatti Chiron',2019,5,1500,1995,2900000]];
 CARS.push(['Chevrolet Lanos',2000,0,85,1000,2200],['Kia Cerato',2012,0,156,1250,6500],['Toyota MR2 SW20',1993,1,245,1260,18000],['Nissan Silvia S15',2000,1,247,1250,21000],['Honda S2000',2000,1,240,1250,24000],['Toyota GR Yaris',2021,1,261,1280,32000],['Ford Mustang GT',2005,2,300,1580,27000],['Mitsubishi 3000GT VR-4',1994,2,320,1700,29000],['Toyota Chaser JZX100',1998,2,276,1500,30000],['Nissan 350Z',2003,2,287,1450,28000],['Mitsubishi Lancer Evo IX',2006,2,286,1400,36000],['Mazda RX-7 FD Veilside',1999,2,350,1280,48000],['Chevrolet Camaro ZL1',2018,3,650,1760,72000],['Dodge Viper GTS',1999,3,450,1500,95000],['Tesla Model S Plaid',2022,3,1020,2162,108000],['Nissan GT-R R35',2017,3,565,1740,115000],['Ferrari 458 Italia',2010,4,562,1485,230000],['McLaren 720S',2017,4,710,1419,310000],['Pagani Huayra',2013,5,730,1350,2600000],['Koenigsegg Jesko',2022,5,1600,1420,3200000]);
 CARS.sort((a,b)=>a[2]-b[2]||a[5]-b[5]);
+// Never re-sort after this line: indices 0..31 are the saved v1 catalog contract.
+const LEGACY_NAMES=CARS.map(c=>c[0]);
+CAR_ADDITIONS.forEach(c=>CARS.push(c.slice(0,6)));
+let previewCid=null,previewColor='#e9602d',catalogQuery='',catalogBrand='',catalogShape='';
+const SHAPES={sedan:['Sedan','سيدان'],coupe:['Coupe','كوبيه'],sports:['Sports coupe','كوبيه رياضية'],roadster:['Roadster','مكشوفة'],targa:['Targa','تارجا'],hatch:['Hot hatch','هاتشباك'],ev:['Electric crossover','كروس أوفر كهربا'],suv:['SUV','SUV'],muscle:['Muscle','ماسل'],super:['Supercar','سوبركار'],hyper:['Hypercar','هايبركار'],gtr:['GT coupe','جراند تورر']};
+function shapeOf(cid){if(cid>=32)return CAR_ADDITIONS[cid-32][6];const n=CARS[cid][0];if(/Chiron|Jesko|Huayra/.test(n))return 'hyper';if(/Ferrari|Lamborghini|McLaren|NSX/.test(n))return 'super';if(/MX-5|S2000/.test(n))return 'roadster';if(/Yaris/.test(n))return 'hatch';if(/Mustang|Camaro|Viper/.test(n))return 'muscle';if(/GT-R/.test(n))return 'gtr';if(/Excel|Sunny|Cerato|Lanos|Chaser|Impreza|Evo|Plaid/.test(n))return 'sedan';return 'sports'}
+function shapeName(cid){return SHAPES[shapeOf(cid)][S.lang==='ar'?1:0]}
+function word(en,ar){return S.lang==='ar'?ar:en}
+function infoButton(cid){return `<button class="infoBtn" onclick="event.stopPropagation();showCatalog(${cid})">${word('Specs + 3D','المواصفات و3D')}</button>`}
+function showCatalog(cid){previewCid=cid;S.tab='catalog';S.scr='game';render();if(innerWidth<821)document.getElementById('stage').scrollIntoView({behavior:'smooth',block:'start'})}
+function realSpecs(cid){
+ const c=CARS[cid],r=cid>=32?CAR_ADDITIONS[cid-32]:null;
+ let data=r?`<div class="specGrid"><div><small>${word('Engine / motor','المحرك')}</small><b dir="ltr">${r[7]}</b></div><div><small>${word('Published power','القوة المعلنة')}</small><b dir="ltr">${r[8]}</b></div><div><small>${word('Drivetrain','نظام الدفع')}</small><b dir="ltr">${r[9].startsWith('Not specified')?word('Not specified in source','مش مذكور في المصدر'):r[9]}</b></div><div><small>${word('Transmission','الفتيس')}</small><b dir="ltr">${r[10].startsWith('Not ')?word('Not specified in source','مش مذكور في المصدر'):r[10]}</b></div></div><p class="mut" dir="ltr">${r[12]} · ${CAR_SOURCES[r[11]].scope}</p><a class="sourceLink" href="${CAR_SOURCES[r[11]].url}" target="_blank" rel="noopener noreferrer">${word('Manufacturer source','مصدر الشركة')} ↗ ${CAR_SOURCES[r[11]].publisher}</a>`:`<p class="mut">${word('Original demo entry. Its power, mass and year are legacy game data, not verified factory specifications. No factory-spec claim is made for this entry.','من كتالوج النسخة القديمة. القوة والوزن والسنة هنا بيانات اللعبة القديمة، مش مواصفات مصنع موثّقة.')}</p>`;
+ return `<div class="card specCard"><div class="eyebrow">${r?word('FACTORY FILE / SOURCED','ملف المصنع / موثّق'):word('LEGACY GAME ENTRY','من النسخة الأصلية')}</div><h2 dir="ltr">${c[0]} <span class="mut">${c[1]}</span></h2><span class="bodyTag">${shapeName(cid)}</span>${data}<details><summary>${word('Game balance values, not real-world prices or performance','أرقام توازن اللعبة، مش أسعار أو أداء حقيقي')}</summary><p class="mut">${c[3]} game hp · ${c[4]} game kg · ${fmt(c[5])} ${word('fictional base value','قيمة أساسية خيالية')}<br>${word('Race times, tuning, wear, rarity and exchange rates are game rules. Mass is an approximate game value, not a certified curb weight.','أزمنة السباق والتعديل والتآكل والندرة وسعر الصرف قواعد لعبة. الوزن تقديري للعبة، مش وزن مصنع معتمد.')}</p></details><div class="row"><button onclick="previewColor=COLS[(COLS.indexOf(previewColor)+1)%COLS.length];updateCar()">${word('Preview paint','غيّر لون المعاينة')}</button><button class="pri" onclick="buyCatalog(${cid})">${word('Buy in game','اشتري في اللعبة')} ${fmt(c[5])}</button></div></div>`;
+}
+function vCatalog(){if(previewCid===null)previewCid=32;return `<div class="catalogIntro"><div class="eyebrow">SHOWROOM / 02</div><h2>${word('The car collection','كتالوج العربيات')} <span class="count">${CARS.length}</span></h2><p class="mut">${word('33 new source-backed model/trim entries. Original 32 entries kept for save compatibility. Models and variants are counted separately.','33 موديل وفئة جديدة بمصادر الشركات. الـ32 عربية الأصلية زي ما هي عشان حفظك يفضل سليم. الموديلات وفئاتها بتتحسب كل واحدة لوحدها.')}</p></div>${realSpecs(previewCid)}<div class="filters"><input id="catalogSearch" type="search" placeholder="${word('Search model or year','دوّر بالموديل أو السنة')}" value="" oninput="catalogQuery=this.value;renderCatalogList()"><select id="brandFilter" onchange="catalogBrand=this.value;renderCatalogList()"><option value="">${word('All brands','كل الماركات')}</option>${[...new Set(CARS.map(c=>c[0].split(' ')[0]))].sort().map(x=>`<option>${x}</option>`).join('')}</select><select id="shapeFilter" onchange="catalogShape=this.value;renderCatalogList()"><option value="">${word('All bodies','كل الأشكال')}</option>${Object.entries(SHAPES).map(([k,v])=>`<option value="${k}">${v[S.lang==='ar'?1:0]}</option>`).join('')}</select></div><p id="catalogCount" class="mut" aria-live="polite"></p><div id="catalogList" class="catalogList"></div>`}
+function renderCatalogList(){const list=document.getElementById('catalogList');if(!list)return;const rows=CARS.map((c,id)=>({c,id})).filter(({c,id})=>(!catalogQuery||(c[0]+' '+c[1]).toLowerCase().includes(catalogQuery.toLowerCase()))&&(!catalogBrand||c[0].split(' ')[0]===catalogBrand)&&(!catalogShape||shapeOf(id)===catalogShape));document.getElementById('catalogCount').textContent=rows.length+' / '+CARS.length+' '+word('entries','عربية وفئة');list.innerHTML=rows.map(({c,id})=>`<button class="catalogTile ${id===previewCid?'active':''}" onclick="previewCid=${id};render()"><span class="tileNumber">${String(id+1).padStart(2,'0')} / ${shapeName(id)}</span><b dir="ltr">${c[0]}</b><span class="mut">${c[1]} · ${id>=32?word('Factory source ↗','مصدر مصنع ↗'):word('Legacy game data','بيانات اللعبة الأصلية')}</span><span class="tilePrice">${fmt(c[5])} <small>${word('in game','في اللعبة')}</small></span></button>`).join('')||`<p>${word('No matching cars. Try another search.','مفيش نتائج. جرّب اسم تاني.')}</p>`}
+function buyCatalog(cid){if(racing)return toast(word('Finish the race first','استنى السباق يخلص'));if(S.own.length>=8)return toast(t('full'));if(S.usd<CARS[cid][5])return toast(t('poor'));S.stock.push({cid,cond:100,price:CARS[cid][5]});buy(S.stock.length-1);S.tab='garage';render()}
+function exportSave(){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(GarageSave.normalize(S),null,2)],{type:'application/json'}));a.href=url;a.download='garage-empire-save.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function importSave(input){const file=input.files[0];if(!file)return;if(file.size>200000){toast(word('Save file too large','ملف الحفظ كبير زيادة'));input.value='';return}const fr=new FileReader();fr.onload=()=>{try{const data=GarageSave.normalize(JSON.parse(fr.result));if(!data)throw Error();if(confirm(word('Replace this browser progress with the backup?','تستبدل تقدم المتصفح بالنسخة الاحتياطية؟'))){applyState(data);render()}}catch{toast(word('Invalid save file','ملف الحفظ مش صالح'))}input.value=''};fr.readAsText(file)}
+
 const COLS=['#c93d34','#e8e8e8','#1c1c1e','#2f6fd0','#f2c230','#2f9e60','#e5692c'];
 const L={
-en:{garage:'Garage',market:'Market',work:'Workshop',race:'Race',own:'You own no cars. Buy one in the Market.',buy:'Buy',sell:'Sell',refresh:'Refresh market',spoiler:'Spoiler',tune:'ECU tune',stage:'Stage',cond:'Condition',hp:'Power',kg:'kg',eng:'Engine',tir:'Tires',brk:'Brakes',rep:'Repair',repall:'Repair all',ok:'Good',pick:'Select a car in the Garage first.',go:'Start drag race (400 m)',you:'You',opp:'Rival',win:'You won',lose:'You lost',et:'ET',prize:'Prize',poor:'Not enough money',full:'Garage full (max 8)',reset:'Reset',rst:'Reset all progress?',note:'Demo: fixed rate 1 USD = 50 EGP. Progress saves in this browser.',drag:'Drag to rotate',wins:'Wins',ecu:'ECU stage',max:'Max',sold:'Sold',bought:'Bought',free:'Free'},
-ar:{garage:'الجراج',market:'السوق',work:'الورشة',race:'السباق',own:'مفيش عندك عربيات. اشتري واحدة من السوق.',buy:'اشتري',sell:'بيع',refresh:'حدّث السوق',spoiler:'سبويلر',tune:'تعديل ECU',stage:'المرحلة',cond:'الحالة',hp:'القوة',kg:'كجم',eng:'المحرك',tir:'الكاوتش',brk:'الفرامل',rep:'صلّح',repall:'صلّح الكل',ok:'سليمة',pick:'اختار عربية من الجراج الأول.',go:'ابدأ سباق تسارع (400 م)',you:'أنت',opp:'المنافس',win:'كسبت',lose:'خسرت',et:'الزمن',prize:'الجايزة',poor:'الرصيد مش كفاية',full:'الجراج مليان (الحد 8)',reset:'إعادة ضبط',rst:'مسح كل التقدم؟',note:'نسخة تجريبية: سعر الصرف ثابت 1 دولار = 50 جنيه. التقدم بيتحفظ في المتصفح.',drag:'اسحب للتدوير',wins:'الانتصارات',ecu:'مرحلة ECU',max:'الحد الأقصى',sold:'تم البيع',bought:'تم الشراء',free:'مجاني'}};
+en:{garage:'Garage',market:'Market',work:'Workshop',race:'Race',own:'You own no cars. Buy one in the Market.',buy:'Buy',sell:'Sell',refresh:'Refresh market',spoiler:'Spoiler',tune:'ECU tune',stage:'Stage',cond:'Condition',hp:'Game power',kg:'game kg',eng:'Engine',tir:'Tires',brk:'Brakes',rep:'Repair',repall:'Repair all',ok:'Good',pick:'Select a car in the Garage first.',go:'Start drag race (400 m)',you:'You',opp:'Rival',win:'You won',lose:'You lost',et:'ET',prize:'Prize',poor:'Not enough money',full:'Garage full (max 8)',reset:'Reset',rst:'Reset all progress?',note:'Demo: fixed rate 1 USD = 50 EGP. Progress saves in this browser.',drag:'Drag to rotate',wins:'Wins',ecu:'ECU stage',max:'Max',sold:'Sold',bought:'Bought',free:'Free'},
+ar:{garage:'الجراج',market:'السوق',work:'الورشة',race:'السباق',own:'مفيش عندك عربيات. اشتري واحدة من السوق.',buy:'اشتري',sell:'بيع',refresh:'حدّث السوق',spoiler:'سبويلر',tune:'تعديل ECU',stage:'المرحلة',cond:'الحالة',hp:'قوة اللعبة',kg:'كجم (اللعبة)',eng:'المحرك',tir:'الكاوتش',brk:'الفرامل',rep:'صلّح',repall:'صلّح الكل',ok:'سليمة',pick:'اختار عربية من الجراج الأول.',go:'ابدأ سباق تسارع (400 م)',you:'أنت',opp:'المنافس',win:'كسبت',lose:'خسرت',et:'الزمن',prize:'الجايزة',poor:'الرصيد مش كفاية',full:'الجراج مليان (الحد 8)',reset:'إعادة ضبط',rst:'مسح كل التقدم؟',note:'نسخة تجريبية: سعر الصرف ثابت 1 دولار = 50 جنيه. التقدم بيتحفظ في المتصفح.',drag:'اسحب للتدوير',wins:'الانتصارات',ecu:'مرحلة ECU',max:'الحد الأقصى',sold:'تم البيع',bought:'تم الشراء',free:'مجاني'}};
 let S, uid=1, car3d;
 const rnd=(a,b)=>a+Math.random()*(b-a);
 function stock(){return Array.from({length:6},()=>{const c=Math.min(CARS.length-1,Math.floor(Math.pow(Math.random(),1.7)*CARS.length)),cond=Math.round(rnd(35,100));return{cid:c,cond,price:Math.round(CARS[c][5]*(.5+.5*cond/100)*rnd(.95,1.2))}})}
@@ -120,20 +159,23 @@ function render(){
  document.documentElement.lang=S.lang;document.documentElement.dir=S.lang==='ar'?'rtl':'ltr';
  if(S.theme)document.documentElement.dataset.theme=S.theme;else delete document.documentElement.dataset.theme;
  money.textContent=fmt(S.usd);bCur.textContent=S.cur;bLang.textContent=S.lang==='ar'?'EN':'عربي';bTh.textContent='◐';bReset.textContent=t('reset');
- nav.innerHTML=['garage','market','work','race'].map(k=>`<button class="${S.tab===k?'on':''}" onclick="S.tab='${k}';render()">${t(k)}</button>`).join('');
- view.innerHTML=({garage:vGarage,market:vMarket,work:vWork,race:vRace})[S.tab]()+`<p class="mut">${t('note')}</p>`;
+ nav.innerHTML=['garage','market','catalog','work','race'].map(k=>`<button class="${S.tab===k?'on':''}" onclick="S.tab='${k}';render()">${k==='catalog'?word('Catalog','الكتالوج'):t(k)}</button>`).join('');
+ view.innerHTML=({garage:vGarage,market:vMarket,work:vWork,race:vRace,catalog:vCatalog})[S.tab]()+`<p class="mut">${t('note')}</p>`;
  setAcc();renderHome();updateCar();save();
+ if(car3d)spinButton.setAttribute('aria-pressed',car3d.isAuto());
+ if(S.tab==='catalog'){catalogSearch.value=catalogQuery;brandFilter.value=catalogBrand;shapeFilter.value=catalogShape;renderCatalogList()}
+ document.getElementById('backup').textContent=word('Export save','نزّل نسخة حفظ');document.getElementById('restoreLabel').firstChild.textContent=word('Restore save','استرجع حفظ');
 }
 function vGarage(){
  if(!S.own.length)return`<div class="card">${t('own')}</div>`;
  return S.own.map(o=>{const c=CARS[o.cid];return`<div class="card ${o.id===S.sel?'sel':''}" onclick="S.sel=${o.id};render()">
- <div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>
+ <div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>${infoButton(o.cid)}
  <div class="mut">${t('hp')} ${hpOf(o)} · ${c[4]} ${t('kg')} · ${t('cond')} ${cond(o)}% · ${t('ecu')} ${o.st}</div>
  <div class="row" style="margin-top:6px" onclick="event.stopPropagation()"><span class="row" style="gap:5px">${COLS.map(k=>`<button class="sw" aria-label="color" style="background:${k}" onclick="paint(${o.id},'${k}')"></button>`).join('')}</span>
  <span class="row" style="gap:6px"><button onclick="spoil(${o.id})">${t('spoiler')} ${o.sp?'✓':fmt(500)}</button>
  <button onclick="tune(${o.id})" ${o.st>=3?'disabled':''}>${o.st>=3?t('max'):t('tune')+' '+fmt(800*(o.st+1))}</button>
  <button onclick="sell(${o.id})">${t('sell')} ${fmt(val(o))}</button></span></div></div>`}).join('')}
-function vMarket(){return`<button onclick="S.stock=stock();render()" style="margin-bottom:10px">${t('refresh')}</button>`+S.stock.map((s,i)=>{const c=CARS[s.cid];return`<div class="card"><div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>
+function vMarket(){return`<button onclick="S.stock=stock();render()" style="margin-bottom:10px">${t('refresh')}</button>`+S.stock.map((s,i)=>{const c=CARS[s.cid];return`<div class="card"><div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>${infoButton(s.cid)}
  <div class="row"><span class="mut">${t('hp')} ${c[3]} · ${c[4]} ${t('kg')} · ${t('cond')} ${s.cond}%</span><button class="pri" onclick="buy(${i})">${t('buy')} ${fmt(s.price)}</button></div></div>`}).join('')}
 function rcost(o,i){return Math.ceil((100-o.w[i])*(8+CARS[o.cid][5]/4000))}
 function vWork(){const o=cur();if(!o)return`<div class="card">${t('pick')}</div>`;
@@ -172,33 +214,11 @@ function race(){
  },Math.max(mine,opp)*k*1000+200);
 }
 
-/* 3D */
-function init3d(){
- const el=document.getElementById('stage'),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(40,1,.1,100);
- const rd=new THREE.WebGLRenderer({antialias:true,alpha:true});rd.setPixelRatio(Math.min(devicePixelRatio,2));el.prepend(rd.domElement);
- sc.add(new THREE.HemisphereLight(0xffffff,0x555566,.9));const d=new THREE.DirectionalLight(0xffffff,.9);d.position.set(4,6,5);sc.add(d);
- const g=new THREE.Group();sc.add(g);
- const floor=new THREE.Mesh(new THREE.CircleGeometry(4,48),new THREE.MeshStandardMaterial({color:0x444a50}));floor.rotation.x=-Math.PI/2;sc.add(floor);const ring=new THREE.Mesh(new THREE.RingGeometry(3.6,3.72,64),new THREE.MeshBasicMaterial({color:0x19e3ff,side:2}));ring.rotation.x=-Math.PI/2;ring.position.y=.01;sc.add(ring);const ug=new THREE.PointLight(0xff2d95,1.4,8);ug.position.set(0,.2,0);sc.add(ug);
- const body=new THREE.MeshStandardMaterial({color:0xffffff,metalness:.5,roughness:.35}),dark=new THREE.MeshStandardMaterial({color:0x15181b,roughness:.6});
- const add=(geo,m,x,y,z)=>{const e=new THREE.Mesh(geo,m);e.position.set(x,y,z);g.add(e);return e};
- add(new THREE.BoxGeometry(4.2,.6,1.8),body,0,.6,0);add(new THREE.BoxGeometry(2.1,.55,1.6),body,-.2,1.15,0);
- add(new THREE.BoxGeometry(1.9,.4,1.62),dark,-.2,1.17,0).scale.set(1,.9,1);
- [[1.3,.9],[-1.3,.9],[1.3,-.9],[-1.3,-.9]].forEach(([x,z])=>{const w=add(new THREE.CylinderGeometry(.4,.4,.3,20),dark,x,.4,z);w.rotation.x=Math.PI/2});
- const sp=new THREE.Group();[[-.7],[.7]].forEach(([z])=>{const s=new THREE.Mesh(new THREE.BoxGeometry(.1,.4,.1),dark);s.position.set(-1.9,1.1,z);sp.add(s)});
- const wing=new THREE.Mesh(new THREE.BoxGeometry(.5,.07,1.9),body);wing.position.set(-1.9,1.35,0);sp.add(wing);g.add(sp);
- car3d={g,body,sp};cam.position.set(6,3,6);cam.lookAt(0,.8,0);
- let drag=false,px=0;el.addEventListener('pointerdown',e=>{drag=true;px=e.clientX});addEventListener('pointerup',()=>drag=false);
- el.addEventListener('pointermove',e=>{if(drag){g.rotation.y+=(e.clientX-px)*.01;px=e.clientX}});
- const rs=()=>{const w=el.clientWidth,h=el.clientHeight;rd.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix()};addEventListener('resize',rs);rs();
- (function loop(){if(!drag&&!matchMedia('(prefers-reduced-motion:reduce)').matches)g.rotation.y+=.005;rd.render(sc,cam);requestAnimationFrame(loop)})()}
-function updateCar(){if(!car3d){document.getElementById('cap').textContent=S.lang==='ar'?'معاينة 3D مش متاحة. باقي اللعبة شغال.':'3D preview unavailable. You can still play.';return;}const o=cur();car3d.g.visible=!!o;if(!o)return;car3d.body.color.set(o.col);car3d.sp.visible=!!o.sp;
- const r=CARS[o.cid][2];car3d.g.scale.set(1+r*.025,1-r*.035,1+r*.02);if(!document.getElementById('cap').dataset.t)document.getElementById('cap').textContent=t('drag')}
-
 bCur.onclick=()=>{S.cur=S.cur==='USD'?'EGP':'USD';render()};
 bLang.onclick=()=>{S.lang=S.lang==='ar'?'en':'ar';render()};
 bTh.onclick=()=>{const d=document.documentElement.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');S.theme=d==='dark'?'light':'dark';render()};
 bReset.onclick=()=>{if(confirm(t('rst'))){const l=S.lang,th=S.theme;applyState(fresh());S.lang=l;S.theme=th;render()}};
-const H={en:{tag:'Night runs. Real cars. One empire.',go:'Continue',cash:'Cash',own:'Your cars',db:'Cars in the game',w:'Race wins',t:{garage:['Garage','Paint, tune and show off your build'],market:['Market','Hunt the best deal on the street'],work:['Workshop','Repair wear before it costs you a race'],race:['Street race','Beat the rival over 400 m']}},ar:{tag:'سباقات الليل. عربيات حقيقية. إمبراطورية واحدة.',go:'كمّل اللعب',cash:'الرصيد',own:'عربياتك',db:'عربيات في اللعبة',w:'انتصارات',t:{garage:['الجراج','لوّن وعدّل واستعرض عربيتك'],market:['السوق','دوّر على أحسن صفقة'],work:['الورشة','صلّح التآكل قبل ما يكلفك السباق'],race:['سباق الشارع','اكسب المنافس في 400 متر']}}};
+const H={en:{tag:'The showroom update. 65 cars and variants.',go:'Continue',cash:'Cash',own:'Your cars',db:'Cars in the game',w:'Race wins',t:{garage:['Garage','Paint, tune and show off your build'],market:['Market','Hunt the best deal on the street'],work:['Workshop','Repair wear before it costs you a race'],race:['Street race','Beat the rival over 400 m']}},ar:{tag:'تحديث المعرض. 65 عربية وفئة في انتظارك.',go:'كمّل اللعب',cash:'الرصيد',own:'عربياتك',db:'عربيات في اللعبة',w:'انتصارات',t:{garage:['الجراج','لوّن وعدّل واستعرض عربيتك'],market:['السوق','دوّر على أحسن صفقة'],work:['الورشة','صلّح التآكل قبل ما يكلفك السباق'],race:['سباق الشارع','اكسب المنافس في 400 متر']}}};
 function go(k){if(k==='home')S.scr='home';else{S.scr='game';if(k!=='game')S.tab=k}render()}
 function renderHome(){const h=S.scr!=='game',d=H[S.lang];home.hidden=!h;document.querySelector('main').hidden=h;if(!h)return;
  const sky=Array.from({length:17},(_,i)=>{const e=70+((i*53)%130);return`<rect x="${i*48}" y="${300-e}" width="40" height="${e}"/>`}).join('');
@@ -206,8 +226,9 @@ function renderHome(){const h=S.scr!=='game',d=H[S.lang];home.hidden=!h;document
  <div class="hc"><p class="tg">${d.tag}</p><h2 class="big">GARAGE<br>EMPIRE</h2>
  <div class="stats"><div><b>${fmt(S.usd)}</b><span>${d.cash}</span></div><div><b>${S.own.length}</b><span>${d.own}</span></div><div><b>${S.wins}</b><span>${d.w}</span></div><div><b>${CARS.length}</b><span>${d.db}</span></div></div>
  <button class="pri cta" onclick="go('game')">${d.go}</button>
- <div class="tiles">${['garage','market','work','race'].map(k=>`<button class="tile" onclick="go('${k}')"><b>${d.t[k][0]}</b><span>${d.t[k][1]}</span></button>`).join('')}</div></div>`}
+ <button class="catalogCta" onclick="showCatalog(32)">${word('Explore the new showroom ↗','اكتشف كتالوج العربيات الجديد ↗')}</button><div class="tiles">${['garage','market','work','race'].map(k=>`<button class="tile" onclick="go('${k}')"><b>${d.t[k][0]}</b><span>${d.t[k][1]}</span></button>`).join('')}</div></div>`}
 let raceToken=0,localFailed=false;
+for(const fn of ['paint','spoil','tune','sell','buy','repair','repairAll']){const original=window[fn];window[fn]=function(...args){if(racing)return toast(word('Finish the race first','استنى السباق يخلص'));return original(...args)}}
 const DEMO_KEY='garage-empire-pages-demo-v1';
 function applyState(data){racing=false;S=data;uid=Math.max(0,...S.own.map(o=>o.id))+1;raceToken++}
 function load(){try{const raw=localStorage.getItem(DEMO_KEY);const d=raw&&GarageSave.normalize(JSON.parse(raw));applyState(d||fresh())}catch{applyState(fresh());localFailed=true}}
