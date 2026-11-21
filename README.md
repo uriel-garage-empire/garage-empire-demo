@@ -13,6 +13,13 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 - Drag to orbit, use zoom/reset/rotation buttons, or focus the preview and use arrow keys and +/- on a keyboard. Reduced-motion preferences disable automatic rotation initially. Rendering pauses when hidden and is limited to about 30 fps.
 - Export and restore validated browser-save backups. Existing v1 saves keep their car IDs and local storage key. Keep a backup before clearing browser data.
 
+## Street racing update, 21 November 2026
+
+- Rivals are now real catalog cars with their own power, wear, ECU stage and spoiler, scouted per tier and shown before the race.
+- Race outcome is decided by the matchup: car stats, condition, tuning and launch timing all affect the result. The old fixed-random rival multiplier is removed.
+- Green-light reaction launch: lights count down, tapping before green is a false start, and reaction time is added to the total. Rivals react faster at higher tiers.
+- Six progression tiers (one per three wins). Higher tiers scout rarer, stronger rivals with tuned builds and bigger prizes. The win counter and all v1 saves remain compatible; no save-format change.
+
 ## Storage and limitations
 
 Progress is stored only in this browser on this device. It does not sync between devices and may disappear if browser site data is cleared. There are no accounts, passwords, multiplayer trades or server APIs in this demo. The economy is client-authoritative and is not secure for competitive or real-money play.
