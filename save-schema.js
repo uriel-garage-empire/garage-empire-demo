@@ -1,6 +1,6 @@
 /* Shared allow-list for local and cloud saves. Economy is still client-authoritative. */
 (function (root) {
-  const CAR_COUNT = 32;
+  const CAR_COUNT = 65;
   function normalize(d) {
     if (!d || typeof d !== 'object' || Array.isArray(d)) return null;
     if (!Number.isFinite(d.usd) || d.usd < 0 || d.usd >= 1e10 || !Number.isInteger(d.wins) || d.wins < 0 || d.wins > 1e7) return null;
@@ -24,7 +24,7 @@
       cur:['USD','EGP'].includes(d.cur)?d.cur:'USD',
       lang:['ar','en'].includes(d.lang)?d.lang:'ar',
       theme:['','light','dark'].includes(d.theme)?d.theme:'',
-      tab:['garage','market','work','race'].includes(d.tab)?d.tab:'garage',
+      tab:['garage','market','catalog','work','race'].includes(d.tab)?d.tab:'garage',
       scr:['home','game'].includes(d.scr)?d.scr:'home'};
   }
   const api={normalize,CAR_COUNT};
