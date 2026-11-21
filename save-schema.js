@@ -1,6 +1,16 @@
 /* Shared allow-list for local and cloud saves. Economy is still client-authoritative. */
 (function (root) {
   const CAR_COUNT = 65;
+  const TEAM_IDS = ['analyst', 'mechanic', 'agent', 'coach'];
+  const TABS = ['garage', 'market', 'catalog', 'work', 'race', 'parts', 'team'];
+  function upg(u) {
+    if (u === undefined || u === null) return {tu: 0, ti: 0, wt: 0};
+    if (typeof u !== 'object' || Array.isArray(u)) return null;
+    const {tu, ti, wt} = u;
+    if (!Number.isInteger(tu) || tu < 0 || tu > 3 || !Number.isInteger(ti) || ti < 0 || ti > 2 ||
+        !Number.isInteger(wt) || wt < 0 || wt > 2) return null;
+    return {tu, ti, wt};
+  }
   function normalize(d) {
     if (!d || typeof d !== 'object' || Array.isArray(d)) return null;
     if (!Number.isFinite(d.usd) || d.usd < 0 || d.usd >= 1e10 || !Number.isInteger(d.wins) || d.wins < 0 || d.wins > 1e7) return null;
@@ -12,22 +22,32 @@
           !c.w.every(n => Number.isInteger(n) && n >= 0 && n <= 100) ||
           typeof c.col !== 'string' || !/^#[0-9a-fA-F]{6}$/.test(c.col) ||
           ![0, 1].includes(c.sp) || !Number.isInteger(c.st) || c.st < 0 || c.st > 3) return null;
-      ids.add(c.id); own.push({id:c.id,cid:c.cid,w:[...c.w],col:c.col,sp:c.sp,st:c.st});
+      const up = upg(c.up);
+      if (!up) return null;
+      ids.add(c.id); own.push({id:c.id,cid:c.cid,w:[...c.w],col:c.col,sp:c.sp,st:c.st,up});
     }
     for (const s of d.stock) {
       if (!s || !Number.isInteger(s.cid) || s.cid < 0 || s.cid >= CAR_COUNT ||
           !Number.isInteger(s.cond) || s.cond < 0 || s.cond > 100 || !Number.isFinite(s.price) || s.price < 0 || s.price > 1e9) return null;
       stock.push({cid:s.cid,cond:s.cond,price:s.price});
     }
-    return {usd:d.usd,own,stock,wins:d.wins,
+    let team = [];
+    if (d.team !== undefined) {
+      if (!Array.isArray(d.team)) return null;
+      for (const m of d.team) {
+        if (!TEAM_IDS.includes(m) || team.includes(m)) return null;
+        team.push(m);
+      }
+    }
+    return {usd:d.usd,own,stock,wins:d.wins,team,
       sel:ids.has(d.sel)?d.sel:(own[0]?.id || 0),
       cur:['USD','EGP'].includes(d.cur)?d.cur:'USD',
       lang:['ar','en'].includes(d.lang)?d.lang:'ar',
       theme:['','light','dark'].includes(d.theme)?d.theme:'',
-      tab:['garage','market','catalog','work','race'].includes(d.tab)?d.tab:'garage',
+      tab:TABS.includes(d.tab)?d.tab:'garage',
       scr:['home','game'].includes(d.scr)?d.scr:'home'};
   }
-  const api={normalize,CAR_COUNT};
+  const api={normalize,CAR_COUNT,TEAM_IDS};
   if (typeof module !== 'undefined' && module.exports) module.exports=api;
   else root.GarageSave=api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);
