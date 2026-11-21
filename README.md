@@ -20,6 +20,13 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 - Green-light reaction launch: lights count down, tapping before green is a false start, and reaction time is added to the total. Rivals react faster at higher tiers.
 - Six progression tiers (one per three wins). Higher tiers scout rarer, stronger rivals with tuned builds and bigger prizes. The win counter and all v1 saves remain compatible; no save-format change.
 
+## Crew, RPM and parts update, 21 November 2026
+
+- Interactive gear shifting: an RPM gauge climbs through 4 gears during the run. Shift in the green zone for a perfect shift (-0.15s), early or limiter shifts cost time. Electric single-speed cars run without shifts. Space bar also shifts.
+- Hireable team paid with in-game currency: Analyst (post-race report explaining the result from measured reaction, pace, shifts and condition), Mechanic (repair/factory-part discount, less wear), Agent (+15% prizes), Coach (wider perfect-shift zone).
+- Parts market: factory (OEM) service kits restore engine/tire/brake wear; aftermarket parts add turbo (3 stages), sport/slick tires (2) and weight reduction (2) plus the existing ECU stages and spoiler. All part prices are in-game estimates inspired by real market prices, labeled as estimates, not actual quotes.
+- Upgrade effects are part of the pace formula (power, weight, tire wear). Existing saves migrate automatically (new fields get defaults); no save-format break.
+
 ## Storage and limitations
 
 Progress is stored only in this browser on this device. It does not sync between devices and may disappear if browser site data is cleared. There are no accounts, passwords, multiplayer trades or server APIs in this demo. The economy is client-authoritative and is not secure for competitive or real-money play.
