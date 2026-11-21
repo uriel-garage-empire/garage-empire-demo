@@ -263,7 +263,7 @@ function race(){
   lights.forEach(el=>el.className='');lights[lights.length-1].className='go';
   const b=document.getElementById('go');if(b)b.textContent=t('tapGo');
   timers.push(setTimeout(()=>{if(token===raceToken)animate(document.getElementById('l2'),(rTotal-rReact/1000)*k)},rReact));
-  timers.push(setTimeout(()=>resolve(token,o),rTotal*k*1000+400));
+  timers.push(setTimeout(()=>{if(token===raceToken&&!launched)resolve(token,o)},rTotal*k*1000+400));
  },waitMs));
 }
 function launch(){
