@@ -7,7 +7,10 @@ const MODELS={
  'Toyota Supra A80':{url:'assets/models/toyota-supra-a80.glb',credit:'Martin Trafas (TinoD2)'},
  'Mazda MX-5 NA':{url:'assets/models/mazda-mx5-na.glb.b64',parts:3,credit:'SPDWKS (Speedy-Works)'},
  'Nissan Silvia S15':{url:'assets/models/nissan-silvia-s15.glb.b64',parts:2,credit:'IVA (dxmhl)',yaw:Math.PI},
- 'Toyota MR2 SW20':{url:'assets/models/toyota-mr2-sw20.glb.b64',parts:10,credit:'_shobh19 (s0h1o9b)',yaw:Math.PI}
+ 'Toyota MR2 SW20':{url:'assets/models/toyota-mr2-sw20.glb.b64',parts:10,credit:'_shobh19 (s0h1o9b)',yaw:Math.PI},
+ 'BMW M3 E46':{url:'assets/models/bmw-m3-e46.glb.b64',parts:3,credit:'BRIKKER (daniklyz)',yaw:Math.PI},
+ 'Nissan 350Z':{url:'assets/models/nissan-350z.glb.b64',parts:4,credit:'Blue3D (Blueberry12)'},
+ 'Toyota Chaser JZX100':{url:'assets/models/toyota-chaser-jzx100.glb.b64',parts:5,credit:'Blue3D (Blueberry12)'}
 };
 function init3d(){
  const el=document.getElementById('stage'),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(36,1,.1,80);
