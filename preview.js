@@ -1,19 +1,24 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
-/* Real-shape community models, loaded as GLB for exact catalog names only (see CREDITS.md). */
+/* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
- 'Nissan Skyline R34 GT-R':{url:'assets/models/nissan-skyline-r34-gtr.glb',credit:'David Sirera'},
- 'Chevrolet Camaro ZL1':{url:'assets/models/chevrolet-camaro-zl1.glb',credit:'Kris Tong'},
- 'Dodge Challenger SRT Hellcat':{url:'assets/models/dodge-challenger-srt-hellcat.glb',credit:'Grzybek'},
- 'Toyota Supra A80':{url:'assets/models/toyota-supra-a80.glb',credit:'Martin Trafas (TinoD2)'},
- 'Mazda MX-5 NA':{url:'assets/models/mazda-mx5-na.glb.b64',parts:3,credit:'SPDWKS (Speedy-Works)'},
- 'Nissan Silvia S15':{url:'assets/models/nissan-silvia-s15.glb.b64',parts:2,credit:'IVA (dxmhl)',yaw:Math.PI},
- 'Toyota MR2 SW20':{url:'assets/models/toyota-mr2-sw20.glb.b64',parts:10,credit:'_shobh19 (s0h1o9b)',yaw:Math.PI},
- 'BMW M3 E46':{url:'assets/models/bmw-m3-e46.glb.b64',parts:3,credit:'BRIKKER (daniklyz)',yaw:Math.PI},
- 'Nissan 350Z':{url:'assets/models/nissan-350z.glb.b64',parts:4,credit:'Blue3D (Blueberry12)'},
- 'Toyota Chaser JZX100':{url:'assets/models/toyota-chaser-jzx100.glb.b64',parts:5,credit:'Blue3D (Blueberry12)'},
- 'Ford Mustang GT':{url:'assets/models/ford-mustang-gt-2005-imperial.glb.b64',parts:3,credit:'ImperialBlue3D'},
- 'Tesla Model S Plaid':{url:'assets/models/tesla-model-s-plaid.glb.b64',parts:5,credit:'slowpoly'}
+ 'Nissan Skyline R34 GT-R':{catalogYear:1999,url:'assets/models/nissan-skyline-r34-gtr.glb',credit:'David Sirera'},
+ 'Chevrolet Camaro ZL1':{catalogYear:2018,url:'assets/models/chevrolet-camaro-zl1.glb',credit:'Kris Tong'},
+ 'Dodge Challenger SRT Hellcat':{catalogYear:2023,url:'assets/models/dodge-challenger-srt-hellcat.glb',credit:'Grzybek'},
+ 'Toyota Supra A80':{catalogYear:1998,url:'assets/models/toyota-supra-a80.glb',credit:'Martin Trafas (TinoD2)'},
+ 'Mazda MX-5 NA':{catalogYear:1992,url:'assets/models/mazda-mx5-na.glb.b64',parts:3,credit:'SPDWKS (Speedy-Works)'},
+ 'Nissan Silvia S15':{catalogYear:2000,url:'assets/models/nissan-silvia-s15.glb.b64',parts:2,credit:'IVA (dxmhl)',yaw:Math.PI},
+ 'Toyota MR2 SW20':{catalogYear:1993,url:'assets/models/toyota-mr2-sw20.glb.b64',parts:10,credit:'_shobh19 (s0h1o9b)',yaw:Math.PI},
+ 'BMW M3 E46':{catalogYear:2003,url:'assets/models/bmw-m3-e46.glb.b64',parts:3,credit:'BRIKKER (daniklyz)',yaw:Math.PI},
+ 'Nissan 350Z':{catalogYear:2003,url:'assets/models/nissan-350z.glb.b64',parts:4,credit:'Blue3D (Blueberry12)'},
+ 'Toyota Chaser JZX100':{catalogYear:1998,url:'assets/models/toyota-chaser-jzx100.glb.b64',parts:5,credit:'Blue3D (Blueberry12)'},
+ 'Ford Mustang GT':{catalogYear:2005,url:'assets/models/ford-mustang-gt-2005-imperial.glb.b64',parts:3,credit:'ImperialBlue3D'},
+ 'Tesla Model S Plaid':{catalogYear:2022,url:'assets/models/tesla-model-s-plaid.glb.b64',parts:5,credit:'slowpoly'}
 };
+// The year is a catalog routing constraint, not a claim of exact asset year/trim.
+function modelForCar(cid){
+ const c=CARS[cid];if(!c)return null;
+ const m=MODELS[c[0]];return m&&m.catalogYear===c[1]?m:null;
+}
 function init3d(){
  const el=document.getElementById('stage'),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(36,1,.1,80);
  const rd=new THREE.WebGLRenderer({antialias:true,alpha:true});rd.setPixelRatio(Math.min(devicePixelRatio,1.7));rd.outputEncoding=THREE.sRGBEncoding;rd.toneMapping=THREE.ACESFilmicToneMapping;rd.toneMappingExposure=1.0;rd.shadowMap.enabled=true;rd.shadowMap.type=THREE.PCFSoftShadowMap;el.prepend(rd.domElement);
@@ -93,7 +98,7 @@ function init3d(){
  }
  // Real-shape path: licensed GLB, normalized to the turntable. Procedural path stays the fallback.
  function build(cid,spoiler){
-  const name=CARS[cid][0],mdef=MODELS[name];
+  const name=CARS[cid][0],mdef=modelForCar(cid);
   if(!mdef||!THREE.GLTFLoader){buildProcedural(cid,spoiler);return}
   clearStage();
   const sp=new THREE.Group();sp.visible=false;g.add(sp);
@@ -225,6 +230,6 @@ function updateCar(){
  if(!car3d){caption.textContent=S.lang==='ar'?'معاينة 3D مش متاحة. باقي اللعبة شغال.':'3D unavailable. The rest of the game still works.';return}
  car3d.g.visible=cid!==undefined;if(cid===undefined)return;
  const catalog=S.tab==='catalog'&&previewCid!==null;car3d.set(cid,catalog?previewColor:o.col,catalog?0:o.sp);
- const mdef=car3d.usingModel&&MODELS[CARS[cid][0]];
+ const mdef=car3d.usingModel&&modelForCar(cid);
  caption.textContent=mdef?(S.lang==='ar'?'مجسم مجتمعي من نفس جيل الموديل · '+mdef.credit+' · CC BY · مش نسخة مطابقة للسنة أو الفئة بالظبط. اسحب للتدوير.':'Same-generation community model by '+mdef.credit+' (CC BY), not an exact year/trim replica. Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
                                                                                                                                                                                                                                                                                                                     }
