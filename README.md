@@ -206,3 +206,8 @@ Current coverage: **41of100catalog entries**,**35distinct community bodies**,**5
 ## S650 GT body update, 22 November 2026
 
 Current coverage: **42 of 100 catalog entries**, **36 distinct community bodies**, **58 procedural**. Adds only the 2024 Mustang GT with an authored lightweight stylized body and visible fine-detail caveat. The 2005 GT mapping remains separate and unchanged. EcoBoost/Dark Horse remain procedural. Catalog/save IDs, gameplay and loading1 behavior preserved.
+
+
+## Dark Horse body update, 22 November 2026
+
+Current coverage: **43 of 100 catalog entries**, **37 distinct community bodies**, **57 procedural**. Existing 2024 Dark Horse now has a small authored PS1-style photo-textured body with visible simplification/equipment caveat. The GT bodies are separate; EcoBoost stays procedural. Catalog/save IDs, gameplay and loading1 unchanged.
