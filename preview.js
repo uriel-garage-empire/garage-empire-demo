@@ -1,6 +1,7 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
+"Audi RS 6 Avant performance":{"catalogYear": 2024, "url": "assets/models/rs6-yokatann.glb.b64", "parts": 3, "yaw": Math.PI, "credit": "yokatann", "noteEn": "Low-poly C8 RS6 Avant community body; not exact 2024 performance equipment.", "noteAr": "مجسم RS6 Avant جيل C8 منخفض التفاصيل، مش تفاصيل performance سنة 2024 بالضبط."},
 "Mazda CX-5 2.5 S":{"catalogYear": 2024, "url": "assets/models/cx5-itsdiyor-packed1.glb.b64", "parts": 26, "credit": "ItsDiyor", "noteEn": "Shared 2020 CX-5 body; not 2024 facelift or exact trim equipment.", "noteAr": "هيكل CX-5 سنة 2020 مشترك، مش تحديث 2024 ولا تفاصيل الفئة بالضبط."},
 "Mazda CX-5 2.5 Turbo":{"catalogYear": 2024, "url": "assets/models/cx5-itsdiyor-packed1.glb.b64", "parts": 26, "credit": "ItsDiyor", "noteEn": "Shared 2020 CX-5 body; not 2024 facelift or exact trim equipment.", "noteAr": "هيكل CX-5 سنة 2020 مشترك، مش تحديث 2024 ولا تفاصيل الفئة بالضبط."},
 
