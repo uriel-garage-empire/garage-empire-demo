@@ -1,6 +1,7 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
+"Ford Mustang Dark Horse":{"catalogYear": 2024, "url": "assets/models/mustang-darkhorse-lolandpop.glb.b64", "parts": 3, "credit": "LolAndPop!", "noteEn": "Photo-textured PS1-style Dark Horse; intentionally simplified, not exact equipment.", "noteAr": "مجسم Dark Horse بأسلوب PS1 وصور كخامات، التفاصيل مبسطة ومش تجهيزات مطابقة."},
 "Ford Mustang GT|2024":{"catalogName": "Ford Mustang GT", "catalogYear": 2024, "url": "assets/models/mustang2024-legend.glb.b64", "parts": 2, "credit": "Legendeniuss", "noteEn": "Blueprint-built low-poly2024S650GT; fine equipment details simplified.", "noteAr": "مجسم S650 GT سنة 2024 منخفض التفاصيل، التجهيزات الدقيقة مبسطة."},
 "Toyota GR Supra 2.0":{"catalogYear": 2024, "url": "assets/models/supra-bedoya.glb.b64", "parts": 14, "credit": "BedoyaCamilo", "noteEn": "Stylized A90 body; exact2024equipment and2.0/3.0trim details differ.", "noteAr": "هيكل A90 فني، تجهيزات 2024 وتفاصيل فئتي 2.0 و3.0 مش مطابقة بالظبط."},"Toyota GR Supra 3.0":{"catalogYear": 2024, "url": "assets/models/supra-bedoya.glb.b64", "parts": 14, "credit": "BedoyaCamilo", "noteEn": "Stylized A90 body; exact2024equipment and2.0/3.0trim details differ.", "noteAr": "هيكل A90 فني، تجهيزات 2024 وتفاصيل فئتي 2.0 و3.0 مش مطابقة بالظبط."},
 "Honda Civic EK":{"catalogYear": 1999, "url": "assets/models/civic-ek9-marksform.glb.b64", "parts": 3, "credit": "marksform", "noteEn": "Stylized EK9 Type R hatch body; exact 1999 facelift/trim details differ.", "noteAr": "هيكل EK9 Type R هاتشباك فني، تفاصيل تحديث وفئة 1999 مختلفة."},
@@ -296,4 +297,4 @@ function updateCar(){
  const mdef=car3d.usingModel&&modelForCar(cid);
  caption.textContent=mdef?(S.lang==='ar'?'مجسم مجتمعي من نفس جيل الموديل · '+mdef.credit+' · CC BY · مش نسخة مطابقة للسنة أو الفئة بالظبط. اسحب للتدوير.':'Same-generation community model by '+mdef.credit+' (CC BY), not an exact year/trim replica. Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
  if(mdef&&mdef.noteEn)caption.textContent=(S.lang==='ar'?mdef.noteAr+' · '+mdef.credit+' · CC BY · اسحب للتدوير.':mdef.noteEn+' Community model by '+mdef.credit+' · CC BY. Drag to orbit.');
-  }
+                    }
