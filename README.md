@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Licensed model update, 22 November 2026
 
-The deployed showroom maps 44 of the existing 100 catalog entries to 38 distinct CC BY community body assets. Shared trim entries do not count as separate bodies. The remaining 56 entries use procedural bodies. Credits, source links, repacking notes and year/trim limitations are in CREDITS.md. Original source paint is retained. These are community model/generation representations, not exact verified year/trim replicas.
+The deployed showroom maps 45 of the existing 100 catalog entries to 39 distinct CC BY community body assets. Shared trim entries do not count as separate bodies. The remaining 55 entries use procedural bodies. Credits, source links, repacking notes and year/trim limitations are in CREDITS.md. Original source paint is retained. These are community model/generation representations, not exact verified year/trim replicas.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -211,3 +211,6 @@ Current coverage: **42 of 100 catalog entries**, **36 distinct community bodies*
 ## Dark Horse body update, 22 November 2026
 
 Current coverage: **43 of 100 catalog entries**, **37 distinct community bodies**, **57 procedural**. Existing 2024 Dark Horse now has a small authored PS1-style photo-textured body with visible simplification/equipment caveat. The GT bodies are separate; EcoBoost stays procedural. Catalog/save IDs, gameplay and loading1 unchanged.
+
+## Excel X2 body update
+Current coverage:45of100catalog entries,39distinct bodies,55procedural. The legacy Hyundai Excel uses a1990-era X2sedan model with an explicit earlier-facelift and local-equipment caveat for the1997catalog entry. Egypt-market reports identify1991-1999Excel as X2, distinct from Australian AccentX3name reuse. Original source paint/images retained, exact Meshopt packing, no new gameplay or catalog/save changes.
