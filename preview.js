@@ -1,6 +1,9 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
+ 'Chevrolet Corvette Stingray':{catalogYear:2024,url:'assets/models/corvette-c8-thcyrax.glb.b64',parts:2,credit:'Thcyrax'},
+ 'BMW M4 Competition M xDrive':{catalogYear:2021,url:'assets/models/bmw-m4-g82-rosemarin.glb.b64',parts:13,credit:'Rosemarin',yaw:Math.PI},
+ 'Ferrari 458 Italia':{catalogYear:2010,url:'assets/models/ferrari-458-gios.glb.b64',parts:14,credit:'giosassets',yaw:Math.PI},
  'Nissan Skyline R34 GT-R':{catalogYear:1999,url:'assets/models/nissan-skyline-r34-gtr.glb',credit:'David Sirera'},
  'Chevrolet Camaro ZL1':{catalogYear:2018,url:'assets/models/chevrolet-camaro-zl1.glb',credit:'Kris Tong'},
  'Dodge Challenger SRT Hellcat':{catalogYear:2023,url:'assets/models/dodge-challenger-srt-hellcat.glb',credit:'Grzybek'},
