@@ -214,3 +214,8 @@ Current coverage: **43 of 100 catalog entries**, **37 distinct community bodies*
 
 ## Excel X2 body update
 Current coverage:45of100catalog entries,39distinct bodies,55procedural. The legacy Hyundai Excel uses a1990-era X2sedan model with an explicit earlier-facelift and local-equipment caveat for the1997catalog entry. Egypt-market reports identify1991-1999Excel as X2, distinct from Australian AccentX3name reuse. Original source paint/images retained, exact Meshopt packing, no new gameplay or catalog/save changes.
+
+
+## Lightweight 992 Turbo S body update, 22 November 2026
+
+Current coverage: **46 of 100 catalog entries**, **40 distinct body assets**, **54 procedural**. The existing 2021 Turbo S now uses a 21k-triangle community 992 coupe with visible simplification and exact-equipment caveats. Original dark-green paint, black glass, materials, geometry and image retained. Original GLB is 1.76MB; ten lossless base64 transport parts. No gameplay, catalog/save or loading-behavior changes.
