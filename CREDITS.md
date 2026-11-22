@@ -128,3 +128,12 @@ Both models inspected in actual desktop and 390px mobile renders. This does not 
 - Nevera: source GLB 1,726,428 bytes, integrated GLB 789,064 bytes. All 29,180 rendered surface triangles and all 4 embedded image byte sequences retained, with used material base colors unchanged. Equivalent-vertex welding, unused-attribute pruning and 16-bit vertex quantization using glTF Transform 4.5.1, no surface decimation. Out-of-range UVs remain floating point. Quantization reduces numerical precision. Lossless base64 transport and runtime centering/scaling only. Creator paint and static source pose retained.
 - Chiron: source GLB 6,008,984 bytes, integrated GLB 4,237,032 bytes. All 97,485 rendered surface triangles and all 11 embedded image byte sequences retained, with used material base colors unchanged. Equivalent-vertex welding, unused-attribute pruning and 16-bit vertex quantization using glTF Transform 4.5.1, no surface decimation. Out-of-range UVs remain floating point. Quantization reduces numerical precision. Lossless base64 transport and runtime centering/scaling only. Creator paint and static source pose retained.
 - Actual desktop and 390px mobile renders inspected. This does not establish physical-phone FPS. No catalog/save IDs or gameplay features changed.
+
+
+## Loading update, 22 November 2026
+
+Six existing body assets (Civic sedan, BMW M4 G82, Ferrari 458, RX-7 Veilside, Lanos and Nevera) use Meshopt geometry packing. No surface decimation or additional vertex quantization was applied in this update. Vertex attribute values, node transforms, embedded image bytes and original material JSON are retained. Triangle index encoding may cyclically rotate the three indices within a triangle, preserving its winding and surface. Original attribution and year/trim caveats above continue to apply. Lossless base64 text transport remains in use. Older asset files remain as release history but are no longer selected for these six bodies.
+
+The unmodified meshoptimizer 1.2.0 decoder is included as MeshoptDecoder.js. Source: https://github.com/zeux/meshoptimizer. MIT license and copyright notice are included in MESHOPT-LICENSE.md.
+
+The loader now keeps the three most recently used model resources resident, releases older resources, cancels superseded downloads, permits retries after a failed download and rejects stale render completions. Progress text distinguishes downloading from model preparation. Catalog/save IDs, model coverage and gameplay are unchanged.
