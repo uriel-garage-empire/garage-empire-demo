@@ -10,7 +10,9 @@ const MODELS={
  'Toyota MR2 SW20':{url:'assets/models/toyota-mr2-sw20.glb.b64',parts:10,credit:'_shobh19 (s0h1o9b)',yaw:Math.PI},
  'BMW M3 E46':{url:'assets/models/bmw-m3-e46.glb.b64',parts:3,credit:'BRIKKER (daniklyz)',yaw:Math.PI},
  'Nissan 350Z':{url:'assets/models/nissan-350z.glb.b64',parts:4,credit:'Blue3D (Blueberry12)'},
- 'Toyota Chaser JZX100':{url:'assets/models/toyota-chaser-jzx100.glb.b64',parts:5,credit:'Blue3D (Blueberry12)'}
+ 'Toyota Chaser JZX100':{url:'assets/models/toyota-chaser-jzx100.glb.b64',parts:5,credit:'Blue3D (Blueberry12)'},
+ 'Ford Mustang GT':{url:'assets/models/ford-mustang-gt-2005-imperial.glb.b64',parts:3,credit:'ImperialBlue3D'},
+ 'Tesla Model S Plaid':{url:'assets/models/tesla-model-s-plaid.glb.b64',parts:5,credit:'slowpoly'}
 };
 function init3d(){
  const el=document.getElementById('stage'),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(36,1,.1,80);
@@ -225,4 +227,4 @@ function updateCar(){
  const catalog=S.tab==='catalog'&&previewCid!==null;car3d.set(cid,catalog?previewColor:o.col,catalog?0:o.sp);
  const mdef=car3d.usingModel&&MODELS[CARS[cid][0]];
  caption.textContent=mdef?(S.lang==='ar'?'مجسم مجتمعي من نفس جيل الموديل · '+mdef.credit+' · CC BY · مش نسخة مطابقة للسنة أو الفئة بالظبط. اسحب للتدوير.':'Same-generation community model by '+mdef.credit+' (CC BY), not an exact year/trim replica. Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
-  }
+                                                                                                                                                                                                                                                                                                                    }
