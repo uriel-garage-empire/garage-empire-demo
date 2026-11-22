@@ -39,3 +39,10 @@ Integration changes for these three: duplicate/unreferenced glTF data removed wi
 - **Tesla Model S Plaid (2022)**: Tesla model S Plaid 2023 by slowpoly, https://sketchfab.com/3d-models/tesla-model-s-plaid-2023-aec912ed367b4aebacc8676922f42beb, CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/). A low-poly exterior of the refreshed Plaid body, uploaded as a 2023 model. Used as a same-generation representation of the catalog's 2022 Plaid, not an exact 2022 equipment/lighting replica. The 2022 lighting refresh is documented at https://www.teslarati.com/tesla-model-s-plaid-matrix-headlights-new-tail-lights-deliveries/. Original red paint and creator texture marks are retained.
 
 Integration changes for these two: glTF deduplication and pruning only, with rendered triangle counts unchanged. Existing 512px Mustang and 1024px Tesla source textures retained, no mesh simplification. Lossless base64 text transport and runtime framing as above.
+
+## G80 M3 and Huayra existing-car models
+
+- **BMW M3 Competition M xDrive (2021 catalog entry)**: Low Poly BMW G80 M3 by SharkyStudios (sharkycat109), https://sketchfab.com/3d-models/low-poly-bmw-g80-m3-ea3e807ff69e40fe82c5577ee9f0a2f4, CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/). Same G80 four-door M3 generation. Creator labels it 2020; this is a stylized G80 body representation, not a verified 2021 Competition xDrive equipment replica.
+- **Pagani Huayra (2013 catalog entry)**: Low Poly Pagani Huayra by MrTjk, https://sketchfab.com/3d-models/low-poly-pagani-huayra-e321079605f24566817b4c8ffa05b97c, CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/). Creator describes modeling in 3ds Max. Stylized original Huayra body, not a verified 2013 equipment replica.
+
+Integration: original GLB geometry/materials retained, lossless base64 text transport, runtime centering/scaling, and Huayra showroom orientation adjusted. Authentic fixed material paint is retained. Catalog routing requires both catalog name and year; it does not certify the asset's exact year or trim.
