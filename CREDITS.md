@@ -24,3 +24,11 @@ All other cars use the game's original procedural bodies. Car names and designs 
 Local integration changes for MR2 SW20: removed the creator scene's flat ground plane from the displayed asset so normalization frames the car rather than the surrounding plane. Material and car geometry retained. S15 and MR2 previews are rotated to show the front three-quarter view by default.
 
 The Miata NA, S15 and MR2 assets are distributed as lossless base64 text parts for repository publication. The loader reassembles the same GLB bytes before parsing; encoding does not change their geometry or materials.
+
+## Further existing-car models
+
+- **BMW M3 E46 (2003)**: BMW M3 E46 by BRIKKER (daniklyz), https://sketchfab.com/3d-models/bmw-m3-e46-a0cc623fe4ec4b96bc0137b152279321, CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/). Creator describes an original low-poly Blender model, with material colors and a simplified interior. Same E46 model/generation, not an exact verified 2003 trim replica.
+- **Nissan 350Z (2003)**: Nissan 350Z by Blue3D (Blueberry12), https://sketchfab.com/3d-models/nissan-350z-0b6b898a28364c389b0ac82e9b476f1a, CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/). Creator says built from blueprints and reference images. Z33-generation exterior, with custom wheels and rear wing, no interior. Not an exact 2003 factory replica.
+- **Toyota Chaser JZX100 (1998)**: Toyota Chaser by Blue3D (Blueberry12), https://sketchfab.com/3d-models/toyota-chaser-7e856b85c32a40bea7a88b5852ded4a9, CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/). Creator says built from blueprints and press images. Sixth-generation Chaser exterior, no interior, not an exact 1998 trim replica. Generation/body comparison checked against Toyota's lineage page: https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60011062/index.html
+
+Integration changes for these three: duplicate/unreferenced glTF data removed without reducing rendered triangle count; scene centered/rescaled at runtime. Lossless base64 text transport as above, original material paint retained.
