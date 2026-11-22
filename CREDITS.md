@@ -32,3 +32,10 @@ The Miata NA, S15 and MR2 assets are distributed as lossless base64 text parts f
 - **Toyota Chaser JZX100 (1998)**: Toyota Chaser by Blue3D (Blueberry12), https://sketchfab.com/3d-models/toyota-chaser-7e856b85c32a40bea7a88b5852ded4a9, CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/). Creator says built from blueprints and press images. Sixth-generation Chaser exterior, no interior, not an exact 1998 trim replica. Generation/body comparison checked against Toyota's lineage page: https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60011062/index.html
 
 Integration changes for these three: duplicate/unreferenced glTF data removed without reducing rendered triangle count; scene centered/rescaled at runtime. Lossless base64 text transport as above, original material paint retained.
+
+## Lightweight Mustang and Tesla visuals
+
+- **Ford Mustang GT (2005)**: 2005 Ford Mustang GT by ImperialBlue3D, https://sketchfab.com/3d-models/2005-ford-mustang-gt-a8e485f012284d21badb9886e2605bab, CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/). A deliberately low-poly, single-texture S197 GT representation. The creator's baked texture appearance and original red paint are retained. It is not a detailed factory replica.
+- **Tesla Model S Plaid (2022)**: Tesla model S Plaid 2023 by slowpoly, https://sketchfab.com/3d-models/tesla-model-s-plaid-2023-aec912ed367b4aebacc8676922f42beb, CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/). A low-poly exterior of the refreshed Plaid body, uploaded as a 2023 model. Used as a same-generation representation of the catalog's 2022 Plaid, not an exact 2022 equipment/lighting replica. The 2022 lighting refresh is documented at https://www.teslarati.com/tesla-model-s-plaid-matrix-headlights-new-tail-lights-deliveries/. Original red paint and creator texture marks are retained.
+
+Integration changes for these two: glTF deduplication and pruning only, with rendered triangle counts unchanged. Existing 512px Mustang and 1024px Tesla source textures retained, no mesh simplification. Lossless base64 text transport and runtime framing as above.
