@@ -2,20 +2,20 @@
 /* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
  'Bugatti Chiron':{catalogYear:2019,url:'assets/models/chiron-alieeen.glb.b64',parts:24,credit:'ALIEEEN',noteEn:'Standard Chiron community body; exact year/trim equipment not certified.',noteAr:'مجسم شيرون العادية، تفاصيل السنة والفئة مش معتمدة.'},
- 'Rimac Nevera':{catalogYear:2024,url:'assets/models/nevera-3dblender.glb.b64',parts:5,credit:'3dblender_1 + Vladi',noteEn:'2022 Nevera community body; not certified exact 2024 equipment.',noteAr:'مجسم نيفيرا مجتمعي بمرجع 2022، مش تفاصيل 2024 المعتمدة.'},
+ 'Rimac Nevera':{catalogYear:2024,url:'assets/models/nevera-3dblender-packed1.glb.b64',parts:4,credit:'3dblender_1 + Vladi',noteEn:'2022 Nevera community body; not certified exact 2024 equipment.',noteAr:'مجسم نيفيرا مجتمعي بمرجع 2022، مش تفاصيل 2024 المعتمدة.'},
  "Lamborghini Revuelto":{catalogYear:2024,url:'assets/models/revuelto-alieeen.glb.b64',parts:22,credit:"ALIEEEN",noteEn:"Revuelto community model; year/trim details are not certified.",noteAr:"\u0645\u062c\u0633\u0645 \u0631\u064a\u0641\u0648\u064a\u0644\u062a\u0648 \u0645\u062c\u062a\u0645\u0639\u064a\u060c \u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0633\u0646\u0629 \u0648\u0627\u0644\u0641\u0626\u0629 \u0645\u0634 \u0645\u0639\u062a\u0645\u062f\u0629."},
- 'Chevrolet Lanos':{catalogYear:2000,url:'assets/models/lanos-du.glb.b64',parts:6,credit:'D_U',yaw:Math.PI,noteEn:'Low-poly Daewoo Lanos sedan body; badge/year details differ.',noteAr:'هيكل دايو لانوس سيدان منخفض التفاصيل، الشعار وتفاصيل السنة مختلفة.'},
+ 'Chevrolet Lanos':{catalogYear:2000,url:'assets/models/lanos-du-packed1.glb.b64',parts:3,credit:'D_U',yaw:Math.PI,noteEn:'Low-poly Daewoo Lanos sedan body; badge/year details differ.',noteAr:'هيكل دايو لانوس سيدان منخفض التفاصيل، الشعار وتفاصيل السنة مختلفة.'},
  'Honda S2000':{catalogYear:2000,url:'assets/models/s2000-9green.glb.b64',parts:3,credit:'9Green',yaw:Math.PI,noteEn:'Stylized low-poly S2000; not an exact year/trim replica.',noteAr:'مجسم S2000 فني منخفض التفاصيل، مش مطابق للسنة أو الفئة بالضبط.'},
- "Honda Civic Sedan LX":{catalogYear:2025,url:'assets/models/civic-ricy.glb.b64',parts:7,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
- "Honda Civic Sedan Sport Hybrid":{catalogYear:2025,url:'assets/models/civic-ricy.glb.b64',parts:7,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
- "Honda Civic Si":{catalogYear:2025,url:'assets/models/civic-ricy.glb.b64',parts:7,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
+ "Honda Civic Sedan LX":{catalogYear:2025,url:'assets/models/civic-ricy-packed1.glb.b64',parts:5,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
+ "Honda Civic Sedan Sport Hybrid":{catalogYear:2025,url:'assets/models/civic-ricy-packed1.glb.b64',parts:5,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
+ "Honda Civic Si":{catalogYear:2025,url:'assets/models/civic-ricy-packed1.glb.b64',parts:5,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
  'Hyundai IONIQ 5 Standard Range':{catalogYear:2024,url:'assets/models/ioniq5-andika.glb.b64',parts:21,credit:'andikapratamaw'},
  'Hyundai IONIQ 5 Long Range RWD':{catalogYear:2024,url:'assets/models/ioniq5-andika.glb.b64',parts:21,credit:'andikapratamaw'},
  'Hyundai IONIQ 5 Long Range AWD':{catalogYear:2024,url:'assets/models/ioniq5-andika.glb.b64',parts:21,credit:'andikapratamaw'},
  'Nissan GT-R R35':{catalogYear:2017,url:'assets/models/r35-ricy.glb.b64',parts:16,credit:'Ricy',noteEn:'2008 R35 body, not the 2017 facelift.',noteAr:'هيكل R35 سنة 2008، مش شكل تحديث 2017.'},
  'Chevrolet Corvette Stingray':{catalogYear:2024,url:'assets/models/corvette-c8-thcyrax.glb.b64',parts:2,credit:'Thcyrax'},
- 'BMW M4 Competition M xDrive':{catalogYear:2021,url:'assets/models/bmw-m4-g82-rosemarin.glb.b64',parts:13,credit:'Rosemarin',yaw:Math.PI},
- 'Ferrari 458 Italia':{catalogYear:2010,url:'assets/models/ferrari-458-gios.glb.b64',parts:14,credit:'giosassets',yaw:Math.PI},
+ 'BMW M4 Competition M xDrive':{catalogYear:2021,url:'assets/models/bmw-m4-g82-rosemarin-packed1.glb.b64',parts:7,credit:'Rosemarin',yaw:Math.PI},
+ 'Ferrari 458 Italia':{catalogYear:2010,url:'assets/models/ferrari-458-gios-packed1.glb.b64',parts:7,credit:'giosassets',yaw:Math.PI},
  'Nissan Skyline R34 GT-R':{catalogYear:1999,url:'assets/models/nissan-skyline-r34-gtr.glb',credit:'David Sirera'},
  'Chevrolet Camaro ZL1':{catalogYear:2018,url:'assets/models/chevrolet-camaro-zl1.glb',credit:'Kris Tong'},
  'Dodge Challenger SRT Hellcat':{catalogYear:2023,url:'assets/models/dodge-challenger-srt-hellcat.glb',credit:'Grzybek'},
@@ -35,7 +35,7 @@ const MODELS={
  'Mitsubishi Lancer Evo IX':{catalogYear:2006,url:'assets/models/mitsubishi-evo-ix-marksform.glb.b64',parts:4,credit:'marksform'},
  'McLaren 720S':{catalogYear:2017,url:'assets/models/mclaren-720s-shobh.glb.b64',parts:8,credit:'_shobh19 (s0h1o9b)',yaw:Math.PI},
  'Honda NSX':{catalogYear:1997,url:'assets/models/honda-nsx-jasmin.glb.b64',parts:4,credit:'Jasmin Daniel (jasmin.daniel)',yaw:Math.PI},
- 'Mazda RX-7 FD Veilside':{catalogYear:1999,url:'assets/models/mazda-rx7-veilside-giu.glb.b64',parts:11,credit:'giuffridamassimino',yaw:Math.PI}
+ 'Mazda RX-7 FD Veilside':{catalogYear:1999,url:'assets/models/mazda-rx7-veilside-giu-packed1.glb.b64',parts:7,credit:'giuffridamassimino',yaw:Math.PI}
 };
 // The year is a catalog routing constraint, not a claim of exact asset year/trim.
 function modelForCar(cid){
@@ -107,27 +107,57 @@ function init3d(){
  hyper:{l:4.85,w:1.08,h:1.02,front:1.52,rear:-1.5,roofF:.48,roofR:-.52,hood:.68,deck:.84},
  gtr:{l:4.68,w:1,h:1.37,front:1.43,rear:-1.4,roofF:.43,roofR:-.85,hood:1.03,deck:1.01}
  };
- const modelCache={};
- function clearStage(){const geometries=new Set();g.traverse(o=>{if(o.geometry&&!(o instanceof THREE.Sprite))geometries.add(o.geometry)});while(g.children.length)g.remove(g.children[0]);geometries.forEach(x=>x.dispose())}
- function loadGlb(url,parts=0){
-  modelCache[url]=modelCache[url]||new Promise((res,rej)=>{
-   const loader=new THREE.GLTFLoader(),done=x=>res(x.scene);
-   if(!parts){loader.load(url,done,undefined,rej);return}
-   // Lossless text transport for assets published through the repository text editor.
-   Promise.all(Array.from({length:parts},(_,i)=>fetch(url+'.'+i).then(r=>{if(!r.ok)throw Error('Model asset unavailable');return r.text()})))
-    .then(chunks=>{const binary=atob(chunks.join('')),bytes=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);loader.parse(bytes.buffer,'',done,rej)})
-    .catch(rej);
-  });return modelCache[url];
+ // Keep three recently used models resident. Clones share their GPU resources.
+ const modelCache=new Map(),cachedGeometries=new WeakSet(),CACHE_LIMIT=3;
+ let activeModelUrl=null,buildVersion=0;
+ function disposeModel(scene){
+  const geometries=new Set(),materials=new Set(),textures=new Set();
+  scene.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.material)(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m))});
+  geometries.forEach(x=>{cachedGeometries.delete(x);x.dispose()});
+  materials.forEach(m=>{Object.values(m).forEach(v=>{if(v&&v.isTexture)textures.add(v)});m.dispose()});textures.forEach(t=>t.dispose());
+ }
+ function trimModels(){
+  while(modelCache.size>CACHE_LIMIT){
+   const oldest=Array.from(modelCache).find(([url,e])=>url!==activeModelUrl&&e.scene);
+   if(!oldest)break;modelCache.delete(oldest[0]);disposeModel(oldest[1].scene);
+  }
+ }
+ function cancelOtherDownloads(url){
+  for(const [key,e] of modelCache)if(key!==url&&e.phase==='fetch'){modelCache.delete(key);e.controller.abort()}
+ }
+ function clearStage(){
+  const geometries=new Set();g.traverse(o=>{if(o.geometry&&!(o instanceof THREE.Sprite)&&!cachedGeometries.has(o.geometry))geometries.add(o.geometry)});
+  while(g.children.length)g.remove(g.children[0]);geometries.forEach(x=>x.dispose());
+ }
+ function loadGlb(url,parts=0,onProgress=()=>{}){
+  if(modelCache.has(url)){const e=modelCache.get(url);modelCache.delete(url);modelCache.set(url,e);return e.promise}
+  const entry={controller:new AbortController(),phase:'fetch',scene:null};
+  entry.promise=new Promise((res,rej)=>{
+   const loader=new THREE.GLTFLoader();if(typeof MeshoptDecoder!=='undefined')loader.setMeshoptDecoder(MeshoptDecoder);
+   const done=x=>{entry.scene=x.scene;entry.phase='ready';x.scene.traverse(o=>{if(o.geometry)cachedGeometries.add(o.geometry)});trimModels();res(x.scene)};
+   const signal=entry.controller.signal;
+   const fetchPart=async path=>{const r=await fetch(path,{signal});if(!r.ok)throw Error('Model asset unavailable');return r};
+   let completed=0;
+   const data=parts?Promise.all(Array.from({length:parts},(_,i)=>fetchPart(url+'.'+i).then(r=>r.text()).then(text=>{onProgress(++completed,parts);return text}))).then(chunks=>{
+    const binary=atob(chunks.join('')),bytes=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);return bytes.buffer;
+   }):fetchPart(url).then(r=>r.arrayBuffer());
+   data.then(buffer=>{entry.phase='parse';onProgress(parts||1,parts||1,true);loader.parse(buffer,'',done,rej)}).catch(rej);
+  }).catch(error=>{if(modelCache.get(url)===entry)modelCache.delete(url);throw error});
+  modelCache.set(url,entry);trimModels();return entry.promise;
  }
  // Real-shape path: licensed GLB, normalized to the turntable. Procedural path stays the fallback.
  function build(cid,spoiler){
+  const ticket=++buildVersion;
   const name=CARS[cid][0],mdef=modelForCar(cid);
+  activeModelUrl=mdef?mdef.url:null;cancelOtherDownloads(activeModelUrl);car3d.loading=null;
   if(!mdef||!THREE.GLTFLoader){buildProcedural(cid,spoiler);return}
   clearStage();
   const sp=new THREE.Group();sp.visible=false;g.add(sp);
   oldCid=cid;oldSp=spoiler;car3d.sp=sp;car3d.usingModel=false;car3d.profile='glb';
-  loadGlb(mdef.url,mdef.parts).then(scene0=>{
-   if(oldCid!==cid)return;
+  car3d.loading={cid,done:0,total:mdef.parts||1,preparing:false};
+  loadGlb(mdef.url,mdef.parts,(done,total,preparing=false)=>{if(ticket!==buildVersion)return;car3d.loading={cid,done,total,preparing};updateCar()}).then(scene0=>{
+   if(ticket!==buildVersion||oldCid!==cid)return;
+   car3d.loading=null;
    const root=scene0.clone(true);
    const bb=new THREE.Box3().setFromObject(root),size=bb.getSize(new THREE.Vector3());
    if(size.z>size.x)root.rotation.y=Math.PI/2;
@@ -138,7 +168,7 @@ function init3d(){
    root.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});
    g.add(root);car3d.usingModel=true;
    if(typeof updateCar==='function')updateCar();
-  }).catch(()=>{if(oldCid===cid)buildProcedural(cid,spoiler)});
+  }).catch(()=>{if(ticket===buildVersion&&oldCid===cid){car3d.loading=null;buildProcedural(cid,spoiler);updateCar()}});
  }
  function buildProcedural(cid,spoiler){
   clearStage();
@@ -238,7 +268,7 @@ function init3d(){
   oldCid=cid;oldSp=spoiler;car3d.profile=f;car3d.usingModel=false;
  }
  function camera(){cam.position.set(Math.sin(yaw)*Math.cos(pitch)*distance,Math.sin(pitch)*distance+.75,Math.cos(yaw)*Math.cos(pitch)*distance);cam.lookAt(0,.72,0)}
- car3d={g,body,sp:null,rd,sc,cam,build,usingModel:false,set:(cid,color,sp)=>{if(cid!==oldCid||sp!==oldSp)build(cid,sp);if(!car3d.usingModel)body.color.set(color)},zoom:n=>{distance=Math.max(6.6,Math.min(12,distance+n));camera()},reset:()=>{yaw=.65;pitch=.30;distance=8.6;camera()},toggle:()=>{auto=!auto;return auto},isAuto:()=>auto};
+ car3d={g,body,sp:null,rd,sc,cam,build,usingModel:false,loading:null,set:(cid,color,sp)=>{if(cid!==oldCid||sp!==oldSp)build(cid,sp);if(!car3d.usingModel)body.color.set(color)},zoom:n=>{distance=Math.max(6.6,Math.min(12,distance+n));camera()},reset:()=>{yaw=.65;pitch=.30;distance=8.6;camera()},toggle:()=>{auto=!auto;return auto},isAuto:()=>auto};
  el.addEventListener('pointerdown',e=>{if(e.target!==rd.domElement)return;drag=true;px=e.clientX;py=e.clientY;rd.domElement.setPointerCapture(e.pointerId)});
  el.addEventListener('pointerup',()=>drag=false);el.addEventListener('pointercancel',()=>drag=false);
  el.addEventListener('pointermove',e=>{if(drag){yaw-=(e.clientX-px)*.012;if(e.pointerType!=='touch')pitch=Math.max(.08,Math.min(.8,pitch+(e.clientY-py)*.006));px=e.clientX;py=e.clientY;camera()}});
@@ -253,6 +283,9 @@ function updateCar(){
  if(!car3d){caption.textContent=S.lang==='ar'?'معاينة 3D مش متاحة. باقي اللعبة شغال.':'3D unavailable. The rest of the game still works.';return}
  car3d.g.visible=cid!==undefined;if(cid===undefined)return;
  const catalog=S.tab==='catalog'&&previewCid!==null;car3d.set(cid,catalog?previewColor:o.col,catalog?0:o.sp);
+ if(car3d.loading&&car3d.loading.cid===cid){
+  const load=car3d.loading;caption.textContent=load.preparing?(S.lang==='ar'?'جاري تجهيز المجسم بنفس تفاصيله…':'Preparing the full-detail model…'):(S.lang==='ar'?'جاري تحميل مجسم العربية… '+Math.round(100*load.done/load.total)+'%':'Loading car model… '+Math.round(100*load.done/load.total)+'%');return;
+ }
  const mdef=car3d.usingModel&&modelForCar(cid);
  caption.textContent=mdef?(S.lang==='ar'?'مجسم مجتمعي من نفس جيل الموديل · '+mdef.credit+' · CC BY · مش نسخة مطابقة للسنة أو الفئة بالظبط. اسحب للتدوير.':'Same-generation community model by '+mdef.credit+' (CC BY), not an exact year/trim replica. Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
  if(mdef&&mdef.noteEn)caption.textContent=(S.lang==='ar'?mdef.noteAr+' · '+mdef.credit+' · CC BY · اسحب للتدوير.':mdef.noteEn+' Community model by '+mdef.credit+' · CC BY. Drag to orbit.');
