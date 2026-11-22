@@ -2,6 +2,12 @@
 
 Free static car-management demo. Garage customization, NPC market, repairs and simulated drag races run entirely in the browser.
 
+## Licensed model update, 22 November 2026
+
+The deployed showroom currently uses four CC BY community car models: Nissan Skyline R34 GT-R, Chevrolet Camaro ZL1, Dodge Challenger SRT Hellcat and Toyota Supra A80. Credits and source links are in CREDITS.md. These represent the listed model or generation, not an exact verified year/trim. Their original paint is retained. Other catalog entries continue to use procedural bodies.
+
+The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
+
 ## 100-car catalog update, 22 November 2026
 
 - 100 catalog entries: the original 32 legacy entries plus 68 source-backed model/trim entries. Trim variants are counted separately, not as unique model families.
