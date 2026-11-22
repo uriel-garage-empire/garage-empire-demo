@@ -174,3 +174,10 @@ Previous model coverage: **33 of 100 catalog entries**, using **29 distinct comm
 
 
 Current model coverage: **35 of 100 catalog entries**, using **31 distinct community body assets**; **65 remain procedural**. Added a 2022-reference production Nevera community body to the 2024 entry, with a visible exact-equipment caveat, and a standard Chiron community body to the legacy 2019 entry, with an exact-year/trim caveat. Original creator paint retained. Catalog/save IDs and gameplay unchanged. Shared Civic/IONIQ variants count as entries, not separate body assets.
+
+
+### Loading update
+
+Coverage remains 35 catalog entries from 31 distinct body assets. Six existing bodies now use geometry compression without surface reduction, new quantization, or texture changes. A three-model resource cache avoids GPU reuploads on recent revisits; stale downloads are cancelled, failed downloads can be retried on a later selection, and a download/preparation caption replaces the blank unexplained wait. Catalog data and save schema are unchanged.
+
+A controlled desktop-browser test with gzip responses, 4 Mbps download and 100 ms simulated latency measured first rendered Ferrari 458 at about 3.87s before / 2.04s after, and BMW M4 at about 3.28s before / 2.13s after. A recent Ferrari revisit performed no fetch, parse or GPU buffer upload after the change. These are controlled test results, not measurements on a physical phone or a promise for every network.
