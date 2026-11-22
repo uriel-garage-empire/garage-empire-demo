@@ -1,6 +1,7 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
+"Porsche 911 Turbo S":{"catalogYear": 2021, "url": "assets/models/turbo-sk.glb.b64", "parts": 10, "credit": "S.K.", "noteEn": "Community low-poly 992 Turbo S body; exact year and equipment not certified.", "noteAr": "هيكل 992 تيربو S مبسط، السنة والتجهيزات مش مطابقة بالضبط."},
 "Hyundai Excel":{"catalogYear": 1997, "url": "assets/models/excel-m3ika.glb.b64", "parts": 15, "credit": "m3ika", "noteEn": "1990-era X2 sedan body; not exact 1997 local facelift or equipment.", "noteAr": "هيكل إكسيل X2 سيدان بمرجع 1990، مش تفاصيل تحديث وتجهيزات 1997 المحلية بالضبط."},
 "Nissan GT-R Premium":{"catalogYear": 2024, "url": "assets/models/r35-eihab-selected.glb.b64", "parts": 2, "credit": "Eihab_3D", "noteEn": "Stylized 2017-era R35 body, not the 2024 facelift or Premium equipment.", "noteAr": "هيكل R35 فني بشكل تحديث 2017، مش شكل تحديث 2024 ولا تجهيزات Premium."},
 "Ford Mustang Dark Horse":{"catalogYear": 2024, "url": "assets/models/mustang-darkhorse-lolandpop.glb.b64", "parts": 3, "credit": "LolAndPop!", "noteEn": "Photo-textured PS1-style Dark Horse; intentionally simplified, not exact equipment.", "noteAr": "مجسم Dark Horse بأسلوب PS1 وصور كخامات، التفاصيل مبسطة ومش تجهيزات مطابقة."},
