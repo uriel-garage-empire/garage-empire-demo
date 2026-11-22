@@ -1,4 +1,10 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
+/* Real-shape community models, loaded as GLB for exact catalog names only (see CREDITS.md). */
+const MODELS={
+ 'Nissan Skyline R34 GT-R':{url:'assets/models/nissan-skyline-r34-gtr.glb',credit:'David Sirera'},
+ 'Chevrolet Camaro ZL1':{url:'assets/models/chevrolet-camaro-zl1.glb',credit:'Kris Tong'},
+ 'Dodge Challenger SRT Hellcat':{url:'assets/models/dodge-challenger-srt-hellcat.glb',credit:'Grzybek'}
+};
 function init3d(){
  const el=document.getElementById('stage'),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(36,1,.1,80);
  const rd=new THREE.WebGLRenderer({antialias:true,alpha:true});rd.setPixelRatio(Math.min(devicePixelRatio,1.7));rd.outputEncoding=THREE.sRGBEncoding;rd.toneMapping=THREE.ACESFilmicToneMapping;rd.toneMappingExposure=1.0;rd.shadowMap.enabled=true;rd.shadowMap.type=THREE.PCFSoftShadowMap;el.prepend(rd.domElement);
@@ -64,8 +70,31 @@ function init3d(){
  hyper:{l:4.85,w:1.08,h:1.02,front:1.52,rear:-1.5,roofF:.48,roofR:-.52,hood:.68,deck:.84},
  gtr:{l:4.68,w:1,h:1.37,front:1.43,rear:-1.4,roofF:.43,roofR:-.85,hood:1.03,deck:1.01}
  };
+ const modelCache={};
+ function clearStage(){const geometries=new Set();g.traverse(o=>{if(o.geometry&&!(o instanceof THREE.Sprite))geometries.add(o.geometry)});while(g.children.length)g.remove(g.children[0]);geometries.forEach(x=>x.dispose())}
+ function loadGlb(url){modelCache[url]=modelCache[url]||new Promise((res,rej)=>new THREE.GLTFLoader().load(url,x=>res(x.scene),undefined,rej));return modelCache[url]}
+ // Real-shape path: licensed GLB, normalized to the turntable. Procedural path stays the fallback.
  function build(cid,spoiler){
-  const geometries=new Set();g.traverse(o=>{if(o.geometry&&!(o instanceof THREE.Sprite))geometries.add(o.geometry)});while(g.children.length)g.remove(g.children[0]);geometries.forEach(x=>x.dispose());
+  const name=CARS[cid][0],mdef=MODELS[name];
+  if(!mdef||!THREE.GLTFLoader){buildProcedural(cid,spoiler);return}
+  clearStage();
+  const sp=new THREE.Group();sp.visible=false;g.add(sp);
+  oldCid=cid;oldSp=spoiler;car3d.sp=sp;car3d.usingModel=false;car3d.profile='glb';
+  loadGlb(mdef.url).then(scene0=>{
+   if(oldCid!==cid)return;
+   const root=scene0.clone(true);
+   const bb=new THREE.Box3().setFromObject(root),size=bb.getSize(new THREE.Vector3());
+   if(size.z>size.x)root.rotation.y=Math.PI/2;
+   root.scale.setScalar(4.5/Math.max(size.x,size.z));
+   bb.setFromObject(root);const c=bb.getCenter(new THREE.Vector3());
+   root.position.x-=c.x;root.position.z-=c.z;root.position.y-=bb.min.y;
+   root.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});
+   g.add(root);car3d.usingModel=true;
+   if(typeof updateCar==='function')updateCar();
+  }).catch(()=>{if(oldCid===cid)buildProcedural(cid,spoiler)});
+ }
+ function buildProcedural(cid,spoiler){
+  clearStage();
   const name=CARS[cid][0],f=shapeOf(cid),p={...(profiles[f]||profiles.coupe)},seed=Array.from(name).reduce((a,c)=>a+c.charCodeAt(0),0);
   // Small original proportion variations within each family. Never claim exact dimensions.
   p.l+=(seed%7-3)*.025;p.w+=(seed%5-2)*.007;
@@ -159,10 +188,10 @@ function init3d(){
   if(['super','hyper'].includes(f))[-1,1].forEach(s=>box(-.6,.66,s*(p.w+.01),.6,.2,.02,dark));
   const sp=new THREE.Group();g.add(sp);[-.65,.65].forEach(z=>box(-half+.25,p.deck+.2,z,.08,.36,.07,dark,sp));box(-half+.22,p.deck+.4,0,.48,.065,p.w*2.05,body,sp);
   sp.visible=!!spoiler||/NISMO|GT4|GT3|Jesko|Veilside/.test(name);car3d.sp=sp;
-  oldCid=cid;oldSp=spoiler;car3d.profile=f;
+  oldCid=cid;oldSp=spoiler;car3d.profile=f;car3d.usingModel=false;
  }
  function camera(){cam.position.set(Math.sin(yaw)*Math.cos(pitch)*distance,Math.sin(pitch)*distance+.75,Math.cos(yaw)*Math.cos(pitch)*distance);cam.lookAt(0,.72,0)}
- car3d={g,body,sp:null,rd,sc,cam,build,set:(cid,color,sp)=>{if(cid!==oldCid||sp!==oldSp)build(cid,sp);body.color.set(color)},zoom:n=>{distance=Math.max(6.6,Math.min(12,distance+n));camera()},reset:()=>{yaw=.65;pitch=.30;distance=8.6;camera()},toggle:()=>{auto=!auto;return auto},isAuto:()=>auto};
+ car3d={g,body,sp:null,rd,sc,cam,build,usingModel:false,set:(cid,color,sp)=>{if(cid!==oldCid||sp!==oldSp)build(cid,sp);if(!car3d.usingModel)body.color.set(color)},zoom:n=>{distance=Math.max(6.6,Math.min(12,distance+n));camera()},reset:()=>{yaw=.65;pitch=.30;distance=8.6;camera()},toggle:()=>{auto=!auto;return auto},isAuto:()=>auto};
  el.addEventListener('pointerdown',e=>{if(e.target!==rd.domElement)return;drag=true;px=e.clientX;py=e.clientY;rd.domElement.setPointerCapture(e.pointerId)});
  el.addEventListener('pointerup',()=>drag=false);el.addEventListener('pointercancel',()=>drag=false);
  el.addEventListener('pointermove',e=>{if(drag){yaw-=(e.clientX-px)*.012;if(e.pointerType!=='touch')pitch=Math.max(.08,Math.min(.8,pitch+(e.clientY-py)*.006));px=e.clientX;py=e.clientY;camera()}});
@@ -177,5 +206,6 @@ function updateCar(){
  if(!car3d){caption.textContent=S.lang==='ar'?'معاينة 3D مش متاحة. باقي اللعبة شغال.':'3D unavailable. The rest of the game still works.';return}
  car3d.g.visible=cid!==undefined;if(cid===undefined)return;
  const catalog=S.tab==='catalog'&&previewCid!==null;car3d.set(cid,catalog?previewColor:o.col,catalog?0:o.sp);
- caption.textContent=S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.';
+ const mdef=car3d.usingModel&&MODELS[CARS[cid][0]];
+ caption.textContent=mdef?(S.lang==='ar'?'مجسم بشكل الموديل الحقيقي · '+mdef.credit+' · CC BY. اسحب للتدوير.':'Real-shape community model by '+mdef.credit+' (CC BY). Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
   }
