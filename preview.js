@@ -1,6 +1,9 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
+"Mazda CX-5 2.5 S":{"catalogYear": 2024, "url": "assets/models/cx5-itsdiyor-packed1.glb.b64", "parts": 26, "credit": "ItsDiyor", "noteEn": "Shared 2020 CX-5 body; not 2024 facelift or exact trim equipment.", "noteAr": "هيكل CX-5 سنة 2020 مشترك، مش تحديث 2024 ولا تفاصيل الفئة بالضبط."},
+"Mazda CX-5 2.5 Turbo":{"catalogYear": 2024, "url": "assets/models/cx5-itsdiyor-packed1.glb.b64", "parts": 26, "credit": "ItsDiyor", "noteEn": "Shared 2020 CX-5 body; not 2024 facelift or exact trim equipment.", "noteAr": "هيكل CX-5 سنة 2020 مشترك، مش تحديث 2024 ولا تفاصيل الفئة بالضبط."},
+
  'Bugatti Chiron':{catalogYear:2019,url:'assets/models/chiron-alieeen.glb.b64',parts:24,credit:'ALIEEEN',noteEn:'Standard Chiron community body; exact year/trim equipment not certified.',noteAr:'مجسم شيرون العادية، تفاصيل السنة والفئة مش معتمدة.'},
  'Rimac Nevera':{catalogYear:2024,url:'assets/models/nevera-3dblender-packed1.glb.b64',parts:4,credit:'3dblender_1 + Vladi',noteEn:'2022 Nevera community body; not certified exact 2024 equipment.',noteAr:'مجسم نيفيرا مجتمعي بمرجع 2022، مش تفاصيل 2024 المعتمدة.'},
  "Lamborghini Revuelto":{catalogYear:2024,url:'assets/models/revuelto-alieeen.glb.b64',parts:22,credit:"ALIEEEN",noteEn:"Revuelto community model; year/trim details are not certified.",noteAr:"\u0645\u062c\u0633\u0645 \u0631\u064a\u0641\u0648\u064a\u0644\u062a\u0648 \u0645\u062c\u062a\u0645\u0639\u064a\u060c \u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0633\u0646\u0629 \u0648\u0627\u0644\u0641\u0626\u0629 \u0645\u0634 \u0645\u0639\u062a\u0645\u062f\u0629."},
