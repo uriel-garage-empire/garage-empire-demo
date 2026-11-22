@@ -201,3 +201,8 @@ Current coverage: **39 of100catalog entries**,**34distinct community bodies**,**
 ## Lightweight A90 body update,22November2026
 
 Current coverage: **41of100catalog entries**,**35distinct community bodies**,**59procedural**. Existing GR Supra2.0/3.0 share one authored stylizedA90body with visible exact2024equipment/trim caveats. Original2,466,832B/20.7ktriangles/all3images retained. Catalog/saveIDs/gameplay andloading1cache/cancellation/stalecompletionguards unchanged.
+
+
+## S650 GT body update, 22 November 2026
+
+Current coverage: **42 of 100 catalog entries**, **36 distinct community bodies**, **58 procedural**. Adds only the 2024 Mustang GT with an authored lightweight stylized body and visible fine-detail caveat. The 2005 GT mapping remains separate and unchanged. EcoBoost/Dark Horse remain procedural. Catalog/save IDs, gameplay and loading1 behavior preserved.
