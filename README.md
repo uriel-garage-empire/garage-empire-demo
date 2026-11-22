@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Licensed model update, 22 November 2026
 
-The deployed showroom currently uses twenty-three CC BY community car models: Nissan Skyline R34 GT-R, Chevrolet Camaro ZL1, Dodge Challenger SRT Hellcat, Toyota Supra A80, Mazda MX-5 NA, Nissan Silvia S15, Toyota MR2 SW20, BMW M3 E46, Nissan 350Z, Toyota Chaser JZX100, Ford Mustang GT (2005), Tesla Model S Plaid, BMW M3 Competition M xDrive (G80), Pagani Huayra, Honda NSX, Mazda RX-7 FD Veilside, Mazda MX-5 Miata Sport (ND), Lamborghini Aventador, Mitsubishi Lancer Evo IX, McLaren 720S, Ferrari 458 Italia, Chevrolet Corvette Stingray (C8) and BMW M4 (G82). Credits and source links are in CREDITS.md. These represent the listed model or generation, not an exact verified year/trim. Their original paint is retained. The other 77 catalog entries continue to use procedural bodies.
+The deployed showroom currently uses twenty-five distinct CC BY community car models: Nissan Skyline R34 GT-R, Chevrolet Camaro ZL1, Dodge Challenger SRT Hellcat, Toyota Supra A80, Mazda MX-5 NA, Nissan Silvia S15, Toyota MR2 SW20, BMW M3 E46, Nissan 350Z, Toyota Chaser JZX100, Ford Mustang GT (2005), Tesla Model S Plaid, BMW M3 Competition M xDrive (G80), Pagani Huayra, Honda NSX, Mazda RX-7 FD Veilside, Mazda MX-5 Miata Sport (ND), Lamborghini Aventador, Mitsubishi Lancer Evo IX, McLaren 720S, Ferrari 458 Italia, Chevrolet Corvette Stingray (C8) BMW M4 (G82), Nissan GT-R R35 and Hyundai IONIQ 5. Credits and source links are in CREDITS.md. These represent the listed model or generation, not an exact verified year/trim. Their original paint is retained. The other 73 catalog entries continue to use procedural bodies.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -156,6 +156,9 @@ Original 32 catalog rows compared exactly against the previous release; the 33 e
 
 ### Existing-car visual coverage, latest update
 
-Twenty of the 100 existing catalog entries now have matching-model community GLBs. The other 77 keep the clearly labeled procedural preview. Latest additions are Mitsubishi Lancer Evo IX and McLaren 720S. See CREDITS.md for creators, free CC BY licenses, changes and year/trim limits. Fixed-paint models keep their material colors. All model routing uses the catalog name and year together, so the 2005 Mustang cannot replace the 2024 Mustang.
+Twenty of the 100 existing catalog entries now have matching-model community GLBs. The other 73 keep the clearly labeled procedural preview. Latest additions are Mitsubishi Lancer Evo IX and McLaren 720S. See CREDITS.md for creators, free CC BY licenses, changes and year/trim limits. Fixed-paint models keep their material colors. All model routing uses the catalog name and year together, so the 2005 Mustang cannot replace the 2024 Mustang.
 
 No catalog IDs, saved-car IDs, game rules or new cars were added by this visual update.
+
+
+Current model coverage: **27 of 100 catalog entries**, using **25 distinct community body assets**. The stock pre-refresh IONIQ 5 body is shared by its Standard Range, Long Range RWD and Long Range AWD entries. These are three catalog powertrain variants, not three different body models. The other 73 entries keep procedural visuals. The IONIQ 5 N and 2024 GT-R Premium/NISMO remain procedural. R35 uses an early 2008 body, explicitly labelled as not the 2017 facelift. Exact year/trim equipment is not certified. No physical-phone performance claim.
