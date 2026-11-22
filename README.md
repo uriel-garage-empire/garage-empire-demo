@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Licensed model update, 22 November 2026
 
-The deployed showroom currently uses fourteen CC BY community car models: Nissan Skyline R34 GT-R, Chevrolet Camaro ZL1, Dodge Challenger SRT Hellcat, Toyota Supra A80, Mazda MX-5 NA, Nissan Silvia S15, Toyota MR2 SW20, BMW M3 E46, Nissan 350Z, Toyota Chaser JZX100, Ford Mustang GT (2005), Tesla Model S Plaid, BMW M3 Competition M xDrive (G80) and Pagani Huayra. Credits and source links are in CREDITS.md. These represent the listed model or generation, not an exact verified year/trim. Their original paint is retained. The other 86 catalog entries continue to use procedural bodies.
+The deployed showroom currently uses sixteen CC BY community car models: Nissan Skyline R34 GT-R, Chevrolet Camaro ZL1, Dodge Challenger SRT Hellcat, Toyota Supra A80, Mazda MX-5 NA, Nissan Silvia S15, Toyota MR2 SW20, BMW M3 E46, Nissan 350Z, Toyota Chaser JZX100, Ford Mustang GT (2005), Tesla Model S Plaid, BMW M3 Competition M xDrive (G80), Pagani Huayra, Honda NSX and Mazda RX-7 FD Veilside. Credits and source links are in CREDITS.md. These represent the listed model or generation, not an exact verified year/trim. Their original paint is retained. The other 84 catalog entries continue to use procedural bodies.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -156,6 +156,6 @@ Original 32 catalog rows compared exactly against the previous release; the 33 e
 
 ### Existing-car visual coverage, latest update
 
-Fourteen of the 100 existing catalog entries now have matching-model community GLBs. The other 86 keep the clearly labeled procedural preview. Latest additions are the G80 BMW M3 and Pagani Huayra. See CREDITS.md for creators, free CC BY licenses, changes and year/trim limits. Fixed-paint models keep their material colors. All model routing uses the catalog name and year together, so the 2005 Mustang cannot replace the 2024 Mustang.
+Sixteen of the 100 existing catalog entries now have matching-model community GLBs. The other 84 keep the clearly labeled procedural preview. Latest additions are the pre-facelift Honda NSX and Veilside Fortune-bodied RX-7 FD. See CREDITS.md for creators, free CC BY licenses, changes and year/trim limits. Fixed-paint models keep their material colors. All model routing uses the catalog name and year together, so the 2005 Mustang cannot replace the 2024 Mustang.
 
 No catalog IDs, saved-car IDs, game rules or new cars were added by this visual update.
