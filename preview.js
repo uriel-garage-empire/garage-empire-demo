@@ -1,6 +1,8 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
+ 'Chevrolet Lanos':{catalogYear:2000,url:'assets/models/lanos-du.glb.b64',parts:6,credit:'D_U',yaw:Math.PI,noteEn:'Low-poly Daewoo Lanos sedan body; badge/year details differ.',noteAr:'هيكل دايو لانوس سيدان منخفض التفاصيل، الشعار وتفاصيل السنة مختلفة.'},
+ 'Honda S2000':{catalogYear:2000,url:'assets/models/s2000-9green.glb.b64',parts:3,credit:'9Green',yaw:Math.PI,noteEn:'Stylized low-poly S2000; not an exact year/trim replica.',noteAr:'مجسم S2000 فني منخفض التفاصيل، مش مطابق للسنة أو الفئة بالضبط.'},
  "Honda Civic Sedan LX":{catalogYear:2025,url:'assets/models/civic-ricy.glb.b64',parts:7,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
  "Honda Civic Sedan Sport Hybrid":{catalogYear:2025,url:'assets/models/civic-ricy.glb.b64',parts:7,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
  "Honda Civic Si":{catalogYear:2025,url:'assets/models/civic-ricy.glb.b64',parts:7,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
