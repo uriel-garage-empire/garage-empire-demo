@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Licensed model update, 22 November 2026
 
-The deployed showroom currently uses seven CC BY community car models: Nissan Skyline R34 GT-R, Chevrolet Camaro ZL1, Dodge Challenger SRT Hellcat, Toyota Supra A80, Mazda MX-5 NA, Nissan Silvia S15 and Toyota MR2 SW20. Credits and source links are in CREDITS.md. These represent the listed model or generation, not an exact verified year/trim. Their original paint is retained. The other 93 catalog entries continue to use procedural bodies.
+The deployed showroom currently uses ten CC BY community car models: Nissan Skyline R34 GT-R, Chevrolet Camaro ZL1, Dodge Challenger SRT Hellcat, Toyota Supra A80, Mazda MX-5 NA, Nissan Silvia S15, Toyota MR2 SW20, BMW M3 E46, Nissan 350Z and Toyota Chaser JZX100. Credits and source links are in CREDITS.md. These represent the listed model or generation, not an exact verified year/trim. Their original paint is retained. The other 90 catalog entries continue to use procedural bodies.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -47,7 +47,7 @@ Progress is stored only in this browser on this device. It does not sync between
 
 The separate full Express/PostgreSQL project is not included and was not modified. No secrets, server code, real accounts or saved player data are included in this repository. The displayed brand/model names identify the game catalog; this demo is not affiliated with or endorsed by their manufacturers.
 
-Three.js r128 and fonts load from external CDNs. If WebGL/Three.js is unavailable, catalog and game actions remain usable but the 3D preview will not render. The procedural geometry and UI additions are original. Manufacturer text is summarized as short factual fields; images and 3D assets are not copied.
+Three.js r128 and fonts load from external CDNs. If WebGL/Three.js is unavailable, catalog and game actions remain usable but the 3D preview will not render. The procedural geometry and UI additions are original. Manufacturer text is summarized as short factual fields. Downloaded community 3D assets are separately credited under their listed licenses in CREDITS.md.
 
 ## Specification sources
 
