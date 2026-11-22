@@ -1,6 +1,9 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
+ "Honda Civic Sedan LX":{catalogYear:2025,url:'assets/models/civic-ricy.glb.b64',parts:7,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
+ "Honda Civic Sedan Sport Hybrid":{catalogYear:2025,url:'assets/models/civic-ricy.glb.b64',parts:7,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
+ "Honda Civic Si":{catalogYear:2025,url:'assets/models/civic-ricy.glb.b64',parts:7,credit:'Ricy',noteEn:'Shared early 2022 Civic sedan body; not 2025 facelift or trim-exact.',noteAr:'هيكل سيفيك سيدان 2022 مشترك، مش تحديث 2025 ولا تفاصيل الفئة بالضبط.'},
  'Hyundai IONIQ 5 Standard Range':{catalogYear:2024,url:'assets/models/ioniq5-andika.glb.b64',parts:21,credit:'andikapratamaw'},
  'Hyundai IONIQ 5 Long Range RWD':{catalogYear:2024,url:'assets/models/ioniq5-andika.glb.b64',parts:21,credit:'andikapratamaw'},
  'Hyundai IONIQ 5 Long Range AWD':{catalogYear:2024,url:'assets/models/ioniq5-andika.glb.b64',parts:21,credit:'andikapratamaw'},
@@ -248,4 +251,4 @@ function updateCar(){
  const mdef=car3d.usingModel&&modelForCar(cid);
  caption.textContent=mdef?(S.lang==='ar'?'مجسم مجتمعي من نفس جيل الموديل · '+mdef.credit+' · CC BY · مش نسخة مطابقة للسنة أو الفئة بالظبط. اسحب للتدوير.':'Same-generation community model by '+mdef.credit+' (CC BY), not an exact year/trim replica. Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
  if(mdef&&mdef.noteEn)caption.textContent=(S.lang==='ar'?mdef.noteAr+' · '+mdef.credit+' · CC BY · اسحب للتدوير.':mdef.noteEn+' Community model by '+mdef.credit+' · CC BY. Drag to orbit.');
-                                                               }
+  }
