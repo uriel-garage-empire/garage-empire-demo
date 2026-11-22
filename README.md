@@ -196,3 +196,8 @@ Current model coverage: **38 of 100 catalog entries**, using **33 distinct commu
 ## Lightweight Civic EK body update, 22 November 2026
 
 Current coverage: **39 of100catalog entries**,**34distinct community bodies**,**61procedural**. Existing Civic EK uses a stylized EK9 hatch body with visible exact1999facelift/trim caveats,notTypeRperformance claims. Original catalog/saveIDs andgameplay unchanged,loading1 cache/cancellation/stalecompletionguards retained. Source487,484B/3,440triangles,allsourceimages/materials kept.
+
+
+## Lightweight A90 body update,22November2026
+
+Current coverage: **41of100catalog entries**,**35distinct community bodies**,**59procedural**. Existing GR Supra2.0/3.0 share one authored stylizedA90body with visible exact2024equipment/trim caveats. Original2,466,832B/20.7ktriangles/all3images retained. Catalog/saveIDs/gameplay andloading1cache/cancellation/stalecompletionguards unchanged.
