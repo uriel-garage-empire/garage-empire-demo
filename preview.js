@@ -3,7 +3,8 @@
 const MODELS={
  'Nissan Skyline R34 GT-R':{url:'assets/models/nissan-skyline-r34-gtr.glb',credit:'David Sirera'},
  'Chevrolet Camaro ZL1':{url:'assets/models/chevrolet-camaro-zl1.glb',credit:'Kris Tong'},
- 'Dodge Challenger SRT Hellcat':{url:'assets/models/dodge-challenger-srt-hellcat.glb',credit:'Grzybek'}
+ 'Dodge Challenger SRT Hellcat':{url:'assets/models/dodge-challenger-srt-hellcat.glb',credit:'Grzybek'},
+ 'Toyota Supra A80':{url:'assets/models/toyota-supra-a80.glb',credit:'Martin Trafas (TinoD2)'}
 };
 function init3d(){
  const el=document.getElementById('stage'),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(36,1,.1,80);
