@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Licensed model update, 22 November 2026
 
-The deployed showroom currently uses ten CC BY community car models: Nissan Skyline R34 GT-R, Chevrolet Camaro ZL1, Dodge Challenger SRT Hellcat, Toyota Supra A80, Mazda MX-5 NA, Nissan Silvia S15, Toyota MR2 SW20, BMW M3 E46, Nissan 350Z and Toyota Chaser JZX100. Credits and source links are in CREDITS.md. These represent the listed model or generation, not an exact verified year/trim. Their original paint is retained. The other 90 catalog entries continue to use procedural bodies.
+The deployed showroom currently uses twelve CC BY community car models: Nissan Skyline R34 GT-R, Chevrolet Camaro ZL1, Dodge Challenger SRT Hellcat, Toyota Supra A80, Mazda MX-5 NA, Nissan Silvia S15, Toyota MR2 SW20, BMW M3 E46, Nissan 350Z, Toyota Chaser JZX100, Ford Mustang GT (2005) and Tesla Model S Plaid. Credits and source links are in CREDITS.md. These represent the listed model or generation, not an exact verified year/trim. Their original paint is retained. The other 88 catalog entries continue to use procedural bodies.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
