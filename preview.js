@@ -1,6 +1,7 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
+"Ford Mustang GT|2024":{"catalogName": "Ford Mustang GT", "catalogYear": 2024, "url": "assets/models/mustang2024-legend.glb.b64", "parts": 2, "credit": "Legendeniuss", "noteEn": "Blueprint-built low-poly2024S650GT; fine equipment details simplified.", "noteAr": "مجسم S650 GT سنة 2024 منخفض التفاصيل، التجهيزات الدقيقة مبسطة."},
 "Toyota GR Supra 2.0":{"catalogYear": 2024, "url": "assets/models/supra-bedoya.glb.b64", "parts": 14, "credit": "BedoyaCamilo", "noteEn": "Stylized A90 body; exact2024equipment and2.0/3.0trim details differ.", "noteAr": "هيكل A90 فني، تجهيزات 2024 وتفاصيل فئتي 2.0 و3.0 مش مطابقة بالظبط."},"Toyota GR Supra 3.0":{"catalogYear": 2024, "url": "assets/models/supra-bedoya.glb.b64", "parts": 14, "credit": "BedoyaCamilo", "noteEn": "Stylized A90 body; exact2024equipment and2.0/3.0trim details differ.", "noteAr": "هيكل A90 فني، تجهيزات 2024 وتفاصيل فئتي 2.0 و3.0 مش مطابقة بالظبط."},
 "Honda Civic EK":{"catalogYear": 1999, "url": "assets/models/civic-ek9-marksform.glb.b64", "parts": 3, "credit": "marksform", "noteEn": "Stylized EK9 Type R hatch body; exact 1999 facelift/trim details differ.", "noteAr": "هيكل EK9 Type R هاتشباك فني، تفاصيل تحديث وفئة 1999 مختلفة."},
 "Audi RS 6 Avant performance":{"catalogYear": 2024, "url": "assets/models/rs6-yokatann.glb.b64", "parts": 3, "yaw": Math.PI, "credit": "yokatann", "noteEn": "Low-poly C8 RS6 Avant community body; not exact 2024 performance equipment.", "noteAr": "مجسم RS6 Avant جيل C8 منخفض التفاصيل، مش تفاصيل performance سنة 2024 بالضبط."},
@@ -46,7 +47,7 @@ const MODELS={
 // The year is a catalog routing constraint, not a claim of exact asset year/trim.
 function modelForCar(cid){
  const c=CARS[cid];if(!c)return null;
- const m=MODELS[c[0]];return m&&m.catalogYear===c[1]?m:null;
+ const m=MODELS[c[0]+"|"+c[1]]||MODELS[c[0]];return m&&m.catalogYear===c[1]?m:null;
 }
 function init3d(){
  const el=document.getElementById('stage'),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(36,1,.1,80);
