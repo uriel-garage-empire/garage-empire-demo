@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Licensed model update, 22 November 2026
 
-The deployed showroom currently uses thirty-two distinct CC BY community car models: Nissan Skyline R34 GT-R, Chevrolet Camaro ZL1, Dodge Challenger SRT Hellcat, Toyota Supra A80, Mazda MX-5 NA, Nissan Silvia S15, Toyota MR2 SW20, BMW M3 E46, Nissan 350Z, Toyota Chaser JZX100, Ford Mustang GT (2005), Tesla Model S Plaid, BMW M3 Competition M xDrive (G80), Pagani Huayra, Honda NSX, Mazda RX-7 FD Veilside, Mazda MX-5 Miata Sport (ND), Lamborghini Aventador, Mitsubishi Lancer Evo IX, McLaren 720S, Ferrari 458 Italia, Chevrolet Corvette Stingray (C8), BMW M4 (G82), Nissan GT-R R35, Hyundai IONIQ 5 and Honda Civic sedan (2022 body), Lanos sedan (Daewoo body), Honda S2000, Lamborghini Revuelto, Rimac Nevera, Bugatti Chiron and Mazda CX-5 (2020 body). Credits and source links are in CREDITS.md. These represent the listed model or generation, not an exact verified year/trim. Their original paint is retained. The other 63 catalog entries continue to use procedural bodies.
+The deployed showroom maps 44 of the existing 100 catalog entries to 38 distinct CC BY community body assets. Shared trim entries do not count as separate bodies. The remaining 56 entries use procedural bodies. Credits, source links, repacking notes and year/trim limitations are in CREDITS.md. Original source paint is retained. These are community model/generation representations, not exact verified year/trim replicas.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
