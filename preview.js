@@ -17,6 +17,8 @@ const MODELS={
  'Pagani Huayra':{catalogYear:2013,url:'assets/models/pagani-huayra-tjk.glb.b64',parts:7,credit:'MrTjk',yaw:Math.PI},
  'Mazda MX-5 Miata Sport':{catalogYear:2024,url:'assets/models/mazda-mx5-nd-mauro.glb.b64',parts:3,credit:'Mauro3D (maurogsw)',yaw:Math.PI},
  'Lamborghini Aventador':{catalogYear:2017,url:'assets/models/lamborghini-aventador-sebbelon.glb.b64',parts:2,credit:'sebbelon',yaw:Math.PI},
+ 'Mitsubishi Lancer Evo IX':{catalogYear:2006,url:'assets/models/mitsubishi-evo-ix-marksform.glb.b64',parts:4,credit:'marksform'},
+ 'McLaren 720S':{catalogYear:2017,url:'assets/models/mclaren-720s-shobh.glb.b64',parts:8,credit:'_shobh19 (s0h1o9b)',yaw:Math.PI},
  'Honda NSX':{catalogYear:1997,url:'assets/models/honda-nsx-jasmin.glb.b64',parts:4,credit:'Jasmin Daniel (jasmin.daniel)',yaw:Math.PI},
  'Mazda RX-7 FD Veilside':{catalogYear:1999,url:'assets/models/mazda-rx7-veilside-giu.glb.b64',parts:11,credit:'giuffridamassimino',yaw:Math.PI}
 };
