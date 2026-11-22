@@ -186,3 +186,8 @@ A controlled desktop-browser test with gzip responses, 4 Mbps download and 100 m
 ## Shared CX-5 body update, 22 November 2026
 
 Current model coverage: **37 of 100 catalog entries**, using **32 distinct community body assets**; **63 remain procedural**. One shared pre-facelift 2020 CX-5 body represents the two existing 2024 CX-5 entries. It is not the 2022-on facelift and does not certify their wheels, trim or equipment. Arabic/English caveats and creator credit are visible. Existing bounded resource cache, cancellation, stale-completion guard, decoder and loading captions retained. Catalog/save IDs and gameplay unchanged. No physical-phone performance claim.
+
+
+## Lightweight C8 RS6 body update, 22 November 2026
+
+Current model coverage: **38 of 100 catalog entries**, using **33 distinct community body assets**; **62 remain procedural**. The existing Audi RS6 performance entry uses a 6,850-triangle C8 RS6 Avant body,536,560 GLB bytes. It is visibly marked as low-poly and not exact 2024 performance equipment. Full source/CC BY4/NoAI credit retained. Original materials and source paint retained, no geometry reduction. Catalog/save IDs and gameplay unchanged; loading cache/cancellation fixes retained.
