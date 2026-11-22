@@ -14,7 +14,9 @@ const MODELS={
  'Ford Mustang GT':{catalogYear:2005,url:'assets/models/ford-mustang-gt-2005-imperial.glb.b64',parts:3,credit:'ImperialBlue3D'},
  'Tesla Model S Plaid':{catalogYear:2022,url:'assets/models/tesla-model-s-plaid.glb.b64',parts:5,credit:'slowpoly'},
  'BMW M3 Competition M xDrive':{catalogYear:2021,url:'assets/models/bmw-g80-sharky.glb.b64',parts:2,credit:'SharkyStudios (sharkycat109)'},
- 'Pagani Huayra':{catalogYear:2013,url:'assets/models/pagani-huayra-tjk.glb.b64',parts:7,credit:'MrTjk',yaw:Math.PI}
+ 'Pagani Huayra':{catalogYear:2013,url:'assets/models/pagani-huayra-tjk.glb.b64',parts:7,credit:'MrTjk',yaw:Math.PI},
+ 'Honda NSX':{catalogYear:1997,url:'assets/models/honda-nsx-jasmin.glb.b64',parts:4,credit:'Jasmin Daniel (jasmin.daniel)',yaw:Math.PI},
+ 'Mazda RX-7 FD Veilside':{catalogYear:1999,url:'assets/models/mazda-rx7-veilside-giu.glb.b64',parts:11,credit:'giuffridamassimino',yaw:Math.PI}
 };
 // The year is a catalog routing constraint, not a claim of exact asset year/trim.
 function modelForCar(cid){
