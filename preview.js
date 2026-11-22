@@ -4,7 +4,10 @@ const MODELS={
  'Nissan Skyline R34 GT-R':{url:'assets/models/nissan-skyline-r34-gtr.glb',credit:'David Sirera'},
  'Chevrolet Camaro ZL1':{url:'assets/models/chevrolet-camaro-zl1.glb',credit:'Kris Tong'},
  'Dodge Challenger SRT Hellcat':{url:'assets/models/dodge-challenger-srt-hellcat.glb',credit:'Grzybek'},
- 'Toyota Supra A80':{url:'assets/models/toyota-supra-a80.glb',credit:'Martin Trafas (TinoD2)'}
+ 'Toyota Supra A80':{url:'assets/models/toyota-supra-a80.glb',credit:'Martin Trafas (TinoD2)'},
+ 'Mazda MX-5 NA':{url:'assets/models/mazda-mx5-na.glb.b64',parts:3,credit:'SPDWKS (Speedy-Works)'},
+ 'Nissan Silvia S15':{url:'assets/models/nissan-silvia-s15.glb.b64',parts:2,credit:'IVA (dxmhl)',yaw:Math.PI},
+ 'Toyota MR2 SW20':{url:'assets/models/toyota-mr2-sw20.glb.b64',parts:10,credit:'_shobh19 (s0h1o9b)',yaw:Math.PI}
 };
 function init3d(){
  const el=document.getElementById('stage'),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(36,1,.1,80);
@@ -73,7 +76,16 @@ function init3d(){
  };
  const modelCache={};
  function clearStage(){const geometries=new Set();g.traverse(o=>{if(o.geometry&&!(o instanceof THREE.Sprite))geometries.add(o.geometry)});while(g.children.length)g.remove(g.children[0]);geometries.forEach(x=>x.dispose())}
- function loadGlb(url){modelCache[url]=modelCache[url]||new Promise((res,rej)=>new THREE.GLTFLoader().load(url,x=>res(x.scene),undefined,rej));return modelCache[url]}
+ function loadGlb(url,parts=0){
+  modelCache[url]=modelCache[url]||new Promise((res,rej)=>{
+   const loader=new THREE.GLTFLoader(),done=x=>res(x.scene);
+   if(!parts){loader.load(url,done,undefined,rej);return}
+   // Lossless text transport for assets published through the repository text editor.
+   Promise.all(Array.from({length:parts},(_,i)=>fetch(url+'.'+i).then(r=>{if(!r.ok)throw Error('Model asset unavailable');return r.text()})))
+    .then(chunks=>{const binary=atob(chunks.join('')),bytes=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);loader.parse(bytes.buffer,'',done,rej)})
+    .catch(rej);
+  });return modelCache[url];
+ }
  // Real-shape path: licensed GLB, normalized to the turntable. Procedural path stays the fallback.
  function build(cid,spoiler){
   const name=CARS[cid][0],mdef=MODELS[name];
@@ -81,11 +93,12 @@ function init3d(){
   clearStage();
   const sp=new THREE.Group();sp.visible=false;g.add(sp);
   oldCid=cid;oldSp=spoiler;car3d.sp=sp;car3d.usingModel=false;car3d.profile='glb';
-  loadGlb(mdef.url).then(scene0=>{
+  loadGlb(mdef.url,mdef.parts).then(scene0=>{
    if(oldCid!==cid)return;
    const root=scene0.clone(true);
    const bb=new THREE.Box3().setFromObject(root),size=bb.getSize(new THREE.Vector3());
    if(size.z>size.x)root.rotation.y=Math.PI/2;
+   if(mdef.yaw)root.rotation.y+=mdef.yaw;
    root.scale.setScalar(4.5/Math.max(size.x,size.z));
    bb.setFromObject(root);const c=bb.getCenter(new THREE.Vector3());
    root.position.x-=c.x;root.position.z-=c.z;root.position.y-=bb.min.y;
