@@ -191,3 +191,8 @@ Current model coverage: **37 of 100 catalog entries**, using **32 distinct commu
 ## Lightweight C8 RS6 body update, 22 November 2026
 
 Current model coverage: **38 of 100 catalog entries**, using **33 distinct community body assets**; **62 remain procedural**. The existing Audi RS6 performance entry uses a 6,850-triangle C8 RS6 Avant body,536,560 GLB bytes. It is visibly marked as low-poly and not exact 2024 performance equipment. Full source/CC BY4/NoAI credit retained. Original materials and source paint retained, no geometry reduction. Catalog/save IDs and gameplay unchanged; loading cache/cancellation fixes retained.
+
+
+## Lightweight Civic EK body update, 22 November 2026
+
+Current coverage: **39 of100catalog entries**,**34distinct community bodies**,**61procedural**. Existing Civic EK uses a stylized EK9 hatch body with visible exact1999facelift/trim caveats,notTypeRperformance claims. Original catalog/saveIDs andgameplay unchanged,loading1 cache/cancellation/stalecompletionguards retained. Source487,484B/3,440triangles,allsourceimages/materials kept.
