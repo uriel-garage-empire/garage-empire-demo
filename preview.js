@@ -207,5 +207,5 @@ function updateCar(){
  car3d.g.visible=cid!==undefined;if(cid===undefined)return;
  const catalog=S.tab==='catalog'&&previewCid!==null;car3d.set(cid,catalog?previewColor:o.col,catalog?0:o.sp);
  const mdef=car3d.usingModel&&MODELS[CARS[cid][0]];
- caption.textContent=mdef?(S.lang==='ar'?'مجسم بشكل الموديل الحقيقي · '+mdef.credit+' · CC BY. اسحب للتدوير.':'Real-shape community model by '+mdef.credit+' (CC BY). Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
+ caption.textContent=mdef?(S.lang==='ar'?'مجسم مجتمعي من نفس جيل الموديل · '+mdef.credit+' · CC BY · مش نسخة مطابقة للسنة أو الفئة بالظبط. اسحب للتدوير.':'Same-generation community model by '+mdef.credit+' (CC BY), not an exact year/trim replica. Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
   }
