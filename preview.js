@@ -1,6 +1,10 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Real-shape community models, loaded as GLB for exact catalog name/year pairs only (see CREDITS.md). */
 const MODELS={
+ 'Hyundai IONIQ 5 Standard Range':{catalogYear:2024,url:'assets/models/ioniq5-andika.glb.b64',parts:21,credit:'andikapratamaw'},
+ 'Hyundai IONIQ 5 Long Range RWD':{catalogYear:2024,url:'assets/models/ioniq5-andika.glb.b64',parts:21,credit:'andikapratamaw'},
+ 'Hyundai IONIQ 5 Long Range AWD':{catalogYear:2024,url:'assets/models/ioniq5-andika.glb.b64',parts:21,credit:'andikapratamaw'},
+ 'Nissan GT-R R35':{catalogYear:2017,url:'assets/models/r35-ricy.glb.b64',parts:16,credit:'Ricy',noteEn:'2008 R35 body, not the 2017 facelift.',noteAr:'هيكل R35 سنة 2008، مش شكل تحديث 2017.'},
  'Chevrolet Corvette Stingray':{catalogYear:2024,url:'assets/models/corvette-c8-thcyrax.glb.b64',parts:2,credit:'Thcyrax'},
  'BMW M4 Competition M xDrive':{catalogYear:2021,url:'assets/models/bmw-m4-g82-rosemarin.glb.b64',parts:13,credit:'Rosemarin',yaw:Math.PI},
  'Ferrari 458 Italia':{catalogYear:2010,url:'assets/models/ferrari-458-gios.glb.b64',parts:14,credit:'giosassets',yaw:Math.PI},
@@ -243,4 +247,5 @@ function updateCar(){
  const catalog=S.tab==='catalog'&&previewCid!==null;car3d.set(cid,catalog?previewColor:o.col,catalog?0:o.sp);
  const mdef=car3d.usingModel&&modelForCar(cid);
  caption.textContent=mdef?(S.lang==='ar'?'مجسم مجتمعي من نفس جيل الموديل · '+mdef.credit+' · CC BY · مش نسخة مطابقة للسنة أو الفئة بالظبط. اسحب للتدوير.':'Same-generation community model by '+mdef.credit+' (CC BY), not an exact year/trim replica. Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
-                                                                                                                                                                                                                                                                                                                    }
+ if(mdef&&mdef.noteEn)caption.textContent=(S.lang==='ar'?mdef.noteAr+' · '+mdef.credit+' · CC BY · اسحب للتدوير.':mdef.noteEn+' Community model by '+mdef.credit+' · CC BY. Drag to orbit.');
+                                                               }
