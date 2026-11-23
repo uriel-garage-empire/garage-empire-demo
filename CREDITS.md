@@ -424,3 +424,8 @@ Reference-only photographs: https://www.mad4wheels.com/porsche/718-boxster-2016 
 Original reference-led geometry with color materials. Distinct S trim wheels, red calipers and paired round tailpipes. No third-party mesh or photo texture. Simplified bodies and wheels, not exact replicas. Ready-made-first screening remains in force.
 
 References only: https://www.mad4wheels.com/porsche/cayman-718-s-2018 and https://www.mad4wheels.com/porsche/718-boxster-s-2016 . Trim detail source: https://autocatalogarchive.com/wp-content/uploads/2022/03/Porsche-718-Boxster-718-Cayman-2019-INT.pdf (same 982 generation brochure, 19-inch-style S wheels, red calipers and twin tailpipes).
+
+
+## Original simplified 2020 718 Cayman and Boxster GTS 4.0
+
+Original reference-led fallback geometry with dark ten-spoke wheels, red calipers, revised black front intake/lip and rear apron with separated exhausts. No downloaded mesh or photo texture. Simplified, not exact replicas. Reference-only photographs and trim details: https://newsroom.porsche.com/en/2020/products/porsche-718-gts-4-0-models-boxster-cayman-19733.html .
