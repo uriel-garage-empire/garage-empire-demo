@@ -317,3 +317,15 @@ Reference-only sources inspected:
 - 1994 dimensions: https://www.edmunds.com/mitsubishi/3000gt/1994/st-2709/features-specs/
 
 No Sketchfab candidate was imported. The small 1995 listing used CC BY-NC and the uploader's profile described collecting commercial-game meshes, which did not establish suitable source rights. The 1991 low-poly listing was an earlier pop-up-lamp body under a Standard license. A later 1999 listing was incomplete.
+
+
+## Original simplified Toyota GR Corolla Core 2024
+
+Original reference-led geometry and color materials for this demo. Five doors, wide quarters, fender extractors, hooked lamps, low roof spoiler and triple exhaust. Plain hood and roof distinguish Core from Circuit equipment. Simplified bumper curves, flat lenses and generic split-spoke wheels. Not an exact equipment replica. No photograph, third-party mesh or manufacturer logo artwork is included.
+
+Reference-only sources inspected:
+- Official2024Core photographs, front/side/rear: https://pressroom.toyota.com/image/my24_gr-corolla_core_01/
+- Official trim distinctions: https://pressroom.toyota.com/hot-hatch-up-toyota-gr-corolla-adds-premium-grade-to-the-menu/
+- Core dimensions: https://www.edmunds.com/toyota/gr-corolla/2024/st-402011754/features-specs/
+
+No candidate mesh was imported. Slowpoly's lightweight listing offered no free download/license and its matching store model used Royalty Free terms. A downloadable482.5k listing had a CC BY badge but no authoring-origin evidence. Other listings were paid/Standard licensed, custom restricted or explicitly game-extracted.
