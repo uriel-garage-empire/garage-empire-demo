@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations plus nine explicitly labeled different-car visual substitutes (the i4 M50 and eight more, listed in CREDITS.md). These share 40 distinct CC BY body assets. Three original simplified bodies, J250 Land Cruiser, Nissan Z Performance and variant-specific Z NISMO, bring model-backed coverage to 58 entries and 43 distinct bodies; 42 entries remain procedural. Original simplified bodies are counted separately from community assets and different-car substitutes. Each substitute shows another car's body, not a mesh of the named car, and is not counted as a match. Shared entries do not count as new bodies.
+The deployed showroom has 46 model-family community representations plus nine explicitly labeled different-car visual substitutes (the i4 M50 and eight more, listed in CREDITS.md). These share 40 distinct CC BY body assets. Four original simplified bodies, J250 Land Cruiser, Nissan Z Performance, variant-specific Z NISMO and Mk8 Golf GTI, bring model-backed coverage to 59 entries and 44 distinct bodies; 41 entries remain procedural. Original simplified bodies are counted separately from community assets and different-car substitutes. Each substitute shows another car's body, not a mesh of the named car, and is not counted as a match. Shared entries do not count as new bodies.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
