@@ -1,6 +1,8 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Community models route by catalog name/year. Different-car approximations are explicitly flagged (see CREDITS.md). */
 const MODELS={
+"Nissan Z Performance":{"catalogYear": 2024, "url": "original:z-original", "credit": "Original simplified body", "original": true, "noteEn": "Original simplified Z Performance body. Angular lamps, bumpers and generic wheels; not NISMO or an exact trim replica.", "noteAr": "مجسم أصلي مبسط لـ Z Performance. الفوانيس والإكصدامات زاويّة والجنوط مبسطة، مش NISMO ولا نسخة مطابقة للفئة."},
+"Toyota Land Cruiser":{"catalogYear": 2024, "url": "original:landcruiser-j250-original", "credit": "Original simplified body", "original": true, "noteEn": "Original simplified J250 with round 1958-style lamps. Angular roof and simplified lamps, bumpers and wheels; not an exact trim replica.", "noteAr": "مجسم أصلي مبسط للاند كروزر J250 بفوانيس دائرية زي فئة 1958. السقف والفوانيس والإكصدامات والجنوط مبسطة، مش نسخة مطابقة للفئة."},
 "BMW i4 M50":{"catalogYear": 2022, "url": "assets/models/bmw-g80-sharky.glb.b64", "parts": 2, "credit": "SharkyStudios (sharkycat109)", "approximation": true, "sourceBody": "BMW M3 G80", "noteEn": "VISUAL SUBSTITUTE: BMW M3 G80 body, NOT an i4. Roof, grille and rear differ. i4 stats are retained.", "noteAr": "بديل شكلي: هيكل BMW M3 G80، مش i4. السقف والشبكة والخلفية مختلفين. المواصفات بتاعة i4."},
 "Porsche 911 Turbo S":{"catalogYear": 2021, "url": "assets/models/turbo-sk.glb.b64", "parts": 10, "credit": "S.K.", "noteEn": "Community low-poly 992 Turbo S body; exact year and equipment not certified.", "noteAr": "هيكل 992 تيربو S مبسط، السنة والتجهيزات مش مطابقة بالضبط."},
 "Hyundai Excel":{"catalogYear": 1997, "url": "assets/models/excel-m3ika.glb.b64", "parts": 15, "credit": "m3ika", "noteEn": "1990-era X2 sedan body; not exact 1997 local facelift or equipment.", "noteAr": "هيكل إكسيل X2 سيدان بمرجع 1990، مش تفاصيل تحديث وتجهيزات 1997 المحلية بالضبط."},
@@ -54,6 +56,150 @@ const MODELS={
 (function(){const A=[["Chevrolet Corvette E-Ray", 2024, "Chevrolet Corvette Stingray", "Corvette C8 Stingray", "VISUAL SUBSTITUTE: Corvette C8 Stingray body, NOT a E-Ray. The E-Ray is about 3.6 in wider (Z06-style widebody) with a different front fascia. E-Ray stats are retained.", "بديل شكلي: هيكل Corvette C8 Stingray، مش E-Ray. الـE-Ray أعرض بحوالي 9 سم (بودي واسع زي الـZ06) ومقدمتها مختلفة شوية. المواصفات بتاعة E-Ray."], ["Chevrolet Corvette Z06", 2024, "Chevrolet Corvette Stingray", "Corvette C8 Stingray", "VISUAL SUBSTITUTE: Corvette C8 Stingray body, NOT a Z06. The Z06 has a wider body, different front and rear fascias and a centre-exit exhaust. Z06 stats are retained.", "بديل شكلي: هيكل Corvette C8 Stingray، مش Z06. الـZ06 بودي أعرض ومقدمة وخلفية مختلفة وعادم في النص. المواصفات بتاعة Z06."], ["Nissan GT-R NISMO", 2024, "Nissan GT-R Premium", "Nissan R35 (2017-era shape)", "VISUAL SUBSTITUTE: Nissan R35 (2017-era shape) body, NOT a GT-R NISMO. NISMO has its own carbon fascias, trunk lid and swan-neck rear spoiler; 2024 fascias were also redesigned. GT-R NISMO stats are retained.", "بديل شكلي: هيكل Nissan R35 (2017-era shape)، مش GT-R NISMO. الـNISMO ليها صدّامات وغطاء شنطة وجناح خلفي swan-neck من الكربون، وصدّامات 2024 اتغيرت عن الشكل المعروض. المواصفات بتاعة GT-R NISMO."], ["Hyundai IONIQ 5 N", 2025, "Hyundai IONIQ 5 Standard Range", "Hyundai IONIQ 5", "VISUAL SUBSTITUTE: Hyundai IONIQ 5 body, NOT a IONIQ 5 N. The N is about 50 mm wider, 20 mm lower and 80 mm longer, with a larger rear spoiler and its own front fascia. IONIQ 5 N stats are retained.", "بديل شكلي: هيكل Hyundai IONIQ 5، مش IONIQ 5 N. الـN أعرض بـ50 مم وأوطى بـ20 مم وأطول بـ80 مم، بجناح خلفي أكبر ومقدمة خاصة. المواصفات بتاعة IONIQ 5 N."], ["McLaren 750S", 2024, "McLaren 720S", "McLaren 720S", "VISUAL SUBSTITUTE: McLaren 720S body, NOT a 750S. The 750S has a lower nose with a longer splitter, narrower headlight intakes, new side intakes and a larger rear wing. 750S stats are retained.", "بديل شكلي: هيكل McLaren 720S، مش 750S. الـ750S مقدمتها أوطى بسبليتر أطول، فتحات فوانيس أضيق، فتحات هوا جانبية جديدة وجناح خلفي أكبر. المواصفات بتاعة 750S."], ["Porsche 911 Carrera S", 2020, "Porsche 911 Turbo S", "Porsche 911 (992) Turbo S", "VISUAL SUBSTITUTE: Porsche 911 (992) Turbo S body, NOT a 911 Carrera S. The Turbo S is wider at the rear with side air intakes and its own front and rear aprons. 911 Carrera S stats are retained.", "بديل شكلي: هيكل Porsche 911 (992) Turbo S، مش 911 Carrera S. الـTurbo S أعرض من ورا بفتحات هوا جانبية وصدّامات أمامية وخلفية خاصة. المواصفات بتاعة 911 Carrera S."], ["Mazda MX-5 Miata RF Club", 2024, "Mazda MX-5 Miata Sport", "Mazda MX-5 ND roadster (open top)", "VISUAL SUBSTITUTE: Mazda MX-5 ND roadster (open top) body, NOT a MX-5 Miata RF. The RF has a power-retractable fastback hardtop; this body is the open-top roadster without that roof. MX-5 Miata RF stats are retained.", "بديل شكلي: هيكل Mazda MX-5 ND roadster (open top)، مش MX-5 Miata RF. الـRF ليها سقف صلب fastback بيتفتح بالكهربا، والمجسم ده الرودستر المكشوف من غير السقف. المواصفات بتاعة MX-5 Miata RF."], ["Ford Mustang EcoBoost", 2024, "Ford Mustang GT|2024", "Ford Mustang S650 GT", "VISUAL SUBSTITUTE: Ford Mustang S650 GT body, NOT a Mustang EcoBoost. This is the GT body: the EcoBoost has a calmer front fascia, a flat hood without vents and dual exhaust tips instead of the GT's hood vents, splitter and quad tips. Mustang EcoBoost stats are retained.", "بديل شكلي: هيكل Ford Mustang S650 GT، مش Mustang EcoBoost. المجسم هو الـGT: الـEcoBoost مقدمتها أهدى وغطاؤها مسطح من غير فتحات وعادمها بخرجين، مش فتحات وسبليتر وأربع خرجات الـGT. المواصفات بتاعة Mustang EcoBoost."]];
  A.forEach(a=>{const s=MODELS[a[2]];if(!s)throw Error('missing source body '+a[2]);const m=Object.assign({},s,{catalogYear:a[1],approximation:true,sourceBody:a[3],noteEn:a[4],noteAr:a[5]});delete m.catalogName;MODELS[a[0]+(a[0]==='Ford Mustang GT'?'|'+a[1]:'')]=m;});})();
 // The year is a catalog routing constraint, not a claim of exact asset year/trim.
+
+// Original model-specific geometry, accepted simplified style. No generic-car relabeling.
+const ORIGINAL_BUILDERS={
+'original:landcruiser-j250-original':function(){const T=THREE,car=new T.Group();
+const mat=(c,m=0,r=.55)=>new T.MeshStandardMaterial({color:c,metalness:m,roughness:r,side:T.DoubleSide});
+const paint=mat('#b3a58b',.35,.38),black=mat('#252a2d',.05,.66),tire=mat('#151719',0,.85),glass=mat('#283d45',.35,.19),chrome=mat('#aeb3b3',.75,.29),lamp=mat('#f1f6e8',.1,.25),red=mat('#b71922',.2,.35),amber=mat('#e79729',.15,.4),seam=mat('#605a50');
+function mesh(g,m,x=0,y=0,z=0){const o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;car.add(o);return o}
+function box(x,y,z,l,h,w,m,b=0){if(!b)return mesh(new T.BoxGeometry(l,h,w),m,x,y,z);let s=new T.Shape(),a=l/2,c=h/2;s.moveTo(-a+b,-c);s.lineTo(a-b,-c);s.quadraticCurveTo(a,-c,a,-c+b);s.lineTo(a,c-b);s.quadraticCurveTo(a,c,a-b,c);s.lineTo(-a+b,c);s.quadraticCurveTo(-a,c,-a,c-b);s.lineTo(-a,-c+b);s.quadraticCurveTo(-a,-c,-a+b,-c);return mesh(new T.ExtrudeGeometry(s,{depth:w-2*b,bevelEnabled:true,bevelSize:b*.4,bevelThickness:b,bevelSegments:2,steps:1,curveSegments:4}),m,x,y,z-w/2+b)}
+function poly(v,m){let g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v.flat(),3));let ix=[];for(let i=1;i<v.length-1;i++)ix.push(0,i,i+1);g.setIndex(ix);g.computeVertexNormals();return mesh(g,m)}
+function line(v,m=seam,rad=.005){for(let i=1;i<v.length;i++){let a=new T.Vector3(...v[i-1]),b=new T.Vector3(...v[i]),d=b.clone().sub(a);let o=mesh(new T.CylinderGeometry(rad,rad,d.length(),6),m);o.position.copy(a.add(b).multiplyScalar(.5));o.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize())}}
+// Measured envelope 4.925m x1.98m x1.935m. Axles separated 2.85m.
+let sh=new T.Shape();sh.moveTo(-2.45,.62);sh.lineTo(-2.45,1.12);sh.quadraticCurveTo(-2.4,1.24,-2.25,1.25);sh.lineTo(-.92,1.31);sh.lineTo(-.6,1.34);sh.lineTo(2.25,1.34);sh.quadraticCurveTo(2.44,1.3,2.45,1.14);sh.lineTo(2.45,.62);sh.lineTo(2.07,.62);
+for(let cx of [1.425,-1.425]){sh.lineTo(cx+.58,.62);sh.lineTo(cx+.55,.68);sh.lineTo(cx+.38,.91);sh.lineTo(cx-.36,.91);sh.lineTo(cx-.56,.68);sh.lineTo(cx-.59,.62)}sh.lineTo(-2.45,.62);
+mesh(new T.ExtrudeGeometry(sh,{depth:1.84,bevelEnabled:true,bevelSize:.045,bevelThickness:.035,bevelSegments:3,steps:1,curveSegments:10}),paint,0,0,-.92);
+box(0,.42,0,4.0,.18,1.35,black);box(-1.65,1.275,0,1.43,.06,1.76,paint,.035);
+// Cabin planes form explicit sloped sides and windshield, rather than intersecting boxes.
+const sections=[[-.94,1.32,1.34,.9],[-.43,1.32,1.90,.82],[2.12,1.32,1.90,.82],[2.34,1.30,1.46,.88]];
+for(let i=0;i<sections.length-1;i++){let[a,b]=[sections[i],sections[i+1]];for(let s of [-1,1])poly([[a[0],a[1],s*.92],[a[0],a[2],s*a[3]],[b[0],b[2],s*b[3]],[b[0],b[1],s*.92]],paint);poly([[a[0],a[2],-a[3]],[a[0],a[2],a[3]],[b[0],b[2],b[3]],[b[0],b[2],-b[3]]],paint)}
+box(.84,1.906,0,2.52,.055,1.64,paint,.035);
+poly([[-.94,1.365,-.804],[-.94,1.365,.804],[-.489,1.86,.757],[-.489,1.86,-.757]],glass);
+poly([[2.38,1.435,-.79],[2.38,1.435,.79],[2.17,1.84,.75],[2.17,1.84,-.75]],glass);
+for(let s of [-1,1]){
+ // side window belt rises behind second door, characteristic J250 notch
+ const win=(pts)=>poly(pts.map(([x,y])=>[x,y,s*(.926-(y-1.32)*.172)]),glass);
+ win([[-.79,1.37],[-.39,1.843],[.24,1.843],[.24,1.366]]);
+ win([[.31,1.366],[.31,1.843],[1.21,1.843],[1.24,1.46],[1.02,1.385]]);
+ win([[1.33,1.46],[1.30,1.843],[2.00,1.843],[2.19,1.48]]);
+ line([[-.8,1.36,s*.93],[.25,1.36,s*.93],[1.03,1.38,s*.927],[1.3,1.46,s*.91],[2.16,1.47,s*.9]],black,.014);
+ for(let xx of [-.8,.28,1.3])line([[xx,1.33,s*.96],[xx,.66,s*.963]],seam,.004);
+ box(-.06,1.25,s*.979,.19,.038,.035,black,.01);box(1.12,1.25,s*.979,.19,.038,.035,black,.01);
+ box(-.75,1.34,s*1.01,.08,.09,.18,black,.02);box(-.72,1.48,s*1.09,.22,.21,.15,black,.025);
+ box(0,.48,s*.98,2.06,.065,.21,black,.02);
+ line([[1.81,1.24,s*.971],[2.08,1.24,s*.971],[2.08,1.05,s*.971],[1.81,1.05,s*.971],[1.81,1.24,s*.971]],seam,.004);
+ // trapezoidal wheel arch cladding as segmented strips, with real empty wheel holes
+ for(let cx of [-1.425,1.425]){let inner=[[cx-.59,.59],[cx-.59,.72],[cx-.38,.94],[cx+.38,.94],[cx+.59,.72],[cx+.59,.59]],outer=[[cx-.68,.59],[cx-.68,.77],[cx-.43,1.035],[cx+.43,1.035],[cx+.68,.77],[cx+.68,.59]];for(let i=1;i<inner.length;i++)poly([[...inner[i-1],s*1.005],[...outer[i-1],s*1.005],[...outer[i],s*1.005],[...inner[i],s*1.005]].map(([x,y,z])=>[x,y,z]),black)}
+ line([[-.78,.59,s*.96],[.78,.59,s*.96]],black,.045);
+}
+// Lamps and squared grille, front faces x=-2.47
+box(-2.47,.91,0,.08,.50,1.87,black,.035);box(-2.45,.61,0,.16,.17,1.88,black,.035);box(-2.52,.51,0,.07,.11,.9,chrome,.018);
+box(-2.49,1.112,0,.045,.28,1.0,black,.025);
+for(let y of [1.02,1.07,1.12,1.17,1.22])box(-2.518,y,0,.014,.008,.96,seam);
+for(let z=-.45;z<=.46;z+=.075)box(-2.526,1.12,z,.014,.22,.008,seam);
+function textPlane(text,x,y,z,w,h,ry){let c=document.createElement('canvas');c.width=512;c.height=128;let ctx=c.getContext('2d');ctx.fillStyle='#aeb4ae';ctx.textAlign='center';ctx.font='bold 66px Arial';ctx.fillText(text,256,86);let tx=new T.CanvasTexture(c);let o=mesh(new T.PlaneGeometry(w,h),new T.MeshBasicMaterial({map:tx,transparent:true,side:T.DoubleSide}),x,y,z);o.rotation.y=ry;return o}
+textPlane('TOYOTA',-2.54,1.12,0,.49,.12,-Math.PI/2);
+for(let s of [-1,1]){box(-2.48,1.12,s*.71,.065,.32,.36,black,.02);let o=mesh(new T.TorusGeometry(.119,.015,7,36),lamp,-2.524,1.125,s*.70);o.rotation.y=Math.PI/2;let c=mesh(new T.CylinderGeometry(.092,.092,.012,32),glass,-2.525,1.125,s*.70);c.rotation.z=Math.PI/2;box(-2.527,1.12,s*.904,.015,.19,.036,amber);box(-2.54,.78,s*.7,.015,.06,.10,lamp,.01);}
+box(-2.55,.83,0,.025,.15,.32,chrome,.01);
+// Tailgate and lamps. No foreign rear branding.
+box(2.45,.72,0,.13,.24,1.86,black,.035);box(2.49,.52,0,.12,.13,1.12,chrome,.02);
+box(2.50,1.39,0,.045,.065,1.42,black,.012);textPlane('TOYOTA',2.53,1.39,0,.36,.058,Math.PI/2);
+box(2.51,1.13,0,.04,.21,.59,black,.02);box(2.54,1.13,0,.01,.14,.38,chrome,.008);
+for(let s of [-1,1]){box(2.51,1.16,s*.825,.11,.40,.225,black,.025);box(2.575,1.26,s*.825,.015,.13,.17,red,.018);box(2.575,1.15,s*.825,.015,.035,.17,chrome);box(2.575,1.045,s*.825,.015,.13,.17,red,.018)}
+line([[2.54,.89,-.67],[2.54,1.4,-.67],[2.54,1.4,.67],[2.54,.89,.67]],seam,.005);
+box(2.15,1.925,0,.3,.047,1.71,paint,.025);box(2.16,1.89,0,.014,.024,.32,red);line([[2.28,1.48,0],[2.29,1.53,.44]],black,.012);
+// Wheels, recessed alloys and off-road tread.
+for(let x of [-1.425,1.425])for(let s of [-1,1]){let z=s*.865;let o=mesh(new T.CylinderGeometry(.405,.405,.25,40,1),tire,x,.405,z);o.rotation.x=Math.PI/2;let out=s*1.003;
+let ring=mesh(new T.TorusGeometry(.30,.07,8,40),tire,x,.405,out);let rim=mesh(new T.CylinderGeometry(.255,.255,.024,32),black,x,.405,out);rim.rotation.x=Math.PI/2;
+for(let a=0;a<10;a++){let th=a*Math.PI/5;let sp=box(x+Math.sin(th)*.148,.405+Math.cos(th)*.148,out+s*.018,.042,.22,.018,chrome,.005);sp.rotation.z=-th;}
+let hub=mesh(new T.CylinderGeometry(.076,.076,.035,20),black,x,.405,out+s*.03);hub.rotation.x=Math.PI/2;
+for(let a=0;a<36;a++){let th=a*Math.PI/18;for(let zz of [-.075,.075]){let b=box(x+Math.sin(th)*.401,.405+Math.cos(th)*.401,z+zz,.045,.025,.085,black);b.rotation.z=-th;}}
+}
+
+const optimize=()=>{car.updateMatrixWorld(true);let groups=new Map();car.traverse(o=>{if(!o.isMesh)return;let k=o.material.uuid;if(!groups.has(k))groups.set(k,{mat:o.material,geo:[]});let g=o.geometry.clone();if(g.index)g=g.toNonIndexed();g.applyMatrix4(o.matrixWorld);groups.get(k).geo.push(g)});let out=new T.Group();for(let {mat,geo}of groups.values()){let g=new T.BufferGeometry();for(let attr of ['position','normal','uv']){if(!geo.every(x=>x.attributes[attr]))continue;let size=geo[0].attributes[attr].itemSize,len=geo.reduce((n,x)=>n+x.attributes[attr].array.length,0),a=new Float32Array(len),i=0;for(let x of geo){a.set(x.attributes[attr].array,i);i+=x.attributes[attr].array.length}g.setAttribute(attr,new T.BufferAttribute(a,size))}let m=new T.Mesh(g,mat);m.castShadow=m.receiveShadow=true;out.add(m)}return out};const result=optimize();result.traverse(o=>{if(o.isMesh&&o.material.color)o.material.color.convertSRGBToLinear()});return result;},
+'original:z-original':function(){const T=THREE,car=new T.Group();
+const mat=(c,m=0,r=.55)=>new T.MeshStandardMaterial({color:c,metalness:m,roughness:r,side:T.DoubleSide});
+const paint=mat('#c42a38',.35,.38),black=mat('#252a2d',.05,.66),tire=mat('#151719',0,.85),glass=mat('#283d45',.35,.19),chrome=mat('#aeb3b3',.75,.29),lamp=mat('#f1f6e8',.1,.25),red=mat('#b71922',.2,.35),amber=mat('#e79729',.15,.4),seam=mat('#605a50');
+function mesh(g,m,x=0,y=0,z=0){const o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;car.add(o);return o}
+function box(x,y,z,l,h,w,m,b=0){if(!b)return mesh(new T.BoxGeometry(l,h,w),m,x,y,z);let s=new T.Shape(),a=l/2,c=h/2;s.moveTo(-a+b,-c);s.lineTo(a-b,-c);s.quadraticCurveTo(a,-c,a,-c+b);s.lineTo(a,c-b);s.quadraticCurveTo(a,c,a-b,c);s.lineTo(-a+b,c);s.quadraticCurveTo(-a,c,-a,c-b);s.lineTo(-a,-c+b);s.quadraticCurveTo(-a,-c,-a+b,-c);return mesh(new T.ExtrudeGeometry(s,{depth:w-2*b,bevelEnabled:true,bevelSize:b*.4,bevelThickness:b,bevelSegments:2,steps:1,curveSegments:4}),m,x,y,z-w/2+b)}
+function poly(v,m){let g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v.flat(),3));let ix=[];for(let i=1;i<v.length-1;i++)ix.push(0,i,i+1);g.setIndex(ix);g.computeVertexNormals();return mesh(g,m)}
+function line(v,m=seam,rad=.005){for(let i=1;i<v.length;i++){let a=new T.Vector3(...v[i-1]),b=new T.Vector3(...v[i]),d=b.clone().sub(a);let o=mesh(new T.CylinderGeometry(rad,rad,d.length(),6),m);o.position.copy(a.add(b).multiplyScalar(.5));o.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize())}}
+// Z Performance envelope:172.4x72.6x51.8in,100.4inwheelbase. Metres calculated at.0254/in.
+// All surfacing original; photographic images are references, never textures.
+const sections=[[-2.190,.68,.57,.76],[-2.11,.81,.67,.85],[-1.87,.88,.75,.88],[-1.50,.91,.85,.918],[-1.27,.94,.88,.922],[-.95,.96,.86,.907],[-.52,.96,.78,.874],[0,.94,.75,.866],[.55,.94,.79,.876],[1.0,.94,.86,.91],[1.28,.94,.89,.922],[1.56,.91,.88,.907],[1.88,.85,.82,.866],[2.11,.79,.76,.825],[2.190,.75,.70,.775]];
+function sample(x,i){for(let j=1;j<sections.length;j++)if(x<=sections[j][0]){let a=sections[j-1],b=sections[j],f=(x-a[0])/(b[0]-a[0]);return a[i]+(b[i]-a[i])*f}return sections.at(-1)[i]}
+function topY(x,z){let w=sample(x,3),q=Math.abs(z)/w;return sample(x,1)*(1-q*q)+sample(x,2)*q*q}
+function topW(x){return sample(x,3)}
+// Main upper body. Each strip interpolates round shoulders and wheel-arch crowns.
+let vs=[],ids=[],nx=102,nz=36;
+for(let i=0;i<=nx;i++){let x=-2.19+4.38*i/nx,w=topW(x);for(let j=0;j<=nz;j++){let q=-1+2*j/nz;vs.push(x,topY(x,q*w),q*w)}}
+for(let i=0;i<nx;i++)for(let j=0;j<nz;j++){let a=i*(nz+1)+j;ids.push(a,a+1,a+nz+1,a+1,a+nz+2,a+nz+1)}
+let upper=new T.BufferGeometry();upper.setAttribute('position',new T.Float32BufferAttribute(vs,3));upper.setIndex(ids);upper.computeVertexNormals();mesh(upper,paint);
+const axles=[-1.275,1.275],wr=.341,wy=.345,ar=.38;
+function bottom(x){let b=.265;for(let a of axles){let dx=Math.abs(x-a);if(dx<ar)b=Math.max(b,wy+Math.sqrt(ar*ar-dx*dx))}return b}
+// Side grids omit actual wheel openings rather than hiding tires behind a slab.
+for(let s of [-1,1]){let v=[],ix=[],n=200,ny=9;for(let i=0;i<=n;i++){let x=-2.19+4.38*i/n,b=bottom(x),t=sample(x,2),w=topW(x);for(let j=0;j<=ny;j++){let u=j/ny,z=w-.042*Math.sin(u*Math.PI)-.028*(1-u);v.push(x,b+(t-b)*u,s*z)}}for(let i=0;i<n;i++)for(let j=0;j<ny;j++){let a=i*(ny+1)+j;ix.push(a,a+1,a+ny+1,a+1,a+ny+2,a+ny+1)}let g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v,3));g.setIndex(ix);g.computeVertexNormals();mesh(g,paint)}
+box(0,.22,0,3.8,.09,1.45,black);
+// Cabin smooth cross sections from hood base over curved roof to fastback hatch.
+const roof=[[-.63,.975,.73],[-.47,1.08,.702],[-.23,1.235,.652],[.02,1.300,.627],[.25,1.315,.618],[.50,1.288,.633],[.76,1.21,.669],[1.02,1.10,.708],[1.29,.975,.75],[1.52,.875,.783]];
+function cabinY(x){for(let i=1;i<roof.length;i++)if(x<=roof[i][0]){let a=roof[i-1],b=roof[i],u=(x-a[0])/(b[0]-a[0]);return a[1]+(b[1]-a[1])*u}return roof.at(-1)[1]}
+function cabinW(x){for(let i=1;i<roof.length;i++)if(x<=roof[i][0]){let a=roof[i-1],b=roof[i],u=(x-a[0])/(b[0]-a[0]);return a[2]+(b[2]-a[2])*u}return roof.at(-1)[2]}
+function cabinPoint(x,q){return[x,cabinY(x)-.072*q*q,q*cabinW(x)]}
+let rv=[],ri=[],rn=75,rw=22;for(let i=0;i<=rn;i++){let x=-.63+2.15*i/rn;for(let j=0;j<=rw;j++)rv.push(...cabinPoint(x,-1+2*j/rw))}for(let i=0;i<rn;i++)for(let j=0;j<rw;j++){let a=i*(rw+1)+j;ri.push(a,a+1,a+rw+1,a+1,a+rw+2,a+rw+1)}let rg=new T.BufferGeometry();rg.setAttribute('position',new T.Float32BufferAttribute(rv,3));rg.setIndex(ri);rg.computeVertexNormals();mesh(rg,black);
+// Glazing overlays follow curved cabin top. No intersecting opaque windshield plane.
+function canopy(a,b,ma){let v=[],ix=[],n=22,m=18;for(let i=0;i<=n;i++){let x=a+(b-a)*i/n;for(let j=0;j<=m;j++){let p=cabinPoint(x,(-1+2*j/m)*.90);p[1]+=.006;v.push(...p)}}for(let i=0;i<n;i++)for(let j=0;j<m;j++){let k=i*(m+1)+j;ix.push(k,k+1,k+m+1,k+1,k+m+2,k+m+1)}let g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v,3));g.setIndex(ix);g.computeVertexNormals();mesh(g,ma)}
+canopy(-.60,-.20,glass);canopy(.63,1.40,glass);
+// Specific side-window outline and triangular rear quarter glass.
+for(let s of [-1,1]){
+ let lower=[[-.60,.89,.825],[-.28,.88,.826],[.17,.865,.829],[.57,.855,.831],[.98,.87,.813],[1.31,.88,.795]],upperp=[[-.60,.945,.734],[-.28,1.157,.67],[.17,1.247,.622],[.57,1.195,.641],[.98,1.055,.706],[1.31,.902,.755]];
+ // The pillar panels bridge rounded roof rim to the upper door shoulder.
+ for(let i=1;i<lower.length;i++){let a=lower[i-1],b=lower[i],c=upperp[i],d=upperp[i-1];poly([[a[0],a[1],s*a[2]],[b[0],b[1],s*b[2]],[c[0],c[1],s*c[2]],[d[0],d[1],s*d[2]]],black)}
+ poly([[-.51,.911,s*.82],[-.24,1.146,s*.674],[.14,1.218,s*.645],[.58,1.17,s*.668],[.69,.893,s*.82]],glass);
+ poly([[.76,.897,s*.817],[.67,1.149,s*.68],[1.22,.916,s*.787]],glass);
+ line([[-.59,.962,s*.738],[-.28,1.184,s*.673],[.17,1.265,s*.633],[.57,1.214,s*.651],[.98,1.075,s*.714],[1.34,.911,s*.773]],chrome,.012);
+ line([[-.54,.874,s*.86],[-.5,.39,s*.878],[-.32,.33,s*.882],[.61,.33,s*.885],[.84,.39,s*.883],[.91,.81,s*.87]],seam,.004);
+ // Vertical handle inset behind side window.
+ box(.84,.80,s*.884,.036,.13,.013,black,.01);
+ box(-.42,.894,s*.91,.04,.048,.14,black);box(-.42,.965,s*.976,.21,.10,.115,black,.023);
+ box(.08,.28,s*.855,1.67,.055,.10,black,.015);
+ for(let a of axles){let pts=[];for(let i=0;i<=34;i++){let t=Math.PI*i/34;pts.push([a+ar*Math.cos(t),wy+ar*Math.sin(t),s*(topW(a+ar*Math.cos(t))+.004)])}line(pts,paint,.014)}
+ // brake caliper,visible through split spokes
+ box(1.275,.36,s*.824,.085,.17,.045,red,.01);box(-1.275,.36,s*.824,.085,.17,.045,red,.01);
+}
+// Hood shut lines taper toward nose.
+for(let s of [-1,1]){let pts=[];for(let i=0;i<=24;i++){let x=-1.99+1.37*i/24,z=s*(.56+.09*i/24);pts.push([x,topY(x,z)+.006,z])}line(pts,seam,.003)}
+// Front fascia is contoured, dark rectangular central mouth below long hood.
+for(let s of [-1,1])poly([[-2.19,.69,0],[-2.16,.74,s*.63],[-2.12,.62,s*.83],[-2.15,.32,s*.84],[-2.19,.29,s*.57],[-2.205,.67,s*.57]],paint);
+box(-2.20,.465,0,.04,.34,1.18,black,.014);box(-2.18,.278,0,.17,.05,1.65,black,.012);
+for(let y=.34;y<.63;y+=.052)box(-2.228,y,0,.014,.013,1.09,seam,.004);
+for(let z=-.51;z<.53;z+=.13)box(-2.234,.468,z,.014,.29,.008,black);
+// Teardrop lamp pockets sit on curved fender tops, with two separate light arcs.
+for(let s of [-1,1]){
+ let pts=[[-2.10,s*.61],[-2.00,s*.83],[-1.65,s*.87],[-1.82,s*.64]];
+ poly(pts.map(([x,z])=>[x,topY(x,z)+.014,z]),black);
+ let a=[[-2.066,s*.632],[-1.967,s*.806],[-1.69,s*.847]],b=[[-2.04,s*.628],[-1.89,s*.666],[-1.797,s*.738]];
+ for(let p of [a,b])line(p.map(([x,z])=>[x,topY(x,z)+.028,z]),lamp,.013);
+ box(-2.12,.43,s*.787,.013,.13,.025,black,.008);
+}
+// Rear Kamm tail with full dark panel and paired horizontal pill lamps.
+box(2.145,.55,0,.10,.44,1.58,paint,.045);box(2.206,.72,0,.022,.19,1.50,black,.025);box(2.20,.31,0,.13,.19,1.55,black,.03);
+for(let s of [-1,1])for(let y of [.682,.757]){box(2.232,y,s*.486,.018,.025,.48,red)}
+box(2.28,.44,0,.018,.14,.34,chrome,.01);
+for(let s of [-1,1]){let o=mesh(new T.CylinderGeometry(.058,.063,.14,20),chrome,2.28,.265,s*.61);o.rotation.z=Math.PI/2;let e=mesh(new T.CylinderGeometry(.045,.045,.145,20),black,2.288,.265,s*.61);e.rotation.z=Math.PI/2;}
+box(2.11,.81,0,.14,.027,1.46,paint,.01);
+// Nineteen-inch Performance-style wheels, not NISMO aero or wheels.
+for(let x of axles)for(let s of [-1,1]){let z=s*.793;let o=mesh(new T.CylinderGeometry(wr,wr,.24,44),tire,x,wy,z);o.rotation.x=Math.PI/2;let out=s*.918;
+mesh(new T.TorusGeometry(.264,.016,8,44),chrome,x,wy,out);
+let disc=mesh(new T.CylinderGeometry(.222,.222,.015,36),chrome,x,wy,out-s*.035);disc.rotation.x=Math.PI/2;
+for(let a=0;a<5;a++)for(let delta of [-.08,.08]){let th=a*Math.PI*2/5+delta,sp=box(x+Math.sin(th)*.139,wy+Math.cos(th)*.139,out+s*.013,.027,.235,.022,black,.005);sp.rotation.z=-th;}
+let hub=mesh(new T.CylinderGeometry(.057,.057,.027,16),chrome,x,wy,out+s*.019);hub.rotation.x=Math.PI/2;
+for(let a=0;a<40;a++){let th=a*Math.PI/20;let b=box(x+Math.sin(th)*.340,wy+Math.cos(th)*.340,z,.019,.009,.20,black);b.rotation.z=-th;}
+}
+
+const optimize=()=>{car.updateMatrixWorld(true);let groups=new Map();car.traverse(o=>{if(!o.isMesh)return;let k=o.material.uuid;if(!groups.has(k))groups.set(k,{mat:o.material,geo:[]});let g=o.geometry.clone();if(g.index)g=g.toNonIndexed();g.applyMatrix4(o.matrixWorld);groups.get(k).geo.push(g)});let out=new T.Group();for(let {mat,geo}of groups.values()){let g=new T.BufferGeometry();for(let attr of ['position','normal','uv']){if(!geo.every(x=>x.attributes[attr]))continue;let size=geo[0].attributes[attr].itemSize,len=geo.reduce((n,x)=>n+x.attributes[attr].array.length,0),a=new Float32Array(len),i=0;for(let x of geo){a.set(x.attributes[attr].array,i);i+=x.attributes[attr].array.length}g.setAttribute(attr,new T.BufferAttribute(a,size))}let m=new T.Mesh(g,mat);m.castShadow=m.receiveShadow=true;out.add(m)}return out};const result=optimize();result.traverse(o=>{if(o.isMesh&&o.material.color)o.material.color.convertSRGBToLinear()});return result;}
+};
+
 function modelForCar(cid){
  const c=CARS[cid];if(!c)return null;
  const m=MODELS[c[0]+"|"+c[1]]||MODELS[c[0]];return m&&m.catalogYear===c[1]?m:null;
@@ -151,6 +297,7 @@ function init3d(){
   entry.promise=new Promise((res,rej)=>{
    const loader=new THREE.GLTFLoader();if(typeof MeshoptDecoder!=='undefined')loader.setMeshoptDecoder(MeshoptDecoder);
    const done=x=>{entry.scene=x.scene;entry.phase='ready';x.scene.traverse(o=>{if(o.geometry)cachedGeometries.add(o.geometry)});trimModels();res(x.scene)};
+   if(ORIGINAL_BUILDERS[url]){try{done({scene:ORIGINAL_BUILDERS[url]()})}catch(e){rej(e)}return}
    const signal=entry.controller.signal;
    const fetchPart=async path=>{const r=await fetch(path,{signal});if(!r.ok)throw Error('Model asset unavailable');return r};
    let completed=0;
@@ -307,4 +454,5 @@ function updateCar(){
  caption.textContent=mdef?(S.lang==='ar'?'مجسم مجتمعي من نفس جيل الموديل · '+mdef.credit+' · CC BY · مش نسخة مطابقة للسنة أو الفئة بالظبط. اسحب للتدوير.':'Same-generation community model by '+mdef.credit+' (CC BY), not an exact year/trim replica. Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
  if(mdef&&mdef.noteEn)caption.textContent=(S.lang==='ar'?mdef.noteAr+' · '+mdef.credit+' · CC BY · اسحب للتدوير.':mdef.noteEn+' Community model by '+mdef.credit+' · CC BY. Drag to orbit.');
  if(mdef&&mdef.approximation)caption.textContent=(S.lang==='ar'?'بديل شكلي: هيكل '+mdef.sourceBody+' · '+mdef.credit+' · CC BY · الفروق في الملاحظة مع المواصفات · اسحب للتدوير.':'Visual substitute: '+mdef.sourceBody+' body by '+mdef.credit+' (CC BY). Differences are in the note with the specifications. Drag to orbit.');
-  }
+ if(mdef&&mdef.original)caption.textContent=S.lang==='ar'?mdef.noteAr+' · اسحب للتدوير.':mdef.noteEn+' Drag to orbit.';
+    }
