@@ -374,3 +374,14 @@ Reference-only sources inspected:
 - Toyota Canada model information: https://media.toyota.ca/en/releases/2024/what-s-new--2024-toyota-gr86.html
 
 Ready-made candidates found were wrong-generation, restricted, uncertain-origin or below the accepted visual level, and were not imported.
+
+
+## Original stylized Subaru BRZ ZD8 2024
+
+Original reference-led geometry and color materials, fixed silver paint. Original variant of the GR86 study, sharing the core shell but with a BRZ front bumper, rounded horizontal-bar grille, reshaped corner ducts, narrower fender vents, body-color mirrors and a small deck kick. Low coupe, swept lamps, lower grille, fender vents, split rear lamps and twin exhaust. Simplified nose, cabin, fenders, lenses and generic wheels, not an exact replica. No third-party mesh or photographic texture included.
+
+Reference-only sources inspected:
+- BRZ body photographs: https://www.mad4wheels.com/subaru/brz-2022
+- Subaru 2024 model information: https://media.subaru.com/pressrelease/2089/1/subaru-announces-pricing-2024-brz-sports-car
+
+Ready-made candidates found were wrong-generation, restricted, uncertain-origin or below the accepted visual level, and were not imported.
