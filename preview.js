@@ -1,6 +1,7 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Community models route by catalog name/year. Different-car approximations are explicitly flagged (see CREDITS.md). */
 const MODELS={
+"BMW M2":{"yaw": 3.141592653589793, "catalogYear": 2025, "url": "original:m2-g87-original", "original": true, "credit": "Original simplified body", "noteEn": "Original stylized M2 G87 coupe: horizontal twin kidneys, three lower intakes, single projector lamps, angular rear lenses and widely paired quad exhaust. Simplified body, cabin and generic wheels. Not an exact replica.", "noteAr": "مجسم أصلي مبسط لـ M2 G87: كوبيه ببابين وشبكة مزدوجة أفقية وثلاث فتحات سفلية وفوانيس بعدسة واحدة وأربع مخارج شكمان في زوجين. الجسم والسقف والفوانيس والجنوط مبسطة، مش نسخة مطابقة."},
 "Subaru WRX":{"yaw": 3.141592653589793, "catalogYear": 2024, "url": "original:wrx-vb-original", "original": true, "credit": "Original simplified body", "noteEn": "Original stylized WRX VB sedan: hood scoop, hex grille, angular black fender cladding, wrapped rear lamps and quad exhaust. Simplified body surfaces, cabin, lenses and generic wheels. Not an exact replica.", "noteAr": "مجسم أصلي مبسط لـ WRX VB: سيدان بفتحة كبوت وشبكة سداسية وتكسية رفارف سوداء وفوانيس خلفية ملتفة وأربع مخارج شكمان. الجسم والسقف والفوانيس والجنوط مبسطة، مش نسخة مطابقة."},
 "Subaru BRZ":{"yaw": 3.141592653589793, "catalogYear": 2024, "url": "original:brz-zd8-original", "original": true, "credit": "Original simplified body", "noteEn": "Original stylized BRZ ZD8: low coupe, swept lamps, rounded lower grille with horizontal bars, fender vents and twin exhaust. Simplified nose, cabin, fenders, lenses and generic wheels. Not an exact replica.", "noteAr": "مجسم أصلي مبسط لـ BRZ ZD8: كوبيه منخفضة بفوانيس مسحوبة وشبكة سفلية كبيرة وفتحات رفارف وشكمان مزدوج. المقدمة والسقف والرفارف والفوانيس والجنوط مبسطة، مش نسخة مطابقة."},
 "Toyota GR86":{"yaw": 3.141592653589793, "catalogYear": 2024, "url": "original:gr86-zn8-original", "original": true, "credit": "Original simplified body", "noteEn": "Original stylized GR86 ZN8: low coupe, swept lamps, large lower grille, fender vents and twin exhaust. Simplified nose, cabin, fenders, lenses and generic wheels. Not an exact replica.", "noteAr": "مجسم أصلي مبسط لـ GR86 ZN8: كوبيه منخفضة بفوانيس مسحوبة وشبكة سفلية كبيرة وفتحات رفارف وشكمان مزدوج. المقدمة والسقف والرفارف والفوانيس والجنوط مبسطة، مش نسخة مطابقة."},
@@ -73,6 +74,100 @@ const MODELS={
 
 // Original model-specific geometry, accepted simplified style. No generic-car relabeling.
 const ORIGINAL_BUILDERS={
+'original:m2-g87-original':function(){const T=THREE,car=new T.Group();
+const mat=(c,m=0,r=.55)=>new T.MeshStandardMaterial({color:c,metalness:m,roughness:r,side:T.DoubleSide});
+const paint=mat('#5f7984',.35,.38),black=mat('#252a2d',.05,.66),tire=mat('#151719',0,.85),glass=mat('#283d45',.35,.19),chrome=mat('#aeb3b3',.75,.29),lamp=mat('#f1f6e8',.1,.25),red=mat('#b71922',.2,.35),amber=mat('#e79729',.15,.4),seam=mat('#605a50');
+function mesh(g,m,x=0,y=0,z=0){const o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;car.add(o);return o}
+function box(x,y,z,l,h,w,m,b=0){if(!b)return mesh(new T.BoxGeometry(l,h,w),m,x,y,z);let s=new T.Shape(),a=l/2,c=h/2;s.moveTo(-a+b,-c);s.lineTo(a-b,-c);s.quadraticCurveTo(a,-c,a,-c+b);s.lineTo(a,c-b);s.quadraticCurveTo(a,c,a-b,c);s.lineTo(-a+b,c);s.quadraticCurveTo(-a,c,-a,c-b);s.lineTo(-a,-c+b);s.quadraticCurveTo(-a,-c,-a+b,-c);return mesh(new T.ExtrudeGeometry(s,{depth:w-2*b,bevelEnabled:true,bevelSize:b*.4,bevelThickness:b,bevelSegments:2,steps:1,curveSegments:4}),m,x,y,z-w/2+b)}
+function poly(v,m){let g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v.flat(),3));let ix=[];for(let i=1;i<v.length-1;i++)ix.push(0,i,i+1);g.setIndex(ix);g.computeVertexNormals();return mesh(g,m)}
+function line(v,m=seam,rad=.005){for(let i=1;i<v.length;i++){let a=new T.Vector3(...v[i-1]),b=new T.Vector3(...v[i]),d=b.clone().sub(a);let o=mesh(new T.CylinderGeometry(rad,rad,d.length(),6),m);o.position.copy(a.add(b).multiplyScalar(.5));o.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize())}}
+// Original simplified 2025 BMW M2 G87, stock body, meters.
+const axles=[-1.40,1.347],wr=.332,wy=.338,ar=.364;
+const sections=[[-2.29,.89,.88,.78],[-2.17,.91,.89,.86],[-1.91,.92,.89,.91],[-1.65,.90,.86,.9435],[-1.40,.91,.87,.9435],[-1.05,.94,.88,.89],[-.65,.955,.88,.87],[0,.96,.88,.87],[.65,.97,.90,.91],[1.03,.98,.92,.9435],[1.347,.98,.93,.9435],[1.70,.96,.90,.92],[2.05,.94,.86,.87],[2.29,.87,.80,.81]];
+function interp(rows,x,i){let j=1;while(j<rows.length-1&&x>rows[j][0])j++;let a=rows[j-1],b=rows[j],u=Math.max(0,Math.min(1,(x-a[0])/(b[0]-a[0]))),p=rows[Math.max(0,j-2)],q=rows[Math.min(rows.length-1,j+1)],m1=(b[i]-p[i])/(b[0]-p[0]),m2=(q[i]-a[i])/(q[0]-a[0]),dx=b[0]-a[0];return (2*u*u*u-3*u*u+1)*a[i]+(u*u*u-2*u*u+u)*dx*m1+(-2*u*u*u+3*u*u)*b[i]+(u*u*u-u*u)*dx*m2}
+function sample(x,i){return interp(sections,x,i)}
+function topY(x,z){let q=Math.abs(z)/sample(x,3);return sample(x,1)+(sample(x,2)-sample(x,1))*q*q+.015*Math.exp(-Math.pow((x-2.18)/.13,2))*(1-.2*q*q)}
+function grid(n,m,fn,ma){let v=[],ix=[];for(let i=0;i<=n;i++)for(let j=0;j<=m;j++)v.push(...fn(i/n,j/m));for(let i=0;i<n;i++)for(let j=0;j<m;j++){let k=i*(m+1)+j;ix.push(k,k+1,k+m+1,k+1,k+m+2,k+m+1)}let g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v,3));g.setIndex(ix);g.computeVertexNormals();return mesh(g,ma)}
+function bottom(x){let b=.18;for(let a of axles){let d=Math.abs(x-a);if(d<ar)b=Math.max(b,wy+Math.sqrt(ar*ar-d*d))}return b}
+
+
+grid(112,26,(u,v)=>{let x=-2.29+4.58*u,z=(-1+2*v)*sample(x,3);return[x,topY(x,z),z]},paint);
+for(let side of [-1,1])grid(220,12,(u,v)=>{let x=-2.29+4.58*u,b=bottom(x);return[x,b+(sample(x,2)-b)*v,side*(sample(x,3)-.065*(1-v)+.012*Math.sin(Math.PI*v))]},paint);
+box(0,.15,0,4.05,.05,1.53,black);
+const roof=[[-.87,.96,.76],[-.61,1.16,.70],[-.29,1.36,.65],[.03,1.399,.64],[.44,1.403,.64],[.83,1.36,.66],[1.10,1.23,.71],[1.42,1.00,.78]];
+function cr(x,k){return interp(roof,x,k)}
+function cp(x,q){return[x,cr(x,1)-.035*q*q,q*cr(x,2)]}
+grid(90,22,(u,v)=>cp(-.87+2.29*u,-1+2*v),paint);
+for(let[a,b]of [[-.80,-.10],[.89,1.36]])grid(32,18,(u,v)=>{let p=cp(a+(b-a)*u,(-1+2*v)*.94);p[1]+=.008;return p},glass);
+for(let side of [-1,1]){
+ function sp(x,u,o=0){return[x,.91+(cr(x,1)-.035-.91)*u,side*(.83+(cr(x,2)-.83)*u+o)]}
+ grid(90,12,(u,v)=>sp(-.87+2.29*u,v),paint);
+ grid(45,10,(u,v)=>{let a=-.70+.07*(1-v),b=.52;return sp(a+(b-a)*u,.045+.86*v,.009)},glass);
+ grid(25,10,(u,v)=>{let a=.60,b=1.25-.20*v;return sp(a+(b-a)*u,.05+.80*v,.009)},glass);
+ grid(4,12,(u,v)=>sp(.52+.08*u,.04+.87*v,.011),black);
+ function sz(x,y){return side*(sample(x,3)-.055*Math.max(0,(.87-y)/.69)+.008)}
+ line([[-.69,.89],[-.66,.36],[-.52,.23],[.65,.23],[.72,.37],[.73,.91]].map(([x,y])=>[x,y,sz(x,y)]),seam,.0025);
+ box(.48,.852,side*.889,.17,.028,.025,paint,.007);
+ poly([[-.86,.52,side*.879],[-.70,.26,side*.849],[.65,.26,side*.856],[.82,.48,side*.9],[.59,.32,side*.88],[-.60,.32,side*.874]],paint);
+ line([[-.80,.20,side*.86],[.65,.20,side*.88],[.84,.29,side*.91]],black,.01);
+ box(-.64,1.00,side*.80,.06,.05,.15,black);box(-.64,1.05,side*.91,.23,.10,.14,paint,.018);
+ for(let ax of axles){let pts=[];for(let i=0;i<=40;i++){let a=i*Math.PI/40,x=ax+ar*Math.cos(a);pts.push([x,wy+ar*Math.sin(a),side*(sample(x,3)-.002)])}line(pts,paint,.006)}
+ line([[-2.16,.83,side*.29],[-1.77,.91,side*.42],[-.88,.959,side*.63]],seam,.0025);
+}
+function fx(z){return -2.29}
+grid(30,52,(u,v)=>{let z=(-1+2*v)*(.78-.065*(1-u)+.012*Math.sin(Math.PI*u));return[fx(z),.18+(topY(-2.29,z)-.18)*u,z]},paint);
+// Low horizontal twin kidneys with body-color center divider and three separate lower intakes.
+for(let side of [-1,1]){
+ let kp=[[.045,.575],[.37,.575],[.45,.65],[.44,.79],[.075,.80],[.045,.77]];
+ poly(kp.map(([z,y])=>[fx(z)-.019,y,side*z]),black);
+ line([...kp,kp[0]].map(([z,y])=>[fx(z)-.025,y,side*z]),chrome,.005);
+ for(let y of [.62,.67,.72,.77])line([[fx(.07)-.031,y,side*.07],[fx(.40)-.031,y,side*.40]],black,.009);
+ // Thin surface-following lens wraps around the nose into each fender.
+ function lx(z){return fx(z)-.022+.012*Math.pow(Math.max(0,(Math.abs(z)-.49)/.38),2)}
+ let hp=[[.48,.72],[.49,.83],[.70,.86],[.74,.82],[.74,.70],[.61,.69]];
+ poly(hp.map(([z,y])=>[lx(z),y,side*z]),black);
+ line([[.51,.80],[.55,.72],[.66,.715],[.70,.76],[.73,.79]].map(([z,y])=>[lx(z)-.004,y,side*z]),lamp,.005);
+ let z=.61,x=lx(z)-.007,o=mesh(new T.CylinderGeometry(.031,.031,.008,24),chrome,x,.79,side*z);o.rotation.z=Math.PI/2;
+ poly([[.54,.25],[.73,.25],[.75,.51],[.55,.53]].map(([z,y])=>[fx(z)-.019,y,side*z]),black);
+ for(let y of [.30,.41])line([[fx(.59)-.026,y,side*.59],[fx(.72)-.026,y,side*.72]],black,.012);
+ 
+}
+poly([[-.50,.22],[.50,.22],[.51,.47],[.42,.51],[-.42,.51],[-.51,.47]].map(([z,y])=>[fx(z)-.023,y,z]),black);
+for(let z of [-.40,-.25,.25,.40])line([[fx(z)-.035,.25,z],[fx(z)-.035,.47,z]],black,.009);
+box(-2.31,.53,0,.02,.115,.47,black,.005);box(-2.31,.185,0,.04,.025,1.42,black,.003);
+// Rear low trunk lip, angular outer lamps, vertical reflectors, diffuser and two widely paired exhausts.
+function rx(z){return 2.29}
+grid(30,50,(u,v)=>{let z=(-1+2*v)*(.81-.065*(1-u)+.012*Math.sin(Math.PI*u));return[rx(z),.18+(topY(2.29,z)-.18)*u,z]},paint);
+function ribbon(points,ma,width){for(let i=0;i<points.length-1;i++){let a=points[i].slice(),b=points[i+1].slice();a[0]+=.007;b[0]+=.007;a[2]+=Math.sign(a[2])*.005;b[2]+=Math.sign(b[2])*.005;poly([[a[0],a[1]-width/2,a[2]],[b[0],b[1]-width/2,b[2]],[b[0],b[1]+width/2,b[2]],[a[0],a[1]+width/2,a[2]]],ma)}}
+for(let side of [-1,1]){
+ let pts=[[1.96,.88,side*(sample(1.96,3)+.008)],[2.15,.87,side*(sample(2.15,3)+.008)],[rx(.80)+.012,.84,side*.80],[rx(.43)+.012,.83,side*.43],[rx(.43)+.012,.75,side*.43],[rx(.79)+.012,.72,side*.79],[2.15,.74,side*(sample(2.15,3)+.008)],[1.98,.79,side*(sample(1.98,3)+.008)]];
+ for(let i=0;i<3;i++)poly([pts[i],pts[i+1],pts[6-i],pts[7-i]],black);
+ ribbon([pts[0],pts[1],pts[2],pts[3]],red,.020);
+ ribbon([[rx(.47)+.017,.805,side*.47],[rx(.64)+.017,.795,side*.64],[rx(.73)+.017,.82,side*.73],[rx(.79)+.017,.80,side*.79]],red,.021);
+ ribbon([[rx(.46)+.018,.765,side*.46],[rx(.72)+.018,.75,side*.72]],lamp,.012);
+ poly([[.64,.30],[.79,.26],[.79,.61],[.66,.64]].map(([z,y])=>[rx(z)+.018,y,side*z]),black);
+ ribbon([[rx(.77)+.025,.35,side*.77],[rx(.77)+.025,.56,side*.77]],red,.016);
+ for(let z of [.39,.54]){let zz=side*z,o=mesh(new T.CylinderGeometry(.051,.051,.11,24),black,2.31,.235,zz);o.rotation.z=Math.PI/2;let q=mesh(new T.CylinderGeometry(.039,.039,.116,24),tire,2.318,.235,zz);q.rotation.z=Math.PI/2;}
+}
+grid(15,40,(u,v)=>{let z=(-1+2*v)*(.64-.08*u);return[rx(z)+.023,.16+.17*u,z]},black);
+for(let z of [-.25,0,.25])box(2.30,.20,z,.15,.08,.02,black);
+box(2.31,.67,0,.02,.125,.49,black,.008);
+// Generic dark double-spoke wheels, distinct front and rear radii.
+for(let [j,x]of axles.entries())for(let side of [-1,1]){
+ let rr=j?.343:.332,z=side*.813,out=side*.942,o=mesh(new T.CylinderGeometry(rr,rr,.25,40),tire,x,wy,z);o.rotation.x=Math.PI/2;
+ mesh(new T.TorusGeometry(j?.265:.251,.009,8,40),black,x,wy,out);let d=mesh(new T.CylinderGeometry(.233,.233,.016,32),black,x,wy,out-side*.015);d.rotation.x=Math.PI/2;
+ box(x+.13,wy,side*.92,.05,.16,.02,red,.007);
+ for(let a=0;a<5;a++)for(let shift of [-.06,.06]){let t=a*Math.PI*2/5+shift;line([[x+Math.sin(t)*.046,wy+Math.cos(t)*.046,out],[x+Math.sin(t+.03)*(j?.258:.244),wy+Math.cos(t+.03)*(j?.258:.244),out]],chrome,.007)}
+ let h=mesh(new T.CylinderGeometry(.043,.043,.023,16),black,x,wy,out+side*.01);h.rotation.x=Math.PI/2;
+}
+
+// Round plan corners and blend fascia into body rather than leaving rectangular end plates.
+car.traverse(o=>{if(!o.isMesh)return;o.updateMatrix();let g=o.geometry.clone();g.applyMatrix4(o.matrix);o.position.set(0,0,0);o.rotation.set(0,0,0);o.scale.set(1,1,1);if(g.index)g=g.toNonIndexed();let old=g.attributes.position,pts=[];function sub(a,b,c,d){let ab=Math.hypot(a[0]-b[0],a[2]-b[2]),bc=Math.hypot(b[0]-c[0],b[2]-c[2]),ca=Math.hypot(c[0]-a[0],c[2]-a[2]);if(d<4&&Math.max(ab,bc,ca)>.13){let m=(a,b)=>a.map((x,i)=>(x+b[i])/2),p=m(a,b),q=m(b,c),r=m(c,a);sub(a,p,r,d+1);sub(p,b,q,d+1);sub(r,q,c,d+1);sub(p,q,r,d+1)}else pts.push(...a,...b,...c)}for(let k=0;k<old.count;k+=3)sub([old.getX(k),old.getY(k),old.getZ(k)],[old.getX(k+1),old.getY(k+1),old.getZ(k+1)],[old.getX(k+2),old.getY(k+2),old.getZ(k+2)],0);g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pts,3));let p=g.attributes.position;for(let i=0;i<p.count;i++){let x=p.getX(i),z=p.getZ(i),y=p.getY(i);if(x< -1.95&&y>.83){let d=.005*Math.pow(Math.min(1,(-x-1.95)/.3),2);p.setY(i,y-d)}let f=Math.min(1,Math.max(0,(Math.abs(x)-1.86)/.40)),d=.15*Math.pow(Math.min(1,Math.abs(z)/.94),3)*f;p.setX(i,x+(x<0?d:-d))}g.computeVertexNormals();let ns=g.attributes.normal,avg=new Map(),keys=[];for(let k=0;k<p.count;k++){let key=[p.getX(k),p.getY(k),p.getZ(k)].map(v=>Math.round(v*10000)).join(',');keys.push(key);if(!avg.has(key))avg.set(key,[0,0,0]);let a=avg.get(key);a[0]+=ns.getX(k);a[1]+=ns.getY(k);a[2]+=ns.getZ(k)}for(let k=0;k<p.count;k++){let a=avg.get(keys[k]),l=Math.hypot(...a)||1;ns.setXYZ(k,a[0]/l,a[1]/l,a[2]/l)}o.geometry=g});
+
+car.traverse(o=>{if(!o.isMesh)return;let g=o.geometry,p=g.attributes.position;for(let i=0;i<p.count;i++){let x=p.getX(i),y=p.getY(i),z=p.getZ(i),t=Math.max(0,Math.min(1,(Math.abs(x)-1.83)/.49));t=t*t*(3-2*t);if(t){let u=Math.max(0,Math.min(1,(y-.16)/.74));x-=Math.sign(x)*t*(.085*Math.exp(-Math.pow((u-.12)/.23,2))-.028*Math.sin(Math.PI*u));z*=1-.025*t*Math.exp(-Math.pow((y-.43)/.30,2));}p.setXYZ(i,x,y,z)}g.computeVertexNormals();let n=g.attributes.normal,avg=new Map(),keys=[];for(let i=0;i<p.count;i++){let k=[p.getX(i),p.getY(i),p.getZ(i)].map(v=>Math.round(v*10000)).join(',');keys.push(k);if(!avg.has(k))avg.set(k,[0,0,0]);let a=avg.get(k);a[0]+=n.getX(i);a[1]+=n.getY(i);a[2]+=n.getZ(i)}for(let i=0;i<p.count;i++){let a=avg.get(keys[i]),l=Math.hypot(...a)||1;n.setXYZ(i,a[0]/l,a[1]/l,a[2]/l)}});
+const optimize=()=>{car.updateMatrixWorld(true);let groups=new Map();car.traverse(o=>{if(!o.isMesh)return;let k=o.material.uuid;if(!groups.has(k))groups.set(k,{mat:o.material,geo:[]});let g=o.geometry.clone();if(g.index)g=g.toNonIndexed();g.applyMatrix4(o.matrixWorld);groups.get(k).geo.push(g)});let out=new T.Group();for(let {mat,geo}of groups.values()){let g=new T.BufferGeometry();for(let attr of ['position','normal','uv']){if(!geo.every(x=>x.attributes[attr]))continue;let size=geo[0].attributes[attr].itemSize,len=geo.reduce((n,x)=>n+x.attributes[attr].array.length,0),a=new Float32Array(len),i=0;for(let x of geo){a.set(x.attributes[attr].array,i);i+=x.attributes[attr].array.length}g.setAttribute(attr,new T.BufferAttribute(a,size))}let m=new T.Mesh(g,mat);m.castShadow=m.receiveShadow=true;out.add(m)}return out};
+const result=optimize();result.traverse(o=>{if(o.isMesh&&o.material.color)o.material.color.convertSRGBToLinear()});return result;},
+
 'original:wrx-vb-original':function(){const T=THREE,car=new T.Group();
 const mat=(c,m=0,r=.55)=>new T.MeshStandardMaterial({color:c,metalness:m,roughness:r,side:T.DoubleSide});
 const paint=mat('#e36b20',.35,.38),black=mat('#252a2d',.05,.66),tire=mat('#151719',0,.85),glass=mat('#283d45',.35,.19),chrome=mat('#aeb3b3',.75,.29),lamp=mat('#f1f6e8',.1,.25),red=mat('#b71922',.2,.35),amber=mat('#e79729',.15,.4),seam=mat('#605a50');
@@ -1772,6 +1867,7 @@ function updateCar(){
  if(mdef?.url==='original:gr86-zn8-original')caption.textContent=S.lang==='ar'?'GR86 أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified GR86, not an exact replica. Drag to orbit.';
  if(mdef?.url==='original:brz-zd8-original')caption.textContent=S.lang==='ar'?'BRZ أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified BRZ, not an exact replica. Drag to orbit.';
  if(mdef?.url==='original:wrx-vb-original')caption.textContent=S.lang==='ar'?'WRX أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified WRX, not an exact replica. Drag to orbit.';
+ if(mdef?.url==='original:m2-g87-original')caption.textContent=S.lang==='ar'?'M2 أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified M2, not an exact replica. Drag to orbit.';
  if(mdef?.url==='original:accord-sport-hybrid-original')caption.textContent=S.lang==='ar'?'Accord Sport Hybrid أصلي مبسط. اسحب للتدوير.':'Original simplified Accord Sport Hybrid. Drag to orbit.';
  if(mdef?.url==='original:accord-lx-original')caption.textContent=S.lang==='ar'?'Accord LX أصلي مبسط. اسحب للتدوير.':'Original simplified Accord LX. Drag to orbit.';
  if(mdef?.url==='original:civictyper-fl5-original')caption.textContent=S.lang==='ar'?'Civic Type R أصلي مبسط. الفوانيس والإكصدامات والجنوط مبسطة. اسحب للتدوير.':'Original simplified Civic Type R. Simplified lamps, bumpers and wheels. Drag to orbit.';
@@ -1780,4 +1876,4 @@ function updateCar(){
  if(mdef?.url==='original:viper-gts-sr2-original')caption.textContent=S.lang==='ar'?'Viper GTS أصلي مبسط. الفوانيس والإكصدامات والجنوط مبسطة. اسحب للتدوير.':'Original simplified Viper GTS. Coarse lamps, bumpers and wheels. Drag to orbit.';
  if(mdef?.url==='original:impreza-wrx-bugeye-original')caption.textContent=S.lang==='ar'?'WRX بوغ آي أصلي مبسط. الفوانيس والإكصدامات والجنوط مبسطة. اسحب للتدوير.':'Original simplified bugeye WRX. Coarse lamps, bumpers and wheels. Drag to orbit.';
  if(mdef?.url==='original:gr-yaris-original')caption.textContent=S.lang==='ar'?'GR Yaris أصلي مبسط. الفوانيس والإكصدامات والجنوط مبسطة، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified GR Yaris. Coarse lamps, bumpers and wheels, not an exact replica. Drag to orbit.';
- }
+  }
