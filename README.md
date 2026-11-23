@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations, eighteen original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 73/100 catalog entries with 58 distinct body definitions; 27 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has 46 model-family community representations, nineteen original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 74/100 catalog entries with 59 distinct body definitions; 26 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -316,3 +316,10 @@ Coverage 72/100 = 46 community model-family + 17 original simplified + 9 labeled
 Reference-led mid-engine coupe with slanted four-point headlamps, three front openings, side ducts, angular rear lenses connected by dark trim and a single central exhaust. Body, cabin, lenses and generic wheels are simplified, not an exact replica. No downloaded mesh or photographic textures. Fallback after existing ready-made source screening. Only the base Cayman entry is added; other trims and open-top models remain separate unfinished work.
 
 Coverage 73/100 =46 community model-family +18 original simplified +9 labeled substitutes. 58 distinct bodies;27 procedural. Catalog/save IDs, prior visuals and gameplay unchanged. No physical-phone FPS claim.
+
+
+## Original stylized 2016 Porsche 718 Boxster
+
+Reference-led open two-seat roadster with slanted four-point headlamps, three front openings, side ducts, angular rear lenses connected by dark trim and a single central exhaust. Body, cabin, lenses and generic wheels are simplified, not an exact replica. No downloaded mesh or photographic textures. Fallback after existing ready-made source screening. Only the base Boxster entry is added; other trims and open-top models remain separate unfinished work.
+
+Coverage 74/100 =46 community model-family +19 original simplified +9 labeled substitutes. 59 distinct bodies;26 procedural. Catalog/save IDs, prior visuals and gameplay unchanged. No physical-phone FPS claim.
