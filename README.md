@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations, twenty-three original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 78/100 catalog entries with 63 distinct body definitions; 22 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has 46 model-family community representations, twenty-five original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 80/100 catalog entries with 65 distinct body definitions; 20 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -333,3 +333,8 @@ Cayman S coupe and Boxster S open roadster use separately defined trim builders 
 ## Original stylized 2020 718 GTS 4.0 trims
 
 Cayman coupe and Boxster open roadster use revised black front inlets/lip, dark ten-spoke wheels with red calipers, revised black rear apron and separated round exhausts. Simplified original fallback, not exact replicas. No third-party mesh or photographic texture. Coverage78/100:46community,23original,9substitutes,63distinct body definitions,22procedural. Prior visuals, catalog/save IDs and gameplay unchanged.
+
+
+## Original stylized 2020 718 GT4 and Spyder
+
+GT4 has a fixed wing with twin supports; Spyder has an open cockpit and double-bubble rear deck without the fixed wing. Both have revised GT intakes, radiator outlet, splitter and side blades, multi-spoke wheels and separated exhausts. Simplified original fallback, not exact replicas. No third-party meshes or photo textures. Coverage80/100:46community,25original,9substitutes,65distinct definitions,20procedural. Prior visuals/catalog/save IDs/gameplay unchanged.
