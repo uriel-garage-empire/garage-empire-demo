@@ -464,3 +464,8 @@ Original reference-led geometry, no third-party mesh/photo textures. Matching fr
 ## Original simplified2025 Audi RS3 sedan
 
 Original reference-led geometry, no third-party mesh/photo textures. Matching free ready-made searches did not establish a stock2025RS3; inspected own-creation2021A3 was wrong trim/year and weak quality, not relabeled. References viewed, not redistributed: https://media.audiusa.com/releases/630 , https://www.mad4wheels.com/audi/rs-3-sedan-2025/car-wallpaper-772058 , https://media.audiusa.com/assets/applications/original/14705-my25-audi-a3-s3-rs-3-tech-specs-rev-051425.pdf .
+
+
+## Original simplified2024 Tesla Model3 Performance
+
+Original reference-led geometry, no third-party mesh or photo texture. Prior free ready-made screening did not establish a suitable matching licensed model: weak low-poly candidate and unclear-origin copies excluded. References viewed, not redistributed: https://www.tesla.com/blog/introducing-new-model-3-performance , https://www.caranddriver.com/news/a60583488/2024-tesla-model-3-performance-details/ , https://ev-database.org/car/2188/Tesla-Model-3-Performance .
