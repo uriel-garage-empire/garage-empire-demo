@@ -340,3 +340,14 @@ Reference-only sources inspected:
 - Official2024USdimensions/features: https://hondanews.com/en-US/releases/2024-honda-civic-type-r-specifications-features
 
 No candidate imported. Custom FL5kit listing used BY-NC-ND and stated an obtained base model. A141.8k downloadable CC BY listing had no established authoring-origin evidence. Other leads were paid scans, restricted store models, wrong-generation bodies or explicitly game-extracted meshes.
+
+
+## Original simplified Honda Accord LX 2025
+
+Original reference-led geometry/color materials. Long four-door sedan, single hexagonal grille, slim lamps, split full-width rear light panel, no spoiler or moonroof, body-color mirrors and simplified silver17-inch-style wheels. Simplified bumper contours and flat lenses, not an exact equipment replica. No third-party mesh or photograph included.
+
+Reference-only sources inspected:
+- Same-generation2023USfront/rear photographs: https://www.mad4wheels.com/honda/accord-usa-version-2023
+- Official2025USdimensions and LX equipment: https://hondanews.com/en-US/honda-automobiles/releases/release-008e554add341b8444085beaa2074089-2025-honda-accord-specifications-features
+
+Ready-made research: 3DStarving874k and Davidson256.9k same-generation Sketchfab listings had no download option; Davidson offered the full model for sale. Remeshy anonymous generated mesh had no qualified license/origin evidence. Another mirror's CC0 attribution conflicted with the counterpart listing's author/license. CarDesi IzmoCars archive had no specified license. No candidate imported.
