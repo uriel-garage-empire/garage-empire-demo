@@ -363,3 +363,14 @@ Reference-only sources inspected:
 - Same-generation exterior references: https://www.mad4wheels.com/honda/accord-usa-version-2023
 
 Accord ready-made screening found paid/non-downloadable models, unclear origin/license and conflicting attribution. No qualified free lightweight redistributable matching mesh was established. No candidate imported.
+
+
+## Original stylized Toyota GR86 ZN8 2024
+
+Original reference-led geometry and color materials, fixed blue paint. Low coupe, swept lamps, lower grille, fender vents, split rear lamps and twin exhaust. Simplified nose, cabin, fenders, lenses and generic wheels, not an exact replica. No third-party mesh or photographic texture included.
+
+Reference-only sources inspected:
+- GR86 body photographs: https://www.mad4wheels.com/toyota/gr-86-2022
+- Toyota Canada model information: https://media.toyota.ca/en/releases/2024/what-s-new--2024-toyota-gr86.html
+
+Ready-made candidates found were wrong-generation, restricted, uncertain-origin or below the accepted visual level, and were not imported.
