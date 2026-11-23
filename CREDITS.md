@@ -268,3 +268,15 @@ Separate simplified pre-facelift Mk8 Golf R variant based on the original GTI ha
 Manufacturer reference: https://media.vw.com/press-kits/2024-golf-r-press-kit . This is the US2024 pre-facelift, not the European2024 facelift. Same-generation2022 photographs visually inspected: https://commons.wikimedia.org/wiki/File:2022_Volkswagen_Golf_R_in_Pure_White%2C_front_left%2C_2025-04-24.jpg and https://commons.wikimedia.org/wiki/File:2022_Volkswagen_Golf_R_in_Pure_White%2C_rear_left%2C_2025-04-24.jpg . Photos by Elise240SX, CC BY-SA4.0, https://creativecommons.org/licenses/by-sa/4.0/ . References only, not bundled or used as textures, not proof of every2024 equipment detail.
 
 Ready-made checks first: PYV2022R listing states game extraction, excluded; the DR1KING Sketchfab candidate has1.6million triangles and a333PS facelift description, unsuitable; Blendkit actual download requires Full Plan, not free. No candidate downloaded or promoted.
+
+
+## Original simplified GR Yaris2021
+
+Original geometry written for this project, not copied from a ready-made model. Three-door GR Yaris representation with angular lamps/bumpers and generic wheels, not exact factory equipment. Existing approved assets untouched. No reference images or manufacturer textures are bundled.
+
+Reference facts: Toyota UK launch description, https://media.toyota.co.uk/the-new-toyota-gr-yaris/ .
+Reference photographs, viewed only:
+-2021Toyota GR Yaris1.6GXPA16R, https://commons.wikimedia.org/wiki/File:2021_Toyota_GR_Yaris_1.6_GXPA16R_(20220317).jpg ,CCBY-SA4.0.
+-Rear photo by M93, https://commons.wikimedia.org/wiki/File:Toyota_GR_Yaris_(XP21)_%E2%80%93_h_03052021.jpg ,CCBY-SA3.0Germany.
+
+No Sketchfab GR Yaris candidate was imported. The free26.4k-triangle listing did not establish original authorship; the other2021listing explicitly cites CSR2.
