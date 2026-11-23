@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations, fourteen original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 69/100 catalog entries with 54 distinct body definitions; 31 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has 46 model-family community representations, fifteen original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 70/100 catalog entries with 55 distinct body definitions; 30 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -288,3 +288,10 @@ Current coverage 68/100 = 46 community model-family representations + 13 origina
 Reference-led original low coupe with swept lamps, large lower grille, fender vents, split rear lamps and twin exhaust. Fixed blue paint. The nose, cabin, fenders, lenses and generic wheels are simplified, not an exact replica. This is the simplified sample level reviewed and accepted by the owner. No downloaded GR86 mesh or photographic texture. 66,952 triangles merged into 10 material groups.
 
 Coverage 69/100 = 46 community model-family + 14 original simplified + 9 labeled substitutes. 54 distinct body definitions; 31 procedural entries. Prior bodies, catalog/save IDs and gameplay unchanged. No physical-phone FPS claim.
+
+
+## Original stylized 2024 Subaru BRZ ZD8
+
+Reference-led original low coupe with swept lamps, rounded lower grille with horizontal bars, fender vents, split rear lamps and twin exhaust. Fixed silver paint. The nose, cabin, fenders, lenses and generic wheels are simplified, not an exact replica. The simplified visual level follows the owner-approved GR86 sample. No downloaded BRZ mesh or photographic texture. 65,980 triangles merged into 10 material groups.
+
+Coverage 70/100 = 46 community model-family + 15 original simplified + 9 labeled substitutes. 55 distinct body definitions; 30 procedural entries. Prior bodies, catalog/save IDs and gameplay unchanged. No physical-phone FPS claim.
