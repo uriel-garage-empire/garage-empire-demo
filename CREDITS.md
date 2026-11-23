@@ -469,3 +469,8 @@ Original reference-led geometry, no third-party mesh/photo textures. Matching fr
 ## Original simplified2024 Tesla Model3 Performance
 
 Original reference-led geometry, no third-party mesh or photo texture. Prior free ready-made screening did not establish a suitable matching licensed model: weak low-poly candidate and unclear-origin copies excluded. References viewed, not redistributed: https://www.tesla.com/blog/introducing-new-model-3-performance , https://www.caranddriver.com/news/a60583488/2024-tesla-model-3-performance-details/ , https://ev-database.org/car/2188/Tesla-Model-3-Performance .
+
+
+## Original simplified2024 Lexus IS500 F SPORT Performance
+
+Original reference-led geometry, no third-party mesh or photo texture. Prior free ready-made screening did not establish a suitable matching licensed model: Polycam capture without verified usable car geometry/license, print signage and unsuitable sources excluded. References viewed, not redistributed: https://pressroom.lexus.com/whats-new-2024-lexus-is-300-350-500/ , https://www.lexus.com/content/dam/lexus/documents/brochures/models/2024/MY24-Lexus-IS-Brochure.pdf , https://www.edmunds.com/lexus/is/2024/500-f-sport/features-specs/ .
