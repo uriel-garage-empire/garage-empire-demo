@@ -305,3 +305,15 @@ Shape references inspected:
 - 1999 dimensions: https://www.edmunds.com/dodge/viper/1999/st-13602/features-specs/
 
 Ready-made review did not establish a suitable free redistributable matching mesh. One GTS listing was deleted. The small 1997 GTS used a Standard license rather than an open redistribution license, and the 1999 ACR page had no usable download or displayed license. A later-generation 2013 model was not used. No downloaded Viper asset was imported.
+
+
+## Original simplified Mitsubishi 3000GT VR-4 1994
+
+Original reference-led geometry and color materials for this demo. Wide Z16A-era liftback coupe with fixed twin-projector lamp layout, hood blisters, stacked side vents, low wing and quad pipes. Flat simplified lenses, bumper contours and generic five-spoke wheels. Not an exact equipment replica. No photograph, third-party mesh or manufacturer logo artwork is included.
+
+Reference-only sources inspected:
+- 1994 brochure pages: https://importarchive.com/brochure/mitsubishi3000gt1994_01
+- 1994 front, side and rear photographs: https://www.mad4wheels.com/mitsubishi/3000gt-1994
+- 1994 dimensions: https://www.edmunds.com/mitsubishi/3000gt/1994/st-2709/features-specs/
+
+No Sketchfab candidate was imported. The small 1995 listing used CC BY-NC and the uploader's profile described collecting commercial-game meshes, which did not establish suitable source rights. The 1991 low-poly listing was an earlier pop-up-lamp body under a Standard license. A later 1999 listing was incomplete.
