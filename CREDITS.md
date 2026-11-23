@@ -403,3 +403,10 @@ Original reference-led geometry and color materials. Horizontal twin kidneys, th
 Reference-only photographs inspected: https://www.mad4wheels.com/bmw/m2-g87--2025
 
 Ready-made source screening found no qualified matching import. Candidates were game-extracted, uncertain-origin or had redistribution restrictions and were excluded.
+
+
+## Original simplified Porsche 718 Cayman 2016
+
+Original reference-led geometry with color materials, no third-party mesh or photographic texture. Simplified body, cabin, lamps and generic wheels, not an exact replica. Base coupe only, no relabeling across the remaining trims. Previously screened ready-made candidates had wrong-generation geometry, game origins or unresolved provenance and were excluded.
+
+Reference-only photographs: https://www.mad4wheels.com/porsche/cayman-718--2018 . Dimensions: https://www.porsche.com/international/models/718/718-models/718-cayman/ .
