@@ -2,9 +2,9 @@
 
 Free static car-management demo. Garage customization, NPC market, repairs and simulated drag races run entirely in the browser.
 
-## Licensed model update, 22 November 2026
+## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations plus nine explicitly labeled different-car visual substitutes (the i4 M50 and eight more, listed in CREDITS.md). These share 40 distinct CC BY body assets; 45 entries remain procedural. Each substitute shows another car's body, not a mesh of the named car, and is not counted as a match. Shared entries do not count as new bodies.
+The deployed showroom has 46 model-family community representations plus nine explicitly labeled different-car visual substitutes (the i4 M50 and eight more, listed in CREDITS.md). These share 40 distinct CC BY body assets. Two accepted original simplified bodies, J250 Land Cruiser and Nissan Z Performance, bring model-backed coverage to 57 entries and 42 distinct bodies; 43 entries remain procedural. Original simplified bodies are counted separately from community assets and different-car substitutes. Each substitute shows another car's body, not a mesh of the named car, and is not counted as a match. Shared entries do not count as new bodies.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
