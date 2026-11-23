@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations, eleven original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is66/100 catalog entries with51distinct body definitions;34entries remain procedural. The40community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has46model-family community representations, twelve original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is67/100catalog entries with52distinct body definitions;33entries remain procedural. The40community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -267,3 +267,10 @@ Current coverage65/100 =46community model-family representations +10original sim
 Reference-led original five-door fastback hatchback, hood extractor, slim lamps, fender extractors, low wide two-support wing and center triple exhaust. Fixed off-white paint, simplified bumpers and flat lenses, generic wheels. No downloaded Civic Type R mesh or photographic texture.
 
 Current coverage66/100 =46community model-family representations +11original simplified bodies +9explicit different-car substitutes.51distinct body definitions,34procedural entries. Catalog/save IDs, prior bodies and gameplay unchanged. No physical-phone FPS claim.
+
+
+## Original simplified 2025 Honda Accord LX
+
+Reference-led long four-door sedan, hexagonal grille, slim lamps and full-width split rear light panel. Fixed silver paint, simplified bumpers and flat lenses, generic wheels. No downloaded Accord LX mesh or photograph texture.
+
+Current coverage67/100 =46community model-family representations +12original simplified bodies +9explicit different-car substitutes.52distinct body definitions,33procedural entries. Catalog/save IDs, prior bodies and gameplay unchanged. No physical-phone FPS claim.
