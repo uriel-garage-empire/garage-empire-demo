@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has46 model-family community representations, thirty-two original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is87/100 catalog entries with72 distinct body definitions;13 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has46 model-family community representations, thirty-three original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is88/100 catalog entries with73 distinct body definitions;12 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -368,3 +368,8 @@ Separate simplified facelift S3 fallback, not an exact replica. L-pattern single
 ## Original stylized2025 Audi RS3 sedan
 
 Separate simplified facelift RS3 fallback, not an exact replica. Wider fenders, rhombus singleframe, checkered lamps, black mirror caps, cross spokes, twin oval outlets and RS diffuser.87/100coverage,46community+32original+9substitutes,72distinct definitions,13procedural. Prior visuals/catalog/save/gameplay preserved.
+
+
+## Original stylized2024 Tesla Model3 Performance
+
+Separate simplified Highland Performance fallback, not an exact replica. Closed nose, slim lamps, glass roof, C-shaped rear lamps, Performance splitter, diffuser, wheels and lip spoiler.88/100coverage,46community+33original+9substitutes,73distinct definitions,12procedural. Prior visuals/catalog/save/gameplay preserved.
