@@ -474,3 +474,8 @@ Original reference-led geometry, no third-party mesh or photo texture. Prior fre
 ## Original simplified2024 Lexus IS500 F SPORT Performance
 
 Original reference-led geometry, no third-party mesh or photo texture. Prior free ready-made screening did not establish a suitable matching licensed model: Polycam capture without verified usable car geometry/license, print signage and unsuitable sources excluded. References viewed, not redistributed: https://pressroom.lexus.com/whats-new-2024-lexus-is-300-350-500/ , https://www.lexus.com/content/dam/lexus/documents/brochures/models/2024/MY24-Lexus-IS-Brochure.pdf , https://www.edmunds.com/lexus/is/2024/500-f-sport/features-specs/ .
+
+
+## Original simplified2024 Kia EV6 GT
+
+Original reference-led geometry, no third-party mesh or photo texture. Prior free ready-made screening did not establish a suitable matching licensed model: paid slowpoly source and matching mirrors, unresolved SketchUp conversion and editorial raw-redistribution gap excluded. References viewed, not redistributed: https://www.kiamedia.com/us/en/models/ev6/2024 , https://www.kiamedia.com/us/en/models/ev6/2024/specifications , https://www.kia.com/us/content/dam/kia/us/brochures/KIA24_Full-Line_Brochure.pdf , https://www.mad4wheels.com/kia/ev6-gt-usa-version-2023 .
