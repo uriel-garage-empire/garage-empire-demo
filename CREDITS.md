@@ -394,3 +394,12 @@ Original reference-led geometry and color materials. Hood scoop, hex grille, ang
 Reference-only photographs inspected: https://www.mad4wheels.com/subaru/wrx-2022
 
 Ready-made source screening found no qualified matching import. The identified PrintYourVehicle mesh was explicitly game-extracted and was excluded.
+
+
+## Original stylized BMW M2 G87 2025
+
+Original reference-led geometry and color materials. Horizontal twin kidneys, three lower intakes, single projector lamps, angular rear lenses and widely paired quad exhaust. Simplified body surfaces, cabin, lenses and generic wheels, not an exact replica. No third-party mesh or photographic texture included.
+
+Reference-only photographs inspected: https://www.mad4wheels.com/bmw/m2-g87--2025
+
+Ready-made source screening found no qualified matching import. Candidates were game-extracted, uncertain-origin or had redistribution restrictions and were excluded.
