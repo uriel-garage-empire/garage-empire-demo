@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations plus nine explicitly labeled different-car visual substitutes (the i4 M50 and eight more, listed in CREDITS.md). These share 40 distinct CC BY body assets. Six original simplified bodies, J250 Land Cruiser, Nissan Z Performance, variant-specific Z NISMO, Mk8 Golf GTI, variant-specific Golf R and three-door GR Yaris, bring model-backed coverage to 61 entries and 46 distinct bodies; 39 entries remain procedural. Original simplified bodies are counted separately from community assets and different-car substitutes. Each substitute shows another car's body, not a mesh of the named car, and is not counted as a match. Shared entries do not count as new bodies.
+The deployed showroom has 46 model-family community representations, nine original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is64/100 catalog entries with49distinct body definitions;36entries remain procedural. The40community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -246,3 +246,10 @@ Current coverage62/100 =46community-family+7original+9explicit different-car sub
 An original reference-led SR II coupe with long clamshell hood, rearward double-bubble cabin, broad rear haunches, side scallops, oval rear lights and central twin exhaust. Blue paint and twin white stripes are fixed. Bumpers, lamp construction, wheel design and fine trim are simplified, not an exact factory replica. No downloaded Viper mesh or photographic texture is included.
 
 Current coverage: 63/100 = 46 community model-family representations + 8 original simplified bodies + 9 explicitly labeled different-car substitutes. These use 48 distinct body definitions; 37 catalog entries remain procedural. Earlier progress sections above are historical. Catalog/save IDs, previous body builders and gameplay are unchanged.
+
+
+## Original simplified 1994 Mitsubishi 3000GT VR-4
+
+Reference-led original Z16A-era liftback coupe, fixed twin-projector lamp layout, hood blisters, low rear wing, stacked side vents and quad pipes. Fixed red body, simplified bumpers, flat lamp lenses and generic wheels, not a factory-equipment replica. No downloaded 3000GT mesh or photographic texture.
+
+Current coverage64/100 =46community model-family representations +9original simplified bodies +9explicit different-car substitutes.49distinct body definitions,36procedural entries. Catalog/save IDs, prior bodies and gameplay unchanged. No physical-phone FPS claim.
