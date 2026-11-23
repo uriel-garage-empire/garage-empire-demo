@@ -292,3 +292,16 @@ Reference-only sources:
 -EarlyGDJapaneseNBsedan rear photograph, https://commons.wikimedia.org/wiki/File:Subaru_IMPREZA_NB_(TA-GDA)_rear.jpg , rear shape reference only, not US trim certification.
 
 No Sketchfab WRX candidate was imported. The357k-triangle listing showed an earlierGCcoupe; the small2002STiExtreme listing described aWRC2rally car. Neither matched this street sedan.
+
+
+## Original simplified Dodge Viper GTS 1999
+
+Original geometry and color materials made for this demo. Reference-led SR II coupe, not a scan or exact factory replica. Long hood, rearward double-bubble roof, broad rear fenders, side recesses, oval rear lamps and central twin pipes. Simplified fascia contours, lamp units, generic wheels, fixed blue/white paint. No photograph or third-party Viper mesh is redistributed.
+
+Shape references inspected:
+- 1999 front photo: https://commons.wikimedia.org/wiki/File:1999_Dodge_Viper_GTS,_Front_Right,_06-15-2021.jpg
+- 1999 front photo: https://commons.wikimedia.org/wiki/File:1999_Dodge_Viper_GTS_2.jpg
+- SR II GTS rear photo: https://commons.wikimedia.org/wiki/File:The_rearview_of_Chrysler_Viper_GTS.jpg
+- 1999 dimensions: https://www.edmunds.com/dodge/viper/1999/st-13602/features-specs/
+
+Ready-made review did not establish a suitable free redistributable matching mesh. One GTS listing was deleted. The small 1997 GTS used a Standard license rather than an open redistribution license, and the 1999 ACR page had no usable download or displayed license. A later-generation 2013 model was not used. No downloaded Viper asset was imported.
