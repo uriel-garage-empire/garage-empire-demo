@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations, twenty-six original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 81/100 catalog entries with 66 distinct body definitions; 19 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has 46 model-family community representations, twenty-seven original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 82/100 catalog entries with 67 distinct body definitions; 18 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -343,3 +343,8 @@ GT4 has a fixed wing with twin supports; Spyder has an open cockpit and double-b
 ## Original stylized 2024 Hyundai Elantra N facelift
 
 Original simplified fallback with thin front lamps, angular N bumper accents, red side trim, connected rear lamps, twin exhausts and raised rear spoiler. Not an exact replica. 81/100 coverage,46community+26original+9substitutes,66distinct definitions,19procedural. Prior visuals/gameplay/catalog/save IDs preserved.
+
+
+## Original stylized 2025 Toyota Corolla LE
+
+Original simplified fallback, not exact: hooked front lamps, LE horizontal-slat grille, silver 16-inch-style wheel covers and plain bumper with tall rear reflectors. No sport spoiler/diffuser/wheels. 82/100 coverage,46community+27original+9substitutes,67distinct definitions,18procedural. Prior visuals/gameplay/catalog/save IDs preserved.
