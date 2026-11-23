@@ -459,3 +459,8 @@ Original reference-led geometry, no third-party mesh/photo textures. Matching re
 ## Original simplified2025 Audi S3 sedan
 
 Original reference-led geometry, no third-party mesh/photo textures. Matching free ready-made searches did not establish a stock2025S3; inspected own-creation2021A3 was wrong trim/year and weak quality, not relabeled. References viewed, not redistributed: https://media.audiusa.com/releases/617 , https://www.mad4wheels.com/audi/s3-sedan-usa-version-2025/car-wallpaper-829800 , https://www.audi.com/en/media-releases/high-performance-agile-expressive-the-new-audi-s3-15980 , https://media.audiusa.com/assets/applications/original/14705-my25-audi-a3-s3-rs-3-tech-specs-rev-051425.pdf .
+
+
+## Original simplified2025 Audi RS3 sedan
+
+Original reference-led geometry, no third-party mesh/photo textures. Matching free ready-made searches did not establish a stock2025RS3; inspected own-creation2021A3 was wrong trim/year and weak quality, not relabeled. References viewed, not redistributed: https://media.audiusa.com/releases/630 , https://www.mad4wheels.com/audi/rs-3-sedan-2025/car-wallpaper-772058 , https://media.audiusa.com/assets/applications/original/14705-my25-audi-a3-s3-rs-3-tech-specs-rev-051425.pdf .
