@@ -385,3 +385,12 @@ Reference-only sources inspected:
 - Subaru 2024 model information: https://media.subaru.com/pressrelease/2089/1/subaru-announces-pricing-2024-brz-sports-car
 
 Ready-made candidates found were wrong-generation, restricted, uncertain-origin or below the accepted visual level, and were not imported.
+
+
+## Original stylized Subaru WRX VB 2024
+
+Original reference-led geometry and color materials. Hood scoop, hex grille, angular black fender cladding, wrapped rear lamps and quad exhaust. Simplified body surfaces, cabin, lenses and generic wheels, not an exact replica. No third-party mesh or photographic texture included.
+
+Reference-only photographs inspected: https://www.mad4wheels.com/subaru/wrx-2022
+
+Ready-made source screening found no qualified matching import. The identified PrintYourVehicle mesh was explicitly game-extracted and was excluded.
