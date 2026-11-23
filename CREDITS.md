@@ -329,3 +329,14 @@ Reference-only sources inspected:
 - Core dimensions: https://www.edmunds.com/toyota/gr-corolla/2024/st-402011754/features-specs/
 
 No candidate mesh was imported. Slowpoly's lightweight listing offered no free download/license and its matching store model used Royalty Free terms. A downloadable482.5k listing had a CC BY badge but no authoring-origin evidence. Other listings were paid/Standard licensed, custom restricted or explicitly game-extracted.
+
+
+## Original simplified Honda Civic Type R FL5 2024
+
+Original reference-led geometry and color materials. Five-door fastback hatchback, hood extractor, slim three-element lamps, fender extractors, black sill, two-support wing and center triple exhaust. Simplified bumper curves, flat lenses and generic wheels, not an exact equipment replica. No photograph or third-party mesh included.
+
+Reference-only sources inspected:
+- Same-generation2023stock FL5 front/side/rear photos: https://www.mad4wheels.com/honda/civic-type-r-2023
+- Official2024USdimensions/features: https://hondanews.com/en-US/releases/2024-honda-civic-type-r-specifications-features
+
+No candidate imported. Custom FL5kit listing used BY-NC-ND and stated an obtained base model. A141.8k downloadable CC BY listing had no established authoring-origin evidence. Other leads were paid scans, restricted store models, wrong-generation bodies or explicitly game-extracted meshes.
