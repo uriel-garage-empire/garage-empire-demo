@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations, ten original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is65/100 catalog entries with50distinct body definitions;35entries remain procedural. The40community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has 46 model-family community representations, eleven original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is66/100 catalog entries with51distinct body definitions;34entries remain procedural. The40community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -260,3 +260,10 @@ Current coverage64/100 =46community model-family representations +9original simp
 Reference-led original five-door hatchback, widened quarters, front-fender extractors, hooked lamps, plain roof/hood, low spoiler and triple exhaust. Core proportions and equipment direction, not Circuit vented hood, carbon roof or high wing. Fixed red paint, simplified bumpers and flat lenses, generic wheels. No downloaded GR Corolla mesh or photographic texture.
 
 Current coverage65/100 =46community model-family representations +10original simplified bodies +9explicit different-car substitutes.50distinct body definitions,35procedural entries. Catalog/save IDs, prior bodies and gameplay unchanged. No physical-phone FPS claim.
+
+
+## Original simplified 2024 Honda Civic Type R FL5
+
+Reference-led original five-door fastback hatchback, hood extractor, slim lamps, fender extractors, low wide two-support wing and center triple exhaust. Fixed off-white paint, simplified bumpers and flat lenses, generic wheels. No downloaded Civic Type R mesh or photographic texture.
+
+Current coverage66/100 =46community model-family representations +11original simplified bodies +9explicit different-car substitutes.51distinct body definitions,34procedural entries. Catalog/save IDs, prior bodies and gameplay unchanged. No physical-phone FPS claim.
