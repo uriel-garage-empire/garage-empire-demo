@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has46 model-family community representations, thirty-four original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is89/100 catalog entries with74 distinct body definitions;11 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has46 model-family community representations, thirty-five original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is90/100 catalog entries with75 distinct body definitions;10 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -378,3 +378,8 @@ Separate simplified Highland Performance fallback, not an exact replica. Closed 
 ## Original stylized2024 Lexus IS500 F SPORT Performance
 
 Separate simplified IS500 fallback, not an exact replica. Raised hood, spindle grille, L-shaped lamps, rear light bar, moonroof, split10-spoke-style wheels and diagonal-stacked quad exhausts.89/100coverage,46community+34original+9substitutes,74distinct definitions,11procedural. Prior visuals/catalog/save/gameplay preserved.
+
+
+## Original stylized2024 Kia EV6 GT
+
+Separate simplified EV6 GT fallback, not an exact replica. Swept lamps, sloping hatch, boomerang rear light blade, angular GT wheels and neon calipers.90/100coverage,46community+35original+9substitutes,75distinct definitions,10procedural. Prior visuals/catalog/save/gameplay preserved.
