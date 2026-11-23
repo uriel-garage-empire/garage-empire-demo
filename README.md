@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Licensed model update, 22 November 2026
 
-The deployed showroom has 46 model-family community representations plus one explicitly labeled different-car visual substitute for the i4. These share 40 distinct CC BY body assets; 53 entries remain procedural. The i4 substitute is a BMW M3 G80 body, not an i4 mesh. Shared entries do not count as new bodies.
+The deployed showroom has 46 model-family community representations plus nine explicitly labeled different-car visual substitutes (the i4 M50 and eight more, listed in CREDITS.md). These share 40 distinct CC BY body assets; 45 entries remain procedural. Each substitute shows another car's body, not a mesh of the named car, and is not counted as a match. Shared entries do not count as new bodies.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -221,5 +221,5 @@ Current coverage:45of100catalog entries,39distinct bodies,55procedural. The lega
 Current coverage: **46 of 100 catalog entries**, **40 distinct body assets**, **54 procedural**. The existing 2021 Turbo S now uses a 21k-triangle community 992 coupe with visible simplification and exact-equipment caveats. Original dark-green paint, black glass, materials, geometry and image retained. Original GLB is 1.76MB; ten lossless base64 transport parts. No gameplay, catalog/save or loading-behavior changes.
 
 
-### Explicit i4-only visual substitute
-2022BMW i4 M50 now uses a clearly labeled BMW M3 G80 body as a visual substitute. It is NOT an i4 mesh. Catalog name/year/stats/save IDs stay unchanged. Coverage is46existing model-family representations plus1different-car approximation,40distinct meshes,53procedural fallbacks. No new asset payload. See CREDITS for source and visible differences.
+### Labeled visual substitutes (23 November 2026)
+Nine entries reuse an existing body from another car and say so in the showroom title, an amber note beside the specifications and the 3D caption: BMW i4 M50 (BMW M3 G80 body), Corvette E-Ray and Z06 (Corvette C8 Stingray body), Nissan GT-R NISMO (R35 body), Hyundai IONIQ 5 N (IONIQ 5 body), McLaren 750S (720S body), Porsche 911 Carrera S (992 Turbo S body), Mazda MX-5 Miata RF Club (open-top ND roadster body) and Ford Mustang EcoBoost (S650 GT body). Catalog names, years, stats and save IDs are unchanged. Coverage is 46 existing model-family representations plus 9 different-car substitutes, 40 distinct meshes, 45 procedural fallbacks. No new asset payload. See CREDITS for sources and the differences stated for each car.
