@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Licensed model update, 22 November 2026
 
-The deployed showroom maps 45 of the existing 100 catalog entries to 39 distinct CC BY community body assets. Shared trim entries do not count as separate bodies. The remaining 55 entries use procedural bodies. Credits, source links, repacking notes and year/trim limitations are in CREDITS.md. Original source paint is retained. These are community model/generation representations, not exact verified year/trim replicas.
+The deployed showroom has 46 model-family community representations plus one explicitly labeled different-car visual substitute for the i4. These share 40 distinct CC BY body assets; 53 entries remain procedural. The i4 substitute is a BMW M3 G80 body, not an i4 mesh. Shared entries do not count as new bodies.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -219,3 +219,7 @@ Current coverage:45of100catalog entries,39distinct bodies,55procedural. The lega
 ## Lightweight 992 Turbo S body update, 22 November 2026
 
 Current coverage: **46 of 100 catalog entries**, **40 distinct body assets**, **54 procedural**. The existing 2021 Turbo S now uses a 21k-triangle community 992 coupe with visible simplification and exact-equipment caveats. Original dark-green paint, black glass, materials, geometry and image retained. Original GLB is 1.76MB; ten lossless base64 transport parts. No gameplay, catalog/save or loading-behavior changes.
+
+
+### Explicit i4-only visual substitute
+2022BMW i4 M50 now uses a clearly labeled BMW M3 G80 body as a visual substitute. It is NOT an i4 mesh. Catalog name/year/stats/save IDs stay unchanged. Coverage is46existing model-family representations plus1different-car approximation,40distinct meshes,53procedural fallbacks. No new asset payload. See CREDITS for source and visible differences.
