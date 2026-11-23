@@ -417,3 +417,10 @@ Reference-only photographs: https://www.mad4wheels.com/porsche/cayman-718--2018 
 Original reference-led geometry with color materials, no third-party mesh or photographic texture. Simplified body, cabin, lamps and generic wheels, not an exact replica. Base roadster only, no relabeling across the remaining trims. Previously screened ready-made candidates had wrong-generation geometry, game origins or unresolved provenance and were excluded.
 
 Reference-only photographs: https://www.mad4wheels.com/porsche/718-boxster-2016 . Dimensions: https://www.porsche.com/international/models/718/718-models/718-boxster/ .
+
+
+## Original simplified 2016 Porsche 718 Cayman S and Boxster S
+
+Original reference-led geometry with color materials. Distinct S trim wheels, red calipers and paired round tailpipes. No third-party mesh or photo texture. Simplified bodies and wheels, not exact replicas. Ready-made-first screening remains in force.
+
+References only: https://www.mad4wheels.com/porsche/cayman-718-s-2018 and https://www.mad4wheels.com/porsche/718-boxster-s-2016 . Trim detail source: https://autocatalogarchive.com/wp-content/uploads/2022/03/Porsche-718-Boxster-718-Cayman-2019-INT.pdf (same 982 generation brochure, 19-inch-style S wheels, red calipers and twin tailpipes).
