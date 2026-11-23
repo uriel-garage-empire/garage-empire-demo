@@ -454,3 +454,8 @@ Original reference-led fallback, not exact. No third-party mesh/photo textures. 
 ## Original simplified2024 Nissan Ariya e-4ORCE
 
 Original reference-led geometry, no third-party mesh/photo textures. Matching ready-made source found was paid; free copies did not establish provenance, another original listing unavailable. References viewed, not redistributed: https://usa.nissannews.com/en-US/releases/2024-nissan-ariya-press-kit and https://www.mad4wheels.com/nissan/ariya-2023 . Official2024front photo and dimensions/e-4ORCE wheels checked against stock body photo set, no NISMO body substitution.
+
+
+## Original simplified2025 Audi S3 sedan
+
+Original reference-led geometry, no third-party mesh/photo textures. Matching free ready-made searches did not establish a stock2025S3; inspected own-creation2021A3 was wrong trim/year and weak quality, not relabeled. References viewed, not redistributed: https://media.audiusa.com/releases/617 , https://www.mad4wheels.com/audi/s3-sedan-usa-version-2025/car-wallpaper-829800 , https://www.audi.com/en/media-releases/high-performance-agile-expressive-the-new-audi-s3-15980 , https://media.audiusa.com/assets/applications/original/14705-my25-audi-a3-s3-rs-3-tech-specs-rev-051425.pdf .
