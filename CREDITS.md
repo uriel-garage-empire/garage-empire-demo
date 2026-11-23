@@ -227,13 +227,26 @@ The listed differences describe the real cars from the cited sources. They are n
 
 ## Original simplified bodies, 23 November 2026
 
-Two original model-specific studies were accepted at their shown simplified quality. They are not community downloads, different-car substitutes or exact factory replicas. No reference photographs are bundled or used as textures.
+The first two original model-specific studies were accepted at their shown simplified quality. They are not community downloads, different-car substitutes or exact factory replicas. No reference photographs are bundled or used as textures.
 
 - Toyota Land Cruiser 2024: original J250-inspired body, round 1958-style lamps, angular roof, simplified bumper/lamp/wheel details. 27,572 triangles, 11 material groups, 1,822,812 bytes. Catalog hybrid specifications remain separate from the simplified trim appearance.
 - Nissan Z Performance 2024: original simplified RZ34 Performance body, angular fascia and lamps, generic wheels. Not NISMO. 46,652 triangles, 8 material groups, 1,874,240 bytes.
 
 The reference-photo license credits for the private comparisons do not label these original models as downloaded CC BY assets. The screenshots and photographs are not included in the demo.
 
-Coverage: 46 community model-family representations, 2 original simplified model-specific representations, 9 explicitly labeled different-car substitutes, 43 procedural. 42 distinct body definitions, including 40 community and 2 original. No catalog or save ID changes.
+Coverage: 46 community model-family representations, 3 original simplified model-specific representations, 9 explicitly labeled different-car substitutes, 42 procedural. 43 distinct body definitions, including 40 community and 3 original. No catalog or save ID changes.
 
 Original bodies are delivered as compact model-specific geometry builders in preview.js and merged by material at runtime. The GLB byte sizes above describe the verified study exports, not added network downloads. The builders retain the same construction geometry, materials and triangle counts.
+
+
+### Nissan Z NISMO original variant
+
+The Z NISMO is a separate original variant of the simplified Z shell, not an unchanged Performance substitute. Extended nose, trapezoid grille opening and fine mesh treatment, corner canards, dark roofline, black wheel treatment, red lower sills and corner accents, reshaped rear aero and a three-piece deck spoiler are separately modeled. 53,708 triangles, 8 merged material groups. Lamps, wheels and aero surfaces remain deliberately angular and simplified, not exact factory detail.
+
+Primary reference: https://usa.nissannews.com/en-US/releases/2024-nissan-z-nismo-press-kit
+
+Photographic shape references inspected, not bundled or used as textures:
+- Kazyakuruma, CC0, MY2024 Japanese display car: https://commons.wikimedia.org/wiki/File:Nissan_Z_NISMO%2C_2023%2C_front.jpg
+- Pangalau, Australian MY2024 car, side and rear: https://commons.wikimedia.org/wiki/File:2024_Nissan_Z_NISMO_-_03.jpg and https://commons.wikimedia.org/wiki/File:2024_Nissan_Z_NISMO_-_04.jpg
+
+This body is original geometry and has no downloaded game-extracted mesh.
