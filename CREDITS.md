@@ -434,3 +434,8 @@ Original reference-led fallback geometry with dark ten-spoke wheels, red caliper
 ## Original simplified 2020 718 Cayman GT4 and Spyder
 
 Original reference-led fallback geometry. GT4 fixed wing and Spyder double-bubble open rear deck are separately defined. No downloaded mesh or photo textures. Simplified, not exact replicas. References: https://newsroom.porsche.com/en/2019/products/porsche-718-spyder-cayman-gt4-naturally-aspired-engine-mid-engine.html and https://newsroom.porsche.com/en/press-kits/718-spyder-cayman-gt4/aerodynamik.html .
+
+
+## Original simplified 2024 Hyundai Elantra N
+
+Original reference-led fallback geometry. No third-party mesh or photo texture. Matching ready-made game-derived asset excluded, older 2021 own-creation listing wrong facelift and insufficient recognition. Reference photographs viewed, not redistributed: https://www.mad4wheels.com/hyundai/elantra-n-usa-version-2024 . Simplified, not exact.
