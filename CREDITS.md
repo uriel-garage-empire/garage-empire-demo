@@ -444,3 +444,8 @@ Original reference-led fallback geometry. No third-party mesh or photo texture. 
 ## Original simplified 2025 Toyota Corolla LE
 
 Original reference-led fallback geometry, not exact. No third-party mesh or photo texture. No suitable matching free licensed ready-made source established in existing source screen. References viewed, not redistributed: https://pressroom.toyota.com/let-the-good-times-keep-on-rolling-in-the-2025-toyota-corolla/ , https://www.toyota.com/content/dam/toyota/brochures/pdf/2025/corolla_ebrochure.pdf , https://www.smarttoyota.com/static/dealer-14501/corolla/23/sedan/corolla_brochure.pdf , https://commons.wikimedia.org/wiki/File:2024_Toyota_Corolla_LE.jpg and https://www.toyotaofcorvallis.com/inventory/certified-used-2025-toyota-corolla-le-fwd-4d-sedan-5yfb4mde9sp257628/ .
+
+
+## Original simplified 2025 Toyota Camry LE / XSE AWD
+
+Original reference-led fallback, not exact. No third-party mesh/photo textures. Matching ready-made candidates remain excluded as game-derived, uncertain origin, paid or unfinished/wrong generation. References viewed, not redistributed: https://pressroom.toyota.com/toyota-camry-goes-exclusively-hybrid-plus-a-new-look-and-more-technology/ , https://www.mad4wheels.com/toyota/camry-xse-awd-2025 , https://commons.wikimedia.org/wiki/File:2025_Toyota_Camry_LE%2C_front_left.jpg and https://commons.wikimedia.org/wiki/File:2025_Toyota_Camry_LE%2C_rear_left.jpg .
