@@ -15,7 +15,7 @@ Some catalog cars show community-made models of the real car instead of the game
 
 These models keep their creators' authentic paint colors; the in-game paint control is disabled for them. They are same-generation representations, not exact year/trim replicas.
 
-All other cars use the game's original procedural bodies. Car names and designs are trademarks of their respective manufacturers; this is a free fan project with no affiliation.
+Cars without a mapped community or original model-specific body use the game's procedural body families. Car names and designs are trademarks of their respective manufacturers; this is a free fan project with no affiliation.
 
 ## Libraries
 
@@ -223,3 +223,17 @@ Eight catalog entries, in addition to the i4 above, reuse an existing CC BY body
 - Ford Mustang EcoBoost (2024) uses the S650 GT body. The EcoBoost has a calmer front fascia, a flat hood without vents and dual exhaust tips; the GT adds hood vents, a splitter and quad tips ( https://www.topspeed.com/2024-ford-mustang-gt-vs-dark-horse-vs-ecoboost/ , https://www.edmunds.com/ford/mustang/2024/trims/ ).
 
 The listed differences describe the real cars from the cited sources. They are not a claim about every detail of the community meshes.
+
+
+## Original simplified bodies, 23 November 2026
+
+Two original model-specific studies were accepted at their shown simplified quality. They are not community downloads, different-car substitutes or exact factory replicas. No reference photographs are bundled or used as textures.
+
+- Toyota Land Cruiser 2024: original J250-inspired body, round 1958-style lamps, angular roof, simplified bumper/lamp/wheel details. 27,572 triangles, 11 material groups, 1,822,812 bytes. Catalog hybrid specifications remain separate from the simplified trim appearance.
+- Nissan Z Performance 2024: original simplified RZ34 Performance body, angular fascia and lamps, generic wheels. Not NISMO. 46,652 triangles, 8 material groups, 1,874,240 bytes.
+
+The reference-photo license credits for the private comparisons do not label these original models as downloaded CC BY assets. The screenshots and photographs are not included in the demo.
+
+Coverage: 46 community model-family representations, 2 original simplified model-specific representations, 9 explicitly labeled different-car substitutes, 43 procedural. 42 distinct body definitions, including 40 community and 2 original. No catalog or save ID changes.
+
+Original bodies are delivered as compact model-specific geometry builders in preview.js and merged by material at runtime. The GLB byte sizes above describe the verified study exports, not added network downloads. The builders retain the same construction geometry, materials and triangle counts.
