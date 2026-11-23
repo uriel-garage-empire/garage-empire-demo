@@ -439,3 +439,8 @@ Original reference-led fallback geometry. GT4 fixed wing and Spyder double-bubbl
 ## Original simplified 2024 Hyundai Elantra N
 
 Original reference-led fallback geometry. No third-party mesh or photo texture. Matching ready-made game-derived asset excluded, older 2021 own-creation listing wrong facelift and insufficient recognition. Reference photographs viewed, not redistributed: https://www.mad4wheels.com/hyundai/elantra-n-usa-version-2024 . Simplified, not exact.
+
+
+## Original simplified 2025 Toyota Corolla LE
+
+Original reference-led fallback geometry, not exact. No third-party mesh or photo texture. No suitable matching free licensed ready-made source established in existing source screen. References viewed, not redistributed: https://pressroom.toyota.com/let-the-good-times-keep-on-rolling-in-the-2025-toyota-corolla/ , https://www.toyota.com/content/dam/toyota/brochures/pdf/2025/corolla_ebrochure.pdf , https://www.smarttoyota.com/static/dealer-14501/corolla/23/sedan/corolla_brochure.pdf , https://commons.wikimedia.org/wiki/File:2024_Toyota_Corolla_LE.jpg and https://www.toyotaofcorvallis.com/inventory/certified-used-2025-toyota-corolla-le-fwd-4d-sedan-5yfb4mde9sp257628/ .
