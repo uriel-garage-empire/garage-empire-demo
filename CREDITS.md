@@ -280,3 +280,15 @@ Reference photographs, viewed only:
 -Rear photo by M93, https://commons.wikimedia.org/wiki/File:Toyota_GR_Yaris_(XP21)_%E2%80%93_h_03052021.jpg ,CCBY-SA3.0Germany.
 
 No Sketchfab GR Yaris candidate was imported. The free26.4k-triangle listing did not establish original authorship; the other2021listing explicitly cites CSR2.
+
+
+## Original simplified Impreza WRX2002 sedan
+
+Original geometry written for this project. Early GD bugeye four-door sedan with round headlamps/fogs, hood scoop and low trunk wing. Simplified lamps, bumper contours and generic wheels, not exact factory equipment. No downloaded model, photograph, texture or manufacturer logo artwork is included.
+
+Reference-only sources:
+-Subaru2002brochure archive, https://www.subaru.de/hubfs/Service%20und%20Zubeh%C3%B6r/Prospektarchiv/Impreza/Impreza_Mj2002_PTA.pdf?hsLang=de .
+-US sedan front photographs, https://commons.wikimedia.org/wiki/File:2002-2003_Subaru_Impreza_WRX_sedan_--_03-16-2012_1.JPG and https://commons.wikimedia.org/wiki/File:2002-2003_Subaru_Impreza_WRX_sedan_--_03-16-2012_2.JPG .
+-EarlyGDJapaneseNBsedan rear photograph, https://commons.wikimedia.org/wiki/File:Subaru_IMPREZA_NB_(TA-GDA)_rear.jpg , rear shape reference only, not US trim certification.
+
+No Sketchfab WRX candidate was imported. The357k-triangle listing showed an earlierGCcoupe; the small2002STiExtreme listing described aWRC2rally car. Neither matched this street sedan.
