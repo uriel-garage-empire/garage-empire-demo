@@ -479,3 +479,8 @@ Original reference-led geometry, no third-party mesh or photo texture. Prior fre
 ## Original simplified2024 Kia EV6 GT
 
 Original reference-led geometry, no third-party mesh or photo texture. Prior free ready-made screening did not establish a suitable matching licensed model: paid slowpoly source and matching mirrors, unresolved SketchUp conversion and editorial raw-redistribution gap excluded. References viewed, not redistributed: https://www.kiamedia.com/us/en/models/ev6/2024 , https://www.kiamedia.com/us/en/models/ev6/2024/specifications , https://www.kia.com/us/content/dam/kia/us/brochures/KIA24_Full-Line_Brochure.pdf , https://www.mad4wheels.com/kia/ev6-gt-usa-version-2023 .
+
+
+## Original simplified2023 Mercedes-AMG C43
+
+Original reference-led geometry, no imported third-party mesh or photo texture. Ready-made screening found no qualified matching asset: C43 sedan candidate has unresolved original provenance and high geometry cost, while estate/coupe and old-generation C63 are not the target body. Not an exact replica. Reference sources viewed, not redistributed: https://mercedes-benz-media.co.uk/assets/documents/original/40551-PIMercedesAMGC43eng.pdf , https://www.mercedes-benz.co.nz/passengercars/services/manuals.html/c-class-sedan-2024-09-w206-mbux/vehicle-data/vehicle-dimensions-mercedes-amg-vehicles , https://media.mbusa.com/releases/release-0cbff62111a361ef6df50814ca002af4-mercedes-benz-usa-announces-pricing-and-packaging-structures-for-2023-amg-c-43-sedan , https://www.caranddriver.com/mercedes-amg/c43-2024 , https://www.mad4wheels.com/mercedes-amg/c-43-2023 .
