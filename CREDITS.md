@@ -234,7 +234,7 @@ The first two original model-specific studies were accepted at their shown simpl
 
 The reference-photo license credits for the private comparisons do not label these original models as downloaded CC BY assets. The screenshots and photographs are not included in the demo.
 
-Coverage: 46 community model-family representations, 3 original simplified model-specific representations, 9 explicitly labeled different-car substitutes, 42 procedural. 43 distinct body definitions, including 40 community and 3 original. No catalog or save ID changes.
+Coverage: 46 community model-family representations, 4 original simplified model-specific representations, 9 explicitly labeled different-car substitutes, 41 procedural. 44 distinct body definitions, including 40 community and 4 original. No catalog or save ID changes.
 
 Original bodies are delivered as compact model-specific geometry builders in preview.js and merged by material at runtime. The GLB byte sizes above describe the verified study exports, not added network downloads. The builders retain the same construction geometry, materials and triangle counts.
 
@@ -250,3 +250,12 @@ Photographic shape references inspected, not bundled or used as textures:
 - Pangalau, Australian MY2024 car, side and rear: https://commons.wikimedia.org/wiki/File:2024_Nissan_Z_NISMO_-_03.jpg and https://commons.wikimedia.org/wiki/File:2024_Nissan_Z_NISMO_-_04.jpg
 
 This body is original geometry and has no downloaded game-extracted mesh.
+
+
+### Volkswagen Golf GTI Mk8 original body
+
+Original simplified five-door Mk8 GTI geometry, not a downloaded mesh or Golf R substitute. Measured envelope follows the 2024 US press kit, with four-door glazing, Golf C-pillar, wide honeycomb lower opening, red upper grille line, simplified five-unit fog-light treatment, roof spoiler, split rear lamps and twin outboard tailpipes. Angular bumpers, coarse lamps and generic broad-blade wheels are intentional limitations, visible in Arabic and English captions. 50,378 triangles, 8 merged material groups. Geometry is merged by material and carried as a small JavaScript builder, not a new GLB download. No catalog/save IDs or gameplay changes.
+
+Manufacturer reference: https://media.vw.com/press-kits/2024-golf-gti-press-kit . Same-generation 2022 front/rear photographs were visually checked, not proof of every 2024 trim detail: https://commons.wikimedia.org/wiki/File:2022_Volkswagen_Golf_GTI_in_Oryx_White_Pearl,_Front_Left,_04-24-2022.jpg and https://commons.wikimedia.org/wiki/File:2022_Volkswagen_Golf_GTI_in_Oryx_White_Pearl,_Rear_Left,_04-24-2022.jpg . Photos by Elise240SX, CC BY-SA 4.0, are references only, not bundled or used as textures.
+
+Ready-made qualification: the CC BY 4.0 Car2022 Mk8 GTI listing (https://sketchfab.com/3d-models/volkswagen-golf-8-gti-a8-e87d7c0f8937481db236529beb5ecab7) did not establish an original-source chain; held, not downloaded or integrated. Other targeted results were very heavy with restrictive editing text, or an aftermarket widebody with unknown origin. A license badge alone was not treated as source proof.
