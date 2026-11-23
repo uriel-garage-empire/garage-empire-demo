@@ -1,6 +1,6 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Community models route by catalog name/year. Different-car approximations are explicitly flagged (see CREDITS.md). */
-const MODELS={
+const MODELS={...window.ORIGINAL_GTS_MODELS,
 "Porsche 718 Boxster S":{"yaw": 3.141592653589793, "catalogYear": 2016, "url": "original:718-boxster-s-original", "original": true, "credit": "Original simplified trim body", "noteEn": "Original stylized Porsche 718 Boxster S: S-specific five-spoke silver wheels, visible red calipers and paired central round tailpipes. Simplified body and wheels, not an exact replica.", "noteAr": "مجسم أصلي مبسط مع جنوط فضية خماسية وكاليبر أحمر وشكمان دائري مزدوج في الوسط، مش نسخة مطابقة."},
 "Porsche 718 Cayman S":{"yaw": 3.141592653589793, "catalogYear": 2016, "url": "original:718-cayman-s-original", "original": true, "credit": "Original simplified trim body", "noteEn": "Original stylized Porsche 718 Cayman S: S-specific five-spoke silver wheels, visible red calipers and paired central round tailpipes. Simplified body and wheels, not an exact replica.", "noteAr": "مجسم أصلي مبسط مع جنوط فضية خماسية وكاليبر أحمر وشكمان دائري مزدوج في الوسط، مش نسخة مطابقة."},
 "Porsche 718 Boxster":{"yaw": 3.141592653589793, "catalogYear": 2016, "url": "original:718-boxster-original", "original": true, "credit": "Original simplified body", "noteEn": "Original stylized 718 Boxster: open two-seat roadster, raked windshield, visible seats, twin rollover hoops and low rear deck, slanted four-point headlamps, three front openings, side ducts, angular rear lenses with connecting dark trim and single central exhaust. Simplified body and generic wheels, not an exact replica.", "noteAr": "مجسم أصلي مبسط لـ 718 Boxster: رودستر مكشوفة بمقعدين وزجاج أمامي مائل وقوسين حماية وسطح خلفي منخفض وفوانيس أمامية مائلة وثلاث فتحات أمامية وفتحات جانبية وفوانيس خلفية زاوية بشريط داكن وفتحة شكمان وسطية. الجسم والجنوط مبسطة، مش نسخة مطابقة."},
@@ -78,6 +78,8 @@ const MODELS={
 
 // Original model-specific geometry, accepted simplified style. No generic-car relabeling.
 const ORIGINAL_BUILDERS={
+"original:718-boxster-gts-original":function(){return window.buildOriginal718BoxsterGTS();},
+"original:718-cayman-gts-original":function(){return window.buildOriginal718CaymanGTS();},
 "original:718-boxster-s-original":function(){return window.buildOriginal718BoxsterS();},
 "original:718-cayman-s-original":function(){return window.buildOriginal718CaymanS();},
 'original:718-boxster-original':function(){return window.buildOriginal718Boxster();},
@@ -1966,6 +1968,7 @@ function updateCar(){
  if(mdef?.url==='original:718-boxster-original')caption.textContent=S.lang==='ar'?'718 Boxster أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified 718 Boxster, not an exact replica. Drag to orbit.';
  if(mdef?.url==="original:718-cayman-s-original")caption.textContent=S.lang==='ar'?'718 S أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified 718 S trim, not an exact replica. Drag to orbit.';
  if(mdef?.url==="original:718-boxster-s-original")caption.textContent=S.lang==='ar'?'718 S أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified 718 S trim, not an exact replica. Drag to orbit.';
+ if(mdef?.url?.includes('718-')&&mdef.url.includes('-gts-original'))caption.textContent=S.lang==='ar'?'718 GTS أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified 718 GTS, not an exact replica. Drag to orbit.';
  if(mdef?.url==='original:accord-sport-hybrid-original')caption.textContent=S.lang==='ar'?'Accord Sport Hybrid أصلي مبسط. اسحب للتدوير.':'Original simplified Accord Sport Hybrid. Drag to orbit.';
  if(mdef?.url==='original:accord-lx-original')caption.textContent=S.lang==='ar'?'Accord LX أصلي مبسط. اسحب للتدوير.':'Original simplified Accord LX. Drag to orbit.';
  if(mdef?.url==='original:civictyper-fl5-original')caption.textContent=S.lang==='ar'?'Civic Type R أصلي مبسط. الفوانيس والإكصدامات والجنوط مبسطة. اسحب للتدوير.':'Original simplified Civic Type R. Simplified lamps, bumpers and wheels. Drag to orbit.';
@@ -1974,4 +1977,4 @@ function updateCar(){
  if(mdef?.url==='original:viper-gts-sr2-original')caption.textContent=S.lang==='ar'?'Viper GTS أصلي مبسط. الفوانيس والإكصدامات والجنوط مبسطة. اسحب للتدوير.':'Original simplified Viper GTS. Coarse lamps, bumpers and wheels. Drag to orbit.';
  if(mdef?.url==='original:impreza-wrx-bugeye-original')caption.textContent=S.lang==='ar'?'WRX بوغ آي أصلي مبسط. الفوانيس والإكصدامات والجنوط مبسطة. اسحب للتدوير.':'Original simplified bugeye WRX. Coarse lamps, bumpers and wheels. Drag to orbit.';
  if(mdef?.url==='original:gr-yaris-original')caption.textContent=S.lang==='ar'?'GR Yaris أصلي مبسط. الفوانيس والإكصدامات والجنوط مبسطة، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified GR Yaris. Coarse lamps, bumpers and wheels, not an exact replica. Drag to orbit.';
- }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
