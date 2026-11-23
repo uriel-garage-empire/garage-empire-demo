@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations, nineteen original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 74/100 catalog entries with 59 distinct body definitions; 26 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has 46 model-family community representations, twenty-one original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 76/100 catalog entries with 61 distinct body definitions; 24 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -323,3 +323,8 @@ Coverage 73/100 =46 community model-family +18 original simplified +9 labeled su
 Reference-led open two-seat roadster with slanted four-point headlamps, three front openings, side ducts, angular rear lenses connected by dark trim and a single central exhaust. Body, cabin, lenses and generic wheels are simplified, not an exact replica. No downloaded mesh or photographic textures. Fallback after existing ready-made source screening. Only the base Boxster entry is added; other trims and open-top models remain separate unfinished work.
 
 Coverage 74/100 =46 community model-family +19 original simplified +9 labeled substitutes. 59 distinct bodies;26 procedural. Catalog/save IDs, prior visuals and gameplay unchanged. No physical-phone FPS claim.
+
+
+## Original stylized 718 S trims
+
+Cayman S coupe and Boxster S open roadster use separately defined trim builders with five-spoke silver wheels, visible red calipers and paired central round tailpipes, rather than relabeling base geometry unchanged. Simplified, not exact replicas. Reference-led original fallback after ready-made source screening. No third-party meshes or photo textures. Coverage 76/100: 46 community, 21 original, 9 substitutes, 61 distinct body definitions, 24 procedural. Prior visuals, catalog/save IDs and gameplay preserved.
