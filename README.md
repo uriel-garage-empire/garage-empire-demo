@@ -239,3 +239,10 @@ Geometry reference: https://media.toyota.co.uk/the-new-toyota-gr-yaris/ . Actual
 Added an original early GD bugeye sedan body with round headlamps and fog lights, hood scoop, four-door greenhouse, trunk and low wing. Silver paint; simplified bumpers, lamps and generic five-spoke wheels. Not an exact equipment replica.61,292triangles merged into9material groups. Ready-made leads were rejected as wrong-generation coupe or rally specification. No imported asset or reference image payload.
 
 Current coverage62/100 =46community-family+7original+9explicit different-car substitutes.47distinct body definitions,38procedural. Prior body builders, catalog/save IDs and gameplay are unchanged.
+
+
+## Original simplified 1999 Viper GTS coupe
+
+An original reference-led SR II coupe with long clamshell hood, rearward double-bubble cabin, broad rear haunches, side scallops, oval rear lights and central twin exhaust. Blue paint and twin white stripes are fixed. Bumpers, lamp construction, wheel design and fine trim are simplified, not an exact factory replica. No downloaded Viper mesh or photographic texture is included.
+
+Current coverage: 63/100 = 46 community model-family representations + 8 original simplified bodies + 9 explicitly labeled different-car substitutes. These use 48 distinct body definitions; 37 catalog entries remain procedural. Earlier progress sections above are historical. Catalog/save IDs, previous body builders and gameplay are unchanged.
