@@ -449,3 +449,8 @@ Original reference-led fallback geometry, not exact. No third-party mesh or phot
 ## Original simplified 2025 Toyota Camry LE / XSE AWD
 
 Original reference-led fallback, not exact. No third-party mesh/photo textures. Matching ready-made candidates remain excluded as game-derived, uncertain origin, paid or unfinished/wrong generation. References viewed, not redistributed: https://pressroom.toyota.com/toyota-camry-goes-exclusively-hybrid-plus-a-new-look-and-more-technology/ , https://www.mad4wheels.com/toyota/camry-xse-awd-2025 , https://commons.wikimedia.org/wiki/File:2025_Toyota_Camry_LE%2C_front_left.jpg and https://commons.wikimedia.org/wiki/File:2025_Toyota_Camry_LE%2C_rear_left.jpg .
+
+
+## Original simplified2024 Nissan Ariya e-4ORCE
+
+Original reference-led geometry, no third-party mesh/photo textures. Matching ready-made source found was paid; free copies did not establish provenance, another original listing unavailable. References viewed, not redistributed: https://usa.nissannews.com/en-US/releases/2024-nissan-ariya-press-kit and https://www.mad4wheels.com/nissan/ariya-2023 . Official2024front photo and dimensions/e-4ORCE wheels checked against stock body photo set, no NISMO body substitution.
