@@ -232,3 +232,10 @@ Added an original simplified2021GR Yaris body, not a downloaded model or a relab
 Current coverage61/100 =46community-family+6original+9explicit different-car substitutes.46distinct body definitions,39procedural. Existing catalog/save IDs and gameplay unchanged.
 
 Geometry reference: https://media.toyota.co.uk/the-new-toyota-gr-yaris/ . Actual front/rear reference photographs are listed inCREDITS.md, viewed as references only, not bundled or textured.
+
+
+## Original simplified 2002 Impreza WRX sedan
+
+Added an original early GD bugeye sedan body with round headlamps and fog lights, hood scoop, four-door greenhouse, trunk and low wing. Silver paint; simplified bumpers, lamps and generic five-spoke wheels. Not an exact equipment replica.61,292triangles merged into9material groups. Ready-made leads were rejected as wrong-generation coupe or rally specification. No imported asset or reference image payload.
+
+Current coverage62/100 =46community-family+7original+9explicit different-car substitutes.47distinct body definitions,38procedural. Prior body builders, catalog/save IDs and gameplay are unchanged.
