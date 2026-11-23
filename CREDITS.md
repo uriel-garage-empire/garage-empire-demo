@@ -351,3 +351,15 @@ Reference-only sources inspected:
 - Official2025USdimensions and LX equipment: https://hondanews.com/en-US/honda-automobiles/releases/release-008e554add341b8444085beaa2074089-2025-honda-accord-specifications-features
 
 Ready-made research: 3DStarving874k and Davidson256.9k same-generation Sketchfab listings had no download option; Davidson offered the full model for sale. Remeshy anonymous generated mesh had no qualified license/origin evidence. Another mirror's CC0 attribution conflicted with the counterpart listing's author/license. CarDesi IzmoCars archive had no specified license. No candidate imported.
+
+
+## Original simplified Honda Accord Sport Hybrid 2025
+
+Original trim-specific geometry variant of the existing simplified Accord. Fixed red body, moonroof, black mirror covers, low trunk lip and simplified paired-spoke machined/black 19-inch-style wheels. Sport, not Sport-L. Simplified bumper/side contours and flat lenses; not an exact equipment replica. No third-party mesh or photo texture included.
+
+Reference-only sources inspected:
+- Official 2025 US trim specification: https://hondanews.com/en-US/honda-automobiles/releases/release-008e554add341b8444085beaa2074089-2025-honda-accord-specifications-features
+- Official 2025 wheel guide and Sport wheel image: https://www.hondainfocenter.com/2025/accord/feature-guide/exterior-features/wheels-and-tires/
+- Same-generation exterior references: https://www.mad4wheels.com/honda/accord-usa-version-2023
+
+Accord ready-made screening found paid/non-downloadable models, unclear origin/license and conflicting attribution. No qualified free lightweight redistributable matching mesh was established. No candidate imported.
