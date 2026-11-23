@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations, thirty original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is85/100 catalog entries with70 distinct body definitions;15 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has46 model-family community representations, thirty-one original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is86/100 catalog entries with71 distinct body definitions;14 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -358,3 +358,8 @@ Separate simplified fallback bodies, not exact replicas. LE has horizontal grill
 ## Original stylized2024 Nissan Ariya e-4ORCE
 
 Separate simplified crossover fallback, not an exact replica. Black V shield and bent running lights, black floating roof, full-width rear lamp and19inch-style aero wheels.85/100coverage,46community+30original+9substitutes,70distinct definitions,15procedural. Prior visuals/catalog/save/gameplay preserved.
+
+
+## Original stylized2025 Audi S3 sedan
+
+Separate simplified facelift S3 fallback, not an exact replica. L-pattern singleframe grille, thin segmented lamps, silver mirror caps, paired spokes, four round outlets and S rear apron.86/100coverage,46community+31original+9substitutes,71distinct definitions,14procedural. Prior visuals/catalog/save/gameplay preserved.
