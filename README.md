@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations plus nine explicitly labeled different-car visual substitutes (the i4 M50 and eight more, listed in CREDITS.md). These share 40 distinct CC BY body assets. Five original simplified bodies, J250 Land Cruiser, Nissan Z Performance, variant-specific Z NISMO, Mk8 Golf GTI and variant-specific Golf R, bring model-backed coverage to 60 entries and 45 distinct bodies; 40 entries remain procedural. Original simplified bodies are counted separately from community assets and different-car substitutes. Each substitute shows another car's body, not a mesh of the named car, and is not counted as a match. Shared entries do not count as new bodies.
+The deployed showroom has 46 model-family community representations plus nine explicitly labeled different-car visual substitutes (the i4 M50 and eight more, listed in CREDITS.md). These share 40 distinct CC BY body assets. Six original simplified bodies, J250 Land Cruiser, Nissan Z Performance, variant-specific Z NISMO, Mk8 Golf GTI, variant-specific Golf R and three-door GR Yaris, bring model-backed coverage to 61 entries and 46 distinct bodies; 39 entries remain procedural. Original simplified bodies are counted separately from community assets and different-car substitutes. Each substitute shows another car's body, not a mesh of the named car, and is not counted as a match. Shared entries do not count as new bodies.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -223,3 +223,12 @@ Current coverage: **46 of 100 catalog entries**, **40 distinct body assets**, **
 
 ### Labeled visual substitutes (23 November 2026)
 Nine entries reuse an existing body from another car and say so in the showroom title, an amber note beside the specifications and the 3D caption: BMW i4 M50 (BMW M3 G80 body), Corvette E-Ray and Z06 (Corvette C8 Stingray body), Nissan GT-R NISMO (R35 body), Hyundai IONIQ 5 N (IONIQ 5 body), McLaren 750S (720S body), Porsche 911 Carrera S (992 Turbo S body), Mazda MX-5 Miata RF Club (open-top ND roadster body) and Ford Mustang EcoBoost (S650 GT body). Catalog names, years, stats and save IDs are unchanged. Coverage is 46 existing model-family representations plus 9 different-car substitutes, 40 distinct meshes, 45 procedural fallbacks. No new asset payload. See CREDITS for sources and the differences stated for each car.
+
+
+## Original GR Yaris visual, 23 November 2026
+
+Added an original simplified2021GR Yaris body, not a downloaded model or a relabeled Golf/Yaris five-door. The three-door greenhouse, lowered black roof, wide rear quarters, large central grille, separate corner ducts and C-shaped rear lamps follow the early GR Yaris. Lamps, bumpers, mirrors and wheels remain coarse; exact equipment is not claimed. Fixed off-white paint.69,042triangles merged into8material groups. Community candidate origin was unresolved, so it was not imported.
+
+Current coverage61/100 =46community-family+6original+9explicit different-car substitutes.46distinct body definitions,39procedural. Existing catalog/save IDs and gameplay unchanged.
+
+Geometry reference: https://media.toyota.co.uk/the-new-toyota-gr-yaris/ . Actual front/rear reference photographs are listed inCREDITS.md, viewed as references only, not bundled or textured.
