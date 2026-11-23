@@ -429,3 +429,8 @@ References only: https://www.mad4wheels.com/porsche/cayman-718-s-2018 and https:
 ## Original simplified 2020 718 Cayman and Boxster GTS 4.0
 
 Original reference-led fallback geometry with dark ten-spoke wheels, red calipers, revised black front intake/lip and rear apron with separated exhausts. No downloaded mesh or photo texture. Simplified, not exact replicas. Reference-only photographs and trim details: https://newsroom.porsche.com/en/2020/products/porsche-718-gts-4-0-models-boxster-cayman-19733.html .
+
+
+## Original simplified 2020 718 Cayman GT4 and Spyder
+
+Original reference-led fallback geometry. GT4 fixed wing and Spyder double-bubble open rear deck are separately defined. No downloaded mesh or photo textures. Simplified, not exact replicas. References: https://newsroom.porsche.com/en/2019/products/porsche-718-spyder-cayman-gt4-naturally-aspired-engine-mid-engine.html and https://newsroom.porsche.com/en/press-kits/718-spyder-cayman-gt4/aerodynamik.html .
