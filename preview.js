@@ -1,6 +1,7 @@
 /* Original procedural showroom. Stylized body families, not licensed model-exact assets. */
 /* Community models route by catalog name/year. Different-car approximations are explicitly flagged (see CREDITS.md). */
 const MODELS={
+"Volkswagen Golf R":{"yaw":3.141592653589793,"catalogYear": 2024, "url": "original:golf-r-mk8-original", "original": true, "credit": "Original simplified body", "noteEn": "Original simplified Mk8 Golf R variant: separate intakes, blue line, silver mirrors, extended spoiler and quad exhaust. Coarse lamps, bumpers and wheels, not an exact trim replica.", "noteAr": "مجسم أصلي مبسط لـ Golf R Mk8 بفتحات مقدمة مختلفة وخط أزرق ومرايات فضي وجناح أطول وأربع مخارج عادم. الفوانيس والإكصدامات والجنوط مبسطة، مش نسخة مطابقة للفئة."},
 "Volkswagen Golf GTI":{"catalogYear": 2024, "url": "original:golf-gti-mk8-original", "original": true, "credit": "Original simplified body", "noteEn": "Original simplified Mk8 GTI hatchback. Angular lamps and bumpers, generic wheels; not an exact trim replica or Golf R.", "noteAr": "مجسم أصلي مبسط لـ Golf GTI Mk8. الفوانيس والإكصدامات زاوية والجنوط مبسطة، مش نسخة مطابقة للفئة ولا Golf R."},
 "Nissan Z NISMO":{"catalogYear": 2024, "url": "original:z-nismo-original", "original": true, "credit": "Original simplified body", "noteEn": "Original simplified Z NISMO, with extended nose, canards, red sills and three-piece spoiler. Angular lamps and generic wheels, not an exact trim replica.", "noteAr": "مجسم أصلي مبسط لـ Z NISMO بمقدمة أطول وزعانف وجوانب بحافة حمرا وجناح تلات قطع. الفوانيس والجنوط مبسطة، مش نسخة مطابقة للفئة."},
 "Nissan Z Performance":{"catalogYear": 2024, "url": "original:z-original", "credit": "Original simplified body", "original": true, "noteEn": "Original simplified Z Performance body. Angular lamps, bumpers and generic wheels; not NISMO or an exact trim replica.", "noteAr": "مجسم أصلي مبسط لـ Z Performance. الفوانيس والإكصدامات زاويّة والجنوط مبسطة، مش NISMO ولا نسخة مطابقة للفئة."},
@@ -61,6 +62,99 @@ const MODELS={
 
 // Original model-specific geometry, accepted simplified style. No generic-car relabeling.
 const ORIGINAL_BUILDERS={
+'original:golf-r-mk8-original':function(){const T=THREE,car=new T.Group();
+const mat=(c,m=0,r=.55)=>new T.MeshStandardMaterial({color:c,metalness:m,roughness:r,side:T.DoubleSide});
+const paint=mat('#1556a4',.35,.38),black=mat('#252a2d',.05,.66),tire=mat('#151719',0,.85),glass=mat('#283d45',.35,.19),chrome=mat('#aeb3b3',.75,.29),lamp=mat('#f1f6e8',.1,.25),red=mat('#b71922',.2,.35),amber=mat('#e79729',.15,.4),seam=mat('#605a50');
+function mesh(g,m,x=0,y=0,z=0){const o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;car.add(o);return o}
+function box(x,y,z,l,h,w,m,b=0){if(!b)return mesh(new T.BoxGeometry(l,h,w),m,x,y,z);let s=new T.Shape(),a=l/2,c=h/2;s.moveTo(-a+b,-c);s.lineTo(a-b,-c);s.quadraticCurveTo(a,-c,a,-c+b);s.lineTo(a,c-b);s.quadraticCurveTo(a,c,a-b,c);s.lineTo(-a+b,c);s.quadraticCurveTo(-a,c,-a,c-b);s.lineTo(-a,-c+b);s.quadraticCurveTo(-a,-c,-a+b,-c);return mesh(new T.ExtrudeGeometry(s,{depth:w-2*b,bevelEnabled:true,bevelSize:b*.4,bevelThickness:b,bevelSegments:2,steps:1,curveSegments:4}),m,x,y,z-w/2+b)}
+function poly(v,m){let g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v.flat(),3));let ix=[];for(let i=1;i<v.length-1;i++)ix.push(0,i,i+1);g.setIndex(ix);g.computeVertexNormals();return mesh(g,m)}
+function line(v,m=seam,rad=.005){for(let i=1;i<v.length;i++){let a=new T.Vector3(...v[i-1]),b=new T.Vector3(...v[i]),d=b.clone().sub(a);let o=mesh(new T.CylinderGeometry(rad,rad,d.length(),6),m);o.position.copy(a.add(b).multiplyScalar(.5));o.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize())}}
+// Original simplified 2024-US Mk8 Golf R variant study, measured envelope from VW press kit.
+const sections=[[-2.144,.69,.68,.71],[-2.06,.79,.74,.80],[-1.84,.87,.83,.865],[-1.50,.91,.88,.894],[-1.316,.93,.90,.894],[-1.02,.95,.88,.88],[-.60,.96,.86,.878],[0,.96,.86,.878],[.65,.96,.88,.887],[1.316,.95,.91,.894],[1.70,.93,.86,.872],[2.03,.86,.82,.83],[2.144,.78,.77,.79]];
+function sample(x,i){for(let j=1;j<sections.length;j++)if(x<=sections[j][0]){let a=sections[j-1],b=sections[j],f=(x-a[0])/(b[0]-a[0]);return a[i]+(b[i]-a[i])*f}return sections.at(-1)[i]}
+function topY(x,z){let q=Math.abs(z)/sample(x,3);return sample(x,1)*(1-q*q)+sample(x,2)*q*q}
+const axles=[-1.316,1.316],wr=.318,wy=.325,ar=.356;
+function bottom(x){let b=.22;for(let a of axles){let dx=Math.abs(x-a);if(dx<ar)b=Math.max(b,wy+Math.sqrt(ar*ar-dx*dx))}return b}
+function grid(n,m,fn,ma){let v=[],ix=[];for(let i=0;i<=n;i++)for(let j=0;j<=m;j++)v.push(...fn(i/n,j/m));for(let i=0;i<n;i++)for(let j=0;j<m;j++){let k=i*(m+1)+j;ix.push(k,k+1,k+m+1,k+1,k+m+2,k+m+1)}let g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v,3));g.setIndex(ix);g.computeVertexNormals();return mesh(g,ma)}
+grid(92,24,(u,v)=>{let x=-2.144+4.288*u,z=(-1+2*v)*sample(x,3);return[x,topY(x,z),z]},paint);
+for(let side of [-1,1])grid(160,8,(u,v)=>{let x=-2.144+4.288*u,b=bottom(x);return[x,b+(sample(x,2)-b)*v,side*(sample(x,3)-.025*(1-v)-.028*Math.sin(v*Math.PI))]},paint);
+box(0,.20,0,3.85,.08,1.47,black);
+// Distinct four-door hatch greenhouse with near-upright tail and thick Golf C-pillar.
+const roof=[[-1.01,.96,.78],[-.83,1.10,.74],[-.54,1.36,.674],[-.30,1.445,.65],[.15,1.463,.648],[.75,1.46,.657],[1.21,1.43,.672],[1.49,1.31,.703],[1.79,1.06,.76],[1.92,.89,.79]];
+function cr(x,k){for(let i=1;i<roof.length;i++)if(x<=roof[i][0]){let a=roof[i-1],b=roof[i],t=(x-a[0])/(b[0]-a[0]);return a[k]+(b[k]-a[k])*t}return roof.at(-1)[k]}
+function cp(x,q){return[x,cr(x,1)-.05*q*q,q*cr(x,2)]}
+grid(84,20,(u,v)=>cp(-1.01+2.93*u,-1+2*v),paint);
+function canopy(a,b){grid(25,16,(u,v)=>{let p=cp(a+(b-a)*u,(-1+2*v)*.93);p[1]+=.006;return p},glass)}
+canopy(-.98,-.49);canopy(1.43,1.86);
+for(let side of [-1,1]){
+ function sideP(x,u,off){return[x,.90+(cr(x,1)-.05-.90)*u,side*(.861+(cr(x,2)-.861)*u+off)]}
+ grid(84,10,(u,v)=>sideP(-1.01+2.93*u,v,0),paint);
+ function windowPanel(a,b){grid(38,8,(u,v)=>{let x=a+(b-a)*u,edge=Math.min(1,u*12,(1-u)*12);return sideP(x,.09+.84*v-.055*(1-edge)*v,.007)},glass)}
+ windowPanel(-.88,.12);windowPanel(.21,1.34);
+ // black B-pillar, small rear quarter pane and painted C-pillar.
+ grid(3,8,(u,v)=>sideP(.115+.105*u,.08+.86*v,.011),black);
+ line([[1.07,.955,side*.85],[1.16,1.35,side*.707]],black,.011);
+ for(let x of [.07,1.22])box(x,.835,side*.881,.18,.042,.025,paint,.012);
+ line([[-.87,.875,side*.881],[-.79,.34,side*.87],[-.61,.275,side*.865],[.20,.275,side*.865],[.20,.89,side*.878]],seam,.003);
+ line([[.22,.275,side*.865],[.92,.275,side*.874],[1.10,.43,side*.881],[1.39,.83,side*.872]],seam,.003);
+ line([[-1.0,.88,side*.889],[1.69,.88,side*.885]],seam,.0025);
+ box(.05,.238,side*.853,1.83,.048,.075,paint,.01);
+ box(-.76,1.02,side*.842,.065,.06,.14,black);box(-.76,1.07,side*.927,.24,.12,.135,chrome,.025);
+ box(-1.02,.815,side*.887,.17,.028,.009,black,.004);
+ for(let ax of axles){let pts=[];for(let i=0;i<=34;i++){let t=Math.PI*i/34,x=ax+ar*Math.cos(t);pts.push([x,wy+ar*Math.sin(t),side*(sample(x,3)+.001)])}line(pts,paint,.007)}
+}
+// Thin swept Mk8 lamps and blue R upper line.
+for(let side of [-1,1]){
+ grid(28,7,(u,v)=>{let z=side*(.32+.515*u),front=-2.142+.12*u*u,rear=-2.095+.285*u*u,x=front+(rear-front)*v;return[x,topY(x,z)+.012,z]},black);
+ line(Array.from({length:25},(_,i)=>{let u=i/24,z=side*(.33+.50*u),x=-2.10+.28*u*u;return[x,topY(x,z)+.024,z]}),lamp,.008);
+ line(Array.from({length:25},(_,i)=>{let u=i/24,z=side*(.42+.40*u),x=-2.14+.12*u*u;return[x,topY(x,z)+.024,z]}),lamp,.008);
+ poly([[-2.15,.69,0],[-2.148,.735,side*.32],[-2.15,.682,side*.40],[-2.153,.66,0]],black);
+ line([[-2.158,.70,0],[-2.156,.705,side*.32]],paint,.010);line([[-2.163,.679,0],[-2.160,.684,side*.32]],lamp,.006);
+ for(let [x,z]of [[-2.085,.46],[-1.99,.69]]){let o=mesh(new T.SphereGeometry(.032,12,7),lamp,x,topY(x,side*z)+.025,side*z);o.scale.y=.4;}
+ // R twin outboard intakes joining central lower opening, horizontal bars, no GTI fog X.
+ poly([[-2.168,.26,0],[-2.168,.26,side*.78],[-2.13,.36,side*.83],[-2.10,.54,side*.74],[-2.10,.575,side*.62],[-2.15,.55,side*.47],[-2.15,.56,0]],black);
+ poly([[-2.18,.28,side*.48],[-2.18,.28,side*.76],[-2.15,.325,side*.72],[-2.14,.36,side*.40]],paint);
+ for(let y=.315;y<=.51;y+=.055)box(-2.157,y,side*.385,.010,.010,.73,black);
+ line([[-2.17,.28,side*.48],[-2.165,.36,side*.41],[-2.14,.54,side*.53]],black,.018);
+ poly([[-2.181,.27,side*.46],[-2.181,.27,side*.74],[-2.18,.34,side*.67],[-2.18,.38,side*.38]],paint);
+}
+box(-2.17,.25,0,.07,.027,1.59,black,.005);
+// Close upper front without an open seam.
+poly([[-2.145,.69,-.71],[-2.145,.69,.71],[-2.15,.55,.69],[-2.15,.55,-.69]],paint);
+// Hatch, split wraparound lamps, spoiler and dual outboard exhaust.
+grid(9,30,(u,v)=>{let z=(-1+2*v)*.79;return[2.144-.03*Math.pow(Math.abs(z)/.79,4),.25+.54*u,z]},paint);
+for(let side of [-1,1])poly([[2.14,.26,side*.77],[2.14,.85,side*.75],[2.03,.86,side*.83],[2.03,.25,side*.80]],paint);
+box(1.36,1.402,0,.30,.035,1.42,paint,.012);
+box(1.47,1.378,0,.32,.024,1.34,black,.007);
+for(let side of [-1,1])box(1.51,1.402,side*.57,.18,.032,.22,paint,.009);
+box(1.46,1.386,0,.012,.015,.65,red,.004);
+for(let side of [-1,1]){
+ // Flush split tail lenses across rear face; no external bracket geometry.
+ grid(24,4,(u,v)=>{let z=side*(.34+.42*u);return[2.155,.727+.095*v,z]},black);
+ grid(24,3,(u,v)=>{let z=side*(.36+.38*u);return[2.161,.766+.043*v,z]},red);
+ line([[2.163,.742,side*.36],[2.163,.742,side*.70]],chrome,.004);
+ grid(24,4,(u,v)=>{let x=1.79+.34*u;return[x,.757+.085*v,side*(sample(x,3)+.005)]},black);
+ grid(24,3,(u,v)=>{let x=1.82+.29*u;return[x,.785+.035*v,side*(sample(x,3)+.009)]},red);
+ box(2.17,.435,side*.60,.012,.027,.26,red,.006);
+ for(let z of [.585,.70]){let o=mesh(new T.CylinderGeometry(.046,.046,.12,24),chrome,2.19,.215,side*z);o.rotation.z=Math.PI/2;let e=mesh(new T.CylinderGeometry(.035,.035,.13,24),black,2.20,.215,side*z);e.rotation.z=Math.PI/2;}
+
+}
+box(2.16,.427,0,.016,.12,.39,black,.014);box(2.14,.235,0,.075,.14,1.51,black,.024);
+for(let z of [-.44,-.22,0,.22,.44])box(2.17,.22,z,.14,.10,.025,black,.005);
+for(let side of [-1,1])poly([[-.92,.27,side*.88],[1.02,.27,side*.88],[1.08,.23,side*.91],[-.93,.23,side*.91]],paint);
+line([[1.965,.87,-.71],[2.11,.72,-.70],[2.11,.40,-.63],[2.11,.37,.63],[2.11,.72,.70],[1.965,.87,.71]],seam,.003);
+line([[1.792,1.065,-.36],[1.832,1.034,.13]],black,.012);
+// Simplified five-broad-blade Mk8-style wheels. No exact wheel-design claim.
+for(let x of axles)for(let side of [-1,1]){
+ let z=side*.775,out=side*.899;let o=mesh(new T.CylinderGeometry(wr,wr,.235,40),tire,x,wy,z);o.rotation.x=Math.PI/2;
+ mesh(new T.TorusGeometry(.25,.012,8,40),chrome,x,wy,out);
+ let d=mesh(new T.CylinderGeometry(.214,.214,.018,32),black,x,wy,out-side*.018);d.rotation.x=Math.PI/2;
+ box(x+.13,wy,side*.88,.063,.18,.03,paint,.01);
+ for(let a=0;a<5;a++)for(let delta of [-.085,.085]){let t=a*Math.PI*2/5+delta;let o=box(x+Math.sin(t)*.145,wy+Math.cos(t)*.145,out+side*.01,.022,.21,.018,chrome,.004);o.rotation.z=-t;}
+ let h=mesh(new T.CylinderGeometry(.055,.055,.026,16),chrome,x,wy,out+side*.015);h.rotation.x=Math.PI/2;
+}
+
+const optimize=()=>{car.updateMatrixWorld(true);let groups=new Map();car.traverse(o=>{if(!o.isMesh)return;let k=o.material.uuid;if(!groups.has(k))groups.set(k,{mat:o.material,geo:[]});let g=o.geometry.clone();if(g.index)g=g.toNonIndexed();g.applyMatrix4(o.matrixWorld);groups.get(k).geo.push(g)});let out=new T.Group();for(let {mat,geo}of groups.values()){let g=new T.BufferGeometry();for(let attr of ['position','normal','uv']){if(!geo.every(x=>x.attributes[attr]))continue;let size=geo[0].attributes[attr].itemSize,len=geo.reduce((n,x)=>n+x.attributes[attr].array.length,0),a=new Float32Array(len),i=0;for(let x of geo){a.set(x.attributes[attr].array,i);i+=x.attributes[attr].array.length}g.setAttribute(attr,new T.BufferAttribute(a,size))}let m=new T.Mesh(g,mat);m.castShadow=m.receiveShadow=true;out.add(m)}return out};const result=optimize();result.traverse(o=>{if(o.isMesh&&o.material.color)o.material.color.convertSRGBToLinear()});return result;},
 'original:golf-gti-mk8-original':function(){const T=THREE,car=new T.Group();
 const mat=(c,m=0,r=.55)=>new T.MeshStandardMaterial({color:c,metalness:m,roughness:r,side:T.DoubleSide});
 const paint=mat('#d8d7d1',.35,.38),black=mat('#252a2d',.05,.66),tire=mat('#151719',0,.85),glass=mat('#283d45',.35,.19),chrome=mat('#aeb3b3',.75,.29),lamp=mat('#f1f6e8',.1,.25),red=mat('#b71922',.2,.35),amber=mat('#e79729',.15,.4),seam=mat('#605a50');
@@ -648,4 +742,4 @@ function updateCar(){
  if(mdef&&mdef.noteEn)caption.textContent=(S.lang==='ar'?mdef.noteAr+' · '+mdef.credit+' · CC BY · اسحب للتدوير.':mdef.noteEn+' Community model by '+mdef.credit+' · CC BY. Drag to orbit.');
  if(mdef&&mdef.approximation)caption.textContent=(S.lang==='ar'?'بديل شكلي: هيكل '+mdef.sourceBody+' · '+mdef.credit+' · CC BY · الفروق في الملاحظة مع المواصفات · اسحب للتدوير.':'Visual substitute: '+mdef.sourceBody+' body by '+mdef.credit+' (CC BY). Differences are in the note with the specifications. Drag to orbit.');
  if(mdef&&mdef.original)caption.textContent=S.lang==='ar'?mdef.noteAr+' · اسحب للتدوير.':mdef.noteEn+' Drag to orbit.';
-  }
+ }
