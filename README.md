@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has 46 model-family community representations, twenty-five original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 80/100 catalog entries with 65 distinct body definitions; 20 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has 46 model-family community representations, twenty-six original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is 81/100 catalog entries with 66 distinct body definitions; 19 entries remain procedural. The 40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -338,3 +338,8 @@ Cayman coupe and Boxster open roadster use revised black front inlets/lip, dark 
 ## Original stylized 2020 718 GT4 and Spyder
 
 GT4 has a fixed wing with twin supports; Spyder has an open cockpit and double-bubble rear deck without the fixed wing. Both have revised GT intakes, radiator outlet, splitter and side blades, multi-spoke wheels and separated exhausts. Simplified original fallback, not exact replicas. No third-party meshes or photo textures. Coverage80/100:46community,25original,9substitutes,65distinct definitions,20procedural. Prior visuals/catalog/save IDs/gameplay unchanged.
+
+
+## Original stylized 2024 Hyundai Elantra N facelift
+
+Original simplified fallback with thin front lamps, angular N bumper accents, red side trim, connected rear lamps, twin exhausts and raised rear spoiler. Not an exact replica. 81/100 coverage,46community+26original+9substitutes,66distinct definitions,19procedural. Prior visuals/gameplay/catalog/save IDs preserved.
