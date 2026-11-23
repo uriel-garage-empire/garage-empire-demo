@@ -410,3 +410,10 @@ Ready-made source screening found no qualified matching import. Candidates were 
 Original reference-led geometry with color materials, no third-party mesh or photographic texture. Simplified body, cabin, lamps and generic wheels, not an exact replica. Base coupe only, no relabeling across the remaining trims. Previously screened ready-made candidates had wrong-generation geometry, game origins or unresolved provenance and were excluded.
 
 Reference-only photographs: https://www.mad4wheels.com/porsche/cayman-718--2018 . Dimensions: https://www.porsche.com/international/models/718/718-models/718-cayman/ .
+
+
+## Original simplified Porsche 718 Boxster 2016
+
+Original reference-led geometry with color materials, no third-party mesh or photographic texture. Simplified body, cabin, lamps and generic wheels, not an exact replica. Base roadster only, no relabeling across the remaining trims. Previously screened ready-made candidates had wrong-generation geometry, game origins or unresolved provenance and were excluded.
+
+Reference-only photographs: https://www.mad4wheels.com/porsche/718-boxster-2016 . Dimensions: https://www.porsche.com/international/models/718/718-models/718-boxster/ .
