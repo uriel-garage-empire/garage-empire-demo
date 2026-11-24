@@ -12,7 +12,7 @@ const regNow=()=>M.reg?MK.regFee(K()):0;
 function mkStock(){const pool=CARS.map((c,i)=>i).filter(i=>MK.has(K(),CARS[i])===(M.mode==='local'));
  const list=pool.length?pool:CARS.map((c,i)=>i);const out=[],sm=[];
  for(let n=0;n<6;n++){const cid=list[Math.min(list.length-1,Math.floor(Math.pow(Math.random(),1.7)*list.length))],cond=Math.round(rng(35,100));
-  const r=refOf(cid),base=Math.round(r.base*(.5+.5*cond/100)*rng(.95,1.2));const q=MK.calc(cid,base,K());q.a=r.a?{url:r.a.url,d:r.a.d}:null;
+  const r=refOf(cid),base=Math.round(r.base*(.5+.5*cond/100)*rng(.95,1.2));const q=MK.calc(cid,base,K());q.a=r.a?{url:r.a.url,d:r.a.d,basis:r.a.basis,exact:r.a.exact}:null;
   out.push({cid,cond,price:Math.round(q.total)});sm.push(q)}
  M.sm=sm;MK.save();return out}
 window.stock=mkStock;
@@ -30,7 +30,7 @@ function breakdown(q,fee,cond){const it=items(q,fee);const L=(q.imp?[W('Import:'
  if(cond)L.push(W('Delivered in used condition 70% (game)','بتوصل بحالة مستعمل 70% (لعبة)'));
  L.push(srcLine(q.a));return L.join('<br>')}
 function usedBasis(a){return !!(a&&a.basis==='used')}
-function quote(cid){const r=refOf(cid),q=MK.calc(cid,r.base,K(),usedBasis(r.a)?0:1);q.ub=usedBasis(r.a);q.a=r.a?{url:r.a.url,d:r.a.d}:null;return q}
+function quote(cid){const r=refOf(cid),q=MK.calc(cid,r.base,K(),usedBasis(r.a)?0:1);q.ub=usedBasis(r.a);q.a=r.a?{url:r.a.url,d:r.a.d,basis:r.a.basis,exact:r.a.exact}:null;return q}
 MK.quote=quote;
 MK.grandStr=cid=>gtot(quote(cid),regNow());MK.tileStr=cid=>fm(sumLoc(items(quote(cid),0).map(x=>x[1])));
 MK.quoteHtml=cid=>{const q=quote(cid);return`<p class="mut" style="font-size:12px">${W('Market','سوق')}: ${nm(K())}<br>${breakdown(q,regNow(),q.ub)}<br>${W('Game estimate, not official tax advice.','تقدير للعبة، مش استشارة ضريبية رسمية.')}</p>`};
