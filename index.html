@@ -98,6 +98,9 @@ a.sourceLink{color:var(--neo);font-size:12px;text-decoration:none;overflow-wrap:
 #cap{bottom:60px;max-height:64px;overflow-y:auto;line-height:1.5;box-sizing:border-box;z-index:2}
 .cameraControls{bottom:14px;z-index:3}
 @media(max-width:820px){#cap{bottom:58px;max-height:60px}.cameraControls{bottom:12px}}
+
+/* Arabic/English reading order: Latin and number runs stay left-to-right inside Arabic text. */
+.ltrRun{direction:ltr;unicode-bidi:isolate;display:inline}
 </style>
 </head>
 <body>
@@ -136,7 +139,7 @@ a.sourceLink{color:var(--neo);font-size:12px;text-decoration:none;overflow-wrap:
 <script src="original-718-s.js?v=1"></script>
 <script src="original-718-boxster.js?v=original1"></script>
 <script src="./catalog-data.js?v=20261122-realshape22-final"></script>
-<script src="./preview.js?v=coverage100-mazda-sedan"></script>
+<script src="./preview.js?v=bidi1"></script>
 <script src="./save-schema.js?v=20261122-realshape22-final"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="./GLTFLoader.js?v=20261122-realshape22-final"></script>
@@ -164,7 +167,7 @@ function showCatalog(cid){previewCid=cid;S.tab='catalog';S.scr='game';render();i
 function realSpecs(cid){
  const c=CARS[cid],r=cid>=32?CAR_ADDITIONS[cid-32]:null;
  let data=r?`<div class="specGrid"><div><small>${word('Engine / motor','المحرك')}</small><b dir="ltr">${r[7]}</b></div><div><small>${word('Published power','القوة المعلنة')}</small><b dir="ltr">${r[8]}</b></div><div><small>${word('Drivetrain','نظام الدفع')}</small><b dir="ltr">${r[9].startsWith('Not specified')?word('Not specified in source','مش مذكور في المصدر'):r[9]}</b></div><div><small>${word('Transmission','الفتيس')}</small><b dir="ltr">${r[10].startsWith('Not ')?word('Not specified in source','مش مذكور في المصدر'):r[10]}</b></div></div><p class="mut" dir="ltr">${r[12]} · ${CAR_SOURCES[r[11]].scope}</p><a class="sourceLink" href="${CAR_SOURCES[r[11]].url}" target="_blank" rel="noopener noreferrer">${word('Manufacturer source','مصدر الشركة')} ↗ ${CAR_SOURCES[r[11]].publisher}</a>`:`<p class="mut">${word('Original demo entry. Its power, mass and year are legacy game data, not verified factory specifications. No factory-spec claim is made for this entry.','من كتالوج النسخة القديمة. القوة والوزن والسنة هنا بيانات اللعبة القديمة، مش مواصفات مصنع موثّقة.')}</p>`;
- return `<div class="card specCard"><div class="eyebrow">${r?word('FACTORY FILE / SOURCED','ملف المصنع / موثّق'):word('LEGACY GAME ENTRY','من النسخة الأصلية')}</div><h2 dir="ltr">${c[0]} <span class="mut">${c[1]}</span></h2><span class="bodyTag">${shapeName(cid)}</span>${typeof modelForCar==='function'&&(modelForCar(cid)?.approximation||modelForCar(cid)?.original)?`<p class="visualSubstitute" style="border:1px solid #ffb454;padding:10px;border-radius:8px;color:#ffcf86">${word(modelForCar(cid).noteEn+' The specifications below are for '+c[0]+'.',modelForCar(cid).noteAr)}</p>`:''}${data}<details><summary>${word('Game balance values, not real-world prices or performance','أرقام توازن اللعبة، مش أسعار أو أداء حقيقي')}</summary><p class="mut">${c[3]} game hp · ${c[4]} game kg · ${fmt(c[5])} ${word('fictional base value','قيمة أساسية خيالية')}<br>${word('Race times, tuning, wear, rarity and exchange rates are game rules. Mass is an approximate game value, not a certified curb weight.','أزمنة السباق والتعديل والتآكل والندرة وسعر الصرف قواعد لعبة. الوزن تقديري للعبة، مش وزن مصنع معتمد.')}</p></details><div class="row">${typeof modelForCar==='function'&&modelForCar(cid)?`<button disabled title="${word('This body keeps its supplied paint','المجسم ده بيحتفظ بلونه')}">${word('Body paint (fixed)','لون المجسم (ثابت)')}</button>`:`<button onclick="previewColor=COLS[(COLS.indexOf(previewColor)+1)%COLS.length];updateCar()">${word('Preview paint','غيّر لون المعاينة')}</button>`}<button class="pri" onclick="buyCatalog(${cid})">${word('Buy in game','اشتري في اللعبة')} ${fmt(c[5])}</button></div></div>`;
+ return `<div class="card specCard"><div class="eyebrow">${r?word('FACTORY FILE / SOURCED','ملف المصنع / موثّق'):word('LEGACY GAME ENTRY','من النسخة الأصلية')}</div><h2 dir="ltr">${c[0]} <span class="mut">${c[1]}</span></h2><span class="bodyTag">${shapeName(cid)}</span>${typeof modelForCar==='function'&&(modelForCar(cid)?.approximation||modelForCar(cid)?.original)?`<p class="visualSubstitute" style="border:1px solid #ffb454;padding:10px;border-radius:8px;color:#ffcf86">${word(modelForCar(cid).noteEn+' The specifications below are for '+c[0]+'.',modelForCar(cid).noteAr)}</p>`:''}${data}<details><summary>${word('Game balance values, not real-world prices or performance','أرقام توازن اللعبة، مش أسعار أو أداء حقيقي')}</summary><p class="mut">${S.lang==='ar'?`القيمة الأساسية الخيالية: ${fmt(c[5])} · القوة: ${c[3]} حصان (لعبة) · الوزن: ${c[4]} كجم (لعبة)`:`${c[3]} game hp · ${c[4]} game kg · ${fmt(c[5])} fictional base value`}<br>${word('Race times, tuning, wear, rarity and exchange rates are game rules. Mass is an approximate game value, not a certified curb weight.','أزمنة السباق والتعديل والتآكل والندرة وسعر الصرف قواعد لعبة. الوزن تقديري للعبة، مش وزن مصنع معتمد.')}</p></details><div class="row">${typeof modelForCar==='function'&&modelForCar(cid)?`<button disabled title="${word('This body keeps its supplied paint','المجسم ده بيحتفظ بلونه')}">${word('Body paint (fixed)','لون المجسم (ثابت)')}</button>`:`<button onclick="previewColor=COLS[(COLS.indexOf(previewColor)+1)%COLS.length];updateCar()">${word('Preview paint','غيّر لون المعاينة')}</button>`}<button class="pri" onclick="buyCatalog(${cid})">${word('Buy in game','اشتري في اللعبة')} ${fmt(c[5])}</button></div></div>`;
 }
 function vCatalog(){if(previewCid===null)previewCid=32;return `<div class="catalogIntro"><div class="eyebrow">SHOWROOM / 02</div><h2>${word('The car collection','كتالوج العربيات')} <span class="count">${CARS.length}</span></h2><p class="mut">${word('68 new source-backed model/trim entries. Original 32 entries kept for save compatibility. Models and variants are counted separately.','68 موديل وفئة جديدة بمصادر الشركات. الـ32 عربية الأصلية زي ما هي عشان حفظك يفضل سليم. الموديلات وفئاتها بتتحسب كل واحدة لوحدها.')}</p></div>${realSpecs(previewCid)}<div class="filters"><input id="catalogSearch" type="search" placeholder="${word('Search model or year','دوّر بالموديل أو السنة')}" value="" oninput="catalogQuery=this.value;renderCatalogList()"><select id="brandFilter" onchange="catalogBrand=this.value;renderCatalogList()"><option value="">${word('All brands','كل الماركات')}</option>${[...new Set(CARS.map(c=>c[0].split(' ')[0]))].sort().map(x=>`<option>${x}</option>`).join('')}</select><select id="shapeFilter" onchange="catalogShape=this.value;renderCatalogList()"><option value="">${word('All bodies','كل الأشكال')}</option>${Object.entries(SHAPES).map(([k,v])=>`<option value="${k}">${v[S.lang==='ar'?1:0]}</option>`).join('')}</select></div><p id="catalogCount" class="mut" aria-live="polite"></p><div id="catalogList" class="catalogList"></div>`}
 function renderCatalogList(){const list=document.getElementById('catalogList');if(!list)return;const rows=CARS.map((c,id)=>({c,id})).filter(({c,id})=>(!catalogQuery||(c[0]+' '+c[1]).toLowerCase().includes(catalogQuery.toLowerCase()))&&(!catalogBrand||c[0].split(' ')[0]===catalogBrand)&&(!catalogShape||shapeOf(id)===catalogShape));document.getElementById('catalogCount').textContent=rows.length+' / '+CARS.length+' '+word('entries','عربية وفئة');list.innerHTML=rows.map(({c,id})=>`<button class="catalogTile ${id===previewCid?'active':''}" onclick="previewCid=${id};render()"><span class="tileNumber">${String(id+1).padStart(2,'0')} / ${shapeName(id)}</span><b dir="ltr">${c[0]}</b><span class="mut">${c[1]} · ${id>=32?word('Factory source ↗','مصدر مصنع ↗'):word('Legacy game data','بيانات اللعبة الأصلية')}</span><span class="tilePrice">${fmt(c[5])} <small>${word('in game','في اللعبة')}</small></span></button>`).join('')||`<p>${word('No matching cars. Try another search.','مفيش نتائج. جرّب اسم تاني.')}</p>`}
@@ -206,13 +209,13 @@ function vGarage(){
  if(!S.own.length)return`<div class="card">${t('own')}</div>`;
  return S.own.map(o=>{const c=CARS[o.cid];return`<div class="card ${o.id===S.sel?'sel':''}" onclick="S.sel=${o.id};render()">
  <div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>${infoButton(o.cid)}
- <div class="mut">${t('hp')} ${hpOf(o)} · ${c[4]} ${t('kg')} · ${t('cond')} ${cond(o)}% · ${t('ecu')} ${o.st} · ${t('turbo')} ${o.up.tu} · ${t('tiresUp')} ${o.up.ti} · ${t('weightUp')} ${o.up.wt}</div>
+ <div class="mut">${t('hp')}: ${hpOf(o)} · ${word('Mass','الوزن')}: ${c[4]} ${t('kg')} · ${t('cond')}: ${cond(o)}% · ${t('ecu')} ${o.st} · ${t('turbo')} ${o.up.tu} · ${t('tiresUp')} ${o.up.ti} · ${t('weightUp')} ${o.up.wt}</div>
  <div class="row" style="margin-top:6px" onclick="event.stopPropagation()">${typeof modelForCar==='function'&&modelForCar(o.cid)?`<span class="mut">${word('Authentic paint, fixed on this real-shape model.','اللون أصلي وثابت على مجسم الموديل الحقيقي ده.')}</span>`:`<span class="row" style="gap:5px">${COLS.map(k=>`<button class="sw" aria-label="color" style="background:${k}" onclick="paint(${o.id},'${k}')"></button>`).join('')}</span>`}
  <span class="row" style="gap:6px"><button onclick="spoil(${o.id})">${t('spoiler')} ${o.sp?'✓':fmt(500)}</button>
  <button onclick="tune(${o.id})" ${o.st>=3?'disabled':''}>${o.st>=3?t('max'):t('tune')+' '+fmt(800*(o.st+1))}</button>
  <button onclick="sell(${o.id})">${t('sell')} ${fmt(val(o))}</button></span></div></div>`}).join('')}
 function vMarket(){return`<button onclick="S.stock=stock();render()" style="margin-bottom:10px">${t('refresh')}</button>`+S.stock.map((s,i)=>{const c=CARS[s.cid];return`<div class="card"><div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>${infoButton(s.cid)}
- <div class="row"><span class="mut">${t('hp')} ${c[3]} · ${c[4]} ${t('kg')} · ${t('cond')} ${s.cond}%</span><button class="pri" onclick="buy(${i})">${t('buy')} ${fmt(s.price)}</button></div></div>`}).join('')}
+ <div class="row"><span class="mut">${t('hp')}: ${c[3]} · ${word('Mass','الوزن')}: ${c[4]} ${t('kg')} · ${t('cond')}: ${s.cond}%</span><button class="pri" onclick="buy(${i})">${t('buy')} ${fmt(s.price)}</button></div></div>`}).join('')}
 function rcost(o,i){return Math.ceil((100-o.w[i])*(8+CARS[o.cid][5]/4000)*(has('mechanic')?.75:1))}
 function vWork(){const o=cur();if(!o)return`<div class="card">${t('pick')}</div>`;
  const n=[t('eng'),t('tir'),t('brk')],tot=[0,1,2].reduce((a,i)=>a+rcost(o,i),0);
@@ -226,8 +229,8 @@ function vRace(){const o=cur();if(!o)return`<div class="card">${t('pick')}</div>
  const tr=tier(),tn=TIERNAMES[tr][S.lang==='ar'?1:0],rc=R?CARS[R.cid]:null,z=zone();
  return`<div class="card"><div class="row"><h2>${t('tier')} ${tr+1} · ${tn}</h2><span class="mut">${t('wins')} ${S.wins}</span></div>
  ${rc?`<div class="row" style="margin-top:6px"><b>${word('Rival','المنافس')}: ${rc[0]} <span class="mut">${rc[1]}</span></b>${tag(rc[2])}</div>
- <div class="mut">${hpOf(R)} ${t('hp')} · ${t('et')} ≈ ${rEt().toFixed(2)}s · ${t('prize')} ${fmt(prizeOf())}</div>
- <div class="mut">${word('Your build','عربيتك')}: ${CARS[o.cid][0]} · ${hpOf(o)} ${t('hp')} · ${t('et')} ≈ ${et(o).toFixed(2)}s${isEV(o)?' · '+t('auto'):''}</div>`
+ <div class="mut">${t('hp')}: ${hpOf(R)} · ${t('et')} ≈ ${rEt().toFixed(2)}s · ${t('prize')} ${fmt(prizeOf())}</div>
+ <div class="mut">${word('Your build','عربيتك')}: ${CARS[o.cid][0]} · ${t('hp')}: ${hpOf(o)} · ${t('et')} ≈ ${et(o).toFixed(2)}s${isEV(o)?' · '+t('auto'):''}</div>`
  :`<div class="mut" style="margin:6px 0">${word('No rival yet. Scout your tier to line up the next race.','لسه مفيش منافس. دوّر في درجتك عشان تلاقي السباق الجاي.')}</div>`}
  <div class="tree" id="tree"><i></i><i></i><i></i></div>
  <div class="lane"><i id="l1"></i></div><div class="lane o"><i id="l2"></i></div>
@@ -410,6 +413,32 @@ function setAcc(){const el=document.getElementById('saveState');el.style.color=l
 load();
 try{init3d()}catch(e){console.warn('3D preview unavailable',e);document.getElementById('stage').dataset.unavailable='1'}
 render();
+
+/* bidi-fix1: isolate Latin/number runs inside Arabic text */
+(function(){
+const RUN=/[A-Za-z0-9$€£(][A-Za-z0-9$€£%+.,:\/'’°×·()\-\u00a0 ]*[A-Za-z0-9$€£%)]|[A-Za-z0-9$€£]/g;
+const HAS_AR=/[\u0600-\u06FF]/;
+const SKIP=new Set(['SCRIPT','STYLE','TEXTAREA','INPUT','OPTION','SELECT','CANVAS','NOSCRIPT']);
+let busy=false,mo;
+function skipEl(el){for(;el&&el!==document.body;el=el.parentElement){if(SKIP.has(el.tagName)||el.classList?.contains('ltrRun')||el.getAttribute('dir')==='ltr')return true}return false}
+function fix(root){
+ if(document.documentElement.dir!=='rtl')return;
+ const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),list=[];
+ for(let n;n=w.nextNode();){if(HAS_AR.test(n.nodeValue)&&/[A-Za-z0-9]/.test(n.nodeValue)&&!skipEl(n.parentElement))list.push(n)}
+ for(const n of list){
+  const t=n.nodeValue,f=document.createDocumentFragment();let last=0,m;RUN.lastIndex=0;
+  while((m=RUN.exec(t))){
+   if(m.index>last)f.append(t.slice(last,m.index));
+   let run=m[0],trail='';const mt=run.match(/[ \u00a0]+$/);if(mt){trail=mt[0];run=run.slice(0,-trail.length)}
+   const sp=document.createElement('span');sp.className='ltrRun';sp.textContent=run;f.append(sp);if(trail)f.append(trail);last=m.index+m[0].length}
+  if(last<t.length)f.append(t.slice(last));
+  n.replaceWith(f)}
+}
+function run(){busy=true;try{fix(document.body)}finally{busy=false}}
+mo=new MutationObserver(()=>{if(busy)return;busy=true;try{fix(document.body)}finally{busy=false}});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+run();
+})();
 </script>
 </body>
 </html>
