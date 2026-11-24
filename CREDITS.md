@@ -494,3 +494,8 @@ Original reference-led geometry. No imported third-party mesh or photo texture. 
 ## Original simplified2024 launch Porsche Taycan Turbo GT
 
 Original reference-led geometry, no imported mesh or photo texture. StandardGT adaptive spoiler, not Weissach fixed wing. Not an exact replica. Free ready-made-first check: ArchHive free listing creator license explicitly bars repository redistribution; Blendkit requires FullPlan;3M-triangle dannzjs CC-BY listing lacks model-specific creation evidence and is older pre-facelift appearance; Manthey racing is wrong custom variant with unresolved origin. References viewed, not redistributed: https://newsroom.porsche.com/en/2024/products/porsche-the-new-taycan-turbo-gt-35479.html , https://newsroom.porsche.com/dam/jcr:db7be217-7b2a-44a6-b2b3-3493b5baf1c1/pag-taycan-turbo-gt-td-en.pdf , https://www.mad4wheels.com/porsche/taycan-turbo-gt-2025 , https://www.carmagazine.co.uk/car-reviews/porsche/taycan-turbo-gt/ . Official2024launch dimensions4968/1998/1378mm,2900wheelbase.
+
+
+## Original simplified2024 Mazda3 Turbo hatchback
+
+Original reference-led geometry, not an exact replica. No imported mesh/photo texture. Free-ready-made-first: Gerda explicitly BeamNGmod-ripped; Cults Panczel personal-use print license; genericCC0 hatch not Mazda, prior RacingMaster/game sources excluded. Official5door4459/1797/1440mm,2726wheelbase. References viewed, not redistributed: https://news.mazdausa.com/2023-06-13-2024-Mazda3-Pricing-and-Packaging , https://www.mazdausa.com/static/manuals/2024/mazda3/contents/70070600.html , https://www.motor1.com/reviews/734191/2024-mazda3-turbo-review/ . Turbo hatchback body with glossblack grille/wheels/roofspoiler; does not change held base2.5S catalog issue.
