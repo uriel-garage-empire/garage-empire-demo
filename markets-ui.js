@@ -3,6 +3,9 @@
 const ar=()=>S.lang==='ar',W=(e,a)=>ar()?a:e,K=()=>MK.M.country,M=MK.M;
 const nm=k=>MK.C[k].n[ar()?1:0];
 const usd=x=>fmt(x);
+const loc=n=>S.cur==='USD'?n:Math.round(n*MK.rate());
+const fm=n=>S.cur==='USD'?'$'+n.toLocaleString('en-US'):n.toLocaleString('en-US')+' '+MK.cl()[ar()?1:0];
+const sumLoc=a=>a.reduce((s,n)=>s+loc(n),0);
 const rng=(a,b)=>a+Math.random()*(b-a);
 const refOf=cid=>{const a=MK.anchor(cid,K());return {base:a?a.usd:CARS[cid][5],a}};
 const regNow=()=>M.reg?MK.regFee(K()):0;
@@ -15,21 +18,26 @@ function mkStock(){const pool=CARS.map((c,i)=>i).filter(i=>MK.has(K(),CARS[i])==
 window.stock=mkStock;
 function prune(){const ids=new Set(S.own.map(o=>o.id));const n=M.un.length+Object.keys(M.pl).length;M.un=M.un.filter(x=>ids.has(x));for(const k of Object.keys(M.pl))if(!ids.has(+k))delete M.pl[k];if(n!==M.un.length+Object.keys(M.pl).length)MK.save()}
 function ensure(){prune();if(!Array.isArray(M.sm)||M.sm.length!==S.stock.length||M.sm.some(q=>!q||q.k!==K())){S.stock=mkStock()}}
-function srcLine(a){return a?`${W('Price source','مصدر السعر')}: <a href="${a.url}" target="_blank" rel="noopener">${a.d[ar()?1:0]}</a>`:W('Price: game estimate, not a sourced market price','السعر: تقدير للعبة مش سعر سوق موثّق')}
-function breakdown(q,fee){const K0=MK.C[q.k];let L;
- if(!q.imp)L=[`${W('Car price','سعر العربية')}: ${usd(q.base)}${q.fresh?'':' ('+W('used, no added tax','مستعمل، من غير ضريبة مضافة')+')'}`].concat(q.fresh?[`${W('VAT','الضريبة')} ${Math.round(K0.vat*100)}% (${W('catalog new price','سعر جديد من الكتالوج')}): ${usd(q.vat)}`]:[]);
- else L=[`${W('Import','استيراد')}:`,`${W('Car','العربية')}: ${usd(q.base)}`,`${W('Shipping (estimate)','الشحن (تقديري)')}: ${usd(q.ship)}`,`${W('Duty','الجمارك')} ${Math.round(q.dr*100)}%: ${usd(q.du)}`].concat(q.xt?[`${W('Extra duty','رسم إضافي')} ${Math.round(q.ex*100)}%: ${usd(q.xt)}`]:[],[`${W('VAT','الضريبة')} ${Math.round(q.vr*100)}%: ${usd(q.vat)}`]);
- if(fee)L.push(`${W('Road registration (game estimate)','تسجيل الطريق (تقدير للعبة)')}: ${usd(fee)}`);
- L.push(`<b>${W('Total to pay','الإجمالي المطلوب')}: ${usd(Math.round(q.total)+fee)}</b>`);
+function srcLine(a){if(!a)return W('Price: game estimate, not a sourced market price','السعر: تقدير للعبة مش سعر سوق موثّق');
+ return`${W('Price source','مصدر السعر')} (${a.exact?W('exact model year','نفس سنة الموديل'):W('proxy estimate, not exact for this model year','تقدير بديل مش مطابق لسنة الموديل')}, ${a.basis==='used'?W('used-market price, no added tax','سعر مستعمل، من غير ضريبة مضافة'):W('new-car price','سعر عربية جديدة')}): <a href="${a.url}" target="_blank" rel="noopener">${a.d[ar()?1:0]}</a>`}
+function items(q,fee){const K0=MK.C[q.k],r=[];
+ if(!q.imp){r.push([W('Car price','سعر العربية'),q.base]);if(q.fresh&&q.vat)r.push([`${W('VAT','الضريبة')} ${Math.round(K0.vat*100)}% (${W('new car','عربية جديدة')})`,q.vat])}
+ else{r.push([W('Car','العربية'),q.base],[W('Shipping (estimate)','الشحن (تقديري)'),q.ship],[`${W('Duty','الجمارك')} ${Math.round(q.dr*100)}%`,q.du]);if(q.xt)r.push([`${W('Extra duty','رسم إضافي')} ${Math.round(q.ex*100)}%`,q.xt]);r.push([`${W('VAT','الضريبة')} ${Math.round(q.vr*100)}%`,q.vat])}
+ if(fee)r.push([W('Road registration (game estimate)','تسجيل الطريق (تقدير للعبة)'),fee]);return r}
+function gtot(q,fee){return fm(sumLoc(items(q,fee).map(x=>x[1])))}
+function breakdown(q,fee,cond){const it=items(q,fee);const L=(q.imp?[W('Import:','استيراد:')]:[]).concat(it.map(x=>`${x[0]}: ${fm(loc(x[1]))}`));
+ L.push(`<b>${W('Total to pay','الإجمالي المطلوب')}: ${gtot(q,fee)}</b>`);
+ if(cond)L.push(W('Delivered in used condition 70% (game)','بتوصل بحالة مستعمل 70% (لعبة)'));
  L.push(srcLine(q.a));return L.join('<br>')}
-function quote(cid){const r=refOf(cid),q=MK.calc(cid,r.base,K(),1);q.a=r.a?{url:r.a.url,d:r.a.d}:null;return q}
+function usedBasis(a){return !!(a&&a.basis==='used')}
+function quote(cid){const r=refOf(cid),q=MK.calc(cid,r.base,K(),usedBasis(r.a)?0:1);q.ub=usedBasis(r.a);q.a=r.a?{url:r.a.url,d:r.a.d}:null;return q}
 MK.quote=quote;
-MK.grand=cid=>Math.round(quote(cid).total)+regNow();
-MK.quoteHtml=cid=>{const q=quote(cid);return`<p class="mut" style="font-size:12px">${W('Market','سوق')}: ${nm(K())}<br>${breakdown(q,regNow())}<br>${W('Game estimate, not official tax advice.','تقدير للعبة، مش استشارة ضريبية رسمية.')}</p>`};
+MK.grandStr=cid=>gtot(quote(cid),regNow());MK.tileStr=cid=>fm(sumLoc(items(quote(cid),0).map(x=>x[1])));
+MK.quoteHtml=cid=>{const q=quote(cid);return`<p class="mut" style="font-size:12px">${W('Market','سوق')}: ${nm(K())}<br>${breakdown(q,regNow(),q.ub)}<br>${W('Game estimate, not official tax advice.','تقدير للعبة، مش استشارة ضريبية رسمية.')}</p>`};
 function buyCatalogN(cid){if(racing)return toast(W('Finish the race first','استنى السباق يخلص'));if(S.own.length>=8)return toast(t('full'));const q=quote(cid);
  if(S.usd<Math.round(q.total)+regNow())return toast(t('poor'));
- S.stock.push({cid,cond:100,price:Math.round(q.total)});M.sm.push(q);const n0=S.own.length;buy(S.stock.length-1);
- if(S.own.length>n0){S.own[S.own.length-1].w=[100,100,100]}S.tab='garage';render()}
+ const cd=q.ub?70:100;S.stock.push({cid,cond:cd,price:Math.round(q.total)});M.sm.push(q);const n0=S.own.length;buy(S.stock.length-1);
+ if(S.own.length>n0){S.own[S.own.length-1].w=[cd,cd,cd]}S.tab='garage';render()}
 window.buyCatalog=buyCatalogN;
 const _buy=window.buy;
 window.buy=function(i){const s=S.stock[i];if(!s)return;const fee=regNow();
@@ -63,7 +71,7 @@ window.vMarket=function(){ensure();const opts=Object.keys(MK.C).map(k=>`<option 
  <div class="row" style="margin-top:6px"><label><input type="checkbox" ${M.reg?'checked':''} onchange="setReg(this.checked)"> ${W('Register for the road on purchase','سجّلها للطريق عند الشراء')} (${usd(fee)})</label></div>
  <p class="mut" style="font-size:12px">${M.reg?'':W('Unregistered cars can be bought and tuned but cannot start races until registered. No fines, no resale penalty.','العربيات غير المسجلة تتشرى وتتعدل بس مش بتدخل سباقات لحد ما تتسجل. من غير غرامات ولا خصم عند البيع.')}${K()==='eg'?' '+W('Egypt: registered private cars get the light blue plate. Fee is a game estimate.','مصر: العربية الملاكي المسجلة بتاخد اللوحة اللبني. الرسوم تقديرية للعبة.'):''}</p>${facts()}</div>`;
  return head+`<button onclick="S.stock=stock();render()" style="margin-bottom:10px">${t('refresh')}</button>`+S.stock.map((s,i)=>{const c=CARS[s.cid],q=M.sm[i];return`<div class="card"><div class="row"><b>${c[0]} <span class="mut">${c[1]}</span></b>${tag(c[2])}</div>${infoButton(s.cid)}
- <div class="row"><span class="mut">${t('hp')}: ${c[3]} · ${W('Mass','الوزن')}: ${c[4]} ${t('kg')} · ${t('cond')}: ${s.cond}%</span><button class="pri" onclick="buy(${i})">${t('buy')} ${fmt(s.price+fee*(M.reg?1:0))}</button></div>${q?`<div class="mut" style="font-size:12px">${breakdown(q,regNow())}</div>`:''}</div>`}).join('')};
+ <div class="row"><span class="mut">${t('hp')}: ${c[3]} · ${W('Mass','الوزن')}: ${c[4]} ${t('kg')} · ${t('cond')}: ${s.cond}%</span><button class="pri" onclick="buy(${i})">${t('buy')} ${q?gtot(q,regNow()):fmt(s.price+regNow())}</button></div>${q?`<div class="mut" style="font-size:12px">${breakdown(q,regNow())}</div>`:''}</div>`}).join('')};
 const _vG=window.vGarage;
 window.vGarage=function(){prune();const o=cur();let top='';
  if(o){const un=M.un.includes(o.id),fee=MK.regFee(K());top=`<div class="card"><div class="row"><b>${W('Road registration','تسجيل الطريق')}: ${CARS[o.cid][0]}</b>${un?`<span class="mut">${W('Not registered','مش مسجلة')}</span>`:(M.pl[o.id]?plateBadge(o.id):`<span class="mut">${W('Registered','مسجلة')}</span>`)}</div>
