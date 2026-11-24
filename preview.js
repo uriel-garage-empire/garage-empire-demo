@@ -1785,10 +1785,10 @@ function updateCar(){
  }
  const mdef=car3d.usingModel&&modelForCar(cid);
  if(name&&mdef?.approximation)name.textContent=CARS[cid][0]+' · '+CARS[cid][1]+(S.lang==='ar'?' | مجسم بديل: ':' | substitute body: ')+mdef.sourceBody.replace('BMW M3 G80','M3 G80');
- caption.textContent=mdef?(S.lang==='ar'?'مجسم مجتمعي من نفس جيل الموديل · '+mdef.credit+' · CC BY · مش نسخة مطابقة للسنة أو الفئة بالظبط. اسحب للتدوير.':'Same-generation community model by '+mdef.credit+' (CC BY), not an exact year/trim replica. Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
- if(mdef&&mdef.noteEn)caption.textContent=(S.lang==='ar'?mdef.noteAr+' · '+mdef.credit+' · CC BY · اسحب للتدوير.':mdef.noteEn+' Community model by '+mdef.credit+' · CC BY. Drag to orbit.');
- if(mdef&&mdef.approximation)caption.textContent=(S.lang==='ar'?'بديل شكلي: هيكل '+mdef.sourceBody+' · '+mdef.credit+' · CC BY · الفروق في الملاحظة مع المواصفات · اسحب للتدوير.':'Visual substitute: '+mdef.sourceBody+' body by '+mdef.credit+' (CC BY). Differences are in the note with the specifications. Drag to orbit.');
- if(mdef&&mdef.original)caption.textContent=S.lang==='ar'?mdef.noteAr+' · اسحب للتدوير.':mdef.noteEn+' Drag to orbit.';
+ caption.textContent=mdef?(S.lang==='ar'?'مجسم مجتمعي من نفس جيل الموديل، صنعه '+mdef.credit+' (CC BY). مش نسخة مطابقة للسنة أو الفئة بالظبط. اسحب للتدوير.':'Same-generation community model by '+mdef.credit+' (CC BY), not an exact year/trim replica. Drag to orbit.'):(S.lang==='ar'?'مجسم فني مبسّط، مش نسخة مطابقة للموديل. اسحب للتدوير.':'Stylized body, not a model-exact replica. Drag to orbit.');
+ if(mdef&&mdef.noteEn)caption.textContent=(S.lang==='ar'?mdef.noteAr+' المجسم من صنع '+mdef.credit+' (CC BY). اسحب للتدوير.':mdef.noteEn+' Community model by '+mdef.credit+' · CC BY. Drag to orbit.');
+ if(mdef&&mdef.approximation)caption.textContent=(S.lang==='ar'?'بديل شكلي: هيكل '+mdef.sourceBody+'، صنعه '+mdef.credit+' (CC BY). الفروق في الملاحظة مع المواصفات. اسحب للتدوير.':'Visual substitute: '+mdef.sourceBody+' body by '+mdef.credit+' (CC BY). Differences are in the note with the specifications. Drag to orbit.');
+ if(mdef&&mdef.original)caption.textContent=S.lang==='ar'?mdef.noteAr+' اسحب للتدوير.':mdef.noteEn+' Drag to orbit.';
  if(mdef?.url==='original:gr86-zn8-original')caption.textContent=S.lang==='ar'?'GR86 أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified GR86, not an exact replica. Drag to orbit.';
  if(mdef?.url==='original:brz-zd8-original')caption.textContent=S.lang==='ar'?'BRZ أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified BRZ, not an exact replica. Drag to orbit.';
  if(mdef?.url==='original:wrx-vb-original')caption.textContent=S.lang==='ar'?'WRX أصلي مبسط، مش نسخة مطابقة. اسحب للتدوير.':'Original simplified WRX, not an exact replica. Drag to orbit.';
