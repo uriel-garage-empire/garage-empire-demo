@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has46 model-family community representations, forty-three original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is98/100 catalog entries with83 distinct body definitions;2 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has47 model-family community representations, forty-three original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is99/100 catalog entries with84 distinct body definitions;1 entry remains procedural. The41 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -423,3 +423,10 @@ Separate original simplifiedstandardcoupe, not Spider/XX/exactreplica.97/100cove
 ## Original simplified2012 Kia Cerato TD sedan
 
 Separate original simplified four-door TD sedan, not the later YD generation or an exact replica.98/100coverage,46community+43original+9substitutes,83definitions,2procedural. Prior visuals/catalog/save/gameplay preserved.
+
+
+## B14 family scan
+
+Ready-made CC BY4.0 scan by agent(agentmooshroom5) represents1998-99SentraGXE, sharing the B14 family with catalogSunny1996. Not exact fascia, market trim or wheels. Scan distortion/fixed photo textures remain.99mapped=47community+43original+9substitutes,84definitions,1procedural.
+
+B14 scan delivery optimized with meshopt geometry and WebP texture compression, keeping the source-attribution and scan caveats.
