@@ -509,3 +509,8 @@ Original reference-led geometry, not an exact replica. No imported mesh/photo te
 ## Original simplified winged Jesko
 
 Original reference-led geometry, no imported mesh/photo texture. Launch-era2019-22 design, not exact2022 replica. Ready-made-first: Ddiaz explicit RealRacing3; JUSTGAME/kevin/JustAGuy originunresolved; BlendSwap unspecified SketchUporigin; BACKSLASH printkit actualwinglessAbsolut; SRTmirror lacksrecoverableauthorlicense, CGTrader listingRoyaltyFreecannotredistributesource. References viewed, not redistributed: https://www.koenigsegg.com/model/jesko-attack , https://www.koenigsegg.com/technical-specifications-jesko-attack , https://www.mad4wheels.com/koenigsegg/jesko-2019 , https://www.drive.com.au/news/2022-koenigsegg-jesko-production-car-revealed/ .
+
+
+## Original simplified2021 FerrariSF90Stradale
+
+Original reference-led geometry, no imported mesh/photo texture. Ready-made-first: promising originalSheep19 CCmodel actualSketchfabModelDeleted/API404 Nov24; DdiazexplicitCSR2; otherCCuploads lackorigin, Spiderwrongbody, printables2Dlogo, Freecreat252MBorigin/licenseunresolved. References viewed, not redistributed: https://www.ferrari.com/en-EN/auto/sf90-stradale , https://www.ferrarisiliconvalley.com/ferrari-sf90-stradale.html , https://www.mad4wheels.com/ferrari/sf90-stradale-2019 .4710/1972/1186mm2650wheelbase. Sourceunavailable: https://sketchfab.com/3d-models/2020-ferrari-sf90-stradale-b5bd45c9ebd54d25b990a38de04d72e2 .
