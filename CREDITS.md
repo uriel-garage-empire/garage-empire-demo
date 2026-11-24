@@ -519,3 +519,10 @@ Original reference-led geometry, no imported mesh/photo texture. Ready-made-firs
 ## Original simplified2012 Kia Cerato TD sedan
 
 Original reference-led geometry, no imported mesh/photo texture. Ready-made-first: exact2012 CarDesi archive license unspecified;2010TD3Dcadbrowser redistribution prohibited and account/payment requirements; SketchfabCCForte is newer generation;2010Koup is explicitForza4 derivative and wrong body. No suitable free redistributable ready-made source established. Reference images viewed only, not redistributed: https://www.kiamedia.com/us/en/models/forte/2012 , https://xr793.com/wp-content/uploads/2023/04/2012-Kia-Cerato-Specs-AUS.pdf , https://xr793.com/wp-content/uploads/2023/04/2012-Kia-Cerato-LTD-Edition-AUS.pdf , https://commons.wikimedia.org/wiki/Category:Kia_Cerato_(TD) . Dimensions4530/1775/1460mm,wheelbase2650mm.
+
+
+## B14 family scan for NissanSunnyB141996
+
+3D Scanned Nissan Sentra(1999)[Free] by agent(agentmooshroom5), CC Attribution4.0 https://creativecommons.org/licenses/by/4.0/ . Source https://sketchfab.com/3d-models/3d-scanned-nissan-sentra-1999-free-aa24f2c9702a4c87b9bbac68dac85775 . Creator describes own video scan,1998-99SentraGXE B14, modelling reference. Retrieved Nov24,2026. Changes: removed low scanned ground triangles;1kJPEG texture converted toPNG for existingloader compatibility. No invented original model claim. Geometry87238triangles. Known limits: not exact1996Sunny fascia/trim, scan distortion/flat image texture remain. Free normal download; no paid assets,newaccounts or outreach.
+
+B14 scan delivery optimized with meshopt geometry and WebP texture compression, keeping the source-attribution and scan caveats.
