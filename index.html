@@ -291,7 +291,7 @@ function race(){
  const rReact=rnd(Math.max(120,330-30*tier()),Math.max(190,430-35*tier()));
  rReactMs=Math.round(rReact);
  rTotal=rReact/1000+rEt0*rnd(.97,1.05);
- timers.push(setTimeout(()=>{if(token!==raceToken)return;greenAt=performance.now();
+ timers.push(setTimeout(()=>{if(token!==raceToken)return;greenAt=performance.now();try{localStorage.setItem('garage-empire-race-pending',JSON.stringify({id:o.id}))}catch{}
   lights.forEach(el=>el.className='');lights[lights.length-1].className='go';
   const b=document.getElementById('go');if(b)b.textContent=t('tapGo');
   timers.push(setTimeout(()=>{if(token===raceToken)animate(document.getElementById('l2'),(rTotal-rReact/1000)*k)},rReact));
@@ -376,7 +376,7 @@ function report(o,won){
  return`<div class="repBox"><b>📋 ${t('report')}</b><ul>${rows.map(r=>`<li>${r}</li>`).join('')}${tips.map(x=>`<li class="tip">${x}</li>`).join('')}</ul></div>`;
 }
 function resolve(token,o){
- if(resolved||token!==raceToken)return;resolved=true;racing=false;
+ if(resolved||token!==raceToken)return;resolved=true;racing=false;try{localStorage.removeItem('garage-empire-race-pending')}catch{}
  cancelAnimationFrame(rpmId);
  const words=L[S.lang],rc=CARS[R.cid],fs=pTotal===-1,tb=tier(),prize=prizeOf();
  const won=!fs&&pTotal!==null&&pTotal<rTotal;
@@ -406,13 +406,14 @@ function renderHome(){const h=S.scr!=='game',d=H[S.lang];home.hidden=!h;document
 let raceToken=0,localFailed=false;
 for(const fn of ['paint','spoil','tune','sell','buy','repair','repairAll','buyKit','buyUp','hire']){const original=window[fn];window[fn]=function(...args){if(racing)return toast(word('Finish the race first','استنى السباق يخلص'));return original(...args)}}
 const DEMO_KEY='garage-empire-pages-demo-v1';
-function applyState(data){racing=false;resolved=true;R=null;greenAt=0;launched=false;pTotal=null;gear=0;shifts=[];limiterAt=0;cancelAnimationFrame(rpmId);timers.forEach(clearTimeout);timers=[];S=data;uid=Math.max(0,...S.own.map(o=>o.id))+1;raceToken++}
-function load(){try{const raw=localStorage.getItem(DEMO_KEY);const d=raw&&GarageSave.normalize(JSON.parse(raw));applyState(d||fresh())}catch{applyState(fresh());localFailed=true}}
+function applyState(data){try{localStorage.removeItem('garage-empire-race-pending')}catch{}racing=false;resolved=true;R=null;greenAt=0;launched=false;pTotal=null;gear=0;shifts=[];limiterAt=0;cancelAnimationFrame(rpmId);timers.forEach(clearTimeout);timers=[];S=data;uid=Math.max(0,...S.own.map(o=>o.id))+1;raceToken++}
+let forfeitMsg='';
+function load(){try{const raw=localStorage.getItem(DEMO_KEY);const d=raw&&GarageSave.normalize(JSON.parse(raw));let pend=null;try{pend=JSON.parse(localStorage.getItem('garage-empire-race-pending')||'null')}catch{}applyState(d||fresh());if(d&&pend){const o=S.own.find(x=>x.id===pend.id);if(o){const wf=has('mechanic')?.8:1;o.w=o.w.map((v,i)=>Math.max(5,v-Math.round(rnd(3,i===1?14:9)*wf)));forfeitMsg=S.lang==='ar'?'السباق اتقفل في النص، فاتحسب خسارة وعربيتك اتهلكت زي أي سباق.':'The race was left unfinished, so it counted as a loss and your car took normal race wear.'}}}catch{applyState(fresh());localFailed=true}}
 function save(){try{localStorage.setItem(DEMO_KEY,JSON.stringify(GarageSave.normalize(S)));localFailed=false}catch{localFailed=true}setAcc()}
 function setAcc(){const el=document.getElementById('saveState');el.style.color=localFailed?'var(--bad)':'var(--mut)';el.textContent=S.lang==='ar'?(localFailed?'تعذر الحفظ على الجهاز':'نسخة تجربة: الحفظ في المتصفح فقط، من غير حسابات'):(localFailed?'Device save failed':'Demo: browser-only save, no accounts');el.style.cursor='default'}
 load();
 try{init3d()}catch(e){console.warn('3D preview unavailable',e);document.getElementById('stage').dataset.unavailable='1'}
-render();
+render();if(forfeitMsg)toast(forfeitMsg);
 
 /* bidi-fix1: isolate Latin/number runs inside Arabic text */
 (function(){
