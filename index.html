@@ -93,6 +93,11 @@ a.sourceLink{color:var(--neo);font-size:12px;text-decoration:none;overflow-wrap:
 .shiftLog{font-size:12px;display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.shiftLog span{padding:1px 8px;border-radius:99px;background:var(--line)}.shiftLog span.perfect{background:var(--good);color:#04121a}.shiftLog span.lateS,.shiftLog span.earlyS{background:var(--bad);color:#fff}
 .teamGrid{display:grid;gap:10px}.teamCard .row{align-items:flex-start}.repBox{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px;font-size:13px}.repBox li{margin:4px 0}.repBox .tip{color:var(--acc);font-weight:700}
 
+
+/* Keep variable-length car notes clear of the camera buttons. */
+#cap{bottom:60px;max-height:64px;overflow-y:auto;line-height:1.5;box-sizing:border-box;z-index:2}
+.cameraControls{bottom:14px;z-index:3}
+@media(max-width:820px){#cap{bottom:58px;max-height:60px}.cameraControls{bottom:12px}}
 </style>
 </head>
 <body>
