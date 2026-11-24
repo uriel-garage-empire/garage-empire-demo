@@ -499,3 +499,8 @@ Original reference-led geometry, no imported mesh or photo texture. StandardGT a
 ## Original simplified2024 Mazda3 Turbo hatchback
 
 Original reference-led geometry, not an exact replica. No imported mesh/photo texture. Free-ready-made-first: Gerda explicitly BeamNGmod-ripped; Cults Panczel personal-use print license; genericCC0 hatch not Mazda, prior RacingMaster/game sources excluded. Official5door4459/1797/1440mm,2726wheelbase. References viewed, not redistributed: https://news.mazdausa.com/2023-06-13-2024-Mazda3-Pricing-and-Packaging , https://www.mazdausa.com/static/manuals/2024/mazda3/contents/70070600.html , https://www.motor1.com/reviews/734191/2024-mazda3-turbo-review/ . Turbo hatchback body with glossblack grille/wheels/roofspoiler; does not change held base2.5S catalog issue.
+
+
+## Original simplified2018 Porsche911GT3 991.2
+
+Original reference-led geometry, not an exact replica. No imported mesh/photo texture. Free-ready-made-first: MakerWorld exact-name listing actually describes winglessTouring and shows0printfiles; Outlaw actual image is newer992 withfullwidthrearbar; GT3RS/custom sources not stockGT3 and origin unresolved; Get3DModels mirror lacks verified origin. Official4562/1852/1271mm,2457wheelbase. References viewed, not redistributed: https://newsroom.porsche.com/en/products/porsche-911-gt3-world-premiere-geneva-motor-show-gims-2017-13466.html , https://newsroom.porsche.com/dam/jcr:789582f9-2ea1-4feb-94b3-40f4419d8ba6/PAG_Factsheet_911GT3_10_EN.pdf , https://press.porsche.com/download/prod/presse_pag/PressBasicData.nsf/Download?OpenAgent=&attachmentid=1292499 , https://www.mad4wheels.com/porsche/911-991-type-ii-gt3-2018 .
