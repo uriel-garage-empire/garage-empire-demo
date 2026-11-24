@@ -29,8 +29,8 @@ cn:{n:['China','الصين'],cur:'CNY',cl:['CNY','يوان'],rate:7.2,vat:.13,du
 };
 const PLATES={private:{en:'Private (light blue plate)',ar:'ملاكي (لوحة لبني)',col:'#5bb8e8',m:1}};
 const KEY='garage-empire-markets-v1';
-const M={country:'eg',mode:'local',reg:true,plate:'private',un:[],pl:{},sm:[]};
-try{const d=JSON.parse(localStorage.getItem(KEY)||'null');if(d&&C[d.country]){M.country=d.country;M.mode=d.mode==='import'?'import':'local';M.reg=d.reg!==false;M.plate='private';M.un=Array.isArray(d.un)?d.un.filter(Number.isInteger):[];M.pl=d.pl&&typeof d.pl==='object'?d.pl:{};M.sm=Array.isArray(d.sm)?d.sm:[]}}catch(e){}
+const M={country:'eg',mode:'local',reg:true,plate:'private',un:[],pl:{},sm:[],meta:{}};
+try{const d=JSON.parse(localStorage.getItem(KEY)||'null');if(d&&C[d.country]){M.country=d.country;M.mode=d.mode==='import'?'import':'local';M.reg=d.reg!==false;M.plate='private';M.un=Array.isArray(d.un)?d.un.filter(Number.isInteger):[];M.pl=d.pl&&typeof d.pl==='object'?d.pl:{};M.sm=Array.isArray(d.sm)?d.sm:[];M.meta=d.meta&&typeof d.meta==='object'?d.meta:{}}}catch(e){}
 const H='https://eg.hatla2ee.com/en/car/used-prices/';
 const ANCH=[
  {n:'Hyundai Excel',y:1997,k:'eg',amt:131000,basis:'used',exact:1,url:H+'hyundai/excel/1997',d:['Hatla2ee Egypt, Hyundai Excel 1997, average used listing Sep 2026: 131,000 EGP','هتلاتي مصر، هيونداي إكسل 1997، متوسط إعلانات المستعمل سبتمبر 2026: 131,000 جنيه']},
@@ -40,10 +40,15 @@ const ANCH=[
  {n:'Land Cruiser',y:2024,k:'de',amt:71218,basis:'new',exact:0,url:'https://www.toyota.de/content/dam/toyota/nmsc/germany/broschueren-preislisten/preislisten/preisliste_land-cruiser.pdf',d:['Toyota Germany price list, 2.8 D-4D mild hybrid entry price EUR 84,750 incl. 19% VAT = 71,218 EUR before VAT, excl. delivery (publication date not shown, engine and trim differ from the US car)','قائمة أسعار تويوتا ألمانيا، فئة 2.8 D-4D هايبرد 84,750 يورو شامل 19% ضريبة = 71,218 يورو قبل الضريبة، من غير التوصيل (تاريخ النشر مش ظاهر، المحرك والفئة مختلفين عن الأمريكي)']},
  {n:'Honda NSX',y:1997,k:'us',amt:129000,basis:'used',exact:0,url:'https://ferrisexotics.com/notes/model-acura-nsx-t-2026-10-12',d:['Ferris Exotics, Acura NSX-T (sold in the US as Acura), median of 9 sales, Oct 2026: $129,000 (range $89,888 to $160,000, model years not limited to 1997)','Ferris Exotics، أكيورا NSX-T (بتتباع في أمريكا باسم أكيورا)، متوسط 9 عمليات بيع، أكتوبر 2026: 129,000 دولار (من 89,888 لـ160,000، مش مقتصر على موديل 1997)']},
  {n:'Mazda MX-5 NA',y:1992,k:'de',amt:9900,basis:'used',exact:0,url:'https://cetiritocka.com/market/cars?generation=mx-5-na&make=mazda&model=mx-5',d:['cetiritocka, Germany median advertised price for the MX-5 NA generation (all years 1989-1997 combined), Nov 2026: 9,900 EUR','cetiritocka، متوسط السعر المعلن في ألمانيا لجيل MX-5 NA (كل السنين مجمعة)، نوفمبر 2026: 9,900 يورو']},
+ {n:'Honda S2000',y:2000,k:'us',amt:30350,basis:'used',exact:1,url:'https://www.pricevin.com/sold/2000-honda-s2000',d:['PriceVin, 2000 Honda S2000, median of 30 completed Bring a Trailer sales (Aug 2025 to Nov 2026): $30,350 (auction results, US, mileage varies)','برايس فين، هوندا S2000 موديل 2000، متوسط 30 عملية بيع مكتملة على Bring a Trailer (أغسطس 2025 لـنوفمبر 2026): 30,350 دولار (مزادات أمريكا، والكيلومترات بتختلف)']},
+ {n:'Ferrari 458 Italia',y:2010,k:'us',amt:235786,basis:'used',exact:1,url:'https://www.pricevin.com/sold/2010-ferrari-458-italia',d:['PriceVin, 2010 Ferrari 458 Italia, median of 5 completed Bring a Trailer sales (Oct 2025 to Oct 2026): $235,786 (small sample, US auctions)','برايس فين، فيراري 458 إيطاليا 2010، متوسط 5 عمليات بيع مكتملة على Bring a Trailer (أكتوبر 2025 لـأكتوبر 2026): 235,786 دولار (عينة صغيرة، مزادات أمريكا)']},
+ {n:'BMW M3 E46',y:2003,k:'us',amt:29375,basis:'used',exact:0,url:'https://www.pricevin.com/sold/2003-bmw-m3',d:['PriceVin, 2003 BMW M3, median of 30 completed Bring a Trailer sales (Aug 2025 to Oct 2026): $29,375 (coupe and convertible not separated, so this is a proxy)','برايس فين، بي إم دبليو M3 موديل 2003، متوسط 30 عملية بيع مكتملة على Bring a Trailer (أغسطس 2025 لـأكتوبر 2026): 29,375 دولار (الكوبيه والكشف مش مفصولين، فده تقريبي)']},
+ {n:'Nissan 350Z',y:2003,k:'us',amt:19100,basis:'used',exact:0,url:'https://www.pricevin.com/sold/2003-nissan-350z',d:['PriceVin, 2003 Nissan 350Z, median of 6 completed Bring a Trailer sales (Dec 2025 to Nov 2026): $19,100 (all trims, small sample, so this is a proxy)','برايس فين، نيسان 350Z موديل 2003، متوسط 6 عمليات بيع مكتملة على Bring a Trailer (ديسمبر 2025 لـنوفمبر 2026): 19,100 دولار (كل الفئات وعينة صغيرة، فده تقريبي)']},
+ {n:'Toyota MR2 SW20',y:1993,k:'us',amt:12000,basis:'used',exact:0,url:'https://www.pricevin.com/sold/1993-toyota-mr2',d:['PriceVin, 1993 Toyota MR2, median of 5 completed Bring a Trailer sales (Mar to Dec 2025): $12,000 (trims not separated and sample is small, so this is a proxy)','برايس فين، تويوتا MR2 موديل 1993، متوسط 5 عمليات بيع مكتملة على Bring a Trailer (مارس لـديسمبر 2025): 12,000 دولار (الفئات مش مفصولة والعينة صغيرة، فده تقريبي)']},
  {n:'Land Cruiser',y:2024,k:'us',amt:58180,basis:'new',exact:0,url:'https://www.toyota.com/landcruiser/',d:['toyota.com Land Cruiser page, starting MSRP excl. destination and tax, fetched 24 Nov 2026: $58,180 (current model, not checked against 2024)','صفحة toyota.com للاند كروزر، أقل سعر مبدئي من غير الشحن والضريبة، 24 نوفمبر 2026: 58,180 دولار (الموديل الحالي، مش متأكد إنه نفس 2024)']}];
 function anchor(cid,k){const c=CARS[cid];for(const a of ANCH)if(a.k===k&&c[0].includes(a.n)&&c[1]===a.y)return {usd:a.amt/C[k].rate,url:a.url,d:a.d,basis:a.basis,exact:a.exact};return null}
 const brand=c=>c[0].split(' ')[0];
-const has=(k,c)=>C[k].home.includes(brand(c))||C[k].sold.includes(brand(c));
+const has=(k,c)=>C[k].home.includes(brand(c))||C[k].sold.includes(brand(c))||!!anchor(CARS.indexOf(c),k);
 const duty=(k,hp)=>{const d=C[k].duty;if(typeof d==='number')return d;for(const b of d)if(hp<=b[0])return b[1];return 0};
 function calc(cid,baseUSD,k,fresh){const c=CARS[cid],K=C[k],base=Math.round(baseUSD);
  if(has(k,c)){if(!fresh)return {imp:false,base,vat:0,total:base,k};const vat=Math.round(base*K.vat);return {imp:false,fresh:1,base,vat,total:base+vat,k}}
@@ -51,6 +56,6 @@ function calc(cid,baseUSD,k,fresh){const c=CARS[cid],K=C[k],base=Math.round(base
  const du=Math.round(cif*dr),xt=Math.round(cif*ex),vat=Math.round((cif+du+xt)*K.vat);
  return {imp:true,base,ship,cif,dr,du,ex,xt,vr:K.vat,vat,total:cif+du+xt+vat,k}}
 function regFee(k,id){return C[k].reg}
-function save(){try{localStorage.setItem(KEY,JSON.stringify({country:M.country,mode:M.mode,reg:M.reg,plate:M.plate,un:M.un,pl:M.pl,sm:M.sm}))}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({country:M.country,mode:M.mode,reg:M.reg,plate:M.plate,un:M.un,pl:M.pl,sm:M.sm,meta:M.meta}))}catch(e){}}
 window.MK={anchor,C,M,PLATES,has,calc,regFee,save,brand,rate:()=>C[M.country].rate,cl:()=>C[M.country].cl};
 })();
