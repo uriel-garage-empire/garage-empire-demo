@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has46 model-family community representations, thirty-six original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is91/100 catalog entries with76 distinct body definitions;9 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has46 model-family community representations, thirty-seven original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is92/100 catalog entries with77 distinct body definitions;8 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -388,3 +388,8 @@ Separate simplified EV6 GT fallback, not an exact replica. Swept lamps, sloping 
 ## Original stylized2023 Mercedes-AMG C 43
 
 Separate simplified C43 fallback, not an exact replica. Vertical-strut grille, W206 sedan silhouette, wedge rear lamps, multi-spoke wheels and adjacent round quad tailpipes.91/100coverage,46community+36original+9substitutes,76distinct definitions,9procedural. Prior visuals/catalog/save/gameplay preserved.
+
+
+## Original stylized2024 Mercedes-AMG C 63 S E PERFORMANCE
+
+Separate simplified C63 S E PERFORMANCE fallback, not an exact replica. Wider W206 body, bonnet outlet, jet-wing apron, split-spoke wheels, charging flap and trapezoidal quad outlets.92/100coverage,46community+37original+9substitutes,77distinct definitions,8procedural. Prior visuals/catalog/save/gameplay preserved.
