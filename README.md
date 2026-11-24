@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has46 model-family community representations, thirty-eight original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is93/100 catalog entries with78 distinct body definitions;7 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has46 model-family community representations, thirty-nine original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is94/100 catalog entries with79 distinct body definitions;6 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -398,3 +398,8 @@ Separate simplified C63 S E PERFORMANCE fallback, not an exact replica. Wider W2
 ## Original stylized2024 launch Porsche Taycan Turbo GT
 
 Separate simplified standardGT fallback, not an exact replica or Weissach fixed-wing car. Low fastback, four-point lamps, continuous rear light,21-inch-style wheels, gold calipers and adaptive spoiler.93/100coverage,46community+38original+9substitutes,78distinct definitions,7procedural. Prior visuals/catalog/save/gameplay preserved.2024 denotes official launch/deliveries; some markets label this2025 model year.
+
+
+## Original stylized2024 Mazda3 Turbo hatchback
+
+Separate simplified BP hatchback fallback, not an exact replica. Long bonnet, thick rear pillars, shield grille, paired ring tail lamps and black18-inch-style wheels.94/100coverage,46community+39original+9substitutes,79distinct definitions,6procedural. Prior visuals/catalog/save/gameplay preserved. Base2.5S body-style conflict held, not silently remapped.
