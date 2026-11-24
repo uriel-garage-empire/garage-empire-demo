@@ -514,3 +514,8 @@ Original reference-led geometry, no imported mesh/photo texture. Launch-era2019-
 ## Original simplified2021 FerrariSF90Stradale
 
 Original reference-led geometry, no imported mesh/photo texture. Ready-made-first: promising originalSheep19 CCmodel actualSketchfabModelDeleted/API404 Nov24; DdiazexplicitCSR2; otherCCuploads lackorigin, Spiderwrongbody, printables2Dlogo, Freecreat252MBorigin/licenseunresolved. References viewed, not redistributed: https://www.ferrari.com/en-EN/auto/sf90-stradale , https://www.ferrarisiliconvalley.com/ferrari-sf90-stradale.html , https://www.mad4wheels.com/ferrari/sf90-stradale-2019 .4710/1972/1186mm2650wheelbase. Sourceunavailable: https://sketchfab.com/3d-models/2020-ferrari-sf90-stradale-b5bd45c9ebd54d25b990a38de04d72e2 .
+
+
+## Original simplified2012 Kia Cerato TD sedan
+
+Original reference-led geometry, no imported mesh/photo texture. Ready-made-first: exact2012 CarDesi archive license unspecified;2010TD3Dcadbrowser redistribution prohibited and account/payment requirements; SketchfabCCForte is newer generation;2010Koup is explicitForza4 derivative and wrong body. No suitable free redistributable ready-made source established. Reference images viewed only, not redistributed: https://www.kiamedia.com/us/en/models/forte/2012 , https://xr793.com/wp-content/uploads/2023/04/2012-Kia-Cerato-Specs-AUS.pdf , https://xr793.com/wp-content/uploads/2023/04/2012-Kia-Cerato-LTD-Edition-AUS.pdf , https://commons.wikimedia.org/wiki/Category:Kia_Cerato_(TD) . Dimensions4530/1775/1460mm,wheelbase2650mm.
