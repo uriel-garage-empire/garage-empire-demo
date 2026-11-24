@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has46 model-family community representations, thirty-seven original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is92/100 catalog entries with77 distinct body definitions;8 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has46 model-family community representations, thirty-eight original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is93/100 catalog entries with78 distinct body definitions;7 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -393,3 +393,8 @@ Separate simplified C43 fallback, not an exact replica. Vertical-strut grille, W
 ## Original stylized2024 Mercedes-AMG C 63 S E PERFORMANCE
 
 Separate simplified C63 S E PERFORMANCE fallback, not an exact replica. Wider W206 body, bonnet outlet, jet-wing apron, split-spoke wheels, charging flap and trapezoidal quad outlets.92/100coverage,46community+37original+9substitutes,77distinct definitions,8procedural. Prior visuals/catalog/save/gameplay preserved.
+
+
+## Original stylized2024 launch Porsche Taycan Turbo GT
+
+Separate simplified standardGT fallback, not an exact replica or Weissach fixed-wing car. Low fastback, four-point lamps, continuous rear light,21-inch-style wheels, gold calipers and adaptive spoiler.93/100coverage,46community+38original+9substitutes,78distinct definitions,7procedural. Prior visuals/catalog/save/gameplay preserved.2024 denotes official launch/deliveries; some markets label this2025 model year.
