@@ -504,3 +504,8 @@ Original reference-led geometry, not an exact replica. No imported mesh/photo te
 ## Original simplified2018 Porsche911GT3 991.2
 
 Original reference-led geometry, not an exact replica. No imported mesh/photo texture. Free-ready-made-first: MakerWorld exact-name listing actually describes winglessTouring and shows0printfiles; Outlaw actual image is newer992 withfullwidthrearbar; GT3RS/custom sources not stockGT3 and origin unresolved; Get3DModels mirror lacks verified origin. Official4562/1852/1271mm,2457wheelbase. References viewed, not redistributed: https://newsroom.porsche.com/en/products/porsche-911-gt3-world-premiere-geneva-motor-show-gims-2017-13466.html , https://newsroom.porsche.com/dam/jcr:789582f9-2ea1-4feb-94b3-40f4419d8ba6/PAG_Factsheet_911GT3_10_EN.pdf , https://press.porsche.com/download/prod/presse_pag/PressBasicData.nsf/Download?OpenAgent=&attachmentid=1292499 , https://www.mad4wheels.com/porsche/911-991-type-ii-gt3-2018 .
+
+
+## Original simplified winged Jesko
+
+Original reference-led geometry, no imported mesh/photo texture. Launch-era2019-22 design, not exact2022 replica. Ready-made-first: Ddiaz explicit RealRacing3; JUSTGAME/kevin/JustAGuy originunresolved; BlendSwap unspecified SketchUporigin; BACKSLASH printkit actualwinglessAbsolut; SRTmirror lacksrecoverableauthorlicense, CGTrader listingRoyaltyFreecannotredistributesource. References viewed, not redistributed: https://www.koenigsegg.com/model/jesko-attack , https://www.koenigsegg.com/technical-specifications-jesko-attack , https://www.mad4wheels.com/koenigsegg/jesko-2019 , https://www.drive.com.au/news/2022-koenigsegg-jesko-production-car-revealed/ .
