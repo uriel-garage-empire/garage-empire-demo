@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has47 model-family community representations, forty-three original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is99/100 catalog entries with84 distinct body definitions;1 entry remains procedural. The41 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has47 model-family community representations,44 original simplified bodies and9 explicitly labeled different-car visual substitutes. Coverage is100/100 catalog entries with85 distinct body definitions;0 entries remain procedural. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -430,3 +430,8 @@ Separate original simplified four-door TD sedan, not the later YD generation or 
 Ready-made CC BY4.0 scan by agent(agentmooshroom5) represents1998-99SentraGXE, sharing the B14 family with catalogSunny1996. Not exact fascia, market trim or wheels. Scan distortion/fixed photo textures remain.99mapped=47community+43original+9substitutes,84definitions,1procedural.
 
 B14 scan delivery optimized with meshopt geometry and WebP texture compression, keeping the source-attribution and scan caveats.
+
+
+## Final entry: original simplified2024 Mazda3 2.5 S sedan
+
+Separate BP sedan fallback with a real trunk silhouette, matte shield grille, paired ring tail lamps and silver16-inch-style wheels. Not an exact replica. The user approved correcting entry70 from hatch to sedan to match its existing US-spec2.5S trim. IDs, name, stats and save schema are unchanged. Prior99 visuals are unchanged.100 mapped entries does not mean100 exact replicas or100 separate assets.
