@@ -7,8 +7,7 @@ const E=(en,ar,url)=>[en,ar,url];
 const C={
 eg:{n:['Egypt','مصر'],cur:'EGP',cl:['EGP','ج.م'],rate:50,vat:.14,vs:1,duty:[[140,.40],[250,.60],[1e9,1.0]],ship:.05,reg:70,home:[],sold:MAIN.concat(['BMW','Audi','Mercedes-AMG']),
  facts:[E('Egyptian Law 149/2026 (ETA PDF) states the general VAT rate is 14% (from FY 2017/18)','القانون 149 لسنة 2026 (ملف مصلحة الضرائب) بينص إن سعر الضريبة العام 14% (من السنة المالية 2017/18)','https://eta.gov.eg/sites/default/files/2026-08/law.no%5F.149.of%5F.2026.pdf'),
- E('Plate colour shows licence type under Interior Ministry decree 1330/2023: private light blue, taxi orange, transport red (table from a secondary copy, not the Gazette)','لون اللوحة بيحدد نوع الترخيص حسب قرار وزير الداخلية 1330 لسنة 2023: ملاكي لبني، أجرة برتقالي، نقل أحمر (جدول من نسخة منشورة مش الوقائع)','https://alliedforlegalandtaxadvice.com/%d9%82%d8%b1%d8%a7%d8%b1-%d8%b1%d9%82%d9%85-1330-%d9%84%d8%b3%d9%86%d8%a9-2023/'),
- E('Interior Ministry notice dated 30 Sep 2026: from 1 Oct 2026 (trial) licence fees are paid as the fee announced on the board at the traffic unit, with no other payments. The notice gives no fee amounts.','إعلان وزارة الداخلية بتاريخ 30 سبتمبر 2026: من 1 أكتوبر 2026 (تشغيل تجريبي) رسوم الترخيص بتتدفع حسب القيمة المعلنة باللوحة في وحدة المرور من غير مبالغ تانية. الإعلان مش بيذكر قيم الرسوم.','https://www.moi.gov.eg/news/getdetails?newsId=e59ca651-7f58-45c2-9ffe-62481b6dd47f')]},
+ E('Plate colour shows licence type under Interior Ministry decree 1330/2023: private light blue, taxi orange, transport red (table from a secondary copy, not the Gazette)','لون اللوحة بيحدد نوع الترخيص حسب قرار وزير الداخلية 1330 لسنة 2023: ملاكي لبني، أجرة برتقالي، نقل أحمر (جدول من نسخة منشورة مش الوقائع)','https://alliedforlegalandtaxadvice.com/%d9%82%d8%b1%d8%a7%d8%b1-%d8%b1%d9%82%d9%85-1330-%d9%84%d8%b3%d9%86%d8%a9-2023/')]},
 ae:{n:['UAE','الإمارات'],cur:'AED',cl:['AED','د.إ'],rate:3.67,vat:.05,vs:1,duty:.05,ship:.04,reg:250,home:[],sold:MAIN.concat(PREM),
  facts:[]},
 sa:{n:['Saudi Arabia','السعودية'],cur:'SAR',cl:['SAR','ر.س'],rate:3.75,vat:.15,duty:.05,ds:1,ship:.04,reg:150,home:[],sold:MAIN.concat(PREM),
@@ -32,19 +31,22 @@ const PLATES={private:{en:'Private (light blue plate)',ar:'ملاكي (لوحة 
 const KEY='garage-empire-markets-v1';
 const M={country:'eg',mode:'local',reg:true,plate:'private',un:[],pl:{},sm:[]};
 try{const d=JSON.parse(localStorage.getItem(KEY)||'null');if(d&&C[d.country]){M.country=d.country;M.mode=d.mode==='import'?'import':'local';M.reg=d.reg!==false;M.plate='private';M.un=Array.isArray(d.un)?d.un.filter(Number.isInteger):[];M.pl=d.pl&&typeof d.pl==='object'?d.pl:{};M.sm=Array.isArray(d.sm)?d.sm:[]}}catch(e){}
+const H='https://eg.hatla2ee.com/en/car/used-prices/';
 const ANCH=[
- {n:'Hyundai Excel',y:1997,k:'eg',amt:131000,url:'https://eg.hatla2ee.com/en/car/used-prices/hyundai/excel/1997',d:['Hatla2ee Egypt, average used listing, Sep 2026 (131,000 EGP)','هتلاتي مصر، متوسط إعلانات المستعمل، سبتمبر 2026 (131,000 جنيه)']},
- {n:'Mazda MX-5 NA',y:1992,k:'de',amt:9900,url:'https://cetiritocka.com/market/cars?generation=mx-5-na&make=mazda&model=mx-5',d:['cetiritocka, Germany median advertised price for MX-5 NA, Nov 2026 (9,900 EUR, all NA years)','cetiritocka، متوسط السعر المعلن في ألمانيا لـ MX-5 NA، نوفمبر 2026 (9,900 يورو، كل سنين NA)']},
- {n:'Land Cruiser',y:2024,k:'us',amt:58180,url:'https://www.toyota.com/landcruiser/',d:['toyota.com Land Cruiser starting MSRP, excl. destination and tax (new car, fetched 24 Nov 2026)','toyota.com أقل سعر مبدئي للاند كروزر من غير الشحن والضريبة (عربية جديدة، 24 نوفمبر 2026)']}];
-function anchor(cid,k){const c=CARS[cid];for(const a of ANCH)if(a.k===k&&c[0].includes(a.n)&&c[1]===a.y)return {usd:a.amt/C[k].rate,url:a.url,d:a.d,new:a.n==='Land Cruiser'};return null}
+ {n:'Hyundai Excel',y:1997,k:'eg',amt:131000,basis:'used',exact:1,url:H+'hyundai/excel/1997',d:['Hatla2ee Egypt, Hyundai Excel 1997, average used listing Sep 2026: 131,000 EGP','هتلاتي مصر، هيونداي إكسل 1997، متوسط إعلانات المستعمل سبتمبر 2026: 131,000 جنيه']},
+ {n:'Chevrolet Lanos',y:2000,k:'eg',amt:216000,basis:'used',exact:1,url:H+'daewoo/lanos/2000',d:['Hatla2ee Egypt, Daewoo Lanos 2000 (same car under the Daewoo badge), average used listing Sep 2026: 216,000 EGP','هتلاتي مصر، دايو لانوس 2000 (نفس العربية باسم دايو)، متوسط إعلانات المستعمل سبتمبر 2026: 216,000 جنيه']},
+ {n:'Kia Cerato',y:2012,k:'eg',amt:581000,basis:'used',exact:1,url:H+'kia/cerato/2012',d:['Hatla2ee Egypt, Kia Cerato 2012, average used listing Sep 2026: 581,000 EGP','هتلاتي مصر، كيا سيراتو 2012، متوسط إعلانات المستعمل سبتمبر 2026: 581,000 جنيه']},
+ {n:'Mazda MX-5 NA',y:1992,k:'de',amt:9900,basis:'used',exact:0,url:'https://cetiritocka.com/market/cars?generation=mx-5-na&make=mazda&model=mx-5',d:['cetiritocka, Germany median advertised price for the MX-5 NA generation (all years 1989-1997 combined), Nov 2026: 9,900 EUR','cetiritocka، متوسط السعر المعلن في ألمانيا لجيل MX-5 NA (كل السنين مجمعة)، نوفمبر 2026: 9,900 يورو']},
+ {n:'Land Cruiser',y:2024,k:'us',amt:58180,basis:'new',exact:0,url:'https://www.toyota.com/landcruiser/',d:['toyota.com Land Cruiser page, starting MSRP excl. destination and tax, fetched 24 Nov 2026: $58,180 (current model, not checked against 2024)','صفحة toyota.com للاند كروزر، أقل سعر مبدئي من غير الشحن والضريبة، 24 نوفمبر 2026: 58,180 دولار (الموديل الحالي، مش متأكد إنه نفس 2024)']}];
+function anchor(cid,k){const c=CARS[cid];for(const a of ANCH)if(a.k===k&&c[0].includes(a.n)&&c[1]===a.y)return {usd:a.amt/C[k].rate,url:a.url,d:a.d,basis:a.basis,exact:a.exact};return null}
 const brand=c=>c[0].split(' ')[0];
 const has=(k,c)=>C[k].home.includes(brand(c))||C[k].sold.includes(brand(c));
 const duty=(k,hp)=>{const d=C[k].duty;if(typeof d==='number')return d;for(const b of d)if(hp<=b[0])return b[1];return 0};
-function calc(cid,baseUSD,k,fresh){const c=CARS[cid],K=C[k];
- if(has(k,c)) return fresh?{imp:false,fresh:1,base:baseUSD,vat:baseUSD*K.vat,total:baseUSD*(1+K.vat),k}:{imp:false,base:baseUSD,vat:0,total:baseUSD,k};
- const ship=baseUSD*K.ship,cif=baseUSD+ship,dr=duty(k,c[3]);let ex=K.extra||0;if(K.exemptYear&&c[1]<=K.exemptYear)ex=0;
- const du=cif*dr,xt=cif*ex,vat=(cif+du+xt)*K.vat;
- return {imp:true,base:baseUSD,ship,cif,dr,du,ex,xt,vr:K.vat,vat,total:cif+du+xt+vat,k}}
+function calc(cid,baseUSD,k,fresh){const c=CARS[cid],K=C[k],base=Math.round(baseUSD);
+ if(has(k,c)){if(!fresh)return {imp:false,base,vat:0,total:base,k};const vat=Math.round(base*K.vat);return {imp:false,fresh:1,base,vat,total:base+vat,k}}
+ const ship=Math.round(base*K.ship),cif=base+ship,dr=duty(k,c[3]);let ex=K.extra||0;if(K.exemptYear&&c[1]<=K.exemptYear)ex=0;
+ const du=Math.round(cif*dr),xt=Math.round(cif*ex),vat=Math.round((cif+du+xt)*K.vat);
+ return {imp:true,base,ship,cif,dr,du,ex,xt,vr:K.vat,vat,total:cif+du+xt+vat,k}}
 function regFee(k,id){return C[k].reg}
 function save(){try{localStorage.setItem(KEY,JSON.stringify({country:M.country,mode:M.mode,reg:M.reg,plate:M.plate,un:M.un,pl:M.pl,sm:M.sm}))}catch(e){}}
 window.MK={anchor,C,M,PLATES,has,calc,regFee,save,brand,rate:()=>C[M.country].rate,cl:()=>C[M.country].cl};
