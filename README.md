@@ -4,7 +4,7 @@ Free static car-management demo. Garage customization, NPC market, repairs and s
 
 ## Visual coverage update, 23 November 2026
 
-The deployed showroom has46 model-family community representations, forty original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is95/100 catalog entries with80 distinct body definitions;5 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
+The deployed showroom has46 model-family community representations, forty-one original simplified bodies and nine explicitly labeled different-car visual substitutes. Coverage is96/100 catalog entries with81 distinct body definitions;4 entries remain procedural. The40 community body assets are shared across several entries. Original geometry, model-family representations and different-car substitutes are counted separately. Shared entries do not count as new bodies. Substitutes are not meshes of the named car. Earlier progress sections below are historical.
 
 The older update notes below describe the game at each earlier stage. Catalog and save IDs are unchanged by the model updates.
 
@@ -408,3 +408,8 @@ Separate simplified BP hatchback fallback, not an exact replica. Long bonnet, th
 ## Original stylized2018 Porsche911GT3 991.2
 
 Separate simplified991.2GT3 fallback, not an exact replica, RS or992. Raised oval headlights, low GT nose, slim separated rear lamps, central twin exhaust and conventional fixed wing.95/100coverage,46community+40original+9substitutes,80distinct definitions,5procedural. Prior visuals/catalog/save/gameplay preserved.
+
+
+## Original simplified winged Jesko
+
+Separate original launch-era2019-22 winged Jesko fallback for catalog2022, not Absolut or exact replica.96/100coverage,46community+41original+9substitutes,81definitions,4procedural. Prior visuals/catalog/save/gameplay preserved.
